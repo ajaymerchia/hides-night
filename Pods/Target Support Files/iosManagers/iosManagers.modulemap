@@ -1,0 +1,6 @@
+framework module iosManagers {
+  umbrella header "iosManagers-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -7,13 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B510707DB2158DF8CA1855B0 /* Pods_HidesNight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E374076B8F5F10F7CF88F2CD /* Pods_HidesNight.framework */; };
+		B7DE62A121CC18E100AC0113 /* SignUpVC-initUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE62A021CC18E100AC0113 /* SignUpVC-initUI.swift */; };
+		B7DE62A321CC1D9800AC0113 /* SignUpVC-system.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE62A221CC1D9800AC0113 /* SignUpVC-system.swift */; };
+		B7DE62A521CC336600AC0113 /* SignUpVC-photopicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE62A421CC336600AC0113 /* SignUpVC-photopicker.swift */; };
+		B7DE62B621CCC39900AC0113 /* LabeledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE62B521CCC39900AC0113 /* LabeledTextField.swift */; };
+		B7DE62B921CCE28A00AC0113 /* ShakingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE62B821CCE28A00AC0113 /* ShakingViews.swift */; };
+		B7DE62BB21CCE86000AC0113 /* SignUpVC-validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE62BA21CCE86000AC0113 /* SignUpVC-validators.swift */; };
+		B7DE62BD21CDCD7500AC0113 /* FirebaseReady.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE62BC21CDCD7500AC0113 /* FirebaseReady.swift */; };
 		B7EB127321CAEDC100C1DEB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB127221CAEDC100C1DEB7 /* AppDelegate.swift */; };
-		B7EB127521CAEDC100C1DEB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB127421CAEDC100C1DEB7 /* ViewController.swift */; };
 		B7EB127821CAEDC100C1DEB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7EB127621CAEDC100C1DEB7 /* Main.storyboard */; };
 		B7EB127A21CAEDC200C1DEB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7EB127921CAEDC200C1DEB7 /* Assets.xcassets */; };
 		B7EB127D21CAEDC200C1DEB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7EB127B21CAEDC200C1DEB7 /* LaunchScreen.storyboard */; };
 		B7EB128821CAEDC200C1DEB7 /* HidesNightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB128721CAEDC200C1DEB7 /* HidesNightTests.swift */; };
 		B7EB129321CAEDC200C1DEB7 /* HidesNightUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB129221CAEDC200C1DEB7 /* HidesNightUITests.swift */; };
+		B7EB12B621CB3A0D00C1DEB7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB12B521CB3A0D00C1DEB7 /* Constants.swift */; };
+		B7EB12BA21CB3A4900C1DEB7 /* LoginVC-main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB12B921CB3A4900C1DEB7 /* LoginVC-main.swift */; };
+		B7EB12BC21CB70E500C1DEB7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7EB12BB21CB70E500C1DEB7 /* GoogleService-Info.plist */; };
+		B7EB12BE21CB74C800C1DEB7 /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB12BD21CB74C800C1DEB7 /* LaunchVC.swift */; };
+		B7EB12C221CB816D00C1DEB7 /* luckiest-guy.regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7EB12C121CB814D00C1DEB7 /* luckiest-guy.regular.ttf */; };
+		B7EB12C421CB883B00C1DEB7 /* Launch-logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB12C321CB883B00C1DEB7 /* Launch-logic.swift */; };
+		B7EB12C621CB888E00C1DEB7 /* FirebaseAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB12C521CB888E00C1DEB7 /* FirebaseAPIClient.swift */; };
+		B7EB12C821CB898A00C1DEB7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB12C721CB898A00C1DEB7 /* User.swift */; };
+		B7EB12CB21CB89CF00C1DEB7 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB12CA21CB89CF00C1DEB7 /* Game.swift */; };
+		B7EB12CD21CB9D1000C1DEB7 /* LoginVC-initUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB12CC21CB9D1000C1DEB7 /* LoginVC-initUI.swift */; };
+		B7EB12CF21CBA10E00C1DEB7 /* LoginVC-system.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB12CE21CBA10E00C1DEB7 /* LoginVC-system.swift */; };
+		B7EB12D121CBA76400C1DEB7 /* LoginVC-logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB12D021CBA76400C1DEB7 /* LoginVC-logic.swift */; };
+		B7EB12D321CBAA7B00C1DEB7 /* SignUpVC-main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB12D221CBAA7B00C1DEB7 /* SignUpVC-main.swift */; };
+		B7EB12DA21CC137D00C1DEB7 /* SignUpVC-logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB12D921CC137D00C1DEB7 /* SignUpVC-logic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +55,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F8E0FA6BCCAF3B2A9718307 /* Pods_HidesNightTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HidesNightTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A999FB6EB8984DAF1891260 /* Pods_HidesNightUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HidesNightUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7DE62A021CC18E100AC0113 /* SignUpVC-initUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SignUpVC-initUI.swift"; path = "/Users/ajaymerchia/wkspc/ios/hidesnight/HidesNight/HidesNight/ViewControllers/SignUpScreen/SignUpVC-initUI.swift"; sourceTree = "<absolute>"; };
+		B7DE62A221CC1D9800AC0113 /* SignUpVC-system.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpVC-system.swift"; sourceTree = "<group>"; };
+		B7DE62A421CC336600AC0113 /* SignUpVC-photopicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpVC-photopicker.swift"; sourceTree = "<group>"; };
+		B7DE62B521CCC39900AC0113 /* LabeledTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LabeledTextField.swift; path = /Users/ajaymerchia/wkspc/ios/hidesnight/HidesNight/HidesNight/LabeledTextField.swift; sourceTree = "<absolute>"; };
+		B7DE62B821CCE28A00AC0113 /* ShakingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakingViews.swift; sourceTree = "<group>"; };
+		B7DE62BA21CCE86000AC0113 /* SignUpVC-validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpVC-validators.swift"; sourceTree = "<group>"; };
+		B7DE62BC21CDCD7500AC0113 /* FirebaseReady.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseReady.swift; sourceTree = "<group>"; };
 		B7EB126F21CAEDC100C1DEB7 /* HidesNight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HidesNight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7EB127221CAEDC100C1DEB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B7EB127421CAEDC100C1DEB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B7EB127721CAEDC100C1DEB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B7EB127921CAEDC200C1DEB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7EB127C21CAEDC200C1DEB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +76,23 @@
 		B7EB128E21CAEDC200C1DEB7 /* HidesNightUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HidesNightUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7EB129221CAEDC200C1DEB7 /* HidesNightUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HidesNightUITests.swift; sourceTree = "<group>"; };
 		B7EB129421CAEDC200C1DEB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7EB12B521CB3A0D00C1DEB7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = HidesNight/Resources/Constants.swift; sourceTree = SOURCE_ROOT; };
+		B7EB12B921CB3A4900C1DEB7 /* LoginVC-main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LoginVC-main.swift"; path = "HidesNight/ViewControllers/LoginScreen/LoginVC-main.swift"; sourceTree = SOURCE_ROOT; };
+		B7EB12BB21CB70E500C1DEB7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B7EB12BD21CB74C800C1DEB7 /* LaunchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchVC.swift; sourceTree = "<group>"; };
+		B7EB12C121CB814D00C1DEB7 /* luckiest-guy.regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "luckiest-guy.regular.ttf"; sourceTree = "<group>"; };
+		B7EB12C321CB883B00C1DEB7 /* Launch-logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Launch-logic.swift"; sourceTree = "<group>"; };
+		B7EB12C521CB888E00C1DEB7 /* FirebaseAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAPIClient.swift; sourceTree = "<group>"; };
+		B7EB12C721CB898A00C1DEB7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B7EB12CA21CB89CF00C1DEB7 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		B7EB12CC21CB9D1000C1DEB7 /* LoginVC-initUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginVC-initUI.swift"; sourceTree = "<group>"; };
+		B7EB12CE21CBA10E00C1DEB7 /* LoginVC-system.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginVC-system.swift"; sourceTree = "<group>"; };
+		B7EB12D021CBA76400C1DEB7 /* LoginVC-logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginVC-logic.swift"; sourceTree = "<group>"; };
+		B7EB12D221CBAA7B00C1DEB7 /* SignUpVC-main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpVC-main.swift"; sourceTree = "<group>"; };
+		B7EB12D921CC137D00C1DEB7 /* SignUpVC-logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpVC-logic.swift"; sourceTree = "<group>"; };
+		BB83551C7A5051851C018E41 /* Pods-HidesNight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HidesNight.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HidesNight/Pods-HidesNight.debug.xcconfig"; sourceTree = "<group>"; };
+		DD9AE1CC1A178A8C1CF1532E /* Pods-HidesNight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HidesNight.release.xcconfig"; path = "Pods/Target Support Files/Pods-HidesNight/Pods-HidesNight.release.xcconfig"; sourceTree = "<group>"; };
+		E374076B8F5F10F7CF88F2CD /* Pods_HidesNight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HidesNight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B510707DB2158DF8CA1855B0 /* Pods_HidesNight.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +121,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1471DDCB8FD30E14E7266DD7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E374076B8F5F10F7CF88F2CD /* Pods_HidesNight.framework */,
+				5F8E0FA6BCCAF3B2A9718307 /* Pods_HidesNightTests.framework */,
+				8A999FB6EB8984DAF1891260 /* Pods_HidesNightUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		842522D14386A3BCF61676E8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BB83551C7A5051851C018E41 /* Pods-HidesNight.debug.xcconfig */,
+				DD9AE1CC1A178A8C1CF1532E /* Pods-HidesNight.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B7DE62B721CCC3A500AC0113 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B7DE62B521CCC39900AC0113 /* LabeledTextField.swift */,
+				B7DE62B821CCE28A00AC0113 /* ShakingViews.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B7DE62BE21CDCD7B00AC0113 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B7DE62BC21CDCD7500AC0113 /* FirebaseReady.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		B7DE62BF21CE0C7200AC0113 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B7EB12C521CB888E00C1DEB7 /* FirebaseAPIClient.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		B7EB126621CAEDC100C1DEB7 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +172,8 @@
 				B7EB128621CAEDC200C1DEB7 /* HidesNightTests */,
 				B7EB129121CAEDC200C1DEB7 /* HidesNightUITests */,
 				B7EB127021CAEDC100C1DEB7 /* Products */,
+				842522D14386A3BCF61676E8 /* Pods */,
+				1471DDCB8FD30E14E7266DD7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,11 +191,16 @@
 			isa = PBXGroup;
 			children = (
 				B7EB127221CAEDC100C1DEB7 /* AppDelegate.swift */,
-				B7EB127421CAEDC100C1DEB7 /* ViewController.swift */,
-				B7EB127621CAEDC100C1DEB7 /* Main.storyboard */,
 				B7EB127921CAEDC200C1DEB7 /* Assets.xcassets */,
-				B7EB127B21CAEDC200C1DEB7 /* LaunchScreen.storyboard */,
+				B7DE62BE21CDCD7B00AC0113 /* Protocols */,
+				B7DE62BF21CE0C7200AC0113 /* Helpers */,
+				B7EB12C921CB898D00C1DEB7 /* Models */,
+				B7DE62B721CCC3A500AC0113 /* Views */,
+				B7EB12B221CB36D000C1DEB7 /* Resources */,
+				B7EB12B821CB3A2800C1DEB7 /* ViewControllers */,
+				B7EB12B721CB3A1600C1DEB7 /* Storyboards */,
 				B7EB127E21CAEDC200C1DEB7 /* Info.plist */,
+				B7EB12BB21CB70E500C1DEB7 /* GoogleService-Info.plist */,
 			);
 			path = HidesNight;
 			sourceTree = "<group>";
@@ -125,6 +223,76 @@
 			path = HidesNightUITests;
 			sourceTree = "<group>";
 		};
+		B7EB12B221CB36D000C1DEB7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B7EB12B521CB3A0D00C1DEB7 /* Constants.swift */,
+				B7EB12C121CB814D00C1DEB7 /* luckiest-guy.regular.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B7EB12B721CB3A1600C1DEB7 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B7EB127621CAEDC100C1DEB7 /* Main.storyboard */,
+				B7EB127B21CAEDC200C1DEB7 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		B7EB12B821CB3A2800C1DEB7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B7EB12BF21CB74CF00C1DEB7 /* LaunchScreen */,
+				B7EB12C021CB74E500C1DEB7 /* LoginScreen */,
+				B7EB12D421CBAA8300C1DEB7 /* SignUpScreen */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B7EB12BF21CB74CF00C1DEB7 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B7EB12BD21CB74C800C1DEB7 /* LaunchVC.swift */,
+				B7EB12C321CB883B00C1DEB7 /* Launch-logic.swift */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		B7EB12C021CB74E500C1DEB7 /* LoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B7EB12B921CB3A4900C1DEB7 /* LoginVC-main.swift */,
+				B7EB12CC21CB9D1000C1DEB7 /* LoginVC-initUI.swift */,
+				B7EB12CE21CBA10E00C1DEB7 /* LoginVC-system.swift */,
+				B7EB12D021CBA76400C1DEB7 /* LoginVC-logic.swift */,
+			);
+			path = LoginScreen;
+			sourceTree = "<group>";
+		};
+		B7EB12C921CB898D00C1DEB7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B7EB12C721CB898A00C1DEB7 /* User.swift */,
+				B7EB12CA21CB89CF00C1DEB7 /* Game.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B7EB12D421CBAA8300C1DEB7 /* SignUpScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B7EB12D221CBAA7B00C1DEB7 /* SignUpVC-main.swift */,
+				B7DE62A021CC18E100AC0113 /* SignUpVC-initUI.swift */,
+				B7DE62A221CC1D9800AC0113 /* SignUpVC-system.swift */,
+				B7EB12D921CC137D00C1DEB7 /* SignUpVC-logic.swift */,
+				B7DE62BA21CCE86000AC0113 /* SignUpVC-validators.swift */,
+				B7DE62A421CC336600AC0113 /* SignUpVC-photopicker.swift */,
+			);
+			path = SignUpScreen;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +300,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B7EB129721CAEDC200C1DEB7 /* Build configuration list for PBXNativeTarget "HidesNight" */;
 			buildPhases = (
+				EED6A187BCB6121956E4C8B5 /* [CP] Check Pods Manifest.lock */,
 				B7EB126B21CAEDC100C1DEB7 /* Sources */,
 				B7EB126C21CAEDC100C1DEB7 /* Frameworks */,
 				B7EB126D21CAEDC100C1DEB7 /* Resources */,
+				CF21B153F3BEE48B15BA4718 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -230,6 +400,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7EB127D21CAEDC200C1DEB7 /* LaunchScreen.storyboard in Resources */,
+				B7EB12BC21CB70E500C1DEB7 /* GoogleService-Info.plist in Resources */,
+				B7EB12C221CB816D00C1DEB7 /* luckiest-guy.regular.ttf in Resources */,
 				B7EB127A21CAEDC200C1DEB7 /* Assets.xcassets in Resources */,
 				B7EB127821CAEDC100C1DEB7 /* Main.storyboard in Resources */,
 			);
@@ -251,13 +423,98 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CF21B153F3BEE48B15BA4718 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HidesNight/Pods-HidesNight-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/iosManagers/iosManagers.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iosManagers.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HidesNight/Pods-HidesNight-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EED6A187BCB6121956E4C8B5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HidesNight-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B7EB126B21CAEDC100C1DEB7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7EB127521CAEDC100C1DEB7 /* ViewController.swift in Sources */,
+				B7EB12C621CB888E00C1DEB7 /* FirebaseAPIClient.swift in Sources */,
+				B7DE62A121CC18E100AC0113 /* SignUpVC-initUI.swift in Sources */,
 				B7EB127321CAEDC100C1DEB7 /* AppDelegate.swift in Sources */,
+				B7EB12BE21CB74C800C1DEB7 /* LaunchVC.swift in Sources */,
+				B7EB12C421CB883B00C1DEB7 /* Launch-logic.swift in Sources */,
+				B7EB12DA21CC137D00C1DEB7 /* SignUpVC-logic.swift in Sources */,
+				B7DE62B921CCE28A00AC0113 /* ShakingViews.swift in Sources */,
+				B7EB12D321CBAA7B00C1DEB7 /* SignUpVC-main.swift in Sources */,
+				B7DE62B621CCC39900AC0113 /* LabeledTextField.swift in Sources */,
+				B7EB12B621CB3A0D00C1DEB7 /* Constants.swift in Sources */,
+				B7EB12BA21CB3A4900C1DEB7 /* LoginVC-main.swift in Sources */,
+				B7DE62A521CC336600AC0113 /* SignUpVC-photopicker.swift in Sources */,
+				B7EB12CD21CB9D1000C1DEB7 /* LoginVC-initUI.swift in Sources */,
+				B7EB12C821CB898A00C1DEB7 /* User.swift in Sources */,
+				B7DE62BB21CCE86000AC0113 /* SignUpVC-validators.swift in Sources */,
+				B7EB12CB21CB89CF00C1DEB7 /* Game.swift in Sources */,
+				B7DE62BD21CDCD7500AC0113 /* FirebaseReady.swift in Sources */,
+				B7DE62A321CC1D9800AC0113 /* SignUpVC-system.swift in Sources */,
+				B7EB12CF21CBA10E00C1DEB7 /* LoginVC-system.swift in Sources */,
+				B7EB12D121CBA76400C1DEB7 /* LoginVC-logic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +687,7 @@
 		};
 		B7EB129821CAEDC200C1DEB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB83551C7A5051851C018E41 /* Pods-HidesNight.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -448,6 +706,7 @@
 		};
 		B7EB129921CAEDC200C1DEB7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD9AE1CC1A178A8C1CF1532E /* Pods-HidesNight.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
