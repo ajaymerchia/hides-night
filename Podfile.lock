@@ -46,6 +46,7 @@ PODS:
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 5.1)
     - GTMSessionFetcher/Core (~> 1.1)
+  - FSPagerView (0.8.2)
   - GoogleAppMeasurement (5.4.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
     - GoogleUtilities/MethodSwizzler (~> 5.2)
@@ -81,6 +82,7 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - SideMenu (5.0.3)
   - SkyFloatingLabelTextField (3.6.0)
   - SwiftyJSON (4.2.0)
 
@@ -91,9 +93,11 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
+  - FSPagerView
   - iosManagers
   - IQKeyboardManager
   - JGProgressHUD
+  - SideMenu
   - SkyFloatingLabelTextField (~> 3.0)
   - SwiftyJSON
 
@@ -108,6 +112,7 @@ SPEC REPOS:
     - FirebaseDatabase
     - FirebaseInstanceID
     - FirebaseStorage
+    - FSPagerView
     - GoogleAppMeasurement
     - GoogleUtilities
     - GTMSessionFetcher
@@ -116,6 +121,7 @@ SPEC REPOS:
     - JGProgressHUD
     - leveldb-library
     - nanopb
+    - SideMenu
     - SkyFloatingLabelTextField
     - SwiftyJSON
 
@@ -140,6 +146,7 @@ SPEC CHECKSUMS:
   FirebaseDatabase: 0621689f77528d62b47e1c06ca737c4c19275d1a
   FirebaseInstanceID: e2fa4cb35ef5558c200f7f0ad8a53e212215f93e
   FirebaseStorage: 3d22c041370593e639fba013d1eb698a8dae2881
+  FSPagerView: 816a18842306973cc7cc6df8a5332272f7815c30
   GoogleAppMeasurement: 98b71f5e04142793729a5ef23e5b96651ff4b70f
   GoogleUtilities: 95996bea7c7d9b8fb811b7507669a4a8762f80c7
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
@@ -148,9 +155,10 @@ SPEC CHECKSUMS:
   JGProgressHUD: 12b20a8f4ffe05258f8635c1ab92816e451f904d
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
   SkyFloatingLabelTextField: 38164979b79512f9ff9288ad8acfc4bbf5d843e3
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: cc998e4d59408147d7c15f5fb389a61bb0ae1e26
+PODFILE CHECKSUM: 91212d20bd2f41928c2c8f0509fa00fb5f91844d
 
 COCOAPODS: 1.6.0.beta.2

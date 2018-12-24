@@ -94,6 +94,7 @@ extension LoginVC {
         howTo.titleLabel?.font = .TEXT_FONT
         howTo.setTitleColor(.white, for: .normal)
         howTo.setTitleColor(.flatWhiteDark, for: .highlighted)
+        howTo.addTarget(self, action: #selector(toInstructions), for: .touchUpInside)
         
         
         signUp = UIButton(frame: LayoutManager.aboveCentered(elementBelow: howTo, padding: .MARGINAL_PADDING, width: howTo.frame.width, height: pixelFontEstimate))
@@ -123,10 +124,6 @@ extension LoginVC {
         view.addSubview(howTo)
         view.addSubview(signUp)
         view.addSubview(login)
-
-        
-        
-        
     }
     
     func initGestureRecognizer() {

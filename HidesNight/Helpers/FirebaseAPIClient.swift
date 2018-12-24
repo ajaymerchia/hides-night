@@ -92,6 +92,16 @@ class FirebaseAPIClient {
     
     
     // Logging In
+    static func getAllAccounts(callback: @escaping ([String: String]) -> ()) {
+        Database.database().reference().child("publicInfo").observeSingleEvent(of: .value) { (snap) in
+            guard let accounts = snap.value as? [String: String] else {
+                callback([:])
+                return
+            }
+            callback(accounts)
+        }
+    }
+    
     static func findEmail(forUsername: String, success: @escaping (String) -> (), fail: @escaping () -> ()) {
         Database.database().reference().child("publicInfo").child(forUsername).observeSingleEvent(of: .value) { (snap) in
             guard let email = snap.value as? String else {

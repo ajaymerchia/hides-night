@@ -45,7 +45,7 @@ public class AlertManager {
     }
     
     public func startProgressHud(withMsg:String) -> JGProgressHUD {
-        let hud = JGProgressHUD(style: .light)
+        let hud = JGProgressHUD(style: .dark)
         hud.textLabel.text = withMsg
         hud.show(in: self.srcView.view)
         return hud

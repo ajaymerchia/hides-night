@@ -12,6 +12,14 @@ extension SignUpVC {
     func loadRestrictedAccounts() {
         restrictedUsernames = ["admin"]
         restrictedEmails = ["admin@admin.com"]
+        
+        FirebaseAPIClient.getAllAccounts { (accounts) in
+            for (key, value) in accounts {
+                self.restrictedUsernames.append(key)
+                self.restrictedUsernames.append(value)
+            }
+        }
+        
     }
     
     @objc func pickProfilePhoto() {

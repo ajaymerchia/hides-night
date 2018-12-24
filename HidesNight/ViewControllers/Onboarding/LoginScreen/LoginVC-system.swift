@@ -40,15 +40,25 @@ extension LoginVC {
     override func viewWillDisappear(_ animated: Bool) {
         usernameField.text = ""
         passwordField.text = ""
+        hud?.dismiss()
+        pendingLogin = false
+        self.view.isUserInteractionEnabled = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if let tabBar = segue.destination as? TabBarVC {
+            tabBar.user = pendingUser
+        }
     }
     
     // Segue Out Functions
     @objc func toSignUp() {
         performSegue(withIdentifier: "login2signup", sender: self)
+    }
+    
+    @objc func toInstructions() {
+        guard let parentVC = storyboard?.instantiateViewController(withIdentifier: "InstructionsParent") else {return}
+        self.present(parentVC, animated: true, completion: nil)
     }
 
     

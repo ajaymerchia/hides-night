@@ -30,6 +30,7 @@ enum SignupError {
 
 extension Notification.Name {
     static let hasPendingUserLogin = Notification.Name("hasPendingUserLogin")
+    static let newImage = Notification.Name("newImage")
 }
 
 extension CGFloat {

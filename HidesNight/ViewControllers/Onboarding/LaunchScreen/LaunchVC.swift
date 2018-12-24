@@ -8,6 +8,7 @@
 
 import UIKit
 import iosManagers
+import JGProgressHUD
 
 
 class LaunchVC: UIViewController {
@@ -16,6 +17,7 @@ class LaunchVC: UIViewController {
     var gameTitle: UILabel!
     
     var pendingUser: User!
+    var hud: JGProgressHUD?
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -26,9 +26,9 @@ extension SignUpVC: UITextFieldDelegate {
     func initNav() {
         if let nav = self.navigationController?.navigationBar {
             nav.tintColor = .white
-            nav.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-            nav.shadowImage = UIImage()
-            nav.isTranslucent = true
+            nav.backgroundColor = .black
+            nav.barTintColor = .black
+            
             nav.titleTextAttributes = [NSAttributedString.Key.font: UIFont.HEADER_FONT!, NSAttributedString.Key.foregroundColor: UIColor.white]
             
             self.navbar = nav
@@ -47,7 +47,6 @@ extension SignUpVC: UITextFieldDelegate {
         signUpPrompt.font = .SUBTITLE_FONT
         signUpPrompt.textAlignment = .center
         view.addSubview(signUpPrompt)
-        
     }
     
     func initProfilePic() {

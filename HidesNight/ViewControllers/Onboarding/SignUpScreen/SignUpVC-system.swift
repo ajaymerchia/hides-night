@@ -38,7 +38,7 @@ extension SignUpVC {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+        
     }
 
     // Segue Out Functions

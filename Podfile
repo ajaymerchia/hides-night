@@ -23,6 +23,6 @@ target 'HidesNight' do
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git', :branch => 'wip/swift4', :inhibit_warnings => true
   pod 'IQKeyboardManager', :inhibit_warnings => true
   pod 'SkyFloatingLabelTextField', '~> 3.0', :inhibit_warnings => true
-
+  pod 'SideMenu'
 
 end
