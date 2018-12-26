@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 import iosManagers
-import FSPagerView
+
 
 extension InstructionsVC {
     func initUI() {
@@ -19,6 +19,7 @@ extension InstructionsVC {
         self.slides = createSlidesFrom(data: slideData)
         addSlidesToScrollView()
         addPageControl()
+        addGestureDismissal()
     }
 
     // UI Initialization Helpers
@@ -71,5 +72,12 @@ extension InstructionsVC {
         pageControl.pageIndicatorTintColor = .white
         view.addSubview(pageControl)
         view.bringSubviewToFront(pageControl)
+    }
+    
+    func addGestureDismissal() {
+        let gestureRec = UISwipeGestureRecognizer(target: self, action: #selector(goBack))
+        gestureRec.direction = .down
+        view.addGestureRecognizer(gestureRec)
+        
     }
 }

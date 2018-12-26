@@ -132,7 +132,6 @@ extension LoginVC {
     }
     
     func animateNewComponents() {
-        debugPrint("animating")
         UIView.animate(withDuration: 0.75) {
             self.usernameField.alpha = 1
             self.passwordField.alpha = 1

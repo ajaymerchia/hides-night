@@ -80,9 +80,7 @@ extension ProfileVC {
         
         let insets:CGFloat = 20
         
-        guard let helpTemplateImage = UIImage(named: "info")?.withRenderingMode(.alwaysTemplate) else {
-            return
-        }
+        let helpTemplateImage = UIImage.nav_info.withRenderingMode(.alwaysTemplate)
         let helpPreferredColor: UIColor = .flatWhite
         
         helpButton = UIButton(frame: LayoutManager.belowCentered(elementAbove: name, padding: .PADDING*2, width: view.frame.width/3, height: view.frame.width/3))
@@ -107,9 +105,7 @@ extension ProfileVC {
         view.addSubview(helpText)
         
         
-        guard let logoutTemplateImage = UIImage(named: "logout")?.withRenderingMode(.alwaysTemplate) else {
-            return
-        }
+        let logoutTemplateImage = UIImage.nav_logout.withRenderingMode(.alwaysTemplate)
         
         let logoutPreferredColor: UIColor = .ACCENT_RED
         

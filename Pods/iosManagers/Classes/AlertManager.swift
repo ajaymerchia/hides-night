@@ -44,11 +44,15 @@ public class AlertManager {
         
     }
     
-    public func startProgressHud(withMsg:String) -> JGProgressHUD {
-        let hud = JGProgressHUD(style: .dark)
+    public func startProgressHud(withMsg:String, style: JGProgressHUDStyle = .light) -> JGProgressHUD {
+        let hud = JGProgressHUD(style: style)
         hud.textLabel.text = withMsg
         hud.show(in: self.srcView.view)
         return hud
+    }
+    
+    public func triggerCallback() {
+        self.callback?()
     }
     
     public func getTextInput(withTitle: String, andPlaceholder: String, placeholderToText: Bool = false,  completion: @escaping (String) -> (), cancellation: @escaping () -> () = {}) {

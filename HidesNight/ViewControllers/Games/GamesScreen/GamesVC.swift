@@ -10,9 +10,19 @@ import UIKit
 
 class GamesVC: UIViewController {
 
+    // Models
     var user: User!
     
-    var idealButton: UIButton!
+    // Navbar
+    var profilePictureButton: UIButton!
+    var navbar: UINavigationBar!
+    
+    
+    // Game Creation
+    var newGameButton: UIButton!
+    
+    // Upcoming/Previous Games
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

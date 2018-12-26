@@ -16,6 +16,14 @@ class Constants {
     
 }
 
+enum FRIEND_STATUS {
+    case unknown
+    case pending
+    case selected
+    case existing
+    case currUser
+}
+
 enum SignupError {
     case NameBlank
     case EmailBlank
@@ -48,10 +56,28 @@ extension UIColor {
 }
 
 extension UIImage {
-    static let placeholder: UIImage! = UIImage(named: "white-placeholder")
+    
+    // Logo
     static let logo_dark: UIImage! = UIImage(named: "logo-alpha")
-    static let avatar_dark: UIImage! = UIImage(named: "avatar-dark")
+
+    // Placeholders
+    static let avatar_white: UIImage! = UIImage(named: "avatar-white")
     static let avatar_black: UIImage! = UIImage(named: "avatar-black")
+    static let avatar_alpha: UIImage! = UIImage(named: "avatar-alpha")
+    static let placeholder: UIImage! = UIImage(named: "white-placeholder")
+
+    // Nav Icons
+    static let nav_add_image: UIImage! = UIImage(named: "nav-add-image")
+    static let nav_add_person: UIImage! = UIImage(named: "nav-add-person")
+    static let nav_remove_person: UIImage! = UIImage(named: "nav-remove-person")
+    static let nav_info: UIImage! = UIImage(named: "nav-info")
+    static let nav_logout: UIImage! = UIImage(named: "nav-logout")
+    
+    // Icon Buttons
+    static let mark_check: UIImage! = UIImage(named: "mark-check")
+    static let mark_cancel: UIImage! = UIImage(named: "mark-cancel")
+    
+    
 }
 
 extension UIFont {

@@ -24,7 +24,7 @@ extension LaunchVC {
             self.hud?.dismiss()
         }
         
-        alerts.startProgressHud(withMsg: "Logging In")
+        hud = alerts.startProgressHud(withMsg: "Logging In", style: .dark)
     
         
         

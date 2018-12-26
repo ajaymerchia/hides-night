@@ -19,6 +19,8 @@ class LaunchVC: UIViewController {
     var pendingUser: User!
     var hud: JGProgressHUD?
     
+    var hasLoaded = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,13 +31,19 @@ class LaunchVC: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        UIView.animate(withDuration: 1, animations: {
-            self.logo.frame = LayoutManager.aboveCentered(elementBelow: self.gameTitle, padding: .PADDING*10, width: self.logo.frame.width, height: self.logo.frame.height)
-            self.gameTitle.frame =  LayoutManager.belowCentered(elementAbove: self.logo, padding: .PADDING, width: self.view.frame.width, height: 60)
-            self.gameTitle.alpha = 1
-        }) { (bool) in
+        if !hasLoaded {
+            UIView.animate(withDuration: 1, animations: {
+                self.logo.frame = LayoutManager.aboveCentered(elementBelow: self.gameTitle, padding: .PADDING*10, width: self.logo.frame.width, height: self.logo.frame.height)
+                self.gameTitle.frame =  LayoutManager.belowCentered(elementAbove: self.logo, padding: .PADDING, width: self.view.frame.width, height: 60)
+                self.gameTitle.alpha = 1
+            }) { (bool) in
+                self.checkForAutoLogin()
+                self.hasLoaded = true
+            }
+        } else {
             self.checkForAutoLogin()
         }
+        
     }
     
     func initUI() {

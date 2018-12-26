@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FSPagerView
 
 class InstructionsVC: UIViewController {
     var navbar: UINavigationBar!

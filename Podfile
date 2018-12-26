@@ -24,5 +24,17 @@ target 'HidesNight' do
   pod 'IQKeyboardManager', :inhibit_warnings => true
   pod 'SkyFloatingLabelTextField', '~> 3.0', :inhibit_warnings => true
   pod 'SideMenu'
+  
+  
+  # All Useful Pods
+  pod 'PDTSimpleCalendar'
+  pod 'HGPlaceholders'
+#  pod 'PermissionScope'
+  pod 'FontAwesomeKit'
+#  pod 'Spring'
+  pod 'KeychainAccess'
+  
+  
+  
 
 end

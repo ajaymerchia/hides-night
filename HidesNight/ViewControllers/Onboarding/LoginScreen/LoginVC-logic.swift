@@ -34,7 +34,7 @@ extension LoginVC {
             return
         }
         
-        hud = alerts.startProgressHud(withMsg: "Logging In")
+        hud = alerts.startProgressHud(withMsg: "Logging In", style: .dark)
         
         FirebaseAPIClient.findEmail(forUsername: username, success: { (email) in
             debugPrint("Found Email: ", email)

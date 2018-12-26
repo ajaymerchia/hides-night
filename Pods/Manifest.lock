@@ -46,7 +46,27 @@ PODS:
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 5.1)
     - GTMSessionFetcher/Core (~> 1.1)
-  - FSPagerView (0.8.2)
+  - FontAwesomeKit (2.2.1):
+    - FontAwesomeKit/Core (= 2.2.1)
+    - FontAwesomeKit/FontAwesome (= 2.2.1)
+    - FontAwesomeKit/FoundationIcons (= 2.2.1)
+    - FontAwesomeKit/IonIcons (= 2.2.1)
+    - FontAwesomeKit/Material (= 2.2.1)
+    - FontAwesomeKit/Octicons (= 2.2.1)
+    - FontAwesomeKit/Zocial (= 2.2.1)
+  - FontAwesomeKit/Core (2.2.1)
+  - FontAwesomeKit/FontAwesome (2.2.1):
+    - FontAwesomeKit/Core
+  - FontAwesomeKit/FoundationIcons (2.2.1):
+    - FontAwesomeKit/Core
+  - FontAwesomeKit/IonIcons (2.2.1):
+    - FontAwesomeKit/Core
+  - FontAwesomeKit/Material (2.2.1):
+    - FontAwesomeKit/Core
+  - FontAwesomeKit/Octicons (2.2.1):
+    - FontAwesomeKit/Core
+  - FontAwesomeKit/Zocial (2.2.1):
+    - FontAwesomeKit/Core
   - GoogleAppMeasurement (5.4.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
     - GoogleUtilities/MethodSwizzler (~> 5.2)
@@ -72,16 +92,19 @@ PODS:
   - GoogleUtilities/UserDefaults (5.3.6):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.2.1)
-  - iosManagers (1.0.7):
+  - HGPlaceholders (0.3.0)
+  - iosManagers (1.0.10):
     - JGProgressHUD
   - IQKeyboardManager (6.2.0)
   - JGProgressHUD (2.0.3)
+  - KeychainAccess (3.1.2)
   - leveldb-library (1.20)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - PDTSimpleCalendar (0.9.1)
   - SideMenu (5.0.3)
   - SkyFloatingLabelTextField (3.6.0)
   - SwiftyJSON (4.2.0)
@@ -93,10 +116,13 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
-  - FSPagerView
+  - FontAwesomeKit
+  - HGPlaceholders
   - iosManagers
   - IQKeyboardManager
   - JGProgressHUD
+  - KeychainAccess
+  - PDTSimpleCalendar
   - SideMenu
   - SkyFloatingLabelTextField (~> 3.0)
   - SwiftyJSON
@@ -112,15 +138,18 @@ SPEC REPOS:
     - FirebaseDatabase
     - FirebaseInstanceID
     - FirebaseStorage
-    - FSPagerView
+    - FontAwesomeKit
     - GoogleAppMeasurement
     - GoogleUtilities
     - GTMSessionFetcher
+    - HGPlaceholders
     - iosManagers
     - IQKeyboardManager
     - JGProgressHUD
+    - KeychainAccess
     - leveldb-library
     - nanopb
+    - PDTSimpleCalendar
     - SideMenu
     - SkyFloatingLabelTextField
     - SwiftyJSON
@@ -146,19 +175,22 @@ SPEC CHECKSUMS:
   FirebaseDatabase: 0621689f77528d62b47e1c06ca737c4c19275d1a
   FirebaseInstanceID: e2fa4cb35ef5558c200f7f0ad8a53e212215f93e
   FirebaseStorage: 3d22c041370593e639fba013d1eb698a8dae2881
-  FSPagerView: 816a18842306973cc7cc6df8a5332272f7815c30
+  FontAwesomeKit: 3614979b3dbb0ec3f7fac1bd760b91f66c31db67
   GoogleAppMeasurement: 98b71f5e04142793729a5ef23e5b96651ff4b70f
   GoogleUtilities: 95996bea7c7d9b8fb811b7507669a4a8762f80c7
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
-  iosManagers: 18a7735ef51894c4855162a9d5657932267b569f
+  HGPlaceholders: 2df01c51b04a30acd0b8c9c7161c7cdde4541109
+  iosManagers: b43375e0d4912fde1f6d347d603477e74a389435
   IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
   JGProgressHUD: 12b20a8f4ffe05258f8635c1ab92816e451f904d
+  KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  PDTSimpleCalendar: d1c03387678422715dc021aa1a85d70f4d1014f2
   SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
   SkyFloatingLabelTextField: 38164979b79512f9ff9288ad8acfc4bbf5d843e3
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 91212d20bd2f41928c2c8f0509fa00fb5f91844d
+PODFILE CHECKSUM: b82dcb48a9b2a849026a3e746a36039b7946e8df
 
 COCOAPODS: 1.6.0.beta.2

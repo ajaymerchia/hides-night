@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import iosManagers
 extension SignUpVC {
     func loadRestrictedAccounts() {
         restrictedUsernames = ["admin"]
@@ -33,7 +34,10 @@ extension SignUpVC {
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
+        actionSheet.popoverPresentationController?.sourceView = profileSelectButton
+        actionSheet.popoverPresentationController?.sourceRect = CGRect(x: view.center.x, y: view.center.y, width: 0, height: 0)
+        actionSheet.popoverPresentationController?.sourceView = view
+        actionSheet.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
         self.present(actionSheet, animated: true)
     }
     
@@ -76,7 +80,7 @@ extension SignUpVC {
     
     @objc func validateFields() {
         self.view.isUserInteractionEnabled = false
-        hud = alerts.startProgressHud(withMsg: "Creating Account")
+        hud = alerts.startProgressHud(withMsg: "Creating Account", style: .dark)
         
         if let emailError = emailValidator() {
             signupError(code: emailError)
@@ -137,7 +141,7 @@ extension SignUpVC {
                 usr.setProfilePicture(to: img, updateRemote: false)
             }
             
-            debugPrint("Creating user account for")
+            debugPrint("Creating user account for ")
             debugPrint(usr)
             FirebaseAPIClient.uploadUser(usr: usr, withPhoto: (picture != nil), completion: {
                 
