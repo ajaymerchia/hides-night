@@ -15,6 +15,7 @@ class DateTimeVC: PDTSimpleCalendarViewController, PDTSimpleCalendarViewDelegate
     var currentChoice: UILabel!
     var currentDate: Date!
     var timeChooser: UIDatePicker!
+    var targetIndexPath: IndexPath!
     
     var calendarContribution: Date!
     var pickerContribution: Date!
@@ -111,6 +112,10 @@ class DateTimeVC: PDTSimpleCalendarViewController, PDTSimpleCalendarViewDelegate
             BSView.alpha = 0
         }) { (done) in
             BSView.removeFromSuperview()
+            
+            
+            self.collectionView.selectItem(at: self.targetIndexPath, animated: true, scrollPosition: UICollectionView.ScrollPosition.bottom)
+            
         }
         
     }
@@ -128,6 +133,15 @@ class DateTimeVC: PDTSimpleCalendarViewController, PDTSimpleCalendarViewDelegate
         
         cell.layer.borderWidth = 0
         cell.layer.shadowOpacity = 0
+        
+        if cell.date != nil {
+            let order = Calendar.current.compare(currentDate, to: cell.date, toGranularity: .day)
+            if order == .orderedSame {
+                targetIndexPath = indexPath
+            }
+        }
+        
+        
         
         
         
@@ -160,6 +174,8 @@ class DateTimeVC: PDTSimpleCalendarViewController, PDTSimpleCalendarViewDelegate
         calendarContribution = date
         updateDate()
     }
+    
+    
     
     @objc func timeChanged() {
         debugPrint(pickerContribution)

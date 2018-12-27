@@ -536,22 +536,22 @@ static const NSCalendarUnit kCalendarUnitYMD = NSCalendarUnitYear | NSCalendarUn
 
 
 static const NSInteger kFirstDay = 1;
-- (NSIndexPath *)indexPathForCellAtDate:(NSDate *)date
+- (NSIndexPath *) indexPathForCellAtDate:(NSDate *)date
 {
     if (!date) {
         return nil;
     }
     NSInteger section = [self sectionForDate:date];
     NSDate *firstOfMonth = [self firstOfMonthForSection:section];
-
+    
     NSInteger weekday = [[self.calendar components: NSCalendarUnitWeekday fromDate: firstOfMonth] weekday];
     NSInteger startOffset = weekday - self.calendar.firstWeekday;
     startOffset += startOffset >= 0 ? 0 : self.daysPerWeek;
-
+    
     NSInteger day = [[self.calendar components:kCalendarUnitYMD fromDate:date] day];
-
+    
     NSInteger item = (day - kFirstDay + startOffset);
-
+    
     return [NSIndexPath indexPathForItem:item inSection:section];
 }
 
@@ -561,6 +561,25 @@ static const NSInteger kFirstDay = 1;
 }
 
 #pragma mark - PDTSimpleCalendarViewCellDelegate
+
+- (NSIndexPath *)simpleCalendarViewCell:(PDTSimpleCalendarViewCell *)cell indexPathForCellAtDate:(NSDate *)date
+{
+    if (!date) {
+        return nil;
+    }
+    NSInteger section = [self sectionForDate:date];
+    NSDate *firstOfMonth = [self firstOfMonthForSection:section];
+    
+    NSInteger weekday = [[self.calendar components: NSCalendarUnitWeekday fromDate: firstOfMonth] weekday];
+    NSInteger startOffset = weekday - self.calendar.firstWeekday;
+    startOffset += startOffset >= 0 ? 0 : self.daysPerWeek;
+    
+    NSInteger day = [[self.calendar components:kCalendarUnitYMD fromDate:date] day];
+    
+    NSInteger item = (day - kFirstDay + startOffset);
+    
+    return [NSIndexPath indexPathForItem:item inSection:section];
+}
 
 - (BOOL)simpleCalendarViewCell:(PDTSimpleCalendarViewCell *)cell shouldUseCustomColorsForDate:(NSDate *)date
 {

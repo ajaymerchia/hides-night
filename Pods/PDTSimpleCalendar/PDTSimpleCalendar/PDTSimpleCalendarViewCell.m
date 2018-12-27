@@ -13,7 +13,7 @@ const CGFloat PDTSimpleCalendarCircleSize = 32.0f;
 @interface PDTSimpleCalendarViewCell ()
 
 @property (nonatomic, strong) UILabel *dayLabel;
-@property (nonatomic, strong) NSDate *date;
+
 
 @end
 
@@ -94,6 +94,8 @@ const CGFloat PDTSimpleCalendarCircleSize = 32.0f;
     return self;
 }
 
+
+
 - (void)setDate:(NSDate *)date calendar:(NSCalendar *)calendar
 {
     NSString* day = @"";
@@ -151,6 +153,11 @@ const CGFloat PDTSimpleCalendarCircleSize = 32.0f;
 - (void)refreshCellColors
 {
     [self setCircleColor:self.isToday selected:self.isSelected];
+}
+
+- (NSDate*)getDate
+{
+    return [self date];
 }
 
 

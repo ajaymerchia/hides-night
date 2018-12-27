@@ -37,9 +37,9 @@ class myUtils {
         return result
     }
     
-    public static func getMMDDYYRepr(date: Date) -> String {
+    public static func getMDDYYRepr(date: Date) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yy"
+        dateFormatter.dateFormat = "M/dd/yy"
         dateFormatter.locale = Locale(identifier: "en_US")
         return dateFormatter.string(from: date)
     }
@@ -52,7 +52,7 @@ class myUtils {
     }
     
     public static func getFormattedDateAndTime(date: Date) -> String {
-        return getMMDDYYRepr(date: date) + ", " + getTimeWithAMPM(date: date)
+        return getMDDYYRepr(date: date) + ", " + getTimeWithAMPM(date: date)
     }
     
     public static func seconds(hr: Double) -> Double {

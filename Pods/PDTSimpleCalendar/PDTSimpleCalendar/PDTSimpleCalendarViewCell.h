@@ -49,6 +49,7 @@
 
 // Forced ViewCells
 
+- (NSIndexPath *)simpleCalendarViewCell:(PDTSimpleCalendarViewCell *)cell indexPathForCellAtDate:(NSDate *)date;
 
 
 
@@ -113,6 +114,8 @@
  */
 @property (nonatomic, strong) UIFont *textDefaultFont UI_APPEARANCE_SELECTOR;
 
+@property (nonatomic, strong) NSDate *date;
+
 /**
  * Set the date for this cell
  *
@@ -121,6 +124,8 @@
  * @param calendar the calendar.
  */
 - (void)setDate:(NSDate*)date calendar:(NSCalendar*)calendar;
+
+- (NSDate*)getDate;
 
 /**
  *  Force the refresh of the colors for the circle and the text
