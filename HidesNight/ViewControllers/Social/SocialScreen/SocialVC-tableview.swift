@@ -98,7 +98,16 @@ extension SocialVC: UITableViewDelegate, UITableViewDataSource {
             self.selectedIsRequest = (thisHeader != SocialVC.headerNames[2])
             self.performSegue(withIdentifier: "social2friendDetail", sender: self)
         }
-        
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if originalContentPosition == nil {
+            originalContentPosition = scrollView.contentOffset.y
+        }
+        scrollView.bounces = (scrollView.contentOffset.y >= originalContentPosition);
+        if scrollView.contentOffset.y < originalContentPosition {
+            scrollView.setContentOffset(CGPoint(x: 0, y: originalContentPosition), animated: false)
+        }
     }
 
     

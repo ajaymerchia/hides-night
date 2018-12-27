@@ -32,7 +32,7 @@ class LaunchVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if !hasLoaded {
-            UIView.animate(withDuration: 1, animations: {
+            UIView.animate(withDuration: 1, delay: 0.25, options: .curveEaseInOut, animations: {
                 self.logo.frame = LayoutManager.aboveCentered(elementBelow: self.gameTitle, padding: .PADDING*10, width: self.logo.frame.width, height: self.logo.frame.height)
                 self.gameTitle.frame =  LayoutManager.belowCentered(elementAbove: self.logo, padding: .PADDING, width: self.view.frame.width, height: 60)
                 self.gameTitle.alpha = 1
@@ -43,7 +43,6 @@ class LaunchVC: UIViewController {
         } else {
             self.checkForAutoLogin()
         }
-        
     }
     
     func initUI() {

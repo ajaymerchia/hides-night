@@ -49,7 +49,7 @@ extension AddFriendVC {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: nil)
         self.navigationItem.titleView = searchBox
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(goBack))
-        self.navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.TEXT_FONT,
+        self.navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.TEXT_FONT!,
                                                                         NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
     }
     

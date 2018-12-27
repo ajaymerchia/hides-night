@@ -47,6 +47,12 @@
  */
 - (UIColor *)simpleCalendarViewCell:(PDTSimpleCalendarViewCell *)cell circleColorForDate:(NSDate *)date;
 
+// Forced ViewCells
+
+
+
+
+
 @end
 
 /**

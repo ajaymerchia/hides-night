@@ -18,8 +18,8 @@ class FirebaseAPIClient {
         
         debugPrint("Creating account for " + withEmail)
         Auth.auth().createUser(withEmail: withEmail, password: andPassword) { (auth, err) in
-            if err != nil {
-                debugPrint(err)
+            if let error = err {
+                debugPrint(error)
                 fail()
                 return
             }
@@ -45,8 +45,8 @@ class FirebaseAPIClient {
         let ref = Database.database().reference()
         let publicDomain = ref.child("publicInfo")
         publicDomain.child(usr.username).setValue(usr.email) { (err, ref) in
-            if err != nil {
-                debugPrint(err)
+            if let error = err {
+                debugPrint(error)
                 fail()
                 return
             }
@@ -62,8 +62,8 @@ class FirebaseAPIClient {
         let val = usr.createPushable()
         
         userRef.child(usr.uid).setValue(val, withCompletionBlock: { (err, ref) in
-            if err != nil {
-                debugPrint(err)
+            if let error = err {
+                debugPrint(error)
                 fail()
                 return
             }
@@ -126,8 +126,8 @@ class FirebaseAPIClient {
     
     static func login(withEmail: String, andPassword: String, success: @escaping (String) -> (), fail: @escaping () -> ()) {
         Auth.auth().signIn(withEmail: withEmail, password: andPassword) { (data, err) in
-            if err != nil {
-                debugPrint(err)
+            if let error = err {
+                debugPrint(error)
                 fail()
                 return
             }

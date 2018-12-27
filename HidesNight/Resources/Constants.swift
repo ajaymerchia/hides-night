@@ -87,6 +87,7 @@ extension UIFont {
     static let TEXT_ACCENT = UIFont(name: "LuckiestGuy-Regular", size: 14)
     static let BIG_TEXT_FONT = UIFont(name: "Avenir-Heavy", size: 18)
     static let TEXT_FONT = UIFont(name: "Avenir-Heavy", size: 14)
+    static let LIGHT_TEXT_FONT = UIFont(name: "Avenir-Book", size: 14)
     
     public func withTraits(_ traits: UIFontDescriptor.SymbolicTraits...) -> UIFont {
         let descriptor = self.fontDescriptor

@@ -16,6 +16,10 @@
 		B70BCAD821D304E10038BCF1 /* FriendDetailVC-initUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70BCAD721D304E10038BCF1 /* FriendDetailVC-initUI.swift */; };
 		B70BCADA21D304ED0038BCF1 /* FriendDetailVC-system.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70BCAD921D304ED0038BCF1 /* FriendDetailVC-system.swift */; };
 		B70BCADC21D3055B0038BCF1 /* FriendDetailVC-logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70BCADB21D3055B0038BCF1 /* FriendDetailVC-logic.swift */; };
+		B70BCADE21D350410038BCF1 /* CreateGameVC-tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70BCADD21D350410038BCF1 /* CreateGameVC-tableview.swift */; };
+		B70BCAE021D35F0D0038BCF1 /* CreateGameVC-photopicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70BCADF21D35F0D0038BCF1 /* CreateGameVC-photopicker.swift */; };
+		B70BCAE221D370E20038BCF1 /* DateTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70BCAE121D370E20038BCF1 /* DateTimeVC.swift */; };
+		B70BCAE521D454110038BCF1 /* DecisionPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70BCAE421D454110038BCF1 /* DecisionPickerVC.swift */; };
 		B737368521D09EE10068FCA1 /* ProfileVC-initUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B737368421D09EE10068FCA1 /* ProfileVC-initUI.swift */; };
 		B737368721D09F490068FCA1 /* ProfileVC-system.swift in Sources */ = {isa = PBXBuildFile; fileRef = B737368621D09F490068FCA1 /* ProfileVC-system.swift */; };
 		B737368921D0A2150068FCA1 /* ProfileVC-logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B737368821D0A2150068FCA1 /* ProfileVC-logic.swift */; };
@@ -105,6 +109,10 @@
 		B70BCAD721D304E10038BCF1 /* FriendDetailVC-initUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FriendDetailVC-initUI.swift"; sourceTree = "<group>"; };
 		B70BCAD921D304ED0038BCF1 /* FriendDetailVC-system.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FriendDetailVC-system.swift"; sourceTree = "<group>"; };
 		B70BCADB21D3055B0038BCF1 /* FriendDetailVC-logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FriendDetailVC-logic.swift"; sourceTree = "<group>"; };
+		B70BCADD21D350410038BCF1 /* CreateGameVC-tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateGameVC-tableview.swift"; sourceTree = "<group>"; };
+		B70BCADF21D35F0D0038BCF1 /* CreateGameVC-photopicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateGameVC-photopicker.swift"; sourceTree = "<group>"; };
+		B70BCAE121D370E20038BCF1 /* DateTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeVC.swift; sourceTree = "<group>"; };
+		B70BCAE421D454110038BCF1 /* DecisionPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionPickerVC.swift; sourceTree = "<group>"; };
 		B737368421D09EE10068FCA1 /* ProfileVC-initUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileVC-initUI.swift"; sourceTree = "<group>"; };
 		B737368621D09F490068FCA1 /* ProfileVC-system.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileVC-system.swift"; sourceTree = "<group>"; };
 		B737368821D0A2150068FCA1 /* ProfileVC-logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileVC-logic.swift"; sourceTree = "<group>"; };
@@ -231,6 +239,22 @@
 			path = FriendDetailVC;
 			sourceTree = "<group>";
 		};
+		B70BCAE321D370E60038BCF1 /* DateTimeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B70BCAE121D370E20038BCF1 /* DateTimeVC.swift */,
+			);
+			path = DateTimeScreen;
+			sourceTree = "<group>";
+		};
+		B70BCAE621D454150038BCF1 /* DecisionPickerScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B70BCAE421D454110038BCF1 /* DecisionPickerVC.swift */,
+			);
+			path = DecisionPickerScreen;
+			sourceTree = "<group>";
+		};
 		B737368E21D0BD110068FCA1 /* InstructionsScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,10 +269,14 @@
 		B73736A821D0EF700068FCA1 /* CreateGameScreen */ = {
 			isa = PBXGroup;
 			children = (
+				B70BCAE621D454150038BCF1 /* DecisionPickerScreen */,
+				B70BCAE321D370E60038BCF1 /* DateTimeScreen */,
 				B73736A621D0EF520068FCA1 /* CreateGameVC.swift */,
 				B73736A921D0EF960068FCA1 /* CreateGameVC-initUI.swift */,
+				B70BCADD21D350410038BCF1 /* CreateGameVC-tableview.swift */,
 				B73736AB21D0EFBC0068FCA1 /* CreateGameVC-system.swift */,
 				B73736AD21D0EFE40068FCA1 /* CreateGameVC-logic.swift */,
+				B70BCADF21D35F0D0038BCF1 /* CreateGameVC-photopicker.swift */,
 			);
 			path = CreateGameScreen;
 			sourceTree = "<group>";
@@ -725,6 +753,7 @@
 				B7DE62C621CF356700AC0113 /* GamesVC-initUI.swift in Sources */,
 				B737368721D09F490068FCA1 /* ProfileVC-system.swift in Sources */,
 				B73736A121D0D4950068FCA1 /* SlideData.swift in Sources */,
+				B70BCAE221D370E20038BCF1 /* DateTimeVC.swift in Sources */,
 				B70BCACD21D20EB50038BCF1 /* ExtendedUtils.swift in Sources */,
 				B70BCAD121D2D88D0038BCF1 /* FirebaseAPI-gameCreation.swift in Sources */,
 				B7DE62CC21CF36C500AC0113 /* ProfileVC.swift in Sources */,
@@ -734,8 +763,10 @@
 				B70BCAD521D3040E0038BCF1 /* FriendDetailVC.swift in Sources */,
 				B737369221D0BEF60068FCA1 /* InstructionsVC-initUI.swift in Sources */,
 				B70BCADC21D3055B0038BCF1 /* FriendDetailVC-logic.swift in Sources */,
+				B70BCAE521D454110038BCF1 /* DecisionPickerVC.swift in Sources */,
 				B7EB12DA21CC137D00C1DEB7 /* SignUpVC-logic.swift in Sources */,
 				B75C537B21D1A9880024D027 /* AddFriendVC-system.swift in Sources */,
+				B70BCAE021D35F0D0038BCF1 /* CreateGameVC-photopicker.swift in Sources */,
 				B7DE62D021CF45C800AC0113 /* TabBarVC.swift in Sources */,
 				B7DE62CA21CF358E00AC0113 /* GamesVC-logic.swift in Sources */,
 				B7DE62B921CCE28A00AC0113 /* ShakingViews.swift in Sources */,
@@ -757,6 +788,7 @@
 				B75C536F21D1A2120024D027 /* SocialVC-initUI.swift in Sources */,
 				B7EB12CD21CB9D1000C1DEB7 /* LoginVC-initUI.swift in Sources */,
 				B7EB12C821CB898A00C1DEB7 /* User.swift in Sources */,
+				B70BCADE21D350410038BCF1 /* CreateGameVC-tableview.swift in Sources */,
 				B70BCAD821D304E10038BCF1 /* FriendDetailVC-initUI.swift in Sources */,
 				B75C537521D1A8460024D027 /* AddFriendVC.swift in Sources */,
 				B7DE62BB21CCE86000AC0113 /* SignUpVC-validators.swift in Sources */,

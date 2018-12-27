@@ -7,6 +7,20 @@
 //
 
 import Foundation
+class GameSelectionType {
+    static let Assigned = GameSelectionType(repr: "Assigned")
+    static let Chosen = GameSelectionType(repr: "Chosen")
+    static let Randomized = GameSelectionType(repr: "Randomized")
+    
+    var description: String
+    
+    init(repr: String) {
+        description = repr
+    }
+    
+    
+}
+
 class Game: FirebaseReady {
     let uid: String!
     let admin: String!
@@ -26,6 +40,8 @@ class Game: FirebaseReady {
         self.uid = key
         self.admin = record["admin"] as? String
     }
+    
+    
     
     
 }

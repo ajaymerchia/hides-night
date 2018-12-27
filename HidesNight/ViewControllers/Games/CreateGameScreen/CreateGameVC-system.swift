@@ -19,24 +19,27 @@ extension CreateGameVC {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        if firstLoad {
-            firstLoad = false
-            UIMenuController.shared.setMenuVisible(false, animated: false)
-            gameNameField.selectAll(self)
-            
+        let navVC = self.navigationController as! DataNavVC
+        
+        if let newDate = navVC.date {
+            self.date = newDate
+            navVC.date = nil
+            dateTimeCell.detailTextLabel?.text = myUtils.getFormattedDateAndTime(date: self.date)
         }
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        debugPrint(roundDurationCell.textLabel?.frame)
+    }
+
     override func viewWillDisappear(_ animated: Bool) {
-        
+        eventNameField.resignFirstResponder()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+        if let dtVC = segue.destination as? DateTimeVC {
+            dtVC.currentDate = self.date
+        }
     }
 
     // Segue Out Functions

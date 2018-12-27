@@ -25,11 +25,7 @@ extension UIColor {
             return self
         }
     }
-    
-    
-    
 }
-
 class myUtils {
     static func mergeDictionaries(d1: [String: String]?, d2: [String: String]?) -> [String: String] {
         let d1Unwrap: [String: String]! = d1 ?? [:]
@@ -39,7 +35,32 @@ class myUtils {
         }
         
         return result
-        
-        
     }
+    
+    public static func getMMDDYYRepr(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yy"
+        dateFormatter.locale = Locale(identifier: "en_US")
+        return dateFormatter.string(from: date)
+    }
+    
+    public static func getTimeWithAMPM(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "h:mm a"
+        dateFormatter.locale = Locale(identifier: "en_US")
+        return dateFormatter.string(from: date)
+    }
+    
+    public static func getFormattedDateAndTime(date: Date) -> String {
+        return getMMDDYYRepr(date: date) + ", " + getTimeWithAMPM(date: date)
+    }
+    
+    public static func seconds(hr: Double) -> Double {
+        return hr * seconds(min: 60)
+    }
+    
+    public static func seconds(min: Double) -> Double {
+        return min * 60
+    }
+    
 }

@@ -86,7 +86,7 @@ static const NSCalendarUnit kCalendarUnitYMD = NSCalendarUnitYear | NSCalendarUn
     self.backgroundColor = [UIColor whiteColor];
     self.overlayTextColor = [UIColor blackColor];
     self.daysPerWeek = 7;
-    self.weekdayHeaderEnabled = NO;
+    self.weekdayHeaderEnabled = YES;
     self.weekdayTextType = PDTSimpleCalendarViewWeekdayTextTypeShort;
 }
 
@@ -459,41 +459,6 @@ static const NSCalendarUnit kCalendarUnitYMD = NSCalendarUnitYear | NSCalendarUn
 
 #pragma mark - UIScrollViewDelegate
 
-- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
-{
-    //We only display the overlay view if there is a vertical velocity
-    if (fabs(velocity.y) > 0.0f) {
-        if (self.overlayView.alpha < 1.0) {
-            [UIView animateWithDuration:0.25 animations:^{
-                [self.overlayView setAlpha:1.0];
-            }];
-        }
-    }
-}
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
-    NSTimeInterval delay = (decelerate) ? 1.5 : 0.0;
-    [self performSelector:@selector(hideOverlayView) withObject:nil afterDelay:delay];
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    //Update Content of the Overlay View
-    NSArray *indexPaths = [self.collectionView indexPathsForVisibleItems];
-    //indexPaths is not sorted
-    NSArray *sortedIndexPaths = [indexPaths sortedArrayUsingSelector:@selector(compare:)];
-    NSIndexPath *firstIndexPath = [sortedIndexPaths firstObject];
-
-    self.overlayView.text = [self.headerDateFormatter stringFromDate:[self firstOfMonthForSection:firstIndexPath.section]];
-}
-
-- (void)hideOverlayView
-{
-    [UIView animateWithDuration:0.25 animations:^{
-        [self.overlayView setAlpha:0.0];
-    }];
-}
 
 #pragma mark -
 #pragma mark - Calendar calculations

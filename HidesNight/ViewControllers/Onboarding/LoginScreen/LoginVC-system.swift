@@ -72,7 +72,7 @@ extension LoginVC {
     func checkForPendingLogin() {
         debugPrint("Checking for login...")
         if pendingLogin && (pendingUser != nil) {
-            debugPrint("Found login for \(pendingUser?.username!)")
+            debugPrint("Found login for", pendingUser?.username!)
             performSegue(withIdentifier: "login2home", sender: self)
         }
     }

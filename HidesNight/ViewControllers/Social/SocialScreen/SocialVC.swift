@@ -29,7 +29,7 @@ class SocialVC: UIViewController {
     
     // Controls
     var friendsTable: UITableView!
-    
+    var originalContentPosition: CGFloat!
     
     override func viewDidLoad() {
         super.viewDidLoad()

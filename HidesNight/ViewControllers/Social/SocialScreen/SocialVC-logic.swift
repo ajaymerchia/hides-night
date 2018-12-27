@@ -89,6 +89,7 @@ extension SocialVC {
     func getTableDataFor(section: String) -> [Any]{
         guard let index = SocialVC.headerNames.index(of: section) else {return []}
         return tableData[index]
+        
     }
 
 }

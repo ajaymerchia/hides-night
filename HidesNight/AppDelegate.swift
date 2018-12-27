@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         IQKeyboardManager.shared().isEnabled = true
         
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font : UIFont.BIG_TEXT_FONT], for: .normal)
+        
         return true
     }
 

@@ -112,7 +112,7 @@ extension AddFriendVC: UITextFieldDelegate {
     
     func reloadTableview() {
         
-        var hasRecords = updateSectionsHaveRecords()
+        let hasRecords = updateSectionsHaveRecords()
         
         if searchBox.text != "" {
             self.setNoResults(to: !hasRecords)

@@ -1,22 +1,22 @@
 //
-//  DataNavVC.swift
+//  DecisionPickerVC.swift
 //  HidesNight
 //
-//  Created by Ajay Merchia on 12/24/18.
+//  Created by Ajay Merchia on 12/26/18.
 //  Copyright © 2018 Ajay Merchia. All rights reserved.
 //
 
 import UIKit
 
-class DataNavVC: UINavigationController {
-
-    var user: User!
-    var user2: User!
-    var game: Game!
-    var isRequest: Bool!
+class DecisionPickerVC: UIViewController {
+    var navbar: UINavigationBar!
+    var slideData: [SlideData]!
+    var slides: [Slide]!
     
+    var scrollView: UIScrollView!
+    var pageControl: UIPageControl!
     
-    var date: Date?
+    var selectedDecisionStyle: GameSelectionType!
     
     override func viewDidLoad() {
         super.viewDidLoad()
