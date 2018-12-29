@@ -58,6 +58,7 @@ class PersonCell: UITableViewCell {
         self.statusData = to
         switch to {
         case .unknown:
+            status.text = ""
             return
         case .selected:
             contentView.backgroundColor = .black

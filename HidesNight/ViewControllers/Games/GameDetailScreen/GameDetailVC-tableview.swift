@@ -43,7 +43,8 @@ extension GameDetailVC: UITableViewDelegate, UITableViewDataSource {
             cell.profilePic.setImage(playerUser.profilePic, for: .normal)
             cell.contentView.backgroundColor = .black
             cell.backgroundColor = .black
-            cell.allowsSelect = false
+            cell.allowsSelect = self.userIsAdmin
+            
             cell.status.text = self.game.getPlayerStatus(forUser: playerUser).description
             
             return cell
@@ -70,9 +71,21 @@ extension GameDetailVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        gameToDetail = getGameForUI(indexPath: indexPath)
-//        self.performSegue(withIdentifier: "games2detail", sender: self)
+        debugPrint("selected a cell")
+        
+        switch currentSegSelected {
+        case 0:
+            if userIsAdmin {
+                let user = self.game.players.sorted()[indexPath.row]
+                displayPopup(forUser: user, index: indexPath)
+            }
+        case 1:
+            // Team Cell Stuff
+            debugPrint("tapped team")
+        default:
+            // Round Cell Stuff
+            debugPrint("tapped round")
+        }
         
     }
     

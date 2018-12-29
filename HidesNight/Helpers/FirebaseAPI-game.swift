@@ -172,16 +172,23 @@ extension FirebaseAPIClient {
             return
         }
         
-        by.gameIDs.removeValue(forKey: fromGame.uid)
-        by.games.remove(at: by.games.index(of: fromGame)!)
+        if !by.uid.starts(with: "temp") {
+            by.gameIDs.removeValue(forKey: fromGame.uid)
+            by.games.remove(at: by.games.index(of: fromGame)!)
+        }
         
         fromGame.playerStatus.removeValue(forKey: by.uid)
         fromGame.players.remove(at: fromGame.players.index(of: by)!)
         
         updateRemoteGame(game: fromGame, success: {
-            updateRemoteUser(usr: by, success: {
+            if !by.uid.starts(with: "temp") {
+                updateRemoteUser(usr: by, success: {
+                    success()
+                }, fail: {fail()})
+            } else {
                 success()
-            }, fail: {fail()})
+            }
+            
         }, fail: {fail()})
         
     }

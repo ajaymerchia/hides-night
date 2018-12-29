@@ -61,6 +61,7 @@
 		B7B14D4121D6AF03003F8A4C /* InviteFriendVC-system.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D4021D6AF03003F8A4C /* InviteFriendVC-system.swift */; };
 		B7B14D4321D6AF19003F8A4C /* InviteFriendVC-logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D4221D6AF19003F8A4C /* InviteFriendVC-logic.swift */; };
 		B7B14D4521D6B851003F8A4C /* InviteFriendVC-tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D4421D6B851003F8A4C /* InviteFriendVC-tableview.swift */; };
+		B7B14D4721D70A0E003F8A4C /* InfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D4621D70A0E003F8A4C /* InfoController.swift */; };
 		B7DE62A121CC18E100AC0113 /* SignUpVC-initUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE62A021CC18E100AC0113 /* SignUpVC-initUI.swift */; };
 		B7DE62A321CC1D9800AC0113 /* SignUpVC-system.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE62A221CC1D9800AC0113 /* SignUpVC-system.swift */; };
 		B7DE62A521CC336600AC0113 /* SignUpVC-photopicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE62A421CC336600AC0113 /* SignUpVC-photopicker.swift */; };
@@ -169,6 +170,7 @@
 		B7B14D4021D6AF03003F8A4C /* InviteFriendVC-system.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InviteFriendVC-system.swift"; sourceTree = "<group>"; };
 		B7B14D4221D6AF19003F8A4C /* InviteFriendVC-logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InviteFriendVC-logic.swift"; sourceTree = "<group>"; };
 		B7B14D4421D6B851003F8A4C /* InviteFriendVC-tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InviteFriendVC-tableview.swift"; sourceTree = "<group>"; };
+		B7B14D4621D70A0E003F8A4C /* InfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoController.swift; sourceTree = "<group>"; };
 		B7DE62A021CC18E100AC0113 /* SignUpVC-initUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SignUpVC-initUI.swift"; path = "/Users/ajaymerchia/wkspc/ios/hidesnight/HidesNight/HidesNight/ViewControllers/Onboarding/SignUpScreen/SignUpVC-initUI.swift"; sourceTree = "<absolute>"; };
 		B7DE62A221CC1D9800AC0113 /* SignUpVC-system.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpVC-system.swift"; sourceTree = "<group>"; };
 		B7DE62A421CC336600AC0113 /* SignUpVC-photopicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpVC-photopicker.swift"; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 				B7DE62B521CCC39900AC0113 /* LabeledTextField.swift */,
 				B7DE62B821CCE28A00AC0113 /* ShakingViews.swift */,
 				B73736A221D0D8150068FCA1 /* Slide.swift */,
+				B7B14D4621D70A0E003F8A4C /* InfoController.swift */,
 				B75C538221D1F94E0024D027 /* PersonCell.swift */,
 				B70BCAD221D2F36C0038BCF1 /* GameCell.swift */,
 			);
@@ -883,6 +886,7 @@
 				B737369021D0BE7E0068FCA1 /* InstructionsVC.swift in Sources */,
 				B7EB12D121CBA76400C1DEB7 /* LoginVC-logic.swift in Sources */,
 				B737368921D0A2150068FCA1 /* ProfileVC-logic.swift in Sources */,
+				B7B14D4721D70A0E003F8A4C /* InfoController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

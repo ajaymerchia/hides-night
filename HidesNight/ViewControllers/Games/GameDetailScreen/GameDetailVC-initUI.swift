@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 import iosManagers
 
-extension GameDetailVC {
+extension GameDetailVC: UIGestureRecognizerDelegate {
     func initUI() {
         self.view.backgroundColor = .black
         initNav()
@@ -44,10 +44,22 @@ extension GameDetailVC {
         view.addSubview(gamePhoto)
         
         gameParamToggler = UITapGestureRecognizer(target: self, action: #selector(toggleGameParams))
+        gameParamToggler.delegate = self
         view.addGestureRecognizer(gameParamToggler)
     
     }
-    func animateParams(to: CGFloat) { UIView.animate(withDuration: 0.33, animations: {self.gameParams.alpha = to})}
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if touch.view?.isDescendant(of: self.tableView) == true {
+            return false
+        }
+        return true
+    }
+    
+    
+    
+    
+    func animateParams(to: CGFloat) { UIView.animate(withDuration: 0.33, animations: {self.gameParams.alpha = to == 0 ? 0 : 1; self.gameParams.backgroundColor = rgba(0,0,0,to)})}
     @objc func toggleGameParams() {
         if gameParamToggler.location(in: self.view).y < gamePhoto.frame.maxY {
             animateParams(to: gameParamsHidden ? 0 : 0.75)
@@ -115,6 +127,11 @@ extension GameDetailVC {
         label.textColor = .white
         label.font = light ? UIFont.LIGHT_TEXT_FONT : UIFont.BIG_TEXT_FONT?.bold
         label.adjustsFontSizeToFitWidth = true
+        
+//        if light {
+//            gameParams.addSubview(Utils.getBorder(forView: label, thickness: 0.5, color: .white, side: .Bottom))
+//        }
+        
     }
     
     func initLabels() {

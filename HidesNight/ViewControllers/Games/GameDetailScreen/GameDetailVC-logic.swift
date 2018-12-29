@@ -85,16 +85,62 @@ extension GameDetailVC {
     @objc func leaveGame(_ sender: UIButton) {
         self.view.isUserInteractionEnabled = false
         sender.isSelected = true
-        debugPrint("leaving the game")
         
-        FirebaseAPIClient.gameLeft(by: self.user, fromGame: self.game, success: {
+        let actionSheet = UIAlertController(title: "Are you sure you want to leave the game?", message: "You won't be able to rejoin unless you are invited.", preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) -> Void in
             sender.isSelected = false
             self.view.isUserInteractionEnabled = true
-            self.navigationController?.popViewController(animated: true)
-        }, fail: {})
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Leave Game", style: .destructive, handler: { (action) -> Void in
+            FirebaseAPIClient.gameLeft(by: self.user, fromGame: self.game, success: {
+                sender.isSelected = false
+                self.view.isUserInteractionEnabled = true
+                self.navigationController?.popViewController(animated: true)
+            }, fail: {})
+        }))
+        
+        actionSheet.popoverPresentationController?.sourceView = rightActionButton
+        
+        actionSheet.popoverPresentationController?.sourceRect = CGRect(x: view.center.x, y: view.center.y, width: 0, height: 0)
+        actionSheet.popoverPresentationController?.sourceView = view
+        actionSheet.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
+        self.present(actionSheet, animated: true)
+        
+        
+        debugPrint("leaving the game")
+        
+        
     }
     
     @objc func startGame(_ sender: UIButton) {
+        
+    }
+    
+    
+    func displayPopup(forUser: User, index: IndexPath) {
+        let pop = InfoController()
+        pop.image = forUser.profilePic
+        debugPrint(forUser.fullname)
+        pop.titleText = forUser.fullname
+        pop.detailText = "@" + forUser.username
+        
+        if forUser != game.admin {
+            pop.actionText = "Remove From Game"
+            pop.actionCallback = {
+                FirebaseAPIClient.gameLeft(by: forUser, fromGame: self.game, success: {
+                    self.tableView.reloadData()
+                }, fail: {})
+            }
+        }
+        
+        
+        pop.finalCallback = {
+            self.tableView.deselectRow(at: index, animated: true)
+        }
+        
+        pop.presentIn(view: self.view)
+        
         
     }
     
