@@ -77,6 +77,7 @@ extension SocialVC {
     func initTableview() {
         friendsTable = UITableView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: (tabBarController?.tabBar.frame.minY)! - 0))
         friendsTable.register(PersonCell.self, forCellReuseIdentifier: "personCell")
+        friendsTable.register(GameCell.self, forCellReuseIdentifier: "gameCell")
         friendsTable.delegate = self
         friendsTable.dataSource = self
         friendsTable.backgroundColor = .black

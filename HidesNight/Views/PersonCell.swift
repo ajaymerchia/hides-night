@@ -17,6 +17,9 @@ class PersonCell: UITableViewCell {
     var allowsSelect = true
     var status: UILabel!
     var statusData: FRIEND_STATUS?
+    var blackBack: Bool = false
+    var highlightedColor: UIColor!
+    var ogColor: UIColor!
     
     var usr: User!
     
@@ -29,24 +32,24 @@ class PersonCell: UITableViewCell {
 
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         if highlighted {
-            contentView.backgroundColor = contentView.backgroundColor?.modified(withAdditionalHue: 0, additionalSaturation: 0, additionalBrightness: 0.1)
+            contentView.backgroundColor = highlightedColor
         } else {
-            
+            contentView.backgroundColor = blackBack ? .black : .flatBlackDark
         }
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         if statusData != FRIEND_STATUS.selected {
             if selected && allowsSelect {
-                contentView.backgroundColor = .black
+                contentView.backgroundColor = blackBack ? .flatBlackDark : .black
             } else {
-                contentView.backgroundColor = .flatBlackDark
+                contentView.backgroundColor = blackBack ? .black : .flatBlackDark
             }
         } else {
             if selected {
-                contentView.backgroundColor = .flatBlackDark
+                contentView.backgroundColor = blackBack ? .black : .flatBlackDark
             } else {
-                contentView.backgroundColor = .black
+                contentView.backgroundColor = blackBack ? .flatBlackDark : .black
             }
         }
     }
@@ -75,14 +78,18 @@ class PersonCell: UITableViewCell {
         }
     }
     
-    func initializeCellFrom(data: User, size: CGSize) {
+    func initializeCellFrom(data: User, size: CGSize, blackBack: Bool = false) {
         usr = data
+        self.blackBack = blackBack
         let number = ((abs(CGFloat(usr.uid.hashValue))/pow(2,63)) * 180 * 10).truncatingRemainder(dividingBy: 180)
 
         
-        let initals: String = String(usr.first.uppercased().prefix(1)) + String(usr.last.uppercased().prefix(1))
+        let initals: String = String(self.usr.fullname.split(separator: " ").map { (sub) -> Substring in return sub.prefix(1)}.reduce("", +).prefix(2))
         
-        contentView.backgroundColor = .flatBlackDark
+        
+        contentView.backgroundColor = blackBack ? .black : .flatBlackDark
+        
+        highlightedColor = contentView.backgroundColor?.modified(withAdditionalHue: 0, additionalSaturation: 0, additionalBrightness: 0.1)
         
         profilePic = UIButton(frame: CGRect(x: .PADDING, y: 2 * .MARGINAL_PADDING, width: size.height - 4 * .MARGINAL_PADDING, height: size.height - 4 * .MARGINAL_PADDING))
         profilePic.setTitle(initals, for: .normal)

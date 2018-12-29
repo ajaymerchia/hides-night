@@ -22,14 +22,24 @@ class GamesVC: UIViewController {
     var newGameButton: UIButton!
     
     // Upcoming/Previous Games
+    var firstLoad = true
+    static let possibleHeaders = ["Active", "Upcoming Games", "Past Games"]
+    var tableData: [[Game]] = [[],[],[]]
+    var sectionsToDisplay: [String] = []
+    var gamesTable: UITableView!
+    
+    // Prepare for Game Detail
+    var gameToDetail: Game!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         getUserFromParent()
-        initUI()
         setupManagers()
+        initUI()
+        sortAndDisplayGames()
+        
         
     }
     

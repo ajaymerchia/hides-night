@@ -40,10 +40,15 @@ extension LoginVC {
             debugPrint("Found Email: ", email)
             FirebaseAPIClient.login(withEmail: email, andPassword: password, success: { (uid) in
                 FirebaseAPIClient.getUserForAccount(withId: uid, completion: { (user) in
-                    self.pendingUser = user
-                    self.pendingLogin = true
+                    let gameIDs = [String](user?.gameIDs.keys ?? [:].keys)
+                    FirebaseAPIClient.getAllGames(withIDs: gameIDs, completion: { (games) in
+                        user?.games = games
+                        self.pendingUser = user
+                        self.pendingLogin = true
+                        
+                        self.checkForPendingLogin()
+                    })
                     
-                    self.checkForPendingLogin()
                 })
             }, fail: {
                 self.alerts.displayAlert(title: "Oops!", message: "Your password is incorrect.")

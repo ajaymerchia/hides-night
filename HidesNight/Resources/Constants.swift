@@ -104,5 +104,10 @@ extension UIFont {
     }
 }
 
+extension TimeInterval {
+    static let defaultRound = TimeInterval(myUtils.seconds(hr: 1.5))
+    static let defaultCheckin = TimeInterval(myUtils.seconds(min: 15))
+    static let defaultGPS = TimeInterval(myUtils.seconds(hr: 1))
+}
 
 

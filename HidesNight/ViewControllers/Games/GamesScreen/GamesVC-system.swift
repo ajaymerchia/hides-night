@@ -29,20 +29,33 @@ extension GamesVC {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-
+        UIView.animate(withDuration: 0.1) {
+            self.profilePictureButton.alpha = 1
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
-
+        if !firstLoad {
+            sortAndDisplayGames()
+            
+        } else {
+            firstLoad = false
+        }
+        
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        
+        UIView.animate(withDuration: 0.25) {
+            self.profilePictureButton.alpha = 0
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let dataNav = segue.destination as? DataNavVC {
             dataNav.user = self.user
+        } else if let detail = segue.destination as? GameDetailVC {
+            detail.game = gameToDetail
+            detail.user = self.user
         }
     }
 

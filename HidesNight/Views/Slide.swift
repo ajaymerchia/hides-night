@@ -46,6 +46,7 @@ class Slide: UIView {
         labelTitle.text = data.header
         labelTitle.textAlignment = .center
         labelTitle.isScrollEnabled = false
+        labelTitle.isUserInteractionEnabled = false
         self.addSubview(labelTitle)
         
         labelDesc = UITextView(frame: LayoutManager.belowCentered(elementAbove: labelTitle, padding: .PADDING, width: safeWidth, height: self.size.height - (labelTitle.frame.maxY + .PADDING)))
@@ -56,6 +57,7 @@ class Slide: UIView {
         labelDesc.textContainer.lineBreakMode = .byWordWrapping
         labelDesc.textAlignment = .center
         labelDesc.isScrollEnabled = false
+        labelDesc.isUserInteractionEnabled = false
         self.addSubview(labelDesc)
     }
     

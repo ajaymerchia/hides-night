@@ -10,7 +10,7 @@
 		B510707DB2158DF8CA1855B0 /* Pods_HidesNight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E374076B8F5F10F7CF88F2CD /* Pods_HidesNight.framework */; };
 		B70BCACD21D20EB50038BCF1 /* ExtendedUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70BCACC21D20EB50038BCF1 /* ExtendedUtils.swift */; };
 		B70BCACF21D2CE660038BCF1 /* SocialVC-tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70BCACE21D2CE660038BCF1 /* SocialVC-tableview.swift */; };
-		B70BCAD121D2D88D0038BCF1 /* FirebaseAPI-gameCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70BCAD021D2D88D0038BCF1 /* FirebaseAPI-gameCreation.swift */; };
+		B70BCAD121D2D88D0038BCF1 /* FirebaseAPI-game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70BCAD021D2D88D0038BCF1 /* FirebaseAPI-game.swift */; };
 		B70BCAD321D2F36C0038BCF1 /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70BCAD221D2F36C0038BCF1 /* GameCell.swift */; };
 		B70BCAD521D3040E0038BCF1 /* FriendDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70BCAD421D3040E0038BCF1 /* FriendDetailVC.swift */; };
 		B70BCAD821D304E10038BCF1 /* FriendDetailVC-initUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70BCAD721D304E10038BCF1 /* FriendDetailVC-initUI.swift */; };
@@ -46,6 +46,21 @@
 		B75C537F21D1ED1C0024D027 /* FirebaseAPIClient-social.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75C537E21D1ED1C0024D027 /* FirebaseAPIClient-social.swift */; };
 		B75C538121D1F6160024D027 /* AddFriendVC-tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75C538021D1F6160024D027 /* AddFriendVC-tableview.swift */; };
 		B75C538321D1F94E0024D027 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75C538221D1F94E0024D027 /* PersonCell.swift */; };
+		B7B14D2721D4DAA4003F8A4C /* DecisionPickerVC-initUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D2621D4DAA4003F8A4C /* DecisionPickerVC-initUI.swift */; };
+		B7B14D2921D4DAD2003F8A4C /* DecisionPickerVC-system.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D2821D4DAD2003F8A4C /* DecisionPickerVC-system.swift */; };
+		B7B14D2B21D4DB0F003F8A4C /* DecisionPickerVC-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D2A21D4DB0F003F8A4C /* DecisionPickerVC-data.swift */; };
+		B7B14D2D21D5D29B003F8A4C /* GamesVC-tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D2C21D5D29B003F8A4C /* GamesVC-tableview.swift */; };
+		B7B14D2F21D5FC33003F8A4C /* GameDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D2E21D5FC33003F8A4C /* GameDetailVC.swift */; };
+		B7B14D3221D60337003F8A4C /* GameDetailVC-initUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D3121D60337003F8A4C /* GameDetailVC-initUI.swift */; };
+		B7B14D3421D60344003F8A4C /* GameDetailVC-system.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D3321D60344003F8A4C /* GameDetailVC-system.swift */; };
+		B7B14D3621D60350003F8A4C /* GameDetailVC-logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D3521D60350003F8A4C /* GameDetailVC-logic.swift */; };
+		B7B14D3821D637E8003F8A4C /* GameDetailVC-segCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D3721D637E8003F8A4C /* GameDetailVC-segCon.swift */; };
+		B7B14D3A21D63888003F8A4C /* GameDetailVC-tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D3921D63888003F8A4C /* GameDetailVC-tableview.swift */; };
+		B7B14D3C21D6AED0003F8A4C /* InviteFriendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D3B21D6AED0003F8A4C /* InviteFriendVC.swift */; };
+		B7B14D3F21D6AEF0003F8A4C /* InviteFriendVC-initUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D3E21D6AEF0003F8A4C /* InviteFriendVC-initUI.swift */; };
+		B7B14D4121D6AF03003F8A4C /* InviteFriendVC-system.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D4021D6AF03003F8A4C /* InviteFriendVC-system.swift */; };
+		B7B14D4321D6AF19003F8A4C /* InviteFriendVC-logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D4221D6AF19003F8A4C /* InviteFriendVC-logic.swift */; };
+		B7B14D4521D6B851003F8A4C /* InviteFriendVC-tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D4421D6B851003F8A4C /* InviteFriendVC-tableview.swift */; };
 		B7DE62A121CC18E100AC0113 /* SignUpVC-initUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE62A021CC18E100AC0113 /* SignUpVC-initUI.swift */; };
 		B7DE62A321CC1D9800AC0113 /* SignUpVC-system.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE62A221CC1D9800AC0113 /* SignUpVC-system.swift */; };
 		B7DE62A521CC336600AC0113 /* SignUpVC-photopicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE62A421CC336600AC0113 /* SignUpVC-photopicker.swift */; };
@@ -103,7 +118,7 @@
 		8A999FB6EB8984DAF1891260 /* Pods_HidesNightUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HidesNightUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B70BCACC21D20EB50038BCF1 /* ExtendedUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedUtils.swift; sourceTree = "<group>"; };
 		B70BCACE21D2CE660038BCF1 /* SocialVC-tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SocialVC-tableview.swift"; sourceTree = "<group>"; };
-		B70BCAD021D2D88D0038BCF1 /* FirebaseAPI-gameCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseAPI-gameCreation.swift"; sourceTree = "<group>"; };
+		B70BCAD021D2D88D0038BCF1 /* FirebaseAPI-game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseAPI-game.swift"; sourceTree = "<group>"; };
 		B70BCAD221D2F36C0038BCF1 /* GameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCell.swift; sourceTree = "<group>"; };
 		B70BCAD421D3040E0038BCF1 /* FriendDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailVC.swift; sourceTree = "<group>"; };
 		B70BCAD721D304E10038BCF1 /* FriendDetailVC-initUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FriendDetailVC-initUI.swift"; sourceTree = "<group>"; };
@@ -139,6 +154,21 @@
 		B75C537E21D1ED1C0024D027 /* FirebaseAPIClient-social.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseAPIClient-social.swift"; sourceTree = "<group>"; };
 		B75C538021D1F6160024D027 /* AddFriendVC-tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddFriendVC-tableview.swift"; sourceTree = "<group>"; };
 		B75C538221D1F94E0024D027 /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
+		B7B14D2621D4DAA4003F8A4C /* DecisionPickerVC-initUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DecisionPickerVC-initUI.swift"; sourceTree = "<group>"; };
+		B7B14D2821D4DAD2003F8A4C /* DecisionPickerVC-system.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DecisionPickerVC-system.swift"; sourceTree = "<group>"; };
+		B7B14D2A21D4DB0F003F8A4C /* DecisionPickerVC-data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DecisionPickerVC-data.swift"; sourceTree = "<group>"; };
+		B7B14D2C21D5D29B003F8A4C /* GamesVC-tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GamesVC-tableview.swift"; sourceTree = "<group>"; };
+		B7B14D2E21D5FC33003F8A4C /* GameDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailVC.swift; sourceTree = "<group>"; };
+		B7B14D3121D60337003F8A4C /* GameDetailVC-initUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameDetailVC-initUI.swift"; sourceTree = "<group>"; };
+		B7B14D3321D60344003F8A4C /* GameDetailVC-system.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameDetailVC-system.swift"; sourceTree = "<group>"; };
+		B7B14D3521D60350003F8A4C /* GameDetailVC-logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameDetailVC-logic.swift"; sourceTree = "<group>"; };
+		B7B14D3721D637E8003F8A4C /* GameDetailVC-segCon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameDetailVC-segCon.swift"; sourceTree = "<group>"; };
+		B7B14D3921D63888003F8A4C /* GameDetailVC-tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameDetailVC-tableview.swift"; sourceTree = "<group>"; };
+		B7B14D3B21D6AED0003F8A4C /* InviteFriendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteFriendVC.swift; sourceTree = "<group>"; };
+		B7B14D3E21D6AEF0003F8A4C /* InviteFriendVC-initUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InviteFriendVC-initUI.swift"; sourceTree = "<group>"; };
+		B7B14D4021D6AF03003F8A4C /* InviteFriendVC-system.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InviteFriendVC-system.swift"; sourceTree = "<group>"; };
+		B7B14D4221D6AF19003F8A4C /* InviteFriendVC-logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InviteFriendVC-logic.swift"; sourceTree = "<group>"; };
+		B7B14D4421D6B851003F8A4C /* InviteFriendVC-tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InviteFriendVC-tableview.swift"; sourceTree = "<group>"; };
 		B7DE62A021CC18E100AC0113 /* SignUpVC-initUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SignUpVC-initUI.swift"; path = "/Users/ajaymerchia/wkspc/ios/hidesnight/HidesNight/HidesNight/ViewControllers/Onboarding/SignUpScreen/SignUpVC-initUI.swift"; sourceTree = "<absolute>"; };
 		B7DE62A221CC1D9800AC0113 /* SignUpVC-system.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpVC-system.swift"; sourceTree = "<group>"; };
 		B7DE62A421CC336600AC0113 /* SignUpVC-photopicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpVC-photopicker.swift"; sourceTree = "<group>"; };
@@ -251,6 +281,9 @@
 			isa = PBXGroup;
 			children = (
 				B70BCAE421D454110038BCF1 /* DecisionPickerVC.swift */,
+				B7B14D2621D4DAA4003F8A4C /* DecisionPickerVC-initUI.swift */,
+				B7B14D2821D4DAD2003F8A4C /* DecisionPickerVC-system.swift */,
+				B7B14D2A21D4DB0F003F8A4C /* DecisionPickerVC-data.swift */,
 			);
 			path = DecisionPickerScreen;
 			sourceTree = "<group>";
@@ -315,6 +348,31 @@
 			path = AddFriendScreen;
 			sourceTree = "<group>";
 		};
+		B7B14D3021D6031A003F8A4C /* GameDetailScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B7B14D2E21D5FC33003F8A4C /* GameDetailVC.swift */,
+				B7B14D3121D60337003F8A4C /* GameDetailVC-initUI.swift */,
+				B7B14D3721D637E8003F8A4C /* GameDetailVC-segCon.swift */,
+				B7B14D3921D63888003F8A4C /* GameDetailVC-tableview.swift */,
+				B7B14D3321D60344003F8A4C /* GameDetailVC-system.swift */,
+				B7B14D3521D60350003F8A4C /* GameDetailVC-logic.swift */,
+			);
+			path = GameDetailScreen;
+			sourceTree = "<group>";
+		};
+		B7B14D3D21D6AED3003F8A4C /* InviteFriendScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B7B14D3B21D6AED0003F8A4C /* InviteFriendVC.swift */,
+				B7B14D3E21D6AEF0003F8A4C /* InviteFriendVC-initUI.swift */,
+				B7B14D4421D6B851003F8A4C /* InviteFriendVC-tableview.swift */,
+				B7B14D4021D6AF03003F8A4C /* InviteFriendVC-system.swift */,
+				B7B14D4221D6AF19003F8A4C /* InviteFriendVC-logic.swift */,
+			);
+			path = InviteFriendScreen;
+			sourceTree = "<group>";
+		};
 		B7DE62B721CCC3A500AC0113 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,7 +398,7 @@
 			children = (
 				B7EB12C521CB888E00C1DEB7 /* FirebaseAPIClient-account.swift */,
 				B75C537E21D1ED1C0024D027 /* FirebaseAPIClient-social.swift */,
-				B70BCAD021D2D88D0038BCF1 /* FirebaseAPI-gameCreation.swift */,
+				B70BCAD021D2D88D0038BCF1 /* FirebaseAPI-game.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -361,6 +419,8 @@
 			children = (
 				B7DE62C421CF352E00AC0113 /* GamesScreen */,
 				B73736A821D0EF700068FCA1 /* CreateGameScreen */,
+				B7B14D3021D6031A003F8A4C /* GameDetailScreen */,
+				B7B14D3D21D6AED3003F8A4C /* InviteFriendScreen */,
 			);
 			path = Games;
 			sourceTree = "<group>";
@@ -370,6 +430,7 @@
 			children = (
 				B7DE62C121CF351500AC0113 /* GamesVC.swift */,
 				B7DE62C521CF356700AC0113 /* GamesVC-initUI.swift */,
+				B7B14D2C21D5D29B003F8A4C /* GamesVC-tableview.swift */,
 				B7DE62C721CF357900AC0113 /* GamesVC-system.swift */,
 				B7DE62C921CF358E00AC0113 /* GamesVC-logic.swift */,
 			);
@@ -670,6 +731,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-HidesNight/Pods-HidesNight-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BetterSegmentedControl/BetterSegmentedControl.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/FontAwesomeKit/FontAwesomeKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -691,6 +753,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BetterSegmentedControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesomeKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
@@ -747,6 +810,7 @@
 				B73736A721D0EF520068FCA1 /* CreateGameVC.swift in Sources */,
 				B7EB127321CAEDC100C1DEB7 /* AppDelegate.swift in Sources */,
 				B70BCACF21D2CE660038BCF1 /* SocialVC-tableview.swift in Sources */,
+				B7B14D3421D60344003F8A4C /* GameDetailVC-system.swift in Sources */,
 				B75C537F21D1ED1C0024D027 /* FirebaseAPIClient-social.swift in Sources */,
 				B7EB12BE21CB74C800C1DEB7 /* LaunchVC.swift in Sources */,
 				B73736AA21D0EF960068FCA1 /* CreateGameVC-initUI.swift in Sources */,
@@ -754,13 +818,18 @@
 				B737368721D09F490068FCA1 /* ProfileVC-system.swift in Sources */,
 				B73736A121D0D4950068FCA1 /* SlideData.swift in Sources */,
 				B70BCAE221D370E20038BCF1 /* DateTimeVC.swift in Sources */,
+				B7B14D3F21D6AEF0003F8A4C /* InviteFriendVC-initUI.swift in Sources */,
 				B70BCACD21D20EB50038BCF1 /* ExtendedUtils.swift in Sources */,
-				B70BCAD121D2D88D0038BCF1 /* FirebaseAPI-gameCreation.swift in Sources */,
+				B70BCAD121D2D88D0038BCF1 /* FirebaseAPI-game.swift in Sources */,
+				B7B14D3C21D6AED0003F8A4C /* InviteFriendVC.swift in Sources */,
+				B7B14D4321D6AF19003F8A4C /* InviteFriendVC-logic.swift in Sources */,
 				B7DE62CC21CF36C500AC0113 /* ProfileVC.swift in Sources */,
 				B75C537321D1A2370024D027 /* SocialVC-logic.swift in Sources */,
+				B7B14D4121D6AF03003F8A4C /* InviteFriendVC-system.swift in Sources */,
 				B75C538121D1F6160024D027 /* AddFriendVC-tableview.swift in Sources */,
 				B7EB12C421CB883B00C1DEB7 /* Launch-logic.swift in Sources */,
 				B70BCAD521D3040E0038BCF1 /* FriendDetailVC.swift in Sources */,
+				B7B14D2D21D5D29B003F8A4C /* GamesVC-tableview.swift in Sources */,
 				B737369221D0BEF60068FCA1 /* InstructionsVC-initUI.swift in Sources */,
 				B70BCADC21D3055B0038BCF1 /* FriendDetailVC-logic.swift in Sources */,
 				B70BCAE521D454110038BCF1 /* DecisionPickerVC.swift in Sources */,
@@ -770,15 +839,19 @@
 				B7DE62D021CF45C800AC0113 /* TabBarVC.swift in Sources */,
 				B7DE62CA21CF358E00AC0113 /* GamesVC-logic.swift in Sources */,
 				B7DE62B921CCE28A00AC0113 /* ShakingViews.swift in Sources */,
+				B7B14D2921D4DAD2003F8A4C /* DecisionPickerVC-system.swift in Sources */,
 				B7EB12D321CBAA7B00C1DEB7 /* SignUpVC-main.swift in Sources */,
 				B75C537121D1A2250024D027 /* SocialVC-system.swift in Sources */,
 				B75C537D21D1A99B0024D027 /* AddFriendVC-logic.swift in Sources */,
 				B70BCAD321D2F36C0038BCF1 /* GameCell.swift in Sources */,
+				B7B14D3221D60337003F8A4C /* GameDetailVC-initUI.swift in Sources */,
 				B73736A321D0D8150068FCA1 /* Slide.swift in Sources */,
 				B7DE62B621CCC39900AC0113 /* LabeledTextField.swift in Sources */,
+				B7B14D2721D4DAA4003F8A4C /* DecisionPickerVC-initUI.swift in Sources */,
 				B73736A521D0EF110068FCA1 /* DataNavVC.swift in Sources */,
 				B73736AE21D0EFE40068FCA1 /* CreateGameVC-logic.swift in Sources */,
 				B737369421D0BF4C0068FCA1 /* InstructionsVC-system.swift in Sources */,
+				B7B14D3821D637E8003F8A4C /* GameDetailVC-segCon.swift in Sources */,
 				B7EB12B621CB3A0D00C1DEB7 /* Constants.swift in Sources */,
 				B7EB12BA21CB3A4900C1DEB7 /* LoginVC-main.swift in Sources */,
 				B7DE62A521CC336600AC0113 /* SignUpVC-photopicker.swift in Sources */,
@@ -794,14 +867,19 @@
 				B7DE62BB21CCE86000AC0113 /* SignUpVC-validators.swift in Sources */,
 				B7DE62C821CF357900AC0113 /* GamesVC-system.swift in Sources */,
 				B70BCADA21D304ED0038BCF1 /* FriendDetailVC-system.swift in Sources */,
+				B7B14D2F21D5FC33003F8A4C /* GameDetailVC.swift in Sources */,
 				B73736AC21D0EFBC0068FCA1 /* CreateGameVC-system.swift in Sources */,
 				B737368521D09EE10068FCA1 /* ProfileVC-initUI.swift in Sources */,
 				B7EB12CB21CB89CF00C1DEB7 /* Game.swift in Sources */,
+				B7B14D2B21D4DB0F003F8A4C /* DecisionPickerVC-data.swift in Sources */,
 				B7DE62BD21CDCD7500AC0113 /* FirebaseReady.swift in Sources */,
 				B737369A21D0C26D0068FCA1 /* InstructionsVC-data.swift in Sources */,
 				B7DE62A321CC1D9800AC0113 /* SignUpVC-system.swift in Sources */,
 				B7EB12CF21CBA10E00C1DEB7 /* LoginVC-system.swift in Sources */,
+				B7B14D4521D6B851003F8A4C /* InviteFriendVC-tableview.swift in Sources */,
 				B7DE62C221CF351500AC0113 /* GamesVC.swift in Sources */,
+				B7B14D3A21D63888003F8A4C /* GameDetailVC-tableview.swift in Sources */,
+				B7B14D3621D60350003F8A4C /* GameDetailVC-logic.swift in Sources */,
 				B737369021D0BE7E0068FCA1 /* InstructionsVC.swift in Sources */,
 				B7EB12D121CBA76400C1DEB7 /* LoginVC-logic.swift in Sources */,
 				B737368921D0A2150068FCA1 /* ProfileVC-logic.swift in Sources */,

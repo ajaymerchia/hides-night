@@ -16,6 +16,9 @@ class CreateGameVC: UIViewController {
     
     var alerts: AlertManager!
     var hud: JGProgressHUD!
+    var successCreation = false
+    var internalError = false
+    
     var firstLoad = true
 
     var navbar: UINavigationBar!
@@ -33,13 +36,13 @@ class CreateGameVC: UIViewController {
     // Game Parameters
     var roundDurationCell = UITableViewCell()
         var roundDurationLabel: UILabel!
-        var roundDuration = TimeInterval(myUtils.seconds(hr: 1.5))
+        var roundDuration = TimeInterval.defaultRound
     var checkInDurationCell = UITableViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "durationPicker")
         var checkInDurationLabel: UILabel!
-        var checkInDuration = TimeInterval(myUtils.seconds(min: 15))
+        var checkInDuration = TimeInterval.defaultCheckin
     var gpsActivationCell = UITableViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "durationPicker")
         var gpsActivationLabel: UILabel!
-        var gpsActivation = TimeInterval(myUtils.seconds(hr: 1))
+        var gpsActivation = TimeInterval.defaultGPS
     
     var durationPickers = [UIDatePicker]()
     var labels = [UILabel]()
@@ -49,6 +52,11 @@ class CreateGameVC: UIViewController {
         var teamDecisionType = GameSelectionType.Assigned
     var seekDecisionCell = UITableViewCell(style: .value1, reuseIdentifier: "decisionType")
         var seekDecisionType = GameSelectionType.Assigned
+    
+    var awaitingTeam = false
+    var awaitingSeek = false
+    
+    var createButton: UIButton!
     
     var allCells: [[UITableViewCell]] {
         return [
@@ -68,6 +76,7 @@ class CreateGameVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupManagers()
         getData()
         initUI()
     }

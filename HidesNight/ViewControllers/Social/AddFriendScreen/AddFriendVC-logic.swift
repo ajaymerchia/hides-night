@@ -66,7 +66,7 @@ extension AddFriendVC: UITextFieldDelegate {
     func categorize(usr: User) -> FRIEND_STATUS {
         if usr == self.user {
             return .currUser
-        } else if self.user.friends?.keys.contains(usr.uid) ?? false {
+        } else if self.user.friendIDs?.keys.contains(usr.uid) ?? false {
             return .existing
         } else if self.user.sentFrReqs?.keys.contains(usr.uid) ?? false {
             return .pending

@@ -41,7 +41,7 @@ extension FriendDetailVC {
     }
     
     @objc func proposeEndOfFriendship() {
-        let actionSheet = UIAlertController(title: "Are You Sure?", message: "You and \(self.friend.first!) will no longer be able to invite each other to Hides Games.", preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: "Are You Sure?", message: "You and \(self.friend.first!) will no longer be able to quick invite each other.", preferredStyle: .actionSheet)
         
         actionSheet.addAction(UIAlertAction(title: "Remove as Friend", style: .destructive, handler: { (action) -> Void in
             self.endFriendship()

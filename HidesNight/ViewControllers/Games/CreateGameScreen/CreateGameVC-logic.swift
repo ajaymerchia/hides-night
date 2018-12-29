@@ -65,12 +65,7 @@ extension CreateGameVC {
     }
     
     func update(label: UILabel, withInterval: TimeInterval) {
-        let formatter = DateComponentsFormatter()
-        formatter.unitsStyle = .abbreviated
-        let now = Date()
-        let formattedTimeLeft = formatter.string(from: now, to: Date(timeInterval: withInterval, since: now))
-        
-        label.text = formattedTimeLeft
+        label.text = myUtils.getFormattedCountdown(interval: withInterval)
     }
     
     func activate(cell: UITableViewCell, index: IndexPath) {
@@ -112,7 +107,6 @@ extension CreateGameVC {
             self.checkInDuration = min(self.checkInDuration, self.roundDuration)
             self.gpsActivation = min(self.gpsActivation, self.roundDuration)
             
-            debugPrint(roundDuration, checkInDuration, gpsActivation)
             
             update(label: labels[0], withInterval: self.roundDuration)
             update(label: labels[1], withInterval: self.checkInDuration)
@@ -133,5 +127,46 @@ extension CreateGameVC {
         
     }
 
+    
+    @objc func createGame() {
+        debugPrint(roundDuration.magnitude)
+        debugPrint(checkInDuration.magnitude)
+        debugPrint(gpsActivation.magnitude)
+        self.view.isUserInteractionEnabled = false
+        hud = alerts.startProgressHud(withMsg: "Creating Game", style: .dark)
+        
+        guard let gameTitle = eventNameField.text else {
+            alerts.triggerCallback()
+            return
+        }
+        guard gameTitle != "" else {
+            alerts.triggerCallback()
+            return
+        }
+        
+        internalError = true
+        
+        let durations = [roundDuration, checkInDuration, gpsActivation]
+        let decisions = [teamDecisionType, seekDecisionType]
+        
+        let game = Game(gameid: Utils.uuid(), admin: self.admin, title: gameTitle, datetime: self.date, round_checkin_gps: durations, team_seek: decisions, img: eventImageHeader.image)
+
+        self.admin.gameIDs[game.uid] = self.admin.username
+        self.admin.games.append(game)
+        
+        FirebaseAPIClient.uploadGame(game: game, withPhoto: eventImageHeader.image != nil, success: {
+            FirebaseAPIClient.updateRemoteUser(usr: self.admin, success: {
+                self.successCreation = true
+                self.alerts.triggerCallback()
+            }, fail: {
+                self.alerts.triggerCallback()
+            })
+        }) {
+            self.alerts.triggerCallback()
+        }
+        
+    }
+    
+    
 
 }

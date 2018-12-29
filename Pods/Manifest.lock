@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.8.0)
+  - BetterSegmentedControl (1.0.3)
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
@@ -111,6 +112,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - BetterSegmentedControl (~> 1.0)
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`, branch `wip/swift4`)
   - Firebase/Auth
   - Firebase/Core
@@ -130,6 +132,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - BetterSegmentedControl
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -166,6 +169,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  BetterSegmentedControl: 4e3bd0bd517b0f6077c9e17f5663a01cff48e2c5
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Firebase: 8bb9268bff82374f2cbaaabb143e725743c316ae
   FirebaseAnalytics: c06f9d70577d79074214700a71fd5d39de5550fb
@@ -191,6 +195,6 @@ SPEC CHECKSUMS:
   SkyFloatingLabelTextField: 38164979b79512f9ff9288ad8acfc4bbf5d843e3
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: b82dcb48a9b2a849026a3e746a36039b7946e8df
+PODFILE CHECKSUM: 02955f249b1069b415d14f6de62b1f3d01cfc6e6
 
 COCOAPODS: 1.6.0.beta.2

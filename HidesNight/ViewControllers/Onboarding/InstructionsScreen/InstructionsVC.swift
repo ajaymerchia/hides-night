@@ -16,6 +16,8 @@ class InstructionsVC: UIViewController {
     var scrollView: UIScrollView!
     var pageControl: UIPageControl!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

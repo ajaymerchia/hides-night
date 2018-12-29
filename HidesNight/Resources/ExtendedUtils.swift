@@ -55,6 +55,14 @@ class myUtils {
         return getMDDYYRepr(date: date) + ", " + getTimeWithAMPM(date: date)
     }
     
+    public static func getFormattedCountdown(interval: TimeInterval) -> String {
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .abbreviated
+        let now = Date()
+        return formatter.string(from: now, to: Date(timeInterval: interval, since: now))!
+        
+    }
+    
     public static func seconds(hr: Double) -> Double {
         return hr * seconds(min: 60)
     }
@@ -62,5 +70,4 @@ class myUtils {
     public static func seconds(min: Double) -> Double {
         return min * 60
     }
-    
 }

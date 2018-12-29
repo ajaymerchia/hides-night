@@ -89,7 +89,7 @@ extension LoginVC {
         
         let pixelFontEstimate:CGFloat = 30
         
-        howTo = UIButton(frame: CGRect(x: view.frame.width/4, y: view.frame.height - (pixelFontEstimate + .PADDING*1.5), width: view.frame.width/2, height: pixelFontEstimate))
+        howTo = UIButton(frame: CGRect(x: view.frame.width/4, y: view.frame.height - (pixelFontEstimate + .PADDING*1.25), width: view.frame.width/2, height: pixelFontEstimate))
         howTo.setTitle("How to Play", for: .normal)
         howTo.titleLabel?.font = .TEXT_FONT
         howTo.setTitleColor(.white, for: .normal)
@@ -97,7 +97,7 @@ extension LoginVC {
         howTo.addTarget(self, action: #selector(toInstructions), for: .touchUpInside)
         
         
-        signUp = UIButton(frame: LayoutManager.aboveCentered(elementBelow: howTo, padding: .MARGINAL_PADDING, width: howTo.frame.width, height: pixelFontEstimate))
+        signUp = UIButton(frame: LayoutManager.aboveCentered(elementBelow: howTo, padding: -.MARGINAL_PADDING, width: howTo.frame.width, height: pixelFontEstimate))
         signUp.setTitle("New Here? Sign-Up!", for: .normal)
         signUp.titleLabel?.font = .TEXT_FONT
         signUp.setTitleColor(.white, for: .normal)
@@ -105,7 +105,12 @@ extension LoginVC {
         signUp.addTarget(self, action: #selector(toSignUp), for: .touchUpInside)
         
         
-        login = UIButton(frame: LayoutManager.belowCentered(elementAbove: passwordField, padding: .PADDING*2.5, width: view.frame.width/3.5, height: 45))
+//        login = UIButton(frame: LayoutManager.belowCentered(elementAbove: passwordField, padding: .PADDING*2.5, width: view.frame.width/3.5, height: 45))
+        
+        
+        let difference =  signUp.frame.minY - passwordField.frame.maxY
+        login = UIButton(frame: LayoutManager.between(elementAbove: passwordField, elementBelow: signUp, width: view.frame.width/3.5, topPadding: (difference-45)/2, bottomPadding: (difference-45)/2))
+        
         login.setTitle("Login", for: .normal)
         login.titleLabel?.font = .SUBTITLE_FONT
         login.setTitleColor(.DARK_BLUE, for: .normal)

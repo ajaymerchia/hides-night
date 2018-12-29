@@ -61,6 +61,7 @@ class DateTimeVC: PDTSimpleCalendarViewController, PDTSimpleCalendarViewDelegate
         timeChooser = UIDatePicker(frame: LayoutManager.belowCentered(elementAbove: self.collectionView, padding: 0, width: view.frame.width, height: view.frame.height-self.collectionView.frame.maxY))
         timeChooser.datePickerMode = .time
         timeChooser.tintColor = .white
+        timeChooser.minuteInterval = 5
         timeChooser.setValue(UIColor.white, forKey: "textColor")
         timeChooser.setDate(currentDate, animated: true)
         timeChooser.alpha = 0
@@ -170,7 +171,6 @@ class DateTimeVC: PDTSimpleCalendarViewController, PDTSimpleCalendarViewDelegate
     }
     
     func simpleCalendarViewController(_ controller: PDTSimpleCalendarViewController!, didSelect date: Date!) {
-        debugPrint(date)
         calendarContribution = date
         updateDate()
     }
@@ -178,7 +178,6 @@ class DateTimeVC: PDTSimpleCalendarViewController, PDTSimpleCalendarViewDelegate
     
     
     @objc func timeChanged() {
-        debugPrint(pickerContribution)
         updateDate()
     }
     

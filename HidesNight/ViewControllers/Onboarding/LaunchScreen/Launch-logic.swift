@@ -30,15 +30,15 @@ extension LaunchVC {
         
         FirebaseAPIClient.getUserForAccount(withId: loggedInUser.uid) { (usr) in
 //            Set Current User, initiate Login, perform Segue
-            self.pendingUser = usr
-            self.hud?.dismiss()
-            self.performSegue(withIdentifier: "launch2home", sender: self)
+            let gameIDs = [String](usr?.gameIDs.keys ?? [:].keys) ?? []
+            FirebaseAPIClient.getAllGames(withIDs: gameIDs, completion: { (games) in
+                usr?.games = games
+                self.pendingUser = usr
+                self.hud?.dismiss()
+                self.performSegue(withIdentifier: "launch2home", sender: self)
+            })
+            
         }
-//        FirebaseAPIClient.getUserBareBones(uid: loggedInUser.uid) { (user) in
-//            self.pendingUser = user
-//            self.pendingLogin = true
-//            self.performSegue(withIdentifier: "login2HUD", sender: self)
-//        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

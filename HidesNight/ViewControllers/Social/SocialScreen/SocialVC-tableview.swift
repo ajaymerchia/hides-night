@@ -12,6 +12,9 @@ import iosManagers
 
 extension SocialVC: UITableViewDelegate, UITableViewDataSource {
     func provideHeightFor(indexPath: IndexPath) -> CGFloat {
+        if getTableDataFor(section: sectionsToDisplay[indexPath.section]) is [Game] {
+            return 80
+        }
         return 60
     }
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -69,15 +72,16 @@ extension SocialVC: UITableViewDelegate, UITableViewDataSource {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "gameCell") as! GameCell
             
+            guard let games = data as? [Game] else {return cell}
+            let game = games[indexPath.row]
+            
             // Initialize Cell
             for subview in cell.contentView.subviews {
                 subview.removeFromSuperview()
             }
             cell.awakeFromNib()
             cell.selectionStyle = .none
-            //        cell.initializeCellFrom(data: cellUser, size: CGSize(width: view.frame.width, height: provideHeightFor(indexPath: indexPath)))
-            //        cell.setState(to: categorize(usr: cellUser))
-            
+            cell.initializeCellFrom(data: game, size: CGSize(width: tableView.frame.width, height: 80))
             
             return cell
         }
@@ -98,6 +102,14 @@ extension SocialVC: UITableViewDelegate, UITableViewDataSource {
             self.selectedIsRequest = (thisHeader != SocialVC.headerNames[2])
             self.performSegue(withIdentifier: "social2friendDetail", sender: self)
         }
+        
+        if let selection = getTableDataFor(section: thisHeader)[indexPath.row] as? Game {
+            self.gameSelected = selection
+            self.selectedIsRequest = (thisHeader != SocialVC.headerNames[2])
+            self.performSegue(withIdentifier: "social2gameDetail", sender: self)
+        }
+        
+        
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

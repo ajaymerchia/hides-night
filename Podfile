@@ -29,6 +29,8 @@ target 'HidesNight' do
   # All Useful Pods
   pod 'PDTSimpleCalendar'
   pod 'HGPlaceholders'
+  pod 'BetterSegmentedControl', '~> 1.0'
+
 #  pod 'PermissionScope'
   pod 'FontAwesomeKit'
 #  pod 'Spring'

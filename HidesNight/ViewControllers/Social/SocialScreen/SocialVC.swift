@@ -14,6 +14,7 @@ class SocialVC: UIViewController {
     // Models
     var user: User!
     var friendSelected: User!
+    var gameSelected: Game!
     var selectedIsRequest: Bool!
     
     static let headerNames = ["Game Invites", "Friend Requests", "Friends"]
@@ -34,10 +35,12 @@ class SocialVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        debugPrint("Loading Friends VC")
         // Do any additional setup after loading the view.
         setupManagers()
         getUserFromParent()
-        initUI()        
+        initUI()
+        self.loadFriendsAndInvites()
     }
     
 

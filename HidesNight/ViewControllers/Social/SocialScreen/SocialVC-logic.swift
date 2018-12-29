@@ -18,11 +18,13 @@ extension SocialVC {
     }
     
     func loadFriendsAndInvites() {
-        let uids = [String](myUtils.mergeDictionaries(d1: self.user.friends, d2: self.user.inbxFrReqs).keys)
+        let uids = [String](myUtils.mergeDictionaries(d1: self.user.friendIDs, d2: self.user.inbxFrReqs).keys)
         let gameIDs = [String](self.user.inbxGaReqs?.keys ?? [:].keys)
         
         FirebaseAPIClient.getAllUsers(withIDs: uids) { (usrs) in
             FirebaseAPIClient.getAllGames(withIDs: gameIDs, completion: { (games) in
+                
+                self.addFriendsToUserStruct(friends: usrs)
                 self.resetAndAdd(games: games)
                 self.resetAndAdd(friends: usrs)
                 self.reloadTableView()
@@ -31,6 +33,15 @@ extension SocialVC {
         }
 
         
+    }
+    
+    func addFriendsToUserStruct(friends: [User]) {
+        self.user.friends = []
+        for friend in friends {
+            if self.user.friendIDs.keys.contains(friend.uid) {
+                self.user.friends.append(friend)
+            }
+        }
     }
     
     func resetAndAdd(friends: [User]) {
@@ -46,12 +57,12 @@ extension SocialVC {
             }
         }
         
-        tableData[1] = replaceRequests
-        tableData[2] = replaceFriends
+        tableData[1] = replaceRequests.sorted()
+        tableData[2] = replaceFriends.sorted()
     }
     
     func resetAndAdd(games: [Game]) {
-        tableData[0] = games
+        tableData[0] = games.sorted()
     }
     
     func reloadTableView() {
@@ -75,7 +86,7 @@ extension SocialVC {
     func categorize(usr: User) -> FRIEND_STATUS {
         if usr == self.user {
             return .currUser
-        } else if self.user.friends?.keys.contains(usr.uid) ?? false {
+        } else if self.user.friendIDs?.keys.contains(usr.uid) ?? false {
             return .existing
         } else if self.user.sentFrReqs?.keys.contains(usr.uid) ?? false {
             return .pending

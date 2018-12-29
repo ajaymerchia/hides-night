@@ -16,12 +16,21 @@ class DecisionPickerVC: UIViewController {
     var scrollView: UIScrollView!
     var pageControl: UIPageControl!
     
+    var selectCurrentMode: UIButton!
+    
     var selectedDecisionStyle: GameSelectionType!
+    var isTeamSlides: Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if isTeamSlides {
+            createTeamSlides()
+        } else {
+            createSeekerSlides()
+        }
+        initUI()
     }
     
 

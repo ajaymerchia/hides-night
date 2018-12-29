@@ -52,7 +52,6 @@ class FirebaseAPIClient {
             }
             updateRemoteUser(usr: usr, success: completion, fail: fail)
         }
-        
     }
     
     static func updateRemoteUser(usr: User, success: @escaping () -> (), fail: @escaping () -> ()) {
@@ -138,6 +137,20 @@ class FirebaseAPIClient {
             success(user.user.uid)
         }
         
+    }
+    
+    static func getProfilePhotoFor(user: User, completion: @escaping (UIImage?) -> ()) {
+        let photoTarget = Storage.storage().reference().child("profileImages").child(user.username)
+        photoTarget.getData(maxSize: 2 * 1024 * 1024, completion: { (data, err) in
+            if let photoData = data {
+                if let img = UIImage(data: photoData) {
+                    completion(img)
+                }
+            } else {
+                completion(nil)
+            }
+            
+        })
     }
     
     static func getUserForAccount(withId: String, completion: @escaping (User?) -> ()) {

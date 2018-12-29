@@ -11,7 +11,7 @@ import UIKit
 
 public extension UIView {
     
-    func shake(count : Float = 1, duration : TimeInterval = 0.125, withTranslation translation : Float = 5) {
+    func shake(count : Float = 1, duration : TimeInterval = 0.125, withTranslation translation : Float = 7.5) {
         
         let animation : CABasicAnimation = CABasicAnimation(keyPath: "transform.translation.x")
         animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)

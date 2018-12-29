@@ -15,6 +15,8 @@ class DataNavVC: UINavigationController {
     var game: Game!
     var isRequest: Bool!
     
+    var selectionType: GameSelectionType!
+    
     
     var date: Date?
     

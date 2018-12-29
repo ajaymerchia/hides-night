@@ -69,8 +69,8 @@ extension FirebaseAPIClient {
         from.sentFrReqs?.removeValue(forKey: to.uid)
         to.inbxFrReqs?.removeValue(forKey: from.uid)
         
-        from.friends[to.uid] = to.username
-        to.friends[from.uid] = from.username
+        from.friendIDs[to.uid] = to.username
+        to.friendIDs[from.uid] = from.username
         
         
         let userNode = Database.database().reference().child("users")
@@ -81,8 +81,8 @@ extension FirebaseAPIClient {
     }
     
     static func endFriendship(of: User, and: User, completion: @escaping () -> ()) {
-        of.friends?.removeValue(forKey: and.uid)
-        and.friends?.removeValue(forKey: of.uid)
+        of.friendIDs?.removeValue(forKey: and.uid)
+        and.friendIDs?.removeValue(forKey: of.uid)
         
         
         let userNode = Database.database().reference().child("users")

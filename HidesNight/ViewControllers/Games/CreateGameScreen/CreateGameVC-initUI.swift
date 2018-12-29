@@ -15,10 +15,12 @@ extension CreateGameVC {
     func initUI() {
         self.view.backgroundColor = .black
         initNav()
+        initCreateButton()
         initTableview()
         initMetadataCells()
         initGameParameters()
         initTeamParameters()
+        
     }
 
     // UI Initialization Helpers
@@ -36,15 +38,17 @@ extension CreateGameVC {
         
         self.navigationItem.title = "Create a Game"
         
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Create", style: .done, target: self, action: #selector(createGame))
+        
     }
     
     func initTableview() {
-        tableview = UITableView(frame: LayoutManager.belowCentered(elementAbove: navbar, padding: 0, width: view.frame.width, height: view.frame.height-navbar.frame.maxY))
+        tableview = UITableView(frame: LayoutManager.belowCentered(elementAbove: navbar, padding: 0, width: view.frame.width, height: view.frame.height - (navbar.frame.maxY + createButton.frame.height)))
         tableview.delegate = self
         tableview.dataSource = self
         tableview.backgroundColor = .black
         tableview.separatorStyle = .none
-        tableview.isScrollEnabled = false
+//        tableview.isScrollEnabled = false
 //        tableview.separatorColor = .white
         
         tableview.showsVerticalScrollIndicator = false
@@ -55,7 +59,14 @@ extension CreateGameVC {
         eventImageHeader.contentMode = .scaleAspectFill
         eventImageHeader.clipsToBounds = true
         
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        eventImageHeader.addGestureRecognizer(recognizer)
         
+        
+    }
+    
+    @objc func hideKeyboard() {
+        eventNameField.resignFirstResponder()
     }
     
     func initMetadataCells() {
@@ -69,7 +80,7 @@ extension CreateGameVC {
         eventNameField.tintColor = .white
         eventNameField.attributedPlaceholder = NSAttributedString(string: "Game Title (e.g. Sir Hides-a-Lot)", attributes: [.font: UIFont.BIG_TEXT_FONT, .foregroundColor: UIColor.flatWhiteDark])
         eventNameField.becomeFirstResponder()
-        
+
         
         
         addImageButton = UIButton(frame: CGRect(x: eventNameField.frame.maxX + .PADDING, y: 0, width: 2 * .PADDING, height: 2 * .PADDING))
@@ -248,6 +259,15 @@ extension CreateGameVC {
         toCell.addSubview(bottom)
         
         return [top, bottom]
+    }
+    
+    func initCreateButton() {
+        createButton = UIButton(frame: CGRect(x: 0, y: view.frame.height - (80), width: view.frame.width, height: 80))
+        createButton.setBackgroundColor(color: .ACCENT_BLUE, forState: .normal)
+        createButton.setTitle("Create Game!", for: .normal)
+        createButton.titleLabel?.font = .SUBTITLE_FONT
+        createButton.addTarget(self, action: #selector(createGame), for: .touchUpInside)
+        view.addSubview(createButton)
     }
     
     

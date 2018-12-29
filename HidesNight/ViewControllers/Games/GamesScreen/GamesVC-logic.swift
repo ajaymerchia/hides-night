@@ -16,5 +16,46 @@ extension GamesVC {
         self.user = parentTab.user
     }
 
+    func sortAndDisplayGames() {
+        // Sort the Games
+        tableData = [[], [], []]
+        for game in self.user.games {
+            if game.active {
+                tableData[0].append(game)
+            } else if game.datetime > Date.init() {
+                tableData[1].append(game)
+            } else {
+                tableData[2].append(game)
+            }
+        }
+        
+        // Load only the appropriate header
+        sectionsToDisplay = []
+        for i in 0..<tableData.count {
+            let data = tableData[i]
+            if data.count > 0 {
+                sectionsToDisplay.append(GamesVC.possibleHeaders[i])
+            }
+        }
+        
+        gamesTable.reloadData()
+        
+        
+    }
+    
+    func getTableDataFor(section: String) -> [Game]{
+        guard let index = GamesVC.possibleHeaders.index(of: section) else {return []}
+        return tableData[index]
+    }
+    
+    func getGamesForUI(indexPath: IndexPath) -> [Game] {
+        return getTableDataFor(section: sectionsToDisplay[indexPath.section])
+    }
+    
+    func getGameForUI(indexPath: IndexPath) -> Game {
+        return getGamesForUI(indexPath: indexPath)[indexPath.row]
+    }
+    
+    
 
 }

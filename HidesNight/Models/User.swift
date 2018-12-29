@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import iosManagers
 class User: FirebaseReady, Equatable, Comparable {
     
     
@@ -17,6 +18,18 @@ class User: FirebaseReady, Equatable, Comparable {
     
     static func == (lhs: User, rhs: User) -> Bool {
         return lhs.uid == rhs.uid
+    }
+    
+    static func == (lhs: String, rhs: User) -> Bool {
+        return lhs == rhs.uid
+    }
+    
+    static func == (lhs: User, rhs: String) -> Bool {
+        return lhs.uid == rhs
+    }
+    
+    static func createTemporaryUser(first: String, last: String = "") -> User {
+        return User(uid: "temp" + Utils.uuid(), first: first, last: last, email: "temporary_user", username: (first+last))
     }
     
     
@@ -33,9 +46,11 @@ class User: FirebaseReady, Equatable, Comparable {
     var profilePic: UIImage?
     
     var gameIDs: [String : String]! // ID-adminID combos of games
+    var games: [Game] = []
     var inbxGaReqs: [String : String]! // ID-adminID combos of games
     
-    var friends: [String : String]! // ID-user combos of users
+    var friendIDs: [String : String]! // ID-user combos of users
+    var friends: [User] = []
     var sentFrReqs: [String : String]! // ID-user combos of users to whom requests were sent
     var inbxFrReqs: [String : String]! // ID-user combos of users who sent requests
     var hasFriendRequests: Bool {
@@ -54,7 +69,7 @@ class User: FirebaseReady, Equatable, Comparable {
         self.gameIDs = [:]
         self.inbxGaReqs = [:]
         
-        self.friends = [:]
+        self.friendIDs = [:]
         self.sentFrReqs = [:]
         self.inbxFrReqs = [:]
     }
@@ -73,7 +88,7 @@ class User: FirebaseReady, Equatable, Comparable {
         ret["gameIDs"]      = self.gameIDs
         ret["inbxGaReqs"]   = self.inbxGaReqs
         
-        ret["friends"]   = self.friends
+        ret["friends"]   = self.friendIDs
         ret["sentFrReqs"]   = self.sentFrReqs
         ret["inbxFrReqs"]   = self.inbxFrReqs
         
@@ -97,7 +112,7 @@ class User: FirebaseReady, Equatable, Comparable {
         self.gameIDs    = record["gameIDs"] as? [String : String] ?? [:]
         self.inbxGaReqs = record["inbxGaReqs"] as? [String : String] ?? [:]
         
-        self.friends = record["friends"] as? [String : String] ?? [:]
+        self.friendIDs = record["friends"] as? [String : String] ?? [:]
         self.sentFrReqs = record["sentFrReqs"] as? [String : String] ?? [:]
         self.inbxFrReqs = record["inbxFrReqs"] as? [String : String] ?? [:]
     }

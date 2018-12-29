@@ -70,6 +70,13 @@ extension CreateGameVC: UITableViewDelegate, UITableViewDataSource {
         } else {
             thisCell.contentView.backgroundColor = .black
             tableView.deselectRow(at: indexPath, animated: true)
+            
+            if indexPath.row == 0 {
+                awaitingTeam = true
+            } else {
+                awaitingSeek = true
+            }
+            
             self.performSegue(withIdentifier: "create2decisionPicker", sender: self)
         }
         

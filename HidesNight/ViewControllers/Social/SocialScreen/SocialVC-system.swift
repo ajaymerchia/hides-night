@@ -26,7 +26,9 @@ extension SocialVC {
         }
     }
     override func viewWillAppear(_ animated: Bool) {
-
+        UIView.animate(withDuration: 0.1) {
+            self.profilePictureButton.alpha = 1
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -41,7 +43,9 @@ extension SocialVC {
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        
+        UIView.animate(withDuration: 0.25) {
+            self.profilePictureButton.alpha = 0
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -52,6 +56,9 @@ extension SocialVC {
                 navVC.user2 = self.friendSelected
                 navVC.isRequest = self.selectedIsRequest
             }
+        } else if let gameVC = segue.destination as? GameDetailVC {
+            gameVC.user = self.user
+            gameVC.game = self.gameSelected
         }
     }
 

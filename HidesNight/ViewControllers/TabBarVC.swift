@@ -24,7 +24,13 @@ class TabBarVC: UITabBarController {
 //        SideMenuManager.default.menuRightNavigationController = menuRightNavigationController
 //        SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
 //        SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
-
+        for viewController in self.viewControllers ?? [] {
+            if let navigationVC = viewController as? UINavigationController, let rootVC = navigationVC.viewControllers.first {
+                let _ = rootVC.view
+            } else {
+                let _ = viewController.view
+            }
+        }
         
     }
     

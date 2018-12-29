@@ -18,6 +18,7 @@ extension GamesVC {
         initNav()
         initSidebar()
         initNewGameButton()
+        initTableview()
     }
 
     // UI Initialization Helpers
@@ -85,6 +86,27 @@ extension GamesVC {
         
         
         view.addSubview(newGameButton)
+    }
+    
+    func initTableview() {
+        let label = UILabel(frame: LayoutManager.belowCentered(elementAbove: newGameButton, padding: .PADDING, width: view.frame.width - .PADDING, height: 40))
+        label.text = "My Games"
+        label.textColor = .white
+        label.font = .SUBTITLE_FONT
+        label.adjustsFontSizeToFitWidth = true
+        view.addSubview(label)
+        
+        let underlineThickness: CGFloat = 1
+        view.addSubview(Utils.getBorder(forView: label, thickness: underlineThickness, color: .white, side: .Bottom))
+        
+        gamesTable = UITableView(frame: LayoutManager.belowCentered(elementAbove: label, padding: underlineThickness, width: view.frame.width, height: (self.tabBarController?.tabBar.frame.maxY)! - (label.frame.maxY + underlineThickness)))
+        gamesTable.register(GameCell.self, forCellReuseIdentifier: "gameCell")
+        gamesTable.delegate = self
+        gamesTable.dataSource = self
+        gamesTable.backgroundColor = .black
+        gamesTable.separatorStyle = .none
+        
+        view.addSubview(gamesTable)
     }
     
 }
