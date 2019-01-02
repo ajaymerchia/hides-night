@@ -57,9 +57,6 @@ extension GameDetailVC {
             self.tableView.reloadData()
         }, fail: {})
         
-        
-        
-        
     }
     
     @objc func declineInvite(_ sender: UIButton) {
@@ -140,8 +137,6 @@ extension GameDetailVC {
         }
         
         pop.presentIn(view: self.view)
-        
-        
     }
     
     

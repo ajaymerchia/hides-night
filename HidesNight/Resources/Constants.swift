@@ -72,6 +72,8 @@ extension UIImage {
     static let nav_remove_person: UIImage! = UIImage(named: "nav-remove-person")
     static let nav_info: UIImage! = UIImage(named: "nav-info")
     static let nav_logout: UIImage! = UIImage(named: "nav-logout")
+    static let nav_trash: UIImage! = UIImage(named: "nav-trash")
+    static let nav_refresh: UIImage! = UIImage(named: "nav-refresh")
     
     // Icon Buttons
     static let mark_check: UIImage! = UIImage(named: "mark-check")

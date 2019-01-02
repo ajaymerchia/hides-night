@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B510707DB2158DF8CA1855B0 /* Pods_HidesNight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E374076B8F5F10F7CF88F2CD /* Pods_HidesNight.framework */; };
+		B70AD54121D8644C004CEDA0 /* overlay.json in Resources */ = {isa = PBXBuildFile; fileRef = B70AD54021D8620D004CEDA0 /* overlay.json */; };
 		B70BCACD21D20EB50038BCF1 /* ExtendedUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70BCACC21D20EB50038BCF1 /* ExtendedUtils.swift */; };
 		B70BCACF21D2CE660038BCF1 /* SocialVC-tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70BCACE21D2CE660038BCF1 /* SocialVC-tableview.swift */; };
 		B70BCAD121D2D88D0038BCF1 /* FirebaseAPI-game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70BCAD021D2D88D0038BCF1 /* FirebaseAPI-game.swift */; };
@@ -20,6 +21,9 @@
 		B70BCAE021D35F0D0038BCF1 /* CreateGameVC-photopicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70BCADF21D35F0D0038BCF1 /* CreateGameVC-photopicker.swift */; };
 		B70BCAE221D370E20038BCF1 /* DateTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70BCAE121D370E20038BCF1 /* DateTimeVC.swift */; };
 		B70BCAE521D454110038BCF1 /* DecisionPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70BCAE421D454110038BCF1 /* DecisionPickerVC.swift */; };
+		B731A8A821DCB6D600499798 /* TeamSelectorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B731A8A721DCB6D600499798 /* TeamSelectorVC.swift */; };
+		B731A8AD21DCB73D00499798 /* TeamSelectorVC-initUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B731A8AC21DCB73D00499798 /* TeamSelectorVC-initUI.swift */; };
+		B731A8B321DCC8A900499798 /* RoundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B731A8B221DCC8A900499798 /* RoundCell.swift */; };
 		B737368521D09EE10068FCA1 /* ProfileVC-initUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B737368421D09EE10068FCA1 /* ProfileVC-initUI.swift */; };
 		B737368721D09F490068FCA1 /* ProfileVC-system.swift in Sources */ = {isa = PBXBuildFile; fileRef = B737368621D09F490068FCA1 /* ProfileVC-system.swift */; };
 		B737368921D0A2150068FCA1 /* ProfileVC-logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B737368821D0A2150068FCA1 /* ProfileVC-logic.swift */; };
@@ -62,6 +66,20 @@
 		B7B14D4321D6AF19003F8A4C /* InviteFriendVC-logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D4221D6AF19003F8A4C /* InviteFriendVC-logic.swift */; };
 		B7B14D4521D6B851003F8A4C /* InviteFriendVC-tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D4421D6B851003F8A4C /* InviteFriendVC-tableview.swift */; };
 		B7B14D4721D70A0E003F8A4C /* InfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D4621D70A0E003F8A4C /* InfoController.swift */; };
+		B7B14D4921D736E7003F8A4C /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D4821D736E7003F8A4C /* Team.swift */; };
+		B7B14D4B21D73B91003F8A4C /* TeamDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D4A21D73B91003F8A4C /* TeamDetailVC.swift */; };
+		B7B14D5021D73BC3003F8A4C /* TeamDetailVC-initUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D4F21D73BC3003F8A4C /* TeamDetailVC-initUI.swift */; };
+		B7B14D5221D73BCE003F8A4C /* TeamDetailVC-system.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D5121D73BCE003F8A4C /* TeamDetailVC-system.swift */; };
+		B7B14D5421D73BDC003F8A4C /* TeamDetailVC-logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D5321D73BDC003F8A4C /* TeamDetailVC-logic.swift */; };
+		B7B14D5621D7412B003F8A4C /* TeamDetailVC-photopicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D5521D7412B003F8A4C /* TeamDetailVC-photopicker.swift */; };
+		B7B14D5821D76ED8003F8A4C /* TeamMemberSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D5721D76ED8003F8A4C /* TeamMemberSelectVC.swift */; };
+		B7B14D5B21D770C0003F8A4C /* TeamMemberSelectVC-initUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D5A21D770C0003F8A4C /* TeamMemberSelectVC-initUI.swift */; };
+		B7B14D5D21D80F34003F8A4C /* RoundDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D5C21D80F34003F8A4C /* RoundDetailVC.swift */; };
+		B7B14D6021D80F55003F8A4C /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D5F21D80F55003F8A4C /* Round.swift */; };
+		B7B14D6321D82490003F8A4C /* RoundDetailVC-initUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D6221D82490003F8A4C /* RoundDetailVC-initUI.swift */; };
+		B7B14D6521D8249E003F8A4C /* RoundDetailVC-system.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D6421D8249E003F8A4C /* RoundDetailVC-system.swift */; };
+		B7B14D6721D824B4003F8A4C /* RoundDetailVC-logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D6621D824B4003F8A4C /* RoundDetailVC-logic.swift */; };
+		B7B14D6921D829BD003F8A4C /* RoundDetailVC-map.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D6821D829BD003F8A4C /* RoundDetailVC-map.swift */; };
 		B7DE62A121CC18E100AC0113 /* SignUpVC-initUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE62A021CC18E100AC0113 /* SignUpVC-initUI.swift */; };
 		B7DE62A321CC1D9800AC0113 /* SignUpVC-system.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE62A221CC1D9800AC0113 /* SignUpVC-system.swift */; };
 		B7DE62A521CC336600AC0113 /* SignUpVC-photopicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE62A421CC336600AC0113 /* SignUpVC-photopicker.swift */; };
@@ -117,6 +135,7 @@
 /* Begin PBXFileReference section */
 		5F8E0FA6BCCAF3B2A9718307 /* Pods_HidesNightTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HidesNightTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A999FB6EB8984DAF1891260 /* Pods_HidesNightUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HidesNightUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B70AD54021D8620D004CEDA0 /* overlay.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = overlay.json; sourceTree = "<group>"; };
 		B70BCACC21D20EB50038BCF1 /* ExtendedUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedUtils.swift; sourceTree = "<group>"; };
 		B70BCACE21D2CE660038BCF1 /* SocialVC-tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SocialVC-tableview.swift"; sourceTree = "<group>"; };
 		B70BCAD021D2D88D0038BCF1 /* FirebaseAPI-game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseAPI-game.swift"; sourceTree = "<group>"; };
@@ -129,6 +148,9 @@
 		B70BCADF21D35F0D0038BCF1 /* CreateGameVC-photopicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateGameVC-photopicker.swift"; sourceTree = "<group>"; };
 		B70BCAE121D370E20038BCF1 /* DateTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeVC.swift; sourceTree = "<group>"; };
 		B70BCAE421D454110038BCF1 /* DecisionPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionPickerVC.swift; sourceTree = "<group>"; };
+		B731A8A721DCB6D600499798 /* TeamSelectorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSelectorVC.swift; sourceTree = "<group>"; };
+		B731A8AC21DCB73D00499798 /* TeamSelectorVC-initUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamSelectorVC-initUI.swift"; sourceTree = "<group>"; };
+		B731A8B221DCC8A900499798 /* RoundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundCell.swift; sourceTree = "<group>"; };
 		B737368421D09EE10068FCA1 /* ProfileVC-initUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileVC-initUI.swift"; sourceTree = "<group>"; };
 		B737368621D09F490068FCA1 /* ProfileVC-system.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileVC-system.swift"; sourceTree = "<group>"; };
 		B737368821D0A2150068FCA1 /* ProfileVC-logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileVC-logic.swift"; sourceTree = "<group>"; };
@@ -171,6 +193,20 @@
 		B7B14D4221D6AF19003F8A4C /* InviteFriendVC-logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InviteFriendVC-logic.swift"; sourceTree = "<group>"; };
 		B7B14D4421D6B851003F8A4C /* InviteFriendVC-tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InviteFriendVC-tableview.swift"; sourceTree = "<group>"; };
 		B7B14D4621D70A0E003F8A4C /* InfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoController.swift; sourceTree = "<group>"; };
+		B7B14D4821D736E7003F8A4C /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		B7B14D4A21D73B91003F8A4C /* TeamDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailVC.swift; sourceTree = "<group>"; };
+		B7B14D4F21D73BC3003F8A4C /* TeamDetailVC-initUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamDetailVC-initUI.swift"; sourceTree = "<group>"; };
+		B7B14D5121D73BCE003F8A4C /* TeamDetailVC-system.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamDetailVC-system.swift"; sourceTree = "<group>"; };
+		B7B14D5321D73BDC003F8A4C /* TeamDetailVC-logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamDetailVC-logic.swift"; sourceTree = "<group>"; };
+		B7B14D5521D7412B003F8A4C /* TeamDetailVC-photopicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamDetailVC-photopicker.swift"; sourceTree = "<group>"; };
+		B7B14D5721D76ED8003F8A4C /* TeamMemberSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMemberSelectVC.swift; sourceTree = "<group>"; };
+		B7B14D5A21D770C0003F8A4C /* TeamMemberSelectVC-initUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamMemberSelectVC-initUI.swift"; sourceTree = "<group>"; };
+		B7B14D5C21D80F34003F8A4C /* RoundDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundDetailVC.swift; sourceTree = "<group>"; };
+		B7B14D5F21D80F55003F8A4C /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
+		B7B14D6221D82490003F8A4C /* RoundDetailVC-initUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RoundDetailVC-initUI.swift"; sourceTree = "<group>"; };
+		B7B14D6421D8249E003F8A4C /* RoundDetailVC-system.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RoundDetailVC-system.swift"; sourceTree = "<group>"; };
+		B7B14D6621D824B4003F8A4C /* RoundDetailVC-logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RoundDetailVC-logic.swift"; sourceTree = "<group>"; };
+		B7B14D6821D829BD003F8A4C /* RoundDetailVC-map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RoundDetailVC-map.swift"; sourceTree = "<group>"; };
 		B7DE62A021CC18E100AC0113 /* SignUpVC-initUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SignUpVC-initUI.swift"; path = "/Users/ajaymerchia/wkspc/ios/hidesnight/HidesNight/HidesNight/ViewControllers/Onboarding/SignUpScreen/SignUpVC-initUI.swift"; sourceTree = "<absolute>"; };
 		B7DE62A221CC1D9800AC0113 /* SignUpVC-system.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpVC-system.swift"; sourceTree = "<group>"; };
 		B7DE62A421CC336600AC0113 /* SignUpVC-photopicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpVC-photopicker.swift"; sourceTree = "<group>"; };
@@ -290,6 +326,15 @@
 			path = DecisionPickerScreen;
 			sourceTree = "<group>";
 		};
+		B731A8A921DCB6DC00499798 /* TeamSelectorScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B731A8A721DCB6D600499798 /* TeamSelectorVC.swift */,
+				B731A8AC21DCB73D00499798 /* TeamSelectorVC-initUI.swift */,
+			);
+			path = TeamSelectorScreen;
+			sourceTree = "<group>";
+		};
 		B737368E21D0BD110068FCA1 /* InstructionsScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -375,6 +420,48 @@
 			path = InviteFriendScreen;
 			sourceTree = "<group>";
 		};
+		B7B14D4C21D73B99003F8A4C /* TeamDetailScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B7B14D4A21D73B91003F8A4C /* TeamDetailVC.swift */,
+				B7B14D4F21D73BC3003F8A4C /* TeamDetailVC-initUI.swift */,
+				B7B14D5121D73BCE003F8A4C /* TeamDetailVC-system.swift */,
+				B7B14D5321D73BDC003F8A4C /* TeamDetailVC-logic.swift */,
+				B7B14D5521D7412B003F8A4C /* TeamDetailVC-photopicker.swift */,
+			);
+			path = TeamDetailScreen;
+			sourceTree = "<group>";
+		};
+		B7B14D5921D76EE3003F8A4C /* TeamMemberSelectScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B7B14D5721D76ED8003F8A4C /* TeamMemberSelectVC.swift */,
+				B7B14D5A21D770C0003F8A4C /* TeamMemberSelectVC-initUI.swift */,
+			);
+			path = TeamMemberSelectScreen;
+			sourceTree = "<group>";
+		};
+		B7B14D5E21D80F38003F8A4C /* RoundDetailScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B7B14D5C21D80F34003F8A4C /* RoundDetailVC.swift */,
+				B7B14D6221D82490003F8A4C /* RoundDetailVC-initUI.swift */,
+				B7B14D6821D829BD003F8A4C /* RoundDetailVC-map.swift */,
+				B7B14D6421D8249E003F8A4C /* RoundDetailVC-system.swift */,
+				B7B14D6621D824B4003F8A4C /* RoundDetailVC-logic.swift */,
+			);
+			path = RoundDetailScreen;
+			sourceTree = "<group>";
+		};
+		B7B14D6121D82276003F8A4C /* Team Management */ = {
+			isa = PBXGroup;
+			children = (
+				B7B14D4C21D73B99003F8A4C /* TeamDetailScreen */,
+				B7B14D5921D76EE3003F8A4C /* TeamMemberSelectScreen */,
+			);
+			path = "Team Management";
+			sourceTree = "<group>";
+		};
 		B7DE62B721CCC3A500AC0113 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -383,6 +470,7 @@
 				B73736A221D0D8150068FCA1 /* Slide.swift */,
 				B7B14D4621D70A0E003F8A4C /* InfoController.swift */,
 				B75C538221D1F94E0024D027 /* PersonCell.swift */,
+				B731A8B221DCC8A900499798 /* RoundCell.swift */,
 				B70BCAD221D2F36C0038BCF1 /* GameCell.swift */,
 			);
 			path = Views;
@@ -424,6 +512,9 @@
 				B73736A821D0EF700068FCA1 /* CreateGameScreen */,
 				B7B14D3021D6031A003F8A4C /* GameDetailScreen */,
 				B7B14D3D21D6AED3003F8A4C /* InviteFriendScreen */,
+				B7B14D6121D82276003F8A4C /* Team Management */,
+				B7B14D5E21D80F38003F8A4C /* RoundDetailScreen */,
+				B731A8A921DCB6DC00499798 /* TeamSelectorScreen */,
 			);
 			path = Games;
 			sourceTree = "<group>";
@@ -495,6 +586,7 @@
 				B7EB12B821CB3A2800C1DEB7 /* ViewControllers */,
 				B7EB12B721CB3A1600C1DEB7 /* Storyboards */,
 				B7EB127E21CAEDC200C1DEB7 /* Info.plist */,
+				B70AD54021D8620D004CEDA0 /* overlay.json */,
 				B7EB12BB21CB70E500C1DEB7 /* GoogleService-Info.plist */,
 			);
 			path = HidesNight;
@@ -575,6 +667,8 @@
 			children = (
 				B7EB12C721CB898A00C1DEB7 /* User.swift */,
 				B7EB12CA21CB89CF00C1DEB7 /* Game.swift */,
+				B7B14D4821D736E7003F8A4C /* Team.swift */,
+				B7B14D5F21D80F55003F8A4C /* Round.swift */,
 				B73736A021D0D4950068FCA1 /* SlideData.swift */,
 			);
 			path = Models;
@@ -703,6 +797,7 @@
 				B7EB12BC21CB70E500C1DEB7 /* GoogleService-Info.plist in Resources */,
 				B7EB12C221CB816D00C1DEB7 /* luckiest-guy.regular.ttf in Resources */,
 				B7EB127A21CAEDC200C1DEB7 /* Assets.xcassets in Resources */,
+				B70AD54121D8644C004CEDA0 /* overlay.json in Resources */,
 				B7EB127821CAEDC100C1DEB7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -743,6 +838,7 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/MapKitGoogleStyler/MapKitGoogleStyler.framework",
 				"${BUILT_PRODUCTS_DIR}/PDTSimpleCalendar/PDTSimpleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
@@ -765,6 +861,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapKitGoogleStyler.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PDTSimpleCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
@@ -808,6 +905,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7EB12C621CB888E00C1DEB7 /* FirebaseAPIClient-account.swift in Sources */,
+				B7B14D5621D7412B003F8A4C /* TeamDetailVC-photopicker.swift in Sources */,
 				B75C536B21D1A1770024D027 /* SocialVC.swift in Sources */,
 				B7DE62A121CC18E100AC0113 /* SignUpVC-initUI.swift in Sources */,
 				B73736A721D0EF520068FCA1 /* CreateGameVC.swift in Sources */,
@@ -822,22 +920,28 @@
 				B73736A121D0D4950068FCA1 /* SlideData.swift in Sources */,
 				B70BCAE221D370E20038BCF1 /* DateTimeVC.swift in Sources */,
 				B7B14D3F21D6AEF0003F8A4C /* InviteFriendVC-initUI.swift in Sources */,
+				B731A8A821DCB6D600499798 /* TeamSelectorVC.swift in Sources */,
 				B70BCACD21D20EB50038BCF1 /* ExtendedUtils.swift in Sources */,
 				B70BCAD121D2D88D0038BCF1 /* FirebaseAPI-game.swift in Sources */,
 				B7B14D3C21D6AED0003F8A4C /* InviteFriendVC.swift in Sources */,
+				B7B14D5D21D80F34003F8A4C /* RoundDetailVC.swift in Sources */,
+				B7B14D4921D736E7003F8A4C /* Team.swift in Sources */,
 				B7B14D4321D6AF19003F8A4C /* InviteFriendVC-logic.swift in Sources */,
 				B7DE62CC21CF36C500AC0113 /* ProfileVC.swift in Sources */,
 				B75C537321D1A2370024D027 /* SocialVC-logic.swift in Sources */,
 				B7B14D4121D6AF03003F8A4C /* InviteFriendVC-system.swift in Sources */,
 				B75C538121D1F6160024D027 /* AddFriendVC-tableview.swift in Sources */,
+				B7B14D6721D824B4003F8A4C /* RoundDetailVC-logic.swift in Sources */,
 				B7EB12C421CB883B00C1DEB7 /* Launch-logic.swift in Sources */,
 				B70BCAD521D3040E0038BCF1 /* FriendDetailVC.swift in Sources */,
+				B7B14D6021D80F55003F8A4C /* Round.swift in Sources */,
 				B7B14D2D21D5D29B003F8A4C /* GamesVC-tableview.swift in Sources */,
 				B737369221D0BEF60068FCA1 /* InstructionsVC-initUI.swift in Sources */,
 				B70BCADC21D3055B0038BCF1 /* FriendDetailVC-logic.swift in Sources */,
 				B70BCAE521D454110038BCF1 /* DecisionPickerVC.swift in Sources */,
 				B7EB12DA21CC137D00C1DEB7 /* SignUpVC-logic.swift in Sources */,
 				B75C537B21D1A9880024D027 /* AddFriendVC-system.swift in Sources */,
+				B7B14D5821D76ED8003F8A4C /* TeamMemberSelectVC.swift in Sources */,
 				B70BCAE021D35F0D0038BCF1 /* CreateGameVC-photopicker.swift in Sources */,
 				B7DE62D021CF45C800AC0113 /* TabBarVC.swift in Sources */,
 				B7DE62CA21CF358E00AC0113 /* GamesVC-logic.swift in Sources */,
@@ -845,6 +949,7 @@
 				B7B14D2921D4DAD2003F8A4C /* DecisionPickerVC-system.swift in Sources */,
 				B7EB12D321CBAA7B00C1DEB7 /* SignUpVC-main.swift in Sources */,
 				B75C537121D1A2250024D027 /* SocialVC-system.swift in Sources */,
+				B7B14D6521D8249E003F8A4C /* RoundDetailVC-system.swift in Sources */,
 				B75C537D21D1A99B0024D027 /* AddFriendVC-logic.swift in Sources */,
 				B70BCAD321D2F36C0038BCF1 /* GameCell.swift in Sources */,
 				B7B14D3221D60337003F8A4C /* GameDetailVC-initUI.swift in Sources */,
@@ -853,18 +958,24 @@
 				B7B14D2721D4DAA4003F8A4C /* DecisionPickerVC-initUI.swift in Sources */,
 				B73736A521D0EF110068FCA1 /* DataNavVC.swift in Sources */,
 				B73736AE21D0EFE40068FCA1 /* CreateGameVC-logic.swift in Sources */,
+				B7B14D6921D829BD003F8A4C /* RoundDetailVC-map.swift in Sources */,
 				B737369421D0BF4C0068FCA1 /* InstructionsVC-system.swift in Sources */,
+				B7B14D5021D73BC3003F8A4C /* TeamDetailVC-initUI.swift in Sources */,
+				B7B14D4B21D73B91003F8A4C /* TeamDetailVC.swift in Sources */,
 				B7B14D3821D637E8003F8A4C /* GameDetailVC-segCon.swift in Sources */,
 				B7EB12B621CB3A0D00C1DEB7 /* Constants.swift in Sources */,
 				B7EB12BA21CB3A4900C1DEB7 /* LoginVC-main.swift in Sources */,
 				B7DE62A521CC336600AC0113 /* SignUpVC-photopicker.swift in Sources */,
 				B75C537821D1A9660024D027 /* AddFriendVC-initUI.swift in Sources */,
+				B7B14D5B21D770C0003F8A4C /* TeamMemberSelectVC-initUI.swift in Sources */,
 				B737368B21D0B44A0068FCA1 /* ProfileVC-photopicker.swift in Sources */,
 				B75C538321D1F94E0024D027 /* PersonCell.swift in Sources */,
 				B75C536F21D1A2120024D027 /* SocialVC-initUI.swift in Sources */,
 				B7EB12CD21CB9D1000C1DEB7 /* LoginVC-initUI.swift in Sources */,
+				B7B14D6321D82490003F8A4C /* RoundDetailVC-initUI.swift in Sources */,
 				B7EB12C821CB898A00C1DEB7 /* User.swift in Sources */,
 				B70BCADE21D350410038BCF1 /* CreateGameVC-tableview.swift in Sources */,
+				B731A8B321DCC8A900499798 /* RoundCell.swift in Sources */,
 				B70BCAD821D304E10038BCF1 /* FriendDetailVC-initUI.swift in Sources */,
 				B75C537521D1A8460024D027 /* AddFriendVC.swift in Sources */,
 				B7DE62BB21CCE86000AC0113 /* SignUpVC-validators.swift in Sources */,
@@ -873,18 +984,21 @@
 				B7B14D2F21D5FC33003F8A4C /* GameDetailVC.swift in Sources */,
 				B73736AC21D0EFBC0068FCA1 /* CreateGameVC-system.swift in Sources */,
 				B737368521D09EE10068FCA1 /* ProfileVC-initUI.swift in Sources */,
+				B7B14D5221D73BCE003F8A4C /* TeamDetailVC-system.swift in Sources */,
 				B7EB12CB21CB89CF00C1DEB7 /* Game.swift in Sources */,
 				B7B14D2B21D4DB0F003F8A4C /* DecisionPickerVC-data.swift in Sources */,
 				B7DE62BD21CDCD7500AC0113 /* FirebaseReady.swift in Sources */,
 				B737369A21D0C26D0068FCA1 /* InstructionsVC-data.swift in Sources */,
 				B7DE62A321CC1D9800AC0113 /* SignUpVC-system.swift in Sources */,
 				B7EB12CF21CBA10E00C1DEB7 /* LoginVC-system.swift in Sources */,
+				B731A8AD21DCB73D00499798 /* TeamSelectorVC-initUI.swift in Sources */,
 				B7B14D4521D6B851003F8A4C /* InviteFriendVC-tableview.swift in Sources */,
 				B7DE62C221CF351500AC0113 /* GamesVC.swift in Sources */,
 				B7B14D3A21D63888003F8A4C /* GameDetailVC-tableview.swift in Sources */,
 				B7B14D3621D60350003F8A4C /* GameDetailVC-logic.swift in Sources */,
 				B737369021D0BE7E0068FCA1 /* InstructionsVC.swift in Sources */,
 				B7EB12D121CBA76400C1DEB7 /* LoginVC-logic.swift in Sources */,
+				B7B14D5421D73BDC003F8A4C /* TeamDetailVC-logic.swift in Sources */,
 				B737368921D0A2150068FCA1 /* ProfileVC-logic.swift in Sources */,
 				B7B14D4721D70A0E003F8A4C /* InfoController.swift in Sources */,
 			);

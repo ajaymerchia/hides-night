@@ -227,4 +227,36 @@ extension FirebaseAPIClient {
         }
     }
     
+    
+    static func updatePhoto(forTeam: Team, inGame: Game, completion: @escaping () -> () ) {
+        let image_directory = Storage.storage().reference().child("teamPhotos")
+        let photoRef = image_directory.child(forTeam.uid)
+        guard let photoData = forTeam.img?.jpegData(compressionQuality: 0.4) else {
+            completion()
+            return
+        }
+        
+        photoRef.putData(photoData, metadata: nil) { (metadata, error) in
+            guard metadata != nil else {
+                // Uh-oh, an error occurred!
+                debugPrint("error with photo upload")
+                completion()
+                return
+            }
+            completion()
+        }
+    }
+    
+    static func getTeamPhoto(forTeam: Team, completion: @escaping() -> () ) {
+        let photoTarget = Storage.storage().reference().child("teamPhotos").child(forTeam.uid)
+        photoTarget.getData(maxSize: 2 * 1024 * 1024, completion: { (data, err) in
+            if let photoData = data {
+                if let img = UIImage(data: photoData) {
+                    forTeam.img = img
+                }
+            }
+            completion()
+        })
+    }
+    
 }

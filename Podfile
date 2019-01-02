@@ -35,7 +35,8 @@ target 'HidesNight' do
   pod 'FontAwesomeKit'
 #  pod 'Spring'
   pod 'KeychainAccess'
-  
+  pod 'MapKitGoogleStyler'
+
   
   
 

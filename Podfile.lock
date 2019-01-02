@@ -100,6 +100,7 @@ PODS:
   - JGProgressHUD (2.0.3)
   - KeychainAccess (3.1.2)
   - leveldb-library (1.20)
+  - MapKitGoogleStyler (0.1.1)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -124,6 +125,7 @@ DEPENDENCIES:
   - IQKeyboardManager
   - JGProgressHUD
   - KeychainAccess
+  - MapKitGoogleStyler
   - PDTSimpleCalendar
   - SideMenu
   - SkyFloatingLabelTextField (~> 3.0)
@@ -151,6 +153,7 @@ SPEC REPOS:
     - JGProgressHUD
     - KeychainAccess
     - leveldb-library
+    - MapKitGoogleStyler
     - nanopb
     - PDTSimpleCalendar
     - SideMenu
@@ -189,12 +192,13 @@ SPEC CHECKSUMS:
   JGProgressHUD: 12b20a8f4ffe05258f8635c1ab92816e451f904d
   KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  MapKitGoogleStyler: 8efdceb664fc1748a62a9e3b50a34b67a34247bc
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   PDTSimpleCalendar: d1c03387678422715dc021aa1a85d70f4d1014f2
   SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
   SkyFloatingLabelTextField: 38164979b79512f9ff9288ad8acfc4bbf5d843e3
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 02955f249b1069b415d14f6de62b1f3d01cfc6e6
+PODFILE CHECKSUM: d60568f750c0991c602022b68f10e3bd06d08815
 
 COCOAPODS: 1.6.0.beta.2

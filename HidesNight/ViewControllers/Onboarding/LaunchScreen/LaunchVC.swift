@@ -9,7 +9,7 @@
 import UIKit
 import iosManagers
 import JGProgressHUD
-
+import CoreLocation
 
 class LaunchVC: UIViewController {
 
@@ -20,6 +20,7 @@ class LaunchVC: UIViewController {
     var hud: JGProgressHUD?
     
     var hasLoaded = false
+    var locationManager: CLLocationManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +38,19 @@ class LaunchVC: UIViewController {
                 self.gameTitle.frame =  LayoutManager.belowCentered(elementAbove: self.logo, padding: .PADDING, width: self.view.frame.width, height: 60)
                 self.gameTitle.alpha = 1
             }) { (bool) in
+                
+                
                 self.checkForAutoLogin()
+                
                 self.hasLoaded = true
             }
         } else {
+            
+            
             self.checkForAutoLogin()
+            
+            
+            
         }
     }
     

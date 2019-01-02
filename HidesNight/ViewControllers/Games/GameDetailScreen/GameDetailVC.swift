@@ -22,6 +22,11 @@ class GameDetailVC: UIViewController {
     }
     var firstLoad = true
     
+    var teamToShow: Team!
+    var roundToShow: Round!
+    
+    
+    
     // UI!
     var navbar: UINavigationBar!
     

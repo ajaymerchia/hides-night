@@ -32,7 +32,7 @@ extension GameDetailVC: UIGestureRecognizerDelegate {
     // UI Initialization Helpers
     func initNav() {
         navbar = self.navigationController!.navigationBar
-        self.title = game.title
+        self.title = "Game"
     }
     
     func initGamePhoto() {
@@ -271,7 +271,7 @@ extension GameDetailVC: UIGestureRecognizerDelegate {
     
     func getTabBarProxy() -> UIView {
         let tabFrame = (tabBarController?.tabBar.frame)!
-        var actualTabFrame = CGRect(origin: CGPoint(x: tabFrame.minX, y: tabFrame.minY-tabFrame.height), size: CGSize(width: tabFrame.width, height: tabFrame.height))
+        let actualTabFrame = CGRect(origin: CGPoint(x: tabFrame.minX, y: tabFrame.minY-tabFrame.height), size: CGSize(width: tabFrame.width, height: tabFrame.height))
         return UIView(frame: actualTabFrame)
     }
 
@@ -279,6 +279,8 @@ extension GameDetailVC: UIGestureRecognizerDelegate {
         tableView = UITableView(frame: LayoutManager.between(elementAbove: indicatorView, elementBelow: createCellButton, width: view.frame.width, topPadding: 2 * .MARGINAL_PADDING, bottomPadding: 0))
         tableView.center = CGPoint(x: view.frame.width/2, y: tableView.frame.midY)
         tableView.register(PersonCell.self, forCellReuseIdentifier: "personCell")
+        tableView.register(GameCell.self, forCellReuseIdentifier: "teamCell")
+        tableView.register(RoundCell.self, forCellReuseIdentifier: "roundCell")
         // Register RoundCell & TeamCell
         tableView.delegate = self
         tableView.dataSource = self

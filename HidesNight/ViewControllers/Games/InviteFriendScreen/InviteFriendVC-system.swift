@@ -25,6 +25,7 @@ extension InviteFriendVC {
                 self.hud?.textLabel.text = "Error"
                 self.hud?.detailTextLabel.text = "Could not send all invites."
             }
+            
             self.hud?.dismiss(afterDelay: 1.25, animated: true)
             Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false, block: { (t) in
                 self.dismiss(animated: true, completion: nil)

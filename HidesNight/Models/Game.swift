@@ -78,6 +78,7 @@ class Game: FirebaseReady, Comparable {
     // Summary
     var title: String!
     var datetime: Date!
+    var img: UIImage? = nil
     
     // Timing Parameters
     var roundDuration: TimeInterval!
@@ -91,8 +92,12 @@ class Game: FirebaseReady, Comparable {
     // Players
     var players = [User]()
     var playerStatus = [String: PlayerStatus]() //playerID
+    var teams = [String: Team]()
     
-    var img: UIImage? = nil
+    // Rounds
+    var rounds = [Round]()
+    
+    
     
     // Game State
     var active = false
@@ -141,6 +146,22 @@ class Game: FirebaseReady, Comparable {
         ret["players"] = playerDict
         ret["playerStatus"] = playerStatusUpdate
         
+        var teamsPushable: [String: [String: Any?]] = [:]
+        for (uid, team) in self.teams {
+            teamsPushable[uid] = team.createPushable()
+        }
+        
+        ret["teams"] = teamsPushable
+        
+        
+        var roundsPushable: [String: [String: Any?]] = [:]
+        for round in self.rounds {
+            roundsPushable[round.uid] = round.createPushable()
+        }
+        
+        ret["rounds"] = roundsPushable
+        
+        
         ret["active"] = self.active
         
         return ret
@@ -150,7 +171,7 @@ class Game: FirebaseReady, Comparable {
         updateThisGame(key: key, record: record, loadImages: true)
     }
     
-    func updateThisGame(key: String, record: [String: Any], loadImages: Bool = false) {
+    func updateThisGame(key: String, record: [String: Any?], loadImages: Bool = false) {
         self.uid = key
         
         var tempuid: String = ""
@@ -213,7 +234,38 @@ class Game: FirebaseReady, Comparable {
             }
         }
         
+        // Cache Images
+        var teamImages = [String: UIImage]()
+        for (uid, loadedTeam) in self.teams {
+            teamImages[uid] = loadedTeam.img
+        }
+        
+        if let teamData = record["teams"] as? [String: [String: Any?]] {
+            self.teams = [:]
+            for (uid, rec) in teamData {
+                let team = Team(key: uid, record: rec)
+                
+                if let teamPic = teamImages[uid] {
+                    team.img = teamPic
+                }
+                if (loadImages) {
+                    FirebaseAPIClient.getTeamPhoto(forTeam: team) {}
+                }
+                self.teams[uid] = team
+            }
+        }
+        
+        if let roundData = record["rounds"] as? [String: [String: Any?]] {
+            self.rounds = []
+            for (uid, rec) in roundData {
+                let round = Round(key: uid, record: rec, parentGameWithTeams: self)
+                self.rounds.append(round)
+            }
+            self.rounds.sort()
+        }
+        
         self.active = record["active"] as? Bool ?? false
+        
     }
     
     func setGamePhoto(to: UIImage, updateRemote: Bool, completion: @escaping () -> () = {}) {

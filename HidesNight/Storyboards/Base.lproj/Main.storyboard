@@ -389,6 +389,8 @@
                     </view>
                     <connections>
                         <segue destination="IJf-MW-8Ts" kind="presentation" identifier="detail2invite" id="fh9-RJ-ReW"/>
+                        <segue destination="tTh-2g-4zB" kind="show" identifier="detail2team" id="dAv-Ji-uum"/>
+                        <segue destination="7hl-xz-am7" kind="show" identifier="detail2round" id="jQJ-3P-sVw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPW-oV-saL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -426,6 +428,72 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e2o-JM-P1S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6558" y="276"/>
+        </scene>
+        <!--Team DetailVC-->
+        <scene sceneID="UwY-g5-ibi">
+            <objects>
+                <viewController id="tTh-2g-4zB" customClass="TeamDetailVC" customModule="HidesNight" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L5D-kl-RmO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="oAU-Ab-RJ0"/>
+                    </view>
+                    <connections>
+                        <segue destination="MDe-kH-7l4" kind="show" identifier="teamDetail2memberSelect" id="lhw-7Z-BUZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6iq-Or-DU0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6565" y="954"/>
+        </scene>
+        <!--Round DetailVC-->
+        <scene sceneID="uB2-v9-FZ9">
+            <objects>
+                <viewController id="7hl-xz-am7" customClass="RoundDetailVC" customModule="HidesNight" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wwx-gX-KYe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="tAv-5P-AaE"/>
+                    </view>
+                    <connections>
+                        <segue destination="tOu-SV-nPn" kind="show" identifier="round2teamPick" id="3Xm-Zs-UQt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VL4-ea-rHK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6564" y="1651"/>
+        </scene>
+        <!--Team SelectorVC-->
+        <scene sceneID="Qwi-jz-tgE">
+            <objects>
+                <viewController id="tOu-SV-nPn" customClass="TeamSelectorVC" customModule="HidesNight" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XN8-vM-TQy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="gL3-Ab-0KI"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Mn-l2-aat" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7425" y="1650"/>
+        </scene>
+        <!--Team Member SelectVC-->
+        <scene sceneID="oSI-Ue-T14">
+            <objects>
+                <viewController id="MDe-kH-7l4" customClass="TeamMemberSelectVC" customModule="HidesNight" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LnM-aC-wqV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="v3d-YB-qQM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hhd-En-nQI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7425" y="954"/>
         </scene>
     </scenes>
     <resources>

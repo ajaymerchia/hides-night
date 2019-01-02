@@ -10,11 +10,10 @@ import Foundation
 import iosManagers
 
 import FirebaseAuth
+import CoreLocation
 
-
-extension LaunchVC {
+extension LaunchVC: CLLocationManagerDelegate {
     func checkForAutoLogin() {
-//                FirebaseAPIClient.logout() //FIXME: REMOVE WHEN DONE TESTING MANUAL LOGINS
         guard let loggedInUser = Auth.auth().currentUser else {
             self.performSegue(withIdentifier: "launch2login", sender: self)
             return
@@ -37,9 +36,11 @@ extension LaunchVC {
                 self.hud?.dismiss()
                 self.performSegue(withIdentifier: "launch2home", sender: self)
             })
-            
         }
     }
+    
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let tabBarVC = segue.destination as? TabBarVC{

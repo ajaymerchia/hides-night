@@ -37,6 +37,15 @@ extension GameDetailVC {
         if let datavc = segue.destination as? DataNavVC {
             datavc.user = self.user
             datavc.game = self.game
+        } else if let teamvc = segue.destination as? TeamDetailVC {
+            teamvc.game = self.game
+            teamvc.user = self.user
+            teamvc.team = teamToShow
+        } else if let roundvc = segue.destination as? RoundDetailVC {
+            roundvc.game = self.game
+            roundvc.user = self.user
+            roundvc.round = self.roundToShow
+            
         }
     }
 
@@ -45,8 +54,12 @@ extension GameDetailVC {
         switch self.currentSegSelected {
         case 0:
             self.performSegue(withIdentifier: "detail2invite", sender: self)
+        case 1:
+            teamToShow = Team(uid: Utils.uuid(), name: "Team \(game.teams.count + 1)")
+            self.performSegue(withIdentifier: "detail2team", sender: self)
         default:
-            debugPrint("nada")
+            roundToShow = Round(uid: Utils.uuid(), name: "Round \(game.rounds.count + 1)", game: self.game)
+            self.performSegue(withIdentifier: "detail2round", sender: self)
         }
     }
 
