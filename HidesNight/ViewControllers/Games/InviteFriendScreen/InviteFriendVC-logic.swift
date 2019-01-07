@@ -16,7 +16,14 @@ extension InviteFriendVC {
     func getDataFromParent() {
         self.user = (self.navigationController as! DataNavVC).user
         self.game = (self.navigationController as! DataNavVC).game
-        self.friendsToShow = user.friends.sorted()
+        self.friendsToShow = []
+        
+        for friend in user.friends.sorted() {
+            if !self.game.players.contains(friend) {
+                self.friendsToShow.append(friend)
+            }
+        }
+        
     }
     
     @objc func runFilter(_ sender: UITextField) {
