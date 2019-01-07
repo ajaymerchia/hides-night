@@ -14,6 +14,8 @@ class ChatCell: UITableViewCell {
     var msgBackground: UILabel!
     var msgLabel: UILabel!
     
+    var masterWidth: CGFloat!
+    
     var senderImage: UIImageView!
     
     var personImage: UIButton!
@@ -92,7 +94,7 @@ class ChatCell: UITableViewCell {
             
             
             msgBackground.backgroundColor = .flatBlackDark
-            nameLabel.frame = CGRect(x: msgBackground.frame.minX, y: 0, width: contentView.frame.width, height: headerSpace)
+            nameLabel.frame = CGRect(x: msgBackground.frame.minX, y: 0, width: masterWidth - msgBackground.frame.minX, height: headerSpace)
         }
         
         
@@ -126,7 +128,7 @@ class ChatCell: UITableViewCell {
             imgView.image = img
             
             if messageByUser {
-                msgBackground.frame.origin = CGPoint(x: contentView.frame.width - (.PADDING + msgBackground.frame.width), y: msgBackground.frame.minY)
+                msgBackground.frame.origin = CGPoint(x: masterWidth - (.PADDING + msgBackground.frame.width), y: msgBackground.frame.minY)
             }
             
         }

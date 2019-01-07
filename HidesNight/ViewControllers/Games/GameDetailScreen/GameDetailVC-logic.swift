@@ -121,7 +121,6 @@ extension GameDetailVC {
     func displayPopup(forUser: User, index: IndexPath) {
         let pop = InfoController()
         pop.image = forUser.profilePic
-        debugPrint(forUser.fullname)
         pop.titleText = forUser.fullname
         pop.detailText = "@" + forUser.username
         

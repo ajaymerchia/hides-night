@@ -30,14 +30,25 @@ class myUtils {
     
     static func showChatVCFor(game: Game, perspectiveOf: User, fromVC: UINavigationController) {
         let vc = ChatVC()
+        vc.game = game
+        vc.user = perspectiveOf
         
-        FirebaseAPIClient.loadChatFor(game: game) { (c) in
-            vc.chat = c
-            vc.game = game
-            vc.user = perspectiveOf
+        if let preloadedChat = game.chat {
+            vc.chat = preloadedChat
             vc.loadChats()
             fromVC.pushViewController(vc, animated: true)
+            
+        } else {
+            FirebaseAPIClient.loadChatFor(game: game) { (c) in
+                vc.chat = c
+                game.chat = c
+                vc.loadChats()
+                fromVC.pushViewController(vc, animated: true)
+            }
         }
+        
+        
+        
     }
     
     static func mergeDictionaries(d1: [String: String]?, d2: [String: String]?) -> [String: String] {

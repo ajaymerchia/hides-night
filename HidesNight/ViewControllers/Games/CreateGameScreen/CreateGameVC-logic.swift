@@ -129,9 +129,7 @@ extension CreateGameVC {
 
     
     @objc func createGame() {
-        debugPrint(roundDuration.magnitude)
-        debugPrint(checkInDuration.magnitude)
-        debugPrint(gpsActivation.magnitude)
+
         self.view.isUserInteractionEnabled = false
         hud = alerts.startProgressHud(withMsg: "Creating Game", style: .dark)
         

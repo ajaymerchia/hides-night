@@ -73,7 +73,6 @@ extension RoundDetailVC: MKMapViewDelegate, CLLocationManagerDelegate {
         // This is the final step. This code can be copied and pasted into your project
         // without thinking on it so much. It simply instantiates a MKTileOverlayRenderer
         // for displaying the tile overlay.
-        debugPrint("called rendererfor")
         if let tileOverlay = overlay as? MKTileOverlay {
             return MKTileOverlayRenderer(tileOverlay: tileOverlay)
         } else if overlay is MKPolyline {
@@ -88,7 +87,6 @@ extension RoundDetailVC: MKMapViewDelegate, CLLocationManagerDelegate {
     
     @objc func recenter() {
         
-        debugPrint(mapView.centerCoordinate)
         
         var center = mapView.userLocation.coordinate
         var span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
@@ -110,7 +108,6 @@ extension RoundDetailVC: MKMapViewDelegate, CLLocationManagerDelegate {
             centerLat = centerLat/Double(sourceBoundaries.count)
             centerLon = centerLon/Double(sourceBoundaries.count)
             
-            debugPrint(centerLat, centerLon)
             
             let degreePaddingFactor: Double = 1.4
             
@@ -127,15 +124,11 @@ extension RoundDetailVC: MKMapViewDelegate, CLLocationManagerDelegate {
             let latDiff = abs(latBounds[1] - latBounds[0]) * degreePaddingFactor
             let lonDiff = abs(lonBounds[1] - lonBounds[0]) * degreePaddingFactor
             
-            debugPrint(centerLat)
             if hasPermissions {
                 centerLat += (latDiff * (30/Double(mapView.frame.height)))*2
-                debugPrint(centerLat)
             }
             
-            debugPrint(latBounds)
-            debugPrint(latDiff)
-            
+        
             
             
             center = CLLocation(latitude: CLLocationDegrees(exactly: centerLat)!, longitude: CLLocationDegrees(exactly: centerLon)!).coordinate
@@ -186,7 +179,6 @@ extension RoundDetailVC: MKMapViewDelegate, CLLocationManagerDelegate {
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        debugPrint(view)
         hasCalloutSelected = true
     }
     
@@ -195,7 +187,6 @@ extension RoundDetailVC: MKMapViewDelegate, CLLocationManagerDelegate {
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        debugPrint(view)
         
         if let point = view.annotation as? MKPointAnnotation {
             guard let index = boundaries.index(of: point) else { return }
@@ -237,7 +228,6 @@ extension RoundDetailVC: MKMapViewDelegate, CLLocationManagerDelegate {
             return
         }
         let overlayFileURL = URL(fileURLWithPath: overlayFileURLString)
-        debugPrint(overlayFileURL)
         // After that, you can create the tile overlay using MapKitGoogleStyler
         guard let tileOverlay = try? MapKitGoogleStyler.buildOverlay(with: overlayFileURL) else {
             return
@@ -245,7 +235,6 @@ extension RoundDetailVC: MKMapViewDelegate, CLLocationManagerDelegate {
         
         // And finally add it to your MKMapView
         mapView.addOverlay(tileOverlay, level: .aboveLabels)
-        debugPrint(mapView.overlays)
     }
     
     

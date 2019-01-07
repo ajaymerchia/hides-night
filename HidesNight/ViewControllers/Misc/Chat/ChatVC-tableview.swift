@@ -85,7 +85,8 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
         if let img = currentMessage.img {
             targetWidth = img.size.width/img.size.height * heightComputer(index: indexPath.row)
         }
-        
+    
+        cell.masterWidth = tableView.frame.width
         cell.initializeCellFrom(data: currentMessage, size: CGSize(width: targetWidth, height: heightComputer(index: indexPath.row)), forPerspective: self.user, inGame: self.game, withHeader: messageRequiresHeader(index: indexPath.row))
 
         

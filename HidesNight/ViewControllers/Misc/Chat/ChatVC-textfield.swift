@@ -20,7 +20,6 @@ extension ChatVC: UITextFieldDelegate {
         if let userInfo = notification.userInfo {
             let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
             let endFrameY = endFrame!.origin.y 
-            debugPrint(endFrameY)
             
             let duration = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double) ?? 0
             

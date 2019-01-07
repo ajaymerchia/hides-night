@@ -89,7 +89,6 @@ extension GameDetailVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        debugPrint("selected a cell")
         
         switch currentSegSelected {
         case 0:
@@ -99,14 +98,12 @@ extension GameDetailVC: UITableViewDelegate, UITableViewDataSource {
             }
         case 1:
             // Team Cell Stuff
-            debugPrint("tapped team")
             teamToShow = teamFor(indexPath: indexPath)
             self.performSegue(withIdentifier: "detail2team", sender: self)
         default:
             // Round Cell Stuff
             roundToShow = roundFor(indexPath: indexPath)
             self.performSegue(withIdentifier: "detail2round", sender: self)
-            debugPrint("tapped round")
         }
         
     }

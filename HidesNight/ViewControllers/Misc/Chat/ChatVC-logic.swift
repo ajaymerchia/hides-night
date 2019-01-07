@@ -31,7 +31,7 @@ extension ChatVC {
         addMessage(msg: textMessage)
         
         FirebaseAPIClient.send(message: textMessage, to: self.chat) {
-            debugPrint("sent!")
+            debugPrint("message sent!")
             if let imgToSend = self.photoSelected() {
                 self.sendImageMessage(img: imgToSend)
             }
@@ -52,7 +52,6 @@ extension ChatVC {
     }
     
     func loadChats() {
-        debugPrint(self.chat)
         
         pureMessages = []
         for (_, messages) in self.chat.messages {
@@ -69,14 +68,11 @@ extension ChatVC {
             if msg.imgPending {
                 
                 msg.imageLoaded = {
-                    debugPrint("Callback Fired for " + msg.uid)
                     self.addMessage(msg: msg)
                 }
-                debugPrint("Identified Remote Image Message for " + msg.uid)
-                debugPrint("Postponing Image Load")
+                
                 
             } else {
-                debugPrint("Adding Message with ID: " + msg.uid)
                 self.chatView.beginUpdates()
                 self.pureMessages.append(msg)
                 self.pureMessages.sort()
@@ -90,7 +86,6 @@ extension ChatVC {
     }
     
     func addMessage(msg: Message) {
-        debugPrint("Adding Message with ID: " + msg.uid)
         self.chatView.beginUpdates()
         self.pureMessages.append(msg)
         self.pureMessages.sort()
