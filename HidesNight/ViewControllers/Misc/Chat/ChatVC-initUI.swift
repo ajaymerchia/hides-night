@@ -10,7 +10,6 @@
 import Foundation
 import UIKit
 import iosManagers
-import PHFComposeBarView
 
 extension ChatVC {
     func initUI() {
