@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PHFComposeBarView
 
 class ChatVC: UIViewController {
 
