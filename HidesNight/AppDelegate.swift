@@ -21,8 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         IQKeyboardManager.shared().isEnabled = true
+        IQKeyboardManager.shared().disabledToolbarClasses.add(ChatVC.self)
+        IQKeyboardManager.shared().disabledDistanceHandlingClasses.add(ChatVC.self)
+        IQKeyboardManager.shared().disabledTouchResignedClasses.add(ChatVC.self)
         
         UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font : UIFont.BIG_TEXT_FONT], for: .normal)
+        UITextField.appearance().keyboardAppearance = .dark
         
         return true
     }

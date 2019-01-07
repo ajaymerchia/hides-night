@@ -29,6 +29,7 @@ extension RoundDetailVC {
             initTeamView()
         }
         
+        
         initMap()
         
         if hasPermissions {

@@ -50,6 +50,16 @@
 		B75C537F21D1ED1C0024D027 /* FirebaseAPIClient-social.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75C537E21D1ED1C0024D027 /* FirebaseAPIClient-social.swift */; };
 		B75C538121D1F6160024D027 /* AddFriendVC-tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75C538021D1F6160024D027 /* AddFriendVC-tableview.swift */; };
 		B75C538321D1F94E0024D027 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75C538221D1F94E0024D027 /* PersonCell.swift */; };
+		B779FD9A21E2EE3400BEFA60 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B779FD9921E2EE3400BEFA60 /* Chat.swift */; };
+		B779FD9C21E2F29100BEFA60 /* FirebaseAPI-chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B779FD9B21E2F29100BEFA60 /* FirebaseAPI-chat.swift */; };
+		B779FD9E21E2FCCA00BEFA60 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B779FD9D21E2FCCA00BEFA60 /* ChatVC.swift */; };
+		B779FDA121E2FFF500BEFA60 /* ChatVC-initUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B779FDA021E2FFF500BEFA60 /* ChatVC-initUI.swift */; };
+		B779FDA321E2FFFE00BEFA60 /* ChatVC-system.swift in Sources */ = {isa = PBXBuildFile; fileRef = B779FDA221E2FFFE00BEFA60 /* ChatVC-system.swift */; };
+		B779FDA521E3001000BEFA60 /* ChatVC-logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B779FDA421E3001000BEFA60 /* ChatVC-logic.swift */; };
+		B779FDA721E32D9700BEFA60 /* ChatVC-textfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = B779FDA621E32D9700BEFA60 /* ChatVC-textfield.swift */; };
+		B779FDA921E342EE00BEFA60 /* ChatVC-tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B779FDA821E342EE00BEFA60 /* ChatVC-tableview.swift */; };
+		B779FDAB21E34E5700BEFA60 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B779FDAA21E34E5700BEFA60 /* ChatCell.swift */; };
+		B779FDAD21E3764900BEFA60 /* ChatVC-photopicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B779FDAC21E3764900BEFA60 /* ChatVC-photopicker.swift */; };
 		B7B14D2721D4DAA4003F8A4C /* DecisionPickerVC-initUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D2621D4DAA4003F8A4C /* DecisionPickerVC-initUI.swift */; };
 		B7B14D2921D4DAD2003F8A4C /* DecisionPickerVC-system.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D2821D4DAD2003F8A4C /* DecisionPickerVC-system.swift */; };
 		B7B14D2B21D4DB0F003F8A4C /* DecisionPickerVC-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D2A21D4DB0F003F8A4C /* DecisionPickerVC-data.swift */; };
@@ -177,6 +187,16 @@
 		B75C537E21D1ED1C0024D027 /* FirebaseAPIClient-social.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseAPIClient-social.swift"; sourceTree = "<group>"; };
 		B75C538021D1F6160024D027 /* AddFriendVC-tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddFriendVC-tableview.swift"; sourceTree = "<group>"; };
 		B75C538221D1F94E0024D027 /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
+		B779FD9921E2EE3400BEFA60 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		B779FD9B21E2F29100BEFA60 /* FirebaseAPI-chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseAPI-chat.swift"; sourceTree = "<group>"; };
+		B779FD9D21E2FCCA00BEFA60 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		B779FDA021E2FFF500BEFA60 /* ChatVC-initUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatVC-initUI.swift"; sourceTree = "<group>"; };
+		B779FDA221E2FFFE00BEFA60 /* ChatVC-system.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatVC-system.swift"; sourceTree = "<group>"; };
+		B779FDA421E3001000BEFA60 /* ChatVC-logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatVC-logic.swift"; sourceTree = "<group>"; };
+		B779FDA621E32D9700BEFA60 /* ChatVC-textfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatVC-textfield.swift"; sourceTree = "<group>"; };
+		B779FDA821E342EE00BEFA60 /* ChatVC-tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatVC-tableview.swift"; sourceTree = "<group>"; };
+		B779FDAA21E34E5700BEFA60 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		B779FDAC21E3764900BEFA60 /* ChatVC-photopicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatVC-photopicker.swift"; sourceTree = "<group>"; };
 		B7B14D2621D4DAA4003F8A4C /* DecisionPickerVC-initUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DecisionPickerVC-initUI.swift"; sourceTree = "<group>"; };
 		B7B14D2821D4DAD2003F8A4C /* DecisionPickerVC-system.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DecisionPickerVC-system.swift"; sourceTree = "<group>"; };
 		B7B14D2A21D4DB0F003F8A4C /* DecisionPickerVC-data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DecisionPickerVC-data.swift"; sourceTree = "<group>"; };
@@ -395,6 +415,20 @@
 			path = AddFriendScreen;
 			sourceTree = "<group>";
 		};
+		B779FD9F21E2FCDE00BEFA60 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				B779FD9D21E2FCCA00BEFA60 /* ChatVC.swift */,
+				B779FDA021E2FFF500BEFA60 /* ChatVC-initUI.swift */,
+				B779FDA821E342EE00BEFA60 /* ChatVC-tableview.swift */,
+				B779FDA221E2FFFE00BEFA60 /* ChatVC-system.swift */,
+				B779FDA621E32D9700BEFA60 /* ChatVC-textfield.swift */,
+				B779FDA421E3001000BEFA60 /* ChatVC-logic.swift */,
+				B779FDAC21E3764900BEFA60 /* ChatVC-photopicker.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		B7B14D3021D6031A003F8A4C /* GameDetailScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,6 +506,7 @@
 				B75C538221D1F94E0024D027 /* PersonCell.swift */,
 				B731A8B221DCC8A900499798 /* RoundCell.swift */,
 				B70BCAD221D2F36C0038BCF1 /* GameCell.swift */,
+				B779FDAA21E34E5700BEFA60 /* ChatCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -490,6 +525,7 @@
 				B7EB12C521CB888E00C1DEB7 /* FirebaseAPIClient-account.swift */,
 				B75C537E21D1ED1C0024D027 /* FirebaseAPIClient-social.swift */,
 				B70BCAD021D2D88D0038BCF1 /* FirebaseAPI-game.swift */,
+				B779FD9B21E2F29100BEFA60 /* FirebaseAPI-chat.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -531,12 +567,13 @@
 			path = GamesScreen;
 			sourceTree = "<group>";
 		};
-		B7DE62CD21CF36C800AC0113 /* Settings */ = {
+		B7DE62CD21CF36C800AC0113 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
 				B7DE62CE21CF36CF00AC0113 /* Profile */,
+				B779FD9F21E2FCDE00BEFA60 /* Chat */,
 			);
-			path = Settings;
+			path = Misc;
 			sourceTree = "<group>";
 		};
 		B7DE62CE21CF36CF00AC0113 /* Profile */ = {
@@ -637,7 +674,7 @@
 				B7DE62C021CF34F600AC0113 /* Onboarding */,
 				B7DE62C321CF351C00AC0113 /* Games */,
 				B75C536D21D1A1ED0024D027 /* Social */,
-				B7DE62CD21CF36C800AC0113 /* Settings */,
+				B7DE62CD21CF36C800AC0113 /* Misc */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -670,6 +707,7 @@
 				B7B14D4821D736E7003F8A4C /* Team.swift */,
 				B7B14D5F21D80F55003F8A4C /* Round.swift */,
 				B73736A021D0D4950068FCA1 /* SlideData.swift */,
+				B779FD9921E2EE3400BEFA60 /* Chat.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -912,6 +950,7 @@
 				B7EB127321CAEDC100C1DEB7 /* AppDelegate.swift in Sources */,
 				B70BCACF21D2CE660038BCF1 /* SocialVC-tableview.swift in Sources */,
 				B7B14D3421D60344003F8A4C /* GameDetailVC-system.swift in Sources */,
+				B779FDAB21E34E5700BEFA60 /* ChatCell.swift in Sources */,
 				B75C537F21D1ED1C0024D027 /* FirebaseAPIClient-social.swift in Sources */,
 				B7EB12BE21CB74C800C1DEB7 /* LaunchVC.swift in Sources */,
 				B73736AA21D0EF960068FCA1 /* CreateGameVC-initUI.swift in Sources */,
@@ -919,14 +958,19 @@
 				B737368721D09F490068FCA1 /* ProfileVC-system.swift in Sources */,
 				B73736A121D0D4950068FCA1 /* SlideData.swift in Sources */,
 				B70BCAE221D370E20038BCF1 /* DateTimeVC.swift in Sources */,
+				B779FDA921E342EE00BEFA60 /* ChatVC-tableview.swift in Sources */,
 				B7B14D3F21D6AEF0003F8A4C /* InviteFriendVC-initUI.swift in Sources */,
 				B731A8A821DCB6D600499798 /* TeamSelectorVC.swift in Sources */,
+				B779FDA521E3001000BEFA60 /* ChatVC-logic.swift in Sources */,
+				B779FDA321E2FFFE00BEFA60 /* ChatVC-system.swift in Sources */,
 				B70BCACD21D20EB50038BCF1 /* ExtendedUtils.swift in Sources */,
 				B70BCAD121D2D88D0038BCF1 /* FirebaseAPI-game.swift in Sources */,
 				B7B14D3C21D6AED0003F8A4C /* InviteFriendVC.swift in Sources */,
 				B7B14D5D21D80F34003F8A4C /* RoundDetailVC.swift in Sources */,
+				B779FDAD21E3764900BEFA60 /* ChatVC-photopicker.swift in Sources */,
 				B7B14D4921D736E7003F8A4C /* Team.swift in Sources */,
 				B7B14D4321D6AF19003F8A4C /* InviteFriendVC-logic.swift in Sources */,
+				B779FD9A21E2EE3400BEFA60 /* Chat.swift in Sources */,
 				B7DE62CC21CF36C500AC0113 /* ProfileVC.swift in Sources */,
 				B75C537321D1A2370024D027 /* SocialVC-logic.swift in Sources */,
 				B7B14D4121D6AF03003F8A4C /* InviteFriendVC-system.swift in Sources */,
@@ -976,16 +1020,20 @@
 				B7EB12C821CB898A00C1DEB7 /* User.swift in Sources */,
 				B70BCADE21D350410038BCF1 /* CreateGameVC-tableview.swift in Sources */,
 				B731A8B321DCC8A900499798 /* RoundCell.swift in Sources */,
+				B779FD9C21E2F29100BEFA60 /* FirebaseAPI-chat.swift in Sources */,
 				B70BCAD821D304E10038BCF1 /* FriendDetailVC-initUI.swift in Sources */,
 				B75C537521D1A8460024D027 /* AddFriendVC.swift in Sources */,
 				B7DE62BB21CCE86000AC0113 /* SignUpVC-validators.swift in Sources */,
 				B7DE62C821CF357900AC0113 /* GamesVC-system.swift in Sources */,
+				B779FDA721E32D9700BEFA60 /* ChatVC-textfield.swift in Sources */,
 				B70BCADA21D304ED0038BCF1 /* FriendDetailVC-system.swift in Sources */,
 				B7B14D2F21D5FC33003F8A4C /* GameDetailVC.swift in Sources */,
 				B73736AC21D0EFBC0068FCA1 /* CreateGameVC-system.swift in Sources */,
+				B779FDA121E2FFF500BEFA60 /* ChatVC-initUI.swift in Sources */,
 				B737368521D09EE10068FCA1 /* ProfileVC-initUI.swift in Sources */,
 				B7B14D5221D73BCE003F8A4C /* TeamDetailVC-system.swift in Sources */,
 				B7EB12CB21CB89CF00C1DEB7 /* Game.swift in Sources */,
+				B779FD9E21E2FCCA00BEFA60 /* ChatVC.swift in Sources */,
 				B7B14D2B21D4DB0F003F8A4C /* DecisionPickerVC-data.swift in Sources */,
 				B7DE62BD21CDCD7500AC0113 /* FirebaseReady.swift in Sources */,
 				B737369A21D0C26D0068FCA1 /* InstructionsVC-data.swift in Sources */,

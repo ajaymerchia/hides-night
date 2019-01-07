@@ -32,7 +32,6 @@ extension RoundDetailVC: MKMapViewDelegate, CLLocationManagerDelegate {
         
         // Initialize other subviews
         addRecenter()
-        recenter()
         
         if hasPermissions {
             instructions = UILabel(frame: CGRect(x: 0, y: 0, width: mapView.frame.width, height: 30))
@@ -89,30 +88,63 @@ extension RoundDetailVC: MKMapViewDelegate, CLLocationManagerDelegate {
     
     @objc func recenter() {
         
+        debugPrint(mapView.centerCoordinate)
+        
         var center = mapView.userLocation.coordinate
+        var span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
         
         var centerLat: Double = 0
         var centerLon: Double = 0
-        if self.round.boundaryPoints.count > 2 {
-            for coordinate in self.round.boundaryPoints {
+        
+//        let sourceBoundaries = self.round.boundaryPoints
+        let sourceBoundaries: [CLLocationCoordinate2D] = boundaries.map { (annotation) -> CLLocationCoordinate2D in
+            return annotation.coordinate
+        }
+        
+        if sourceBoundaries.count > 2 {
+            for coordinate in sourceBoundaries {
                 centerLat += coordinate.latitude
                 centerLon += coordinate.longitude
             }
             
-            centerLat = centerLat/Double(self.round.boundaryPoints.count)
-            centerLon = centerLon/Double(self.round.boundaryPoints.count)
+            centerLat = centerLat/Double(sourceBoundaries.count)
+            centerLon = centerLon/Double(sourceBoundaries.count)
             
             debugPrint(centerLat, centerLon)
+            
+            let degreePaddingFactor: Double = 1.4
+            
+             // adjust for the instructions embedded in the map
+            
+            let latBounds: [Double] = sourceBoundaries.map({ (coord) -> Double in return coord.latitude}).reduce([Double.infinity, -Double.infinity], { (res, next) -> [Double] in
+                return [min(res[0], next), max(res[1], next)]
+            })
+            
+            let lonBounds: [Double] = sourceBoundaries.map({ (coord) -> Double in return coord.longitude}).reduce([Double.infinity, -Double.infinity], { (res, next) -> [Double] in
+                return [min(res[0], next), max(res[1], next)]
+            })
+            
+            let latDiff = abs(latBounds[1] - latBounds[0]) * degreePaddingFactor
+            let lonDiff = abs(lonBounds[1] - lonBounds[0]) * degreePaddingFactor
+            
+            debugPrint(centerLat)
+            if hasPermissions {
+                centerLat += (latDiff * (30/Double(mapView.frame.height)))*2
+                debugPrint(centerLat)
+            }
+            
+            debugPrint(latBounds)
+            debugPrint(latDiff)
             
             
             
             center = CLLocation(latitude: CLLocationDegrees(exactly: centerLat)!, longitude: CLLocationDegrees(exactly: centerLon)!).coordinate
+            span = MKCoordinateSpan(latitudeDelta: CLLocationDegrees(exactly: latDiff)!, longitudeDelta: CLLocationDegrees(exactly: lonDiff)!)
+        
         }
         
         
-        
-        
-        mapView.setRegion(MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)), animated: true)
+        mapView.setRegion(MKCoordinateRegion(center: center, span: span), animated: true)
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -124,33 +156,26 @@ extension RoundDetailVC: MKMapViewDelegate, CLLocationManagerDelegate {
 
         let reuseId = "pin"
 
-        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
-        if pinView == nil {
-            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-            pinView!.pinTintColor = .ACCENT_BLUE
-            pinView!.isDraggable = true
-            pinView!.canShowCallout = true
-            
-            if let pointAnnotation = annotation as? MKPointAnnotation {
-                if boundaries.first == pointAnnotation {
-                    pinView!.pinTintColor = .red
-                    let refreshButton = UIButton(type: .detailDisclosure)
-                    refreshButton.setImage(UIImage.nav_refresh.withRenderingMode(.alwaysTemplate), for: .normal)
-                    refreshButton.tintColor = .ACCENT_BLUE
-                    pinView!.rightCalloutAccessoryView = refreshButton
-                    
-                    
-                } else {
-                    let deleteButton = UIButton(type: .detailDisclosure)
-                    deleteButton.setImage(UIImage.nav_trash.withRenderingMode(.alwaysTemplate), for: .normal)
-                    deleteButton.tintColor = .ACCENT_RED
-                    pinView!.rightCalloutAccessoryView = deleteButton
-                }
+        let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+        pinView.pinTintColor = .ACCENT_BLUE
+        pinView.isDraggable = true
+        pinView.canShowCallout = true
+        
+        if let pointAnnotation = annotation as? MKPointAnnotation {
+            if boundaries.first == pointAnnotation {
+                pinView.pinTintColor = .red
+                let refreshButton = UIButton(type: .detailDisclosure)
+                refreshButton.setImage(UIImage.nav_refresh.withRenderingMode(.alwaysTemplate), for: .normal)
+                refreshButton.tintColor = .ACCENT_BLUE
+                pinView.rightCalloutAccessoryView = refreshButton
+                
+                
+            } else {
+                let deleteButton = UIButton(type: .detailDisclosure)
+                deleteButton.setImage(UIImage.nav_trash.withRenderingMode(.alwaysTemplate), for: .normal)
+                deleteButton.tintColor = .ACCENT_RED
+                pinView.rightCalloutAccessoryView = deleteButton
             }
-        }
-        else {
-            pinView!.annotation = annotation
-            
         }
 
         return pinView

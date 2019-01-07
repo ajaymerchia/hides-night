@@ -75,6 +75,9 @@ extension GameDetailVC {
         self.view.isUserInteractionEnabled = false
         sender.isSelected = true
         debugPrint("opening chat")
+        
+        myUtils.showChatVCFor(game: self.game, perspectiveOf: self.user, fromVC: self.navigationController!)
+        
         sender.isSelected = false
         self.view.isUserInteractionEnabled = true
     }

@@ -53,6 +53,8 @@
 	<string>Provide location for in-game tracking</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Provide location for in-game tracking</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Save memories from games</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 </dict>

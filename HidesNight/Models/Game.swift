@@ -97,7 +97,8 @@ class Game: FirebaseReady, Comparable {
     // Rounds
     var rounds = [Round]()
     
-    
+    // Social
+    var chat: Chat?
     
     // Game State
     var active = false

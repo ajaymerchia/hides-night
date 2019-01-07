@@ -27,6 +27,19 @@ extension UIColor {
     }
 }
 class myUtils {
+    
+    static func showChatVCFor(game: Game, perspectiveOf: User, fromVC: UINavigationController) {
+        let vc = ChatVC()
+        
+        FirebaseAPIClient.loadChatFor(game: game) { (c) in
+            vc.chat = c
+            vc.game = game
+            vc.user = perspectiveOf
+            vc.loadChats()
+            fromVC.pushViewController(vc, animated: true)
+        }
+    }
+    
     static func mergeDictionaries(d1: [String: String]?, d2: [String: String]?) -> [String: String] {
         let d1Unwrap: [String: String]! = d1 ?? [:]
         let d2Unwrap: [String: String]! = d2 ?? [:]
@@ -40,6 +53,13 @@ class myUtils {
     public static func getMDDYYRepr(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "M/dd/yy"
+        dateFormatter.locale = Locale(identifier: "en_US")
+        return dateFormatter.string(from: date)
+    }
+    
+    public static func getURLSafeDateFormat(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "M-dd-yy"
         dateFormatter.locale = Locale(identifier: "en_US")
         return dateFormatter.string(from: date)
     }
