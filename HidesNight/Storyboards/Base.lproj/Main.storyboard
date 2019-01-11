@@ -371,6 +371,7 @@
                     <connections>
                         <segue destination="cVu-bB-6no" kind="presentation" identifier="games2create" id="ieb-M6-Xxw"/>
                         <segue destination="O6c-Ys-ldF" kind="show" identifier="games2detail" id="rX2-l0-bqT"/>
+                        <segue destination="uow-BD-yNC" kind="show" identifier="games2active" id="ZQH-Sj-hsA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RNR-dz-hxx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -391,6 +392,8 @@
                         <segue destination="IJf-MW-8Ts" kind="presentation" identifier="detail2invite" id="fh9-RJ-ReW"/>
                         <segue destination="tTh-2g-4zB" kind="show" identifier="detail2team" id="dAv-Ji-uum"/>
                         <segue destination="7hl-xz-am7" kind="show" identifier="detail2round" id="jQJ-3P-sVw"/>
+                        <segue destination="cVu-bB-6no" kind="presentation" identifier="detail2edit" id="1Kv-xH-j9u"/>
+                        <segue destination="uow-BD-yNC" kind="show" identifier="detail2active" id="3BW-Lo-C9u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPW-oV-saL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -447,6 +450,40 @@
             </objects>
             <point key="canvasLocation" x="6565" y="954"/>
         </scene>
+        <!--Active GameVC-->
+        <scene sceneID="XI3-8P-FSd">
+            <objects>
+                <viewController id="uow-BD-yNC" customClass="ActiveGameVC" customModule="HidesNight" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FdH-GJ-P7d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="oGh-ED-9fp"/>
+                    </view>
+                    <connections>
+                        <segue destination="O6c-Ys-ldF" kind="show" identifier="active2detail" id="KBo-Q1-ivw"/>
+                        <segue destination="UbS-da-cyR" kind="show" identifier="active2Team" id="9Kg-No-g2v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8oT-c6-bSu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4969" y="2325"/>
+        </scene>
+        <!--Team Read OnlyVC-->
+        <scene sceneID="LgR-e9-q2W">
+            <objects>
+                <viewController id="UbS-da-cyR" customClass="TeamReadOnlyVC" customModule="HidesNight" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vpq-b7-Ea5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="24y-6W-JAj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f6r-N6-fB0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5799" y="2325"/>
+        </scene>
         <!--Round DetailVC-->
         <scene sceneID="uB2-v9-FZ9">
             <objects>
@@ -501,7 +538,9 @@
         <image name="tab-social" width="36" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="q8S-uf-cai"/>
+        <segue reference="ZQH-Sj-hsA"/>
+        <segue reference="KBo-Q1-ivw"/>
         <segue reference="4ni-DN-5rR"/>
+        <segue reference="ieb-M6-Xxw"/>
     </inferredMetricsTieBreakers>
 </document>

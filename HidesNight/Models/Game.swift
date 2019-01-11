@@ -96,6 +96,10 @@ class Game: FirebaseReady, Comparable {
     
     // Rounds
     var rounds = [Round]()
+    var currRoundNumber = 0
+    var currentRound: Round! {
+        return rounds[currRoundNumber]
+    }
     
     // Social
     var chat: Chat?
@@ -161,6 +165,7 @@ class Game: FirebaseReady, Comparable {
         }
         
         ret["rounds"] = roundsPushable
+        ret["currRoundNumber"] = currRoundNumber
         
         
         ret["active"] = self.active
@@ -264,6 +269,7 @@ class Game: FirebaseReady, Comparable {
             }
             self.rounds.sort()
         }
+        self.currRoundNumber = record["currRoundNumber"] as? Int ?? 0
         
         self.active = record["active"] as? Bool ?? false
         

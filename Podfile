@@ -13,6 +13,7 @@ target 'HidesNight' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
+  pod 'Firebase/Messaging'
   
   # Pods for API
   pod 'Alamofire', :inhibit_warnings => true
@@ -24,6 +25,7 @@ target 'HidesNight' do
   pod 'IQKeyboardManager', :inhibit_warnings => true
   pod 'SkyFloatingLabelTextField', '~> 3.0', :inhibit_warnings => true
   pod 'SideMenu'
+  pod 'CountdownLabel'
 
   
   # All Useful Pods

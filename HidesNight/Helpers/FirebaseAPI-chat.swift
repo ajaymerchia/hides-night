@@ -116,7 +116,7 @@ extension FirebaseAPIClient {
                 }
                 
                 for (uid, messageData) in dateMessages {
-                    let messageToAdd = Message(key: uid, record: messageData)
+                    let messageToAdd = Message(key: uid, record: messageData, chat: chatObject)
                     if chatObject.messages[dateRepr] == nil {
                         chatObject.messages[dateRepr] = []
                     }
@@ -145,7 +145,11 @@ extension FirebaseAPIClient {
                     chat.messages[dateRepr] = []
                 }
                 
-                chat.messages[dateRepr]?.append(newMessage)
+                if !chat.messages[dateRepr]!.contains(newMessage) {
+                    chat.messages[dateRepr]!.append(newMessage)
+
+                }
+                
                 onNewMessage(newMessage)
             }
         }

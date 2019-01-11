@@ -8,7 +8,7 @@
 
 import UIKit
 import iosManagers
-import BetterSegmentedControl
+import JGProgressHUD
 
 class GameDetailVC: UIViewController {
     
@@ -25,6 +25,8 @@ class GameDetailVC: UIViewController {
     var teamToShow: Team!
     var roundToShow: Round!
     
+    var gameValidationAlerts: AlertManager!
+    var hud: JGProgressHUD?
     
     
     // UI!
@@ -46,7 +48,6 @@ class GameDetailVC: UIViewController {
     var leftActionButton: UIButton!
     
     // TableControls
-    var segSwitch: BetterSegmentedControl!
     var tableViewTitles = ["Players", "Teams", "Rounds"]
     var createTitles = ["Invite Players", "Create a Team", "Add a Round"]
     var segSwitchButtons =  [UIButton]()

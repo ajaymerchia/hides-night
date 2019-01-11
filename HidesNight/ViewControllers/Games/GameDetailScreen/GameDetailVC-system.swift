@@ -13,7 +13,10 @@ import iosManagers
 
 extension GameDetailVC {
     func setupManagers() {
-        
+        gameValidationAlerts = AlertManager(view: self, stateRestoration: {
+            self.rightActionButton.isSelected = false
+            self.view.isUserInteractionEnabled = true
+        })
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -26,7 +29,8 @@ extension GameDetailVC {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-
+        resetGameDetails()
+        tableView.reloadData()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -45,8 +49,14 @@ extension GameDetailVC {
             roundvc.game = self.game
             roundvc.user = self.user
             roundvc.round = self.roundToShow
-            
+        } else if let activevc = segue.destination as? ActiveGameVC {
+            activevc.user = self.user
+            activevc.game = self.game
         }
+    }
+    
+    @objc func editGame() {
+        self.performSegue(withIdentifier: "detail2edit", sender: self)
     }
 
     // Segue Out Functions

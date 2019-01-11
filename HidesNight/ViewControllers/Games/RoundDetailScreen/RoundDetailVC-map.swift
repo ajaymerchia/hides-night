@@ -124,9 +124,8 @@ extension RoundDetailVC: MKMapViewDelegate, CLLocationManagerDelegate {
             let latDiff = abs(latBounds[1] - latBounds[0]) * degreePaddingFactor
             let lonDiff = abs(lonBounds[1] - lonBounds[0]) * degreePaddingFactor
             
-            if hasPermissions {
-                centerLat += (latDiff * (30/Double(mapView.frame.height)))*2
-            }
+            centerLat += (latDiff * (30/Double(mapView.frame.height)))*2
+            
             
         
             

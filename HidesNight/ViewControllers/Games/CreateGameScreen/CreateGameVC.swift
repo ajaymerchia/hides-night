@@ -13,6 +13,9 @@ import JGProgressHUD
 class CreateGameVC: UIViewController {
 
     var admin: User!
+    var game: Game?
+        var editMode = false
+        var photoChanged = false
     
     var alerts: AlertManager!
     var hud: JGProgressHUD!
@@ -20,6 +23,7 @@ class CreateGameVC: UIViewController {
     var internalError = false
     
     var firstLoad = true
+    
 
     var navbar: UINavigationBar!
     var tableview: UITableView!
@@ -79,6 +83,50 @@ class CreateGameVC: UIViewController {
         setupManagers()
         getData()
         initUI()
+        
+        if editMode {
+            alterForEditMode()
+        }
+    }
+    
+    func alterForEditMode() {
+        guard let g = self.game else {
+            alerts.triggerCallback()
+            return
+        }
+        self.navigationItem.rightBarButtonItem?.title = "Done"
+        
+        eventNameField.text = g.title
+        addImageButton.setImage(g.img, for: .normal)
+        date = g.datetime
+        dateTimeCell.detailTextLabel?.text = myUtils.getFormattedDateAndTime(date: self.date)
+        
+        roundDuration = g.roundDuration
+        checkInDuration = g.checkInDuration
+        gpsActivation = g.gpsActivation
+        
+        update(label: roundDurationLabel, withInterval: roundDuration)
+        update(label: checkInDurationLabel, withInterval: checkInDuration)
+        update(label: gpsActivationLabel, withInterval: gpsActivation)
+        
+        durationPickers[0].countDownDuration = self.roundDuration
+        durationPickers[1].countDownDuration = self.checkInDuration
+        durationPickers[2].countDownDuration = self.gpsActivation
+        
+
+        teamDecisionType = g.teamSelection
+        seekDecisionType = g.seekSelection
+        
+        teamDecisionCell.detailTextLabel?.text = teamDecisionType.description
+        seekDecisionCell.detailTextLabel?.text = seekDecisionType.description
+
+        
+        createButton.setTitle("Update Game", for: .normal)
+        
+        if let img = g.img {
+            animateInHeader(img: img)
+        }
+        
     }
     
     

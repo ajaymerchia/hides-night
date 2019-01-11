@@ -150,7 +150,11 @@ public class InfoController: UIView, UIGestureRecognizerDelegate {
             lastView = UIView(frame: LayoutManager.belowCentered(elementAbove: lastView, padding: .PADDING/2, width: self.frame.width, height: 40))
         }
         
-        self.frame = CGRect(x: 0, y: 0, width: min(view.frame.width - 4 * .PADDING, 400), height: lastView.frame.maxY) // Trim height
+        let largestDistance = self.subviews.map({(view) -> CGFloat in return view.frame.maxY}).reduce(0) { (res, nxt) -> CGFloat in
+            return max(res, nxt)
+        }
+        
+        self.frame = CGRect(x: 0, y: 0, width: min(view.frame.width - 4 * .PADDING, 400), height: largestDistance) // Trim height
         
         self.center = CGPoint(x: view.frame.midX, y: view.frame.maxY + .PADDING + self.frame.height/2)
         

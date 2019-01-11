@@ -59,7 +59,12 @@ extension GamesVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         gameToDetail = getGameForUI(indexPath: indexPath)
-        self.performSegue(withIdentifier: "games2detail", sender: self)
+        
+        if sectionsToDisplay[indexPath.section] == GamesVC.possibleHeaders[0] {
+            self.performSegue(withIdentifier: "games2active", sender: self)
+        } else {
+            self.performSegue(withIdentifier: "games2detail", sender: self)
+        }
         
     }
     

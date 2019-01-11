@@ -18,6 +18,7 @@ class GameCell: UITableViewCell {
     
     var game: Game!
     var team: Team!
+    var highlightedColor: UIColor!
     
     
     
@@ -27,8 +28,12 @@ class GameCell: UITableViewCell {
     }
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        if highlightedColor == nil {
+            highlightedColor = contentView.backgroundColor?.modified(withAdditionalHue: 0, additionalSaturation: 0, additionalBrightness: 0.1)
+        }
+        
         if highlighted {
-            contentView.backgroundColor = contentView.backgroundColor?.modified(withAdditionalHue: 0, additionalSaturation: 0, additionalBrightness: 0.1)
+            contentView.backgroundColor = highlightedColor
         } else {
             
         }
@@ -51,6 +56,7 @@ class GameCell: UITableViewCell {
         
         
         contentView.backgroundColor = .flatBlackDark
+
         
         gamePhoto = UIButton(frame: CGRect(x: .PADDING, y: 2 * .MARGINAL_PADDING, width: size.height - 4 * .MARGINAL_PADDING, height: size.height - 4 * .MARGINAL_PADDING))
         gamePhoto.setTitle(initials, for: .normal)

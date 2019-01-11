@@ -14,6 +14,12 @@ import iosManagers
 extension CreateGameVC {
     func getData() {
         self.admin = (self.navigationController as! DataNavVC).user
+        
+        if (self.navigationController as! DataNavVC).game != nil {
+            self.game = (self.navigationController as! DataNavVC).game
+            editMode = true
+        }
+        
     }
     
     @objc func requestEventImage() {
@@ -130,6 +136,16 @@ extension CreateGameVC {
     
     @objc func createGame() {
 
+        self.roundDuration = durationPickers[0].countDownDuration
+        self.checkInDuration = durationPickers[1].countDownDuration
+        self.gpsActivation = durationPickers[2].countDownDuration
+        
+        if editMode {
+            updateGame()
+            return
+        }
+        
+        
         self.view.isUserInteractionEnabled = false
         hud = alerts.startProgressHud(withMsg: "Creating Game", style: .dark)
         
@@ -159,6 +175,56 @@ extension CreateGameVC {
             }, fail: {
                 self.alerts.triggerCallback()
             })
+        }) {
+            self.alerts.triggerCallback()
+        }
+        
+    }
+    
+    func updateGame() {
+        self.view.isUserInteractionEnabled = false
+        hud = alerts.startProgressHud(withMsg: "Updating Game", style: .dark)
+        
+        guard let g = self.game else {
+            alerts.triggerCallback()
+            return
+        }
+        
+        guard let gameTitle = eventNameField.text else {
+            alerts.triggerCallback()
+            return
+        }
+        guard gameTitle != "" else {
+            alerts.triggerCallback()
+            return
+        }
+        
+        
+        internalError = true
+        
+        g.title = gameTitle
+        g.datetime = self.date
+        
+        g.roundDuration = self.roundDuration
+        g.checkInDuration = self.checkInDuration
+        g.gpsActivation = self.gpsActivation
+        
+        g.teamSelection = self.teamDecisionType
+        g.seekSelection = self.seekDecisionType
+        
+        
+        FirebaseAPIClient.updateRemoteGame(game: g, success: {
+            if self.photoChanged {
+                FirebaseAPIClient.uploadGamePhoto(forGame: g, withImage: self.eventImageHeader.image!, success: {
+                    self.successCreation = true
+                    self.alerts.triggerCallback()
+                }, fail: {
+                    self.alerts.triggerCallback()
+                })
+            } else {
+                self.successCreation = true
+                self.alerts.triggerCallback()
+            }
         }) {
             self.alerts.triggerCallback()
         }

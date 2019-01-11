@@ -56,6 +56,9 @@ extension GamesVC {
         } else if let detail = segue.destination as? GameDetailVC {
             detail.game = gameToDetail
             detail.user = self.user
+        } else if let active = segue.destination as? ActiveGameVC {
+            active.game = gameToDetail
+            active.user = self.user
         }
     }
 
@@ -67,6 +70,7 @@ extension GamesVC {
     @objc func goToCreateGame() {
         self.performSegue(withIdentifier: "games2create", sender: self)
     }
+    
     
 
 }

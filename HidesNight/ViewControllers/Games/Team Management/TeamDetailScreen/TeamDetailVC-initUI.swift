@@ -200,7 +200,7 @@ extension TeamDetailVC: UITextFieldDelegate {
         self.title = teamName.text
         
         if teamName.text == "" {
-            teamName.errorMessage = "Team Name can't be Blank"
+            teamName.errorMessage = "Team Name can't be blank"
         } else {
             teamName.errorMessage = ""
         }

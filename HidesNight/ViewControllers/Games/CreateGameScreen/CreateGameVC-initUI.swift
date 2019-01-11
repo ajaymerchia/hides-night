@@ -36,7 +36,7 @@ extension CreateGameVC {
         }
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.stop, target: self, action: #selector(goBack))
         
-        self.navigationItem.title = "Create a Game"
+        self.navigationItem.title = editMode ? "Edit Game" : "Create a Game"
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Create", style: .done, target: self, action: #selector(createGame))
         
@@ -239,7 +239,7 @@ extension CreateGameVC {
         let datePicker = UIDatePicker(frame: CGRect(x: .PADDING, y: underLabel.frame.maxY + .PADDING * 2, width: view.frame.width - 2 * .PADDING, height: 80))
         datePicker.setValue(UIColor.white, forKey: "textColor")
         datePicker.datePickerMode = .countDownTimer
-        datePicker.minuteInterval = 15
+        datePicker.minuteInterval = 5
         
         
         return datePicker

@@ -33,6 +33,7 @@ extension CreateGameVC: UIImagePickerControllerDelegate, UINavigationControllerD
         
         let chosenImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         animateInHeader(img: chosenImage)
+        photoChanged = true
         dismiss(animated:true, completion: nil)
     }
     

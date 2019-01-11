@@ -21,6 +21,13 @@
 		B70BCAE021D35F0D0038BCF1 /* CreateGameVC-photopicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70BCADF21D35F0D0038BCF1 /* CreateGameVC-photopicker.swift */; };
 		B70BCAE221D370E20038BCF1 /* DateTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70BCAE121D370E20038BCF1 /* DateTimeVC.swift */; };
 		B70BCAE521D454110038BCF1 /* DecisionPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70BCAE421D454110038BCF1 /* DecisionPickerVC.swift */; };
+		B7229FE721E8A2B10059B184 /* FirebaseAPI-notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7229FE621E8A2B10059B184 /* FirebaseAPI-notifications.swift */; };
+		B72BB4A021E6D46F00D9CD8F /* ActiveGameVC-map.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72BB49F21E6D46F00D9CD8F /* ActiveGameVC-map.swift */; };
+		B72BB4A221E70C6C00D9CD8F /* ActiveGameVC-logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72BB4A121E70C6C00D9CD8F /* ActiveGameVC-logic.swift */; };
+		B72BB4A421E7279400D9CD8F /* ActiveGameVC-segCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72BB4A321E7279400D9CD8F /* ActiveGameVC-segCon.swift */; };
+		B72BB4A621E72E1600D9CD8F /* ActiveGameVC-tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72BB4A521E72E1600D9CD8F /* ActiveGameVC-tableview.swift */; };
+		B72BB4A821E731F100D9CD8F /* TeamReadOnlyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72BB4A721E731F100D9CD8F /* TeamReadOnlyVC.swift */; };
+		B72BB4AB21E7338A00D9CD8F /* CountDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72BB4AA21E7338A00D9CD8F /* CountDownCell.swift */; };
 		B731A8A821DCB6D600499798 /* TeamSelectorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B731A8A721DCB6D600499798 /* TeamSelectorVC.swift */; };
 		B731A8AD21DCB73D00499798 /* TeamSelectorVC-initUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B731A8AC21DCB73D00499798 /* TeamSelectorVC-initUI.swift */; };
 		B731A8B321DCC8A900499798 /* RoundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B731A8B221DCC8A900499798 /* RoundCell.swift */; };
@@ -60,6 +67,9 @@
 		B779FDA921E342EE00BEFA60 /* ChatVC-tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B779FDA821E342EE00BEFA60 /* ChatVC-tableview.swift */; };
 		B779FDAB21E34E5700BEFA60 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B779FDAA21E34E5700BEFA60 /* ChatCell.swift */; };
 		B779FDAD21E3764900BEFA60 /* ChatVC-photopicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B779FDAC21E3764900BEFA60 /* ChatVC-photopicker.swift */; };
+		B779FDAF21E415FC00BEFA60 /* ActiveGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B779FDAE21E415FC00BEFA60 /* ActiveGameVC.swift */; };
+		B779FDB221E4188200BEFA60 /* ActiveGameVC-system.swift in Sources */ = {isa = PBXBuildFile; fileRef = B779FDB121E4188200BEFA60 /* ActiveGameVC-system.swift */; };
+		B779FDB421E41A3200BEFA60 /* ActiveGameVC-initUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B779FDB321E41A3200BEFA60 /* ActiveGameVC-initUI.swift */; };
 		B7B14D2721D4DAA4003F8A4C /* DecisionPickerVC-initUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D2621D4DAA4003F8A4C /* DecisionPickerVC-initUI.swift */; };
 		B7B14D2921D4DAD2003F8A4C /* DecisionPickerVC-system.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D2821D4DAD2003F8A4C /* DecisionPickerVC-system.swift */; };
 		B7B14D2B21D4DB0F003F8A4C /* DecisionPickerVC-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B14D2A21D4DB0F003F8A4C /* DecisionPickerVC-data.swift */; };
@@ -158,6 +168,14 @@
 		B70BCADF21D35F0D0038BCF1 /* CreateGameVC-photopicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateGameVC-photopicker.swift"; sourceTree = "<group>"; };
 		B70BCAE121D370E20038BCF1 /* DateTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeVC.swift; sourceTree = "<group>"; };
 		B70BCAE421D454110038BCF1 /* DecisionPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionPickerVC.swift; sourceTree = "<group>"; };
+		B7229FE521E87E930059B184 /* HidesNight.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HidesNight.entitlements; sourceTree = "<group>"; };
+		B7229FE621E8A2B10059B184 /* FirebaseAPI-notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseAPI-notifications.swift"; sourceTree = "<group>"; };
+		B72BB49F21E6D46F00D9CD8F /* ActiveGameVC-map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActiveGameVC-map.swift"; sourceTree = "<group>"; };
+		B72BB4A121E70C6C00D9CD8F /* ActiveGameVC-logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActiveGameVC-logic.swift"; sourceTree = "<group>"; };
+		B72BB4A321E7279400D9CD8F /* ActiveGameVC-segCon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActiveGameVC-segCon.swift"; sourceTree = "<group>"; };
+		B72BB4A521E72E1600D9CD8F /* ActiveGameVC-tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActiveGameVC-tableview.swift"; sourceTree = "<group>"; };
+		B72BB4A721E731F100D9CD8F /* TeamReadOnlyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamReadOnlyVC.swift; sourceTree = "<group>"; };
+		B72BB4AA21E7338A00D9CD8F /* CountDownCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownCell.swift; sourceTree = "<group>"; };
 		B731A8A721DCB6D600499798 /* TeamSelectorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSelectorVC.swift; sourceTree = "<group>"; };
 		B731A8AC21DCB73D00499798 /* TeamSelectorVC-initUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamSelectorVC-initUI.swift"; sourceTree = "<group>"; };
 		B731A8B221DCC8A900499798 /* RoundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundCell.swift; sourceTree = "<group>"; };
@@ -197,6 +215,9 @@
 		B779FDA821E342EE00BEFA60 /* ChatVC-tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatVC-tableview.swift"; sourceTree = "<group>"; };
 		B779FDAA21E34E5700BEFA60 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		B779FDAC21E3764900BEFA60 /* ChatVC-photopicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatVC-photopicker.swift"; sourceTree = "<group>"; };
+		B779FDAE21E415FC00BEFA60 /* ActiveGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveGameVC.swift; sourceTree = "<group>"; };
+		B779FDB121E4188200BEFA60 /* ActiveGameVC-system.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActiveGameVC-system.swift"; sourceTree = "<group>"; };
+		B779FDB321E41A3200BEFA60 /* ActiveGameVC-initUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActiveGameVC-initUI.swift"; sourceTree = "<group>"; };
 		B7B14D2621D4DAA4003F8A4C /* DecisionPickerVC-initUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DecisionPickerVC-initUI.swift"; sourceTree = "<group>"; };
 		B7B14D2821D4DAD2003F8A4C /* DecisionPickerVC-system.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DecisionPickerVC-system.swift"; sourceTree = "<group>"; };
 		B7B14D2A21D4DB0F003F8A4C /* DecisionPickerVC-data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DecisionPickerVC-data.swift"; sourceTree = "<group>"; };
@@ -346,6 +367,14 @@
 			path = DecisionPickerScreen;
 			sourceTree = "<group>";
 		};
+		B72BB4A921E731FD00D9CD8F /* TeamReadOnlyVC */ = {
+			isa = PBXGroup;
+			children = (
+				B72BB4A721E731F100D9CD8F /* TeamReadOnlyVC.swift */,
+			);
+			path = TeamReadOnlyVC;
+			sourceTree = "<group>";
+		};
 		B731A8A921DCB6DC00499798 /* TeamSelectorScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -429,6 +458,20 @@
 			path = Chat;
 			sourceTree = "<group>";
 		};
+		B779FDB021E4186700BEFA60 /* ActiveGameScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B779FDAE21E415FC00BEFA60 /* ActiveGameVC.swift */,
+				B779FDB321E41A3200BEFA60 /* ActiveGameVC-initUI.swift */,
+				B72BB4A521E72E1600D9CD8F /* ActiveGameVC-tableview.swift */,
+				B72BB4A321E7279400D9CD8F /* ActiveGameVC-segCon.swift */,
+				B779FDB121E4188200BEFA60 /* ActiveGameVC-system.swift */,
+				B72BB4A121E70C6C00D9CD8F /* ActiveGameVC-logic.swift */,
+				B72BB49F21E6D46F00D9CD8F /* ActiveGameVC-map.swift */,
+			);
+			path = ActiveGameScreen;
+			sourceTree = "<group>";
+		};
 		B7B14D3021D6031A003F8A4C /* GameDetailScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -507,6 +550,7 @@
 				B731A8B221DCC8A900499798 /* RoundCell.swift */,
 				B70BCAD221D2F36C0038BCF1 /* GameCell.swift */,
 				B779FDAA21E34E5700BEFA60 /* ChatCell.swift */,
+				B72BB4AA21E7338A00D9CD8F /* CountDownCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -523,6 +567,7 @@
 			isa = PBXGroup;
 			children = (
 				B7EB12C521CB888E00C1DEB7 /* FirebaseAPIClient-account.swift */,
+				B7229FE621E8A2B10059B184 /* FirebaseAPI-notifications.swift */,
 				B75C537E21D1ED1C0024D027 /* FirebaseAPIClient-social.swift */,
 				B70BCAD021D2D88D0038BCF1 /* FirebaseAPI-game.swift */,
 				B779FD9B21E2F29100BEFA60 /* FirebaseAPI-chat.swift */,
@@ -551,6 +596,8 @@
 				B7B14D6121D82276003F8A4C /* Team Management */,
 				B7B14D5E21D80F38003F8A4C /* RoundDetailScreen */,
 				B731A8A921DCB6DC00499798 /* TeamSelectorScreen */,
+				B779FDB021E4186700BEFA60 /* ActiveGameScreen */,
+				B72BB4A921E731FD00D9CD8F /* TeamReadOnlyVC */,
 			);
 			path = Games;
 			sourceTree = "<group>";
@@ -613,6 +660,7 @@
 		B7EB127121CAEDC100C1DEB7 /* HidesNight */ = {
 			isa = PBXGroup;
 			children = (
+				B7229FE521E87E930059B184 /* HidesNight.entitlements */,
 				B7EB127221CAEDC100C1DEB7 /* AppDelegate.swift */,
 				B7EB127921CAEDC200C1DEB7 /* Assets.xcassets */,
 				B7DE62BE21CDCD7B00AC0113 /* Protocols */,
@@ -795,6 +843,14 @@
 				TargetAttributes = {
 					B7EB126E21CAEDC100C1DEB7 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					B7EB128221CAEDC200C1DEB7 = {
 						CreatedOnToolsVersion = 10.1;
@@ -869,6 +925,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BetterSegmentedControl/BetterSegmentedControl.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/CountdownLabel/CountdownLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/FontAwesomeKit/FontAwesomeKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
@@ -878,6 +935,7 @@
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/MapKitGoogleStyler/MapKitGoogleStyler.framework",
 				"${BUILT_PRODUCTS_DIR}/PDTSimpleCalendar/PDTSimpleCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -892,6 +950,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BetterSegmentedControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CountdownLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesomeKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
@@ -901,6 +960,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapKitGoogleStyler.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PDTSimpleCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -942,12 +1002,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B779FDB421E41A3200BEFA60 /* ActiveGameVC-initUI.swift in Sources */,
 				B7EB12C621CB888E00C1DEB7 /* FirebaseAPIClient-account.swift in Sources */,
 				B7B14D5621D7412B003F8A4C /* TeamDetailVC-photopicker.swift in Sources */,
 				B75C536B21D1A1770024D027 /* SocialVC.swift in Sources */,
 				B7DE62A121CC18E100AC0113 /* SignUpVC-initUI.swift in Sources */,
 				B73736A721D0EF520068FCA1 /* CreateGameVC.swift in Sources */,
 				B7EB127321CAEDC100C1DEB7 /* AppDelegate.swift in Sources */,
+				B779FDB221E4188200BEFA60 /* ActiveGameVC-system.swift in Sources */,
 				B70BCACF21D2CE660038BCF1 /* SocialVC-tableview.swift in Sources */,
 				B7B14D3421D60344003F8A4C /* GameDetailVC-system.swift in Sources */,
 				B779FDAB21E34E5700BEFA60 /* ChatCell.swift in Sources */,
@@ -966,6 +1028,7 @@
 				B70BCACD21D20EB50038BCF1 /* ExtendedUtils.swift in Sources */,
 				B70BCAD121D2D88D0038BCF1 /* FirebaseAPI-game.swift in Sources */,
 				B7B14D3C21D6AED0003F8A4C /* InviteFriendVC.swift in Sources */,
+				B779FDAF21E415FC00BEFA60 /* ActiveGameVC.swift in Sources */,
 				B7B14D5D21D80F34003F8A4C /* RoundDetailVC.swift in Sources */,
 				B779FDAD21E3764900BEFA60 /* ChatVC-photopicker.swift in Sources */,
 				B7B14D4921D736E7003F8A4C /* Team.swift in Sources */,
@@ -981,9 +1044,12 @@
 				B7B14D6021D80F55003F8A4C /* Round.swift in Sources */,
 				B7B14D2D21D5D29B003F8A4C /* GamesVC-tableview.swift in Sources */,
 				B737369221D0BEF60068FCA1 /* InstructionsVC-initUI.swift in Sources */,
+				B72BB4A621E72E1600D9CD8F /* ActiveGameVC-tableview.swift in Sources */,
+				B72BB4AB21E7338A00D9CD8F /* CountDownCell.swift in Sources */,
 				B70BCADC21D3055B0038BCF1 /* FriendDetailVC-logic.swift in Sources */,
 				B70BCAE521D454110038BCF1 /* DecisionPickerVC.swift in Sources */,
 				B7EB12DA21CC137D00C1DEB7 /* SignUpVC-logic.swift in Sources */,
+				B72BB4A221E70C6C00D9CD8F /* ActiveGameVC-logic.swift in Sources */,
 				B75C537B21D1A9880024D027 /* AddFriendVC-system.swift in Sources */,
 				B7B14D5821D76ED8003F8A4C /* TeamMemberSelectVC.swift in Sources */,
 				B70BCAE021D35F0D0038BCF1 /* CreateGameVC-photopicker.swift in Sources */,
@@ -1003,11 +1069,13 @@
 				B73736A521D0EF110068FCA1 /* DataNavVC.swift in Sources */,
 				B73736AE21D0EFE40068FCA1 /* CreateGameVC-logic.swift in Sources */,
 				B7B14D6921D829BD003F8A4C /* RoundDetailVC-map.swift in Sources */,
+				B72BB4A421E7279400D9CD8F /* ActiveGameVC-segCon.swift in Sources */,
 				B737369421D0BF4C0068FCA1 /* InstructionsVC-system.swift in Sources */,
 				B7B14D5021D73BC3003F8A4C /* TeamDetailVC-initUI.swift in Sources */,
 				B7B14D4B21D73B91003F8A4C /* TeamDetailVC.swift in Sources */,
 				B7B14D3821D637E8003F8A4C /* GameDetailVC-segCon.swift in Sources */,
 				B7EB12B621CB3A0D00C1DEB7 /* Constants.swift in Sources */,
+				B72BB4A021E6D46F00D9CD8F /* ActiveGameVC-map.swift in Sources */,
 				B7EB12BA21CB3A4900C1DEB7 /* LoginVC-main.swift in Sources */,
 				B7DE62A521CC336600AC0113 /* SignUpVC-photopicker.swift in Sources */,
 				B75C537821D1A9660024D027 /* AddFriendVC-initUI.swift in Sources */,
@@ -1028,6 +1096,7 @@
 				B779FDA721E32D9700BEFA60 /* ChatVC-textfield.swift in Sources */,
 				B70BCADA21D304ED0038BCF1 /* FriendDetailVC-system.swift in Sources */,
 				B7B14D2F21D5FC33003F8A4C /* GameDetailVC.swift in Sources */,
+				B7229FE721E8A2B10059B184 /* FirebaseAPI-notifications.swift in Sources */,
 				B73736AC21D0EFBC0068FCA1 /* CreateGameVC-system.swift in Sources */,
 				B779FDA121E2FFF500BEFA60 /* ChatVC-initUI.swift in Sources */,
 				B737368521D09EE10068FCA1 /* ProfileVC-initUI.swift in Sources */,
@@ -1043,6 +1112,7 @@
 				B7B14D4521D6B851003F8A4C /* InviteFriendVC-tableview.swift in Sources */,
 				B7DE62C221CF351500AC0113 /* GamesVC.swift in Sources */,
 				B7B14D3A21D63888003F8A4C /* GameDetailVC-tableview.swift in Sources */,
+				B72BB4A821E731F100D9CD8F /* TeamReadOnlyVC.swift in Sources */,
 				B7B14D3621D60350003F8A4C /* GameDetailVC-logic.swift in Sources */,
 				B737369021D0BE7E0068FCA1 /* InstructionsVC.swift in Sources */,
 				B7EB12D121CBA76400C1DEB7 /* LoginVC-logic.swift in Sources */,
@@ -1224,14 +1294,15 @@
 			baseConfigurationReference = BB83551C7A5051851C018E41 /* Pods-HidesNight.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HidesNight/HidesNight.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9T3JS4TFUB;
+				DEVELOPMENT_TEAM = Y2JVY29H4R;
 				INFOPLIST_FILE = HidesNight/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ajaymerchia.HidesNight;
+				PRODUCT_BUNDLE_IDENTIFIER = mdb.ajaymerchia.HidesNight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1243,14 +1314,15 @@
 			baseConfigurationReference = DD9AE1CC1A178A8C1CF1532E /* Pods-HidesNight.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HidesNight/HidesNight.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9T3JS4TFUB;
+				DEVELOPMENT_TEAM = Y2JVY29H4R;
 				INFOPLIST_FILE = HidesNight/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ajaymerchia.HidesNight;
+				PRODUCT_BUNDLE_IDENTIFIER = mdb.ajaymerchia.HidesNight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

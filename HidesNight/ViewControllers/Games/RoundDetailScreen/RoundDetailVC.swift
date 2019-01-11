@@ -56,7 +56,6 @@ class RoundDetailVC: UIViewController {
         setupManagers()
         initUI()
         recenter()
-
         
     }
     

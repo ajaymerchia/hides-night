@@ -45,6 +45,34 @@ extension GameDetailVC {
         }
     }
     
+    @objc func deactivateGame(_ sender: UIButton) {
+        self.view.isUserInteractionEnabled = false
+        sender.isSelected = true
+        debugPrint("deactivating game")
+        
+        // pop off stack
+        guard var vcs = self.navigationController?.viewControllers else { return }
+        if vcs[vcs.count - 2] is ActiveGameVC {
+            self.navigationController?.viewControllers.remove(at: vcs.count-2)
+        }
+        
+        self.game.active = false
+        
+        FirebaseAPIClient.updateRemoteGame(game: self.game, success: {
+            sender.isSelected = false
+            self.view.isUserInteractionEnabled = true
+            self.configureButtonsForUser()
+            self.tableView.reloadData()
+        }, fail: {
+            sender.isSelected = false
+            self.view.isUserInteractionEnabled = true
+            self.configureButtonsForUser()
+            self.tableView.reloadData()
+        })
+        
+        
+    }
+    
     @objc func acceptInvite(_ sender: UIButton) {
         self.view.isUserInteractionEnabled = false
         sender.isSelected = true
@@ -113,9 +141,60 @@ extension GameDetailVC {
         
     }
     
+    func validateGame() -> (Bool, String) {
+        if self.game.teams.count < 2 {
+            return (false, "You need more than 1 team.")
+        }
+        
+        if self.game.players.count != self.game.teams.map({ (_, team) -> Int in return team.memberIDs.count}).reduce(0, +) {
+            return (false, "All members must be assigned to a team.")
+        }
+        
+        if self.game.rounds.count == 0 {
+            return (false, "Must have at least 1 round.")
+        }
+        
+        if !self.game.rounds.map({ (r) -> Bool in return r.seeker != nil}).reduce(true, { (res, nxt) -> Bool in return res && nxt}) {
+           return (false, "Each round must have a seeker")
+        }
+        
+        return (true, "")
+    }
+    
     @objc func startGame(_ sender: UIButton) {
         
+        self.view.isUserInteractionEnabled = false
+        sender.isSelected = true
+        
+        let validation = validateGame()
+        
+        if !validation.0 {
+            gameValidationAlerts.displayAlert(title: "Oops", message: validation.1)
+            return
+        }
+        
+        
+        
+        let alert = UIAlertController(title: "Ready to Start Game?", message: nil, preferredStyle: .alert)
+        alert.view.backgroundColor = .flatBlackDark
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (_) in
+            self.game.active = true
+            FirebaseAPIClient.updateRemoteGame(game: self.game, success: {}, fail: {})
+            
+            self.gameValidationAlerts.triggerCallback()
+            
+            self.performSegue(withIdentifier: "detail2active", sender: self)
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .destructive, handler: { (_) in
+            self.gameValidationAlerts.triggerCallback()
+        }))
+        
+        self.present(alert, animated: true)
+
     }
+    
+    
     
     
     func displayPopup(forUser: User, index: IndexPath) {
@@ -146,3 +225,4 @@ extension GameDetailVC {
 
 
 }
+

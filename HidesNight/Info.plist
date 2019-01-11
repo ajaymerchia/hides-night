@@ -22,11 +22,22 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Add images</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Provide location for in-game tracking</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Provide location for in-game tracking</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Save memories from games</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Upload images</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>luckiest-guy.regular.ttf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+		<string>remote-notification</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
@@ -49,12 +60,6 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Provide location for in-game tracking</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Provide location for in-game tracking</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Save memories from games</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 </dict>

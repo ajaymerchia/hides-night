@@ -15,14 +15,20 @@ class RoundCell: UITableViewCell {
     var roundNum: UIButton!
     var roundName: UILabel!
     
+    var highlightedColor: UIColor!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        if highlightedColor == nil {
+            highlightedColor = contentView.backgroundColor?.modified(withAdditionalHue: 0, additionalSaturation: 0, additionalBrightness: 0.1)
+        }
+        
         if highlighted {
-            contentView.backgroundColor = contentView.backgroundColor?.modified(withAdditionalHue: 0, additionalSaturation: 0, additionalBrightness: 0.1)
+            contentView.backgroundColor = highlightedColor
         } else {
             
         }
@@ -43,6 +49,7 @@ class RoundCell: UITableViewCell {
         
         contentView.backgroundColor = .flatBlackDark
         
+        
         roundNum = UIButton(frame: CGRect(x: .PADDING, y: 2 * .MARGINAL_PADDING, width: size.height - 4 * .MARGINAL_PADDING, height: size.height - 4 * .MARGINAL_PADDING))
         roundNum.setTitle("\(round.order!).", for: .normal)
         roundNum.setTitleColor(.white, for: .normal)
@@ -50,7 +57,6 @@ class RoundCell: UITableViewCell {
         
         roundNum.layer.cornerRadius = roundNum.frame.width/2
         roundNum.clipsToBounds = true
-        roundNum.setBackgroundColor(color: .black, forState: .normal)
         roundNum.isUserInteractionEnabled = false
         
         self.contentView.addSubview(roundNum)

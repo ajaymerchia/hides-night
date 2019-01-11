@@ -180,6 +180,10 @@ extension FirebaseAPIClient {
         fromGame.playerStatus.removeValue(forKey: by.uid)
         fromGame.players.remove(at: fromGame.players.index(of: by)!)
         
+        for team in fromGame.teams.values {
+            team.memberIDs.removeValue(forKey: by.uid)
+        }
+        
         updateRemoteGame(game: fromGame, success: {
             if !by.uid.starts(with: "temp") {
                 updateRemoteUser(usr: by, success: {

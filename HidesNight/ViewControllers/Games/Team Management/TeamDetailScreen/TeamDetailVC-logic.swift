@@ -39,10 +39,9 @@ extension TeamDetailVC {
     }
     
     @objc func addSelfToTeam(_ sender: UIButton) {
-        if indexSelected != nil {
-            self.slotData[sender.tag] = self.selectionVC.slots[sender.tag]
-            addSlots()
-        }
+        self.slotData[sender.tag] = self.user
+        setBarButton(valid: true)
+        addSlots()
     }
     
     func loadData() {
@@ -99,15 +98,20 @@ extension TeamDetailVC {
         }
         team.name = teamName.text
         let newImage = teamPhoto.imageView?.image
-        team.img = photoChanged ? newImage : nil
+        team.img = photoChanged ? newImage : team.img
         
         self.game.teams[team.uid] = team
         
         
         FirebaseAPIClient.updateRemoteGame(game: self.game, success: {
-            FirebaseAPIClient.updatePhoto(forTeam: self.team, inGame: self.game, completion: {
+            if self.photoChanged {
+                FirebaseAPIClient.updatePhoto(forTeam: self.team, inGame: self.game, completion: {
+                    self.alerts.triggerCallback()
+                })
+            } else {
                 self.alerts.triggerCallback()
-            })
+            }
+            
         }) {
             self.alerts.triggerCallback()
         }

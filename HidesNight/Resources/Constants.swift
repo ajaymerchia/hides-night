@@ -12,8 +12,16 @@ import iosManagers
 import NotificationCenter
 
 class Constants {
-    // UI Elements
     
+}
+
+class NotificationActions {
+    static let acceptAction: String = "accept"
+    static let rejectAction: String = "decline"
+    
+    static let friendRequest: String = "friendRequest"
+    static let gameRequest: String = "gameRequest"
+
 }
 
 enum FRIEND_STATUS {
@@ -71,6 +79,7 @@ extension UIImage {
     static let nav_add_person: UIImage! = UIImage(named: "nav-add-person")
     static let nav_remove_person: UIImage! = UIImage(named: "nav-remove-person")
     static let nav_info: UIImage! = UIImage(named: "nav-info")
+    static let nav_info_small: UIImage! = UIImage(named: "nav-info-small")
     static let nav_logout: UIImage! = UIImage(named: "nav-logout")
     static let nav_trash: UIImage! = UIImage(named: "nav-trash")
     static let nav_refresh: UIImage! = UIImage(named: "nav-refresh")
@@ -78,6 +87,11 @@ extension UIImage {
     // Icon Buttons
     static let mark_check: UIImage! = UIImage(named: "mark-check")
     static let mark_cancel: UIImage! = UIImage(named: "mark-cancel")
+    static let mark_chat: UIImage! = UIImage(named: "mark-chat")
+    static let mark_play: UIImage! = UIImage(named: "mark-play")
+    static let mark_next: UIImage! = UIImage(named: "mark-next")
+    static let mark_catch: UIImage! = UIImage(named: "mark-catch")
+    static let mark_timer: UIImage! = UIImage(named: "mark-timer")
     
     
 }

@@ -33,6 +33,15 @@ extension GameDetailVC: UIGestureRecognizerDelegate {
     func initNav() {
         navbar = self.navigationController!.navigationBar
         self.title = "Game"
+        
+        if userIsAdmin {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(editGame))
+        } else {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.nav_info_small.withRenderingMode(.alwaysTemplate), style: .plain, target: self, action: #selector(toggleGameParams))
+        }
+        
+        
+        
     }
     
     func initGamePhoto() {
@@ -68,12 +77,18 @@ extension GameDetailVC: UIGestureRecognizerDelegate {
     }
     
     func resetGameDetails() {
+        gameTitle.text = game.title
+        gameTime.text = myUtils.getFormattedDateAndTime(date: game.datetime)
+        
+        
+        var newAlpha:CGFloat = 0
         if gameParams != nil {
+            newAlpha = gameParams.alpha
             gameParams.removeFromSuperview()
         }
         gameParams = UIView(frame: gamePhoto.frame)
         gameParams.backgroundColor = .black
-        gameParams.alpha = 0
+        gameParams.alpha = newAlpha
         view.addSubview(gameParams)
         
         let intraHalfPadding = 3 * .MARGINAL_PADDING
@@ -176,9 +191,19 @@ extension GameDetailVC: UIGestureRecognizerDelegate {
         overallButtonHolder.addSubview(leftActionButton)
         
         
-        let colorToUse: UIColor = self.userIsAdmin ? .ACCENT_GREEN : .ACCENT_RED
-        let textToUse: String = self.userIsAdmin ? "Start" : "Leave"
+        
         rightActionButton = UIButton(frame: CGRect(x: 0, y: 0, width: buttonWidth, height: overallButtonHolder.frame.height))
+
+        var textToUse: String = self.userIsAdmin ? (self.game.active ? "Deactivate" : "Start") : "Leave"
+        var colorToUse: UIColor = self.userIsAdmin && !self.game.active ? .ACCENT_GREEN : .ACCENT_RED
+        
+        if self.game.datetime < Date() {
+            colorToUse = .flatGrayDark
+            textToUse = "Expired"
+            rightActionButton.isUserInteractionEnabled = false
+        }
+        
+        
         rightActionButton.center = CGPoint(x: overallButtonHolder.frame.midX + distanceFromCenter, y: rightActionButton.frame.midY)
         
         rightActionButton.titleLabel?.font = buttonFont?.bold
@@ -200,6 +225,7 @@ extension GameDetailVC: UIGestureRecognizerDelegate {
         overallButtonHolder.addSubview(rightActionButton)
         
         
+        
         // Model based button behavior
         configureButtonsForUser()
         
@@ -210,8 +236,13 @@ extension GameDetailVC: UIGestureRecognizerDelegate {
     }
     
     func configureButtonsForUser() {
-        let textToUse: String = self.userIsAdmin ? "Start" : "Leave"
-        
+        var textToUse: String = self.userIsAdmin ? (self.game.active ? "Deactivate" : "Start") : "Leave"
+        var colorToUse: UIColor = self.userIsAdmin && !self.game.active ? .ACCENT_GREEN : .ACCENT_RED
+
+        if self.game.datetime < Date() {
+            colorToUse = .flatGrayDark
+            textToUse = "Expired"
+        }
         
         if !isGameInvite {
             leftActionButton.setBackgroundColor(color: .ACCENT_BLUE, forState: .highlighted)
@@ -226,9 +257,19 @@ extension GameDetailVC: UIGestureRecognizerDelegate {
             
             rightActionButton.setTitle(textToUse, for: .normal)
             rightActionButton.removeTarget(self, action: #selector(declineInvite), for: .touchUpInside)
+            rightActionButton.setTitleColor(colorToUse, for: .normal)
+            rightActionButton.layer.borderColor = colorToUse.cgColor
+
+            rightActionButton.setBackgroundColor(color: colorToUse, forState: .highlighted)
+            rightActionButton.setBackgroundColor(color: colorToUse, forState: .selected)
+            
             
             if userIsAdmin {
-                rightActionButton.addTarget(self, action: #selector(startGame), for: .touchUpInside)
+                if self.game.active {
+                    rightActionButton.addTarget(self, action: #selector(deactivateGame), for: .touchUpInside)
+                } else {
+                    rightActionButton.addTarget(self, action: #selector(startGame), for: .touchUpInside)
+                }
             } else {
                 rightActionButton.addTarget(self, action: #selector(leaveGame), for: .touchUpInside)
             }
@@ -249,8 +290,6 @@ extension GameDetailVC: UIGestureRecognizerDelegate {
 
             rightActionButton.removeTarget(self, action: #selector(leaveGame), for: .touchUpInside)
             rightActionButton.addTarget(self, action: #selector(declineInvite), for: .touchUpInside)
-            
-            
         }
     }
     

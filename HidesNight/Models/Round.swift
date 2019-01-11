@@ -32,7 +32,12 @@ class Round: Equatable, Comparable, FirebaseReady {
         ret["boundaries"] = boundariesPushable
         
         ret["active"] = self.active
+        ret["status"] = self.roundStatus.description
+        
         ret["start"] = self.startTime?.description
+        ret["startHide"] = self.startHide?.description
+        ret["hideTime"] = self.hidingTime.magnitude
+        
         ret["seeker"] = self.seeker?.uid
         ret["winner"] = self.winner?.uid
         
@@ -81,8 +86,20 @@ class Round: Equatable, Comparable, FirebaseReady {
         self.parentGame = parentGame
         self.active = record["active"] as? Bool ?? false
         self.startTime = (record["start"] as? String)?.toDateTime()
+        self.startHide = (record["startHide"] as? String)?.toDateTime()
+        self.hidingTime = TimeInterval(record["hideTime"] as? Int ?? (15 * 60))
+        
         self.seeker = self.parentGame.teams[record["seeker"] as? String ?? ""]
         self.winner = self.parentGame.teams[record["winner"] as? String ?? ""]
+        
+        if let storedStatus = record["status"] as? String {
+            for possibleStatus in RoundStatus.states {
+                if possibleStatus.description == storedStatus {
+                    self.roundStatus = possibleStatus
+                    break
+                }
+            }
+        }
         
     }
     
@@ -97,12 +114,52 @@ class Round: Equatable, Comparable, FirebaseReady {
     // Game State
     var active = false
     var startTime: Date?
+    var startHide: Date?
+    var hidingTime: TimeInterval = TimeInterval(exactly: 15 * 60)!
+    var roundStatus: RoundStatus! = RoundStatus.notStarted
+    var roundIsActive: Bool {
+        return ![RoundStatus.notStarted, RoundStatus.gameOver, RoundStatus.seekerHidingDuration].contains(self.roundStatus)
+    }
+    
     var seeker: Team?
     var winner: Team?
     
     // Team States
     var teamsCaught = [Team]()
     var teamLocations = [String: CLLocationCoordinate2D]()
+    
+    
+}
+
+class RoundStatus: Equatable {
+    static func == (lhs: RoundStatus, rhs: RoundStatus) -> Bool {
+        return lhs.description == rhs.description
+    }
+    
+    static let notStarted = RoundStatus(repr: "Waiting for Admin to start round")
+    static let seekerHidingDuration = RoundStatus(repr: "Waiting for Seekers to start hiding countdown", seekHelp: "Set a hiding period")
+    static let hiding = RoundStatus(repr: "Hide!", seekHelp: "Wait for teams to hide")
+    static let seek = RoundStatus(repr: "Try not to be found", seekHelp: "Find the hidden teams!")
+    static let seekWithGPS = RoundStatus(repr: "GPS is live! Stay hidden or stay on the move!", seekHelp: "Use the GPS to your advantage")
+    static let gameOver = RoundStatus(repr: "Game Over")
+    
+    static let states = [notStarted, seekerHidingDuration, hiding, seek, seekWithGPS, gameOver]
+    
+    var description: String
+    var seekDescription: String
+    
+    
+    init(repr: String) {
+        description = repr
+        seekDescription = repr
+    }
+    
+    init(repr: String, seekHelp: String) {
+        description = repr
+        seekDescription = seekHelp
+    }
+    
+    
 }
 
 extension CLLocationCoordinate2D: FirebaseReady {

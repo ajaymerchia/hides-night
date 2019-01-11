@@ -13,6 +13,7 @@ import iosManagers
 
 extension ChatVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        loadChats()
         return pureMessages.count
     }
     

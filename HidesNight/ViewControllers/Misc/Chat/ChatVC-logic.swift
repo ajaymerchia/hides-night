@@ -28,7 +28,7 @@ extension ChatVC {
 
         
         let textMessage = Message(msg: msg, sender: self.user)
-        addMessage(msg: textMessage)
+        
         
         FirebaseAPIClient.send(message: textMessage, to: self.chat) {
             debugPrint("message sent!")
@@ -37,18 +37,21 @@ extension ChatVC {
             }
         }
         
+        addMessage(msg: textMessage)
+        
         
         
     }
     
     func sendImageMessage(img: UIImage) {
         let imageMessage = Message(img: img, sender: self.user)
-        addMessage(msg: imageMessage)
+        
         
         FirebaseAPIClient.send(message: imageMessage, to: self.chat) {
             self.resetPhotoPicker()
             
         }
+        addMessage(msg: imageMessage)
     }
     
     func loadChats() {
@@ -68,16 +71,14 @@ extension ChatVC {
             if msg.imgPending {
                 
                 msg.imageLoaded = {
-                    self.addMessage(msg: msg)
+                    if msg.img != nil {
+                        self.addMessage(msg: msg)
+                    }
                 }
                 
                 
             } else {
-                self.chatView.beginUpdates()
-                self.pureMessages.append(msg)
-                self.pureMessages.sort()
-                self.chatView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
-                self.chatView.endUpdates()
+                self.addMessage(msg: msg)
             }
             
            
@@ -86,6 +87,10 @@ extension ChatVC {
     }
     
     func addMessage(msg: Message) {
+        
+        if pureMessages.contains(msg) { return }
+        
+        self.loadChats()
         self.chatView.beginUpdates()
         self.pureMessages.append(msg)
         self.pureMessages.sort()

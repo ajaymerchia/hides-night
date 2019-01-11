@@ -85,7 +85,7 @@ extension RoundDetailVC: UIGestureRecognizerDelegate {
     
     
     @objc func finishEditingRound() {
-        hud = alerts.startProgressHud(withMsg: "Creating Round", style: .dark)
+        hud = alerts.startProgressHud(withMsg: "Saving Round", style: .dark)
         self.view.isUserInteractionEnabled = false
         
         self.round.boundaryPoints = []

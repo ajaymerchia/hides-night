@@ -25,7 +25,7 @@ extension GamesVC {
     
     // Navigation
     func initNav() {
-        self.title = "Games"
+        self.title = "Game"
         guard let nav = self.navigationController?.navigationBar else {
             return
         }
