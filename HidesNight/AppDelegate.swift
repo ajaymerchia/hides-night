@@ -18,12 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
     var deviceToken: String?
     var fcmToken: String?
 
-    let gcmMessageIDKey = "gcm.message_id"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        
+        FirebaseApp.configure()
         IQKeyboardManager.shared().isEnabled = true
         IQKeyboardManager.shared().disabledToolbarClasses.add(ChatVC.self)
         IQKeyboardManager.shared().disabledDistanceHandlingClasses.add(ChatVC.self)
@@ -32,37 +31,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
         UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font : UIFont.BIG_TEXT_FONT], for: .normal)
         UITextField.appearance().keyboardAppearance = .dark
         
-        
-        FirebaseApp.configure()
-        Messaging.messaging().delegate = self
-        
         UNUserNotificationCenter.current().delegate = self
+        Messaging.messaging().delegate = self
+        registerForPushNotifications()
         
-//        registerForPushNotifications()
-        firebaseRegisterForNotifications()
 
 
         return true
-    }
-    
-    func firebaseRegisterForNotifications() {
-        let application = UIApplication.shared
-        
-        if #available(iOS 10.0, *) {
-            // For iOS 10 display notification (sent via APNS)
-            UNUserNotificationCenter.current().delegate = self
-            
-            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-            UNUserNotificationCenter.current().requestAuthorization(
-                options: authOptions,
-                completionHandler: {_, _ in })
-        } else {
-            let settings: UIUserNotificationSettings =
-                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-            application.registerUserNotificationSettings(settings)
-        }
-        
-        application.registerForRemoteNotifications()
     }
 
     func registerForPushNotifications() {
@@ -114,9 +89,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
             } else if let result = result {
                 print("Remote instance ID token: \(result.token)")
                 self.fcmToken = result.token
-                
-                print("Remote FCM Token")
-                print(Messaging.messaging().fcmToken)
             }
         }
     }
@@ -154,24 +126,17 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         
         debugPrint("HI EVERYONE, I GOT A NOTIFICATION FROM SOMEWHERE REMOTE!!!")
-        // Print message ID.
-        if let messageID = userInfo[gcmMessageIDKey] {
-            print("Message ID: \(messageID)")
+        
+        guard let aps = userInfo["aps"] as? [String: AnyObject] else {
+            completionHandler(.failed)
+            return
         }
         
-        // Print full message.
-        print(userInfo)
-        
-//        guard let aps = userInfo["aps"] as? [String: AnyObject] else {
-//            completionHandler(.failed)
-//            return
-//        }
-//
-//        if aps["content-available"] as? Int == 1 {
-//            debugPrint(aps["category"] as? String)
-//            debugPrint("i'm gonna execute this code silently now")
-//            completionHandler(.noData)
-//        }
+        if aps["content-available"] as? Int == 1 {
+            debugPrint(aps["category"] as? String)
+            debugPrint("i'm gonna execute this code silently now")
+            completionHandler(.noData)
+        }
         
     }
     

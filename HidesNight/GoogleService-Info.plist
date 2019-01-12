@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>144086577287-nrf1qt548sdsimmv3s1ab7g1dchrkiq3.apps.googleusercontent.com</string>
+	<string>144086577287-vcm33fd2c5gm7m966v5dvvsefs2pja9i.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.144086577287-nrf1qt548sdsimmv3s1ab7g1dchrkiq3</string>
+	<string>com.googleusercontent.apps.144086577287-vcm33fd2c5gm7m966v5dvvsefs2pja9i</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDsf-rjpMyEBmlMA26ARQDWgvQ3doBcaFs</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>ajaymerchia.HidesNight</string>
+	<string>mdb.ajaymerchia.HidesNight</string>
 	<key>PROJECT_ID</key>
 	<string>hidesnight</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:144086577287:ios:e43e8310462712c8</string>
+	<string>1:144086577287:ios:22a14a14c062782e</string>
 	<key>DATABASE_URL</key>
 	<string>https://hidesnight.firebaseio.com</string>
 </dict>

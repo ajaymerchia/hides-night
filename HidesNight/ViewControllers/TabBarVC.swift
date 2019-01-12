@@ -33,9 +33,9 @@ class TabBarVC: UITabBarController {
         }
         
         
-        if let deviceToken = (UIApplication.shared.delegate as? AppDelegate)?.fcmToken {
-            FirebaseAPIClient.setDeviceToken(to: deviceToken, forUser: self.user, completion: {})
-        }
+//        if let deviceToken = (UIApplication.shared.delegate as? AppDelegate)?.fcmToken {
+//            FirebaseAPIClient.setDeviceToken(to: deviceToken, forUser: self.user, completion: {})
+//        }
         
     }
     
