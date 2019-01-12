@@ -17,7 +17,7 @@ extension SocialVC {
         self.user = parentTab.user
     }
     
-    func loadFriendsAndInvites() {
+    func loadFriendsAndInvites(_ completion: @escaping ()->() = {}) {
         let uids = [String](myUtils.mergeDictionaries(d1: self.user.friendIDs, d2: self.user.inbxFrReqs).keys)
         let gameIDs = [String](self.user.inbxGaReqs?.keys ?? [:].keys)
         
@@ -29,6 +29,7 @@ extension SocialVC {
                 self.resetAndAdd(friends: usrs)
                 self.reloadTableView()
                 self.alerts.triggerCallback()
+                completion()
             })
         }
 
@@ -70,6 +71,7 @@ extension SocialVC {
         debugPrint(tableData)
         updateSectionHeaders()
         friendsTable.reloadData()
+        
     }
     
     func updateSectionHeaders() {

@@ -8,6 +8,7 @@
 
 import UIKit
 import SideMenu
+import NotificationCenter
 
 class TabBarVC: UITabBarController {
 
@@ -17,13 +18,7 @@ class TabBarVC: UITabBarController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-//        let menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "SideMenuNav") as! UISideMenuNavigationController
-//        let menuRightNavigationController = UISideMenuNavigationController(rootViewController: self)
-//        
-//        SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
-//        SideMenuManager.default.menuRightNavigationController = menuRightNavigationController
-//        SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
-//        SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
+
         for viewController in self.viewControllers ?? [] {
             if let navigationVC = viewController as? UINavigationController, let rootVC = navigationVC.viewControllers.first {
                 let _ = rootVC.view
@@ -33,10 +28,28 @@ class TabBarVC: UITabBarController {
         }
         
         
-//        if let deviceToken = (UIApplication.shared.delegate as? AppDelegate)?.fcmToken {
-//            FirebaseAPIClient.setDeviceToken(to: deviceToken, forUser: self.user, completion: {})
-//        }
+        if let deviceToken = (UIApplication.shared.delegate as? AppDelegate)?.fcmToken {
+            FirebaseAPIClient.setDeviceToken(to: deviceToken, forUser: self.user, completion: {})
+        }
         
+        
+    }
+    
+    func resetVCs() {
+        guard let navVCs = self.viewControllers as? [UINavigationController] else {
+            return
+        }
+        for vc in navVCs {
+            vc.presentedViewController?.dismiss(animated: false, completion: nil)
+            vc.popToRootViewController(animated: false)
+            vc.navigationBar.isHidden = false
+        }
+        self.tabBar.isHidden = false
+    }
+    
+    @objc func loadSocial() {
+        resetVCs()
+        self.selectedIndex = 1
     }
     
 

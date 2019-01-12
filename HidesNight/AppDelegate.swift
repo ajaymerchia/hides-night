@@ -98,91 +98,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
 
 
 
-// Design The Notification
-extension AppDelegate {
-    func setUpNotificationStyles() {
-        
-        // Accept/Reject Requests
-        let acceptAction = UNNotificationAction(
-            identifier: NotificationActions.acceptAction, title: "Accept",
-            options: [.foreground, .authenticationRequired])
-        let declineAction = UNNotificationAction(
-            identifier: NotificationActions.rejectAction, title: "Decline",
-            options: [.foreground, .authenticationRequired, .destructive])
-        
-        let friendRequests = UNNotificationCategory(identifier: NotificationActions.friendRequest, actions: [acceptAction, declineAction], intentIdentifiers: [], options: [])
-        let gameRequests = UNNotificationCategory(identifier: NotificationActions.gameRequest, actions: [acceptAction, declineAction], intentIdentifiers: [], options: [])
-        
-        
-        UNUserNotificationCenter.current().setNotificationCategories([friendRequests, gameRequests])
-        
-    }
-}
 
-// Handle the Actual Notifications
-extension AppDelegate: UNUserNotificationCenterDelegate {
-    
-    // Called every time a notfication is sent
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        
-        debugPrint("HI EVERYONE, I GOT A NOTIFICATION FROM SOMEWHERE REMOTE!!!")
-        
-        guard let aps = userInfo["aps"] as? [String: AnyObject] else {
-            completionHandler(.failed)
-            return
-        }
-        
-        if aps["content-available"] as? Int == 1 {
-            debugPrint(aps["category"] as? String)
-            debugPrint("i'm gonna execute this code silently now")
-            completionHandler(.noData)
-        }
-        
-    }
-    
-    // Called when action was sent through a notification
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        
-        let userInfo = response.notification.request.content.userInfo
-        
-        guard let aps = userInfo["aps"] as? [String: Any] else {
-            completionHandler()
-            return
-        }
-        guard let notificationCategory = aps["category"] as? String else {
-            completionHandler()
-            return
-        }
-        
-        
-        
-        if let data = userInfo["data"] as? [String: Any] {
-            if notificationCategory == NotificationActions.friendRequest {
-                debugPrint("This is a friend request")
-                
-                // send behavior to a function to handle the response
-                if response.actionIdentifier == NotificationActions.acceptAction {
-                    debugPrint(data["accepted"])
-                } else if response.actionIdentifier == NotificationActions.rejectAction {
-                    debugPrint(data["declined"])
-                }
-            } else if notificationCategory == NotificationActions.gameRequest {
-                debugPrint("This is a game request")
-                
-                // send behavior to a function to handle the response
-                if response.actionIdentifier == NotificationActions.acceptAction {
-                    debugPrint(data["accepted"])
-                } else if response.actionIdentifier == NotificationActions.rejectAction {
-                    debugPrint(data["declined"])
-                }
-            }
-            
-        }
-        
-        completionHandler()
-        
-    }
-}
+
+
 
 
 // App States

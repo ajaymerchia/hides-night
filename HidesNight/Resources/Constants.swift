@@ -16,10 +16,14 @@ class Constants {
 }
 
 class NotificationActions {
+    // Actions
     static let acceptAction: String = "accept"
     static let rejectAction: String = "decline"
     
+    // Notification Types
     static let friendRequest: String = "friendRequest"
+    static let newFriend: String = "newFriend"
+    
     static let gameRequest: String = "gameRequest"
 
 }
@@ -47,6 +51,14 @@ enum SignupError {
 extension Notification.Name {
     static let hasPendingUserLogin = Notification.Name("hasPendingUserLogin")
     static let newImage = Notification.Name("newImage")
+    
+    
+    // Friend Request Actions
+    static let rejectFriendRequest = Notification.Name("rejectFriend")
+    static let acceptFriendRequest = Notification.Name("acceptFriend")
+    static let viewFriendRequest = Notification.Name("viewFriend")
+    
+    
 }
 
 extension CGFloat {

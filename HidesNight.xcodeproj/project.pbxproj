@@ -28,6 +28,8 @@
 		B72BB4A621E72E1600D9CD8F /* ActiveGameVC-tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72BB4A521E72E1600D9CD8F /* ActiveGameVC-tableview.swift */; };
 		B72BB4A821E731F100D9CD8F /* TeamReadOnlyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72BB4A721E731F100D9CD8F /* TeamReadOnlyVC.swift */; };
 		B72BB4AB21E7338A00D9CD8F /* CountDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72BB4AA21E7338A00D9CD8F /* CountDownCell.swift */; };
+		B730637F21E9736C00F4EF7A /* AppDelegate-notificationHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B730637E21E9736C00F4EF7A /* AppDelegate-notificationHandle.swift */; };
+		B730638121E9938500F4EF7A /* AppDelegate-notificationDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = B730638021E9938500F4EF7A /* AppDelegate-notificationDesign.swift */; };
 		B731A8A821DCB6D600499798 /* TeamSelectorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B731A8A721DCB6D600499798 /* TeamSelectorVC.swift */; };
 		B731A8AD21DCB73D00499798 /* TeamSelectorVC-initUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B731A8AC21DCB73D00499798 /* TeamSelectorVC-initUI.swift */; };
 		B731A8B321DCC8A900499798 /* RoundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B731A8B221DCC8A900499798 /* RoundCell.swift */; };
@@ -176,6 +178,8 @@
 		B72BB4A521E72E1600D9CD8F /* ActiveGameVC-tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActiveGameVC-tableview.swift"; sourceTree = "<group>"; };
 		B72BB4A721E731F100D9CD8F /* TeamReadOnlyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamReadOnlyVC.swift; sourceTree = "<group>"; };
 		B72BB4AA21E7338A00D9CD8F /* CountDownCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownCell.swift; sourceTree = "<group>"; };
+		B730637E21E9736C00F4EF7A /* AppDelegate-notificationHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate-notificationHandle.swift"; sourceTree = "<group>"; };
+		B730638021E9938500F4EF7A /* AppDelegate-notificationDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate-notificationDesign.swift"; sourceTree = "<group>"; };
 		B731A8A721DCB6D600499798 /* TeamSelectorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSelectorVC.swift; sourceTree = "<group>"; };
 		B731A8AC21DCB73D00499798 /* TeamSelectorVC-initUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamSelectorVC-initUI.swift"; sourceTree = "<group>"; };
 		B731A8B221DCC8A900499798 /* RoundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundCell.swift; sourceTree = "<group>"; };
@@ -662,6 +666,8 @@
 			children = (
 				B7229FE521E87E930059B184 /* HidesNight.entitlements */,
 				B7EB127221CAEDC100C1DEB7 /* AppDelegate.swift */,
+				B730638021E9938500F4EF7A /* AppDelegate-notificationDesign.swift */,
+				B730637E21E9736C00F4EF7A /* AppDelegate-notificationHandle.swift */,
 				B7EB127921CAEDC200C1DEB7 /* Assets.xcassets */,
 				B7DE62BE21CDCD7B00AC0113 /* Protocols */,
 				B7DE62BF21CE0C7200AC0113 /* Helpers */,
@@ -1103,6 +1109,7 @@
 				B7B14D5221D73BCE003F8A4C /* TeamDetailVC-system.swift in Sources */,
 				B7EB12CB21CB89CF00C1DEB7 /* Game.swift in Sources */,
 				B779FD9E21E2FCCA00BEFA60 /* ChatVC.swift in Sources */,
+				B730637F21E9736C00F4EF7A /* AppDelegate-notificationHandle.swift in Sources */,
 				B7B14D2B21D4DB0F003F8A4C /* DecisionPickerVC-data.swift in Sources */,
 				B7DE62BD21CDCD7500AC0113 /* FirebaseReady.swift in Sources */,
 				B737369A21D0C26D0068FCA1 /* InstructionsVC-data.swift in Sources */,
@@ -1118,6 +1125,7 @@
 				B7EB12D121CBA76400C1DEB7 /* LoginVC-logic.swift in Sources */,
 				B7B14D5421D73BDC003F8A4C /* TeamDetailVC-logic.swift in Sources */,
 				B737368921D0A2150068FCA1 /* ProfileVC-logic.swift in Sources */,
+				B730638121E9938500F4EF7A /* AppDelegate-notificationDesign.swift in Sources */,
 				B7B14D4721D70A0E003F8A4C /* InfoController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

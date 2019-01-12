@@ -33,8 +33,8 @@ extension FirebaseAPIClient {
     static func sendFriendRequest(from: User, to: [User], completion: @escaping () -> ()) {
         var usersNeedingUpdates = [from]
         for recip in to {
-            from.sentFrReqs?[recip.uid] = recip.username
-            recip.inbxFrReqs?[from.uid] = from.username
+            from.sentFrReqs?[recip.uid] = recip.fullname
+            recip.inbxFrReqs?[from.uid] = from.fullname
             
             usersNeedingUpdates.append(recip)
         }
@@ -69,8 +69,8 @@ extension FirebaseAPIClient {
         from.sentFrReqs?.removeValue(forKey: to.uid)
         to.inbxFrReqs?.removeValue(forKey: from.uid)
         
-        from.friendIDs[to.uid] = to.username
-        to.friendIDs[from.uid] = from.username
+        from.friendIDs[to.uid] = to.fullname
+        to.friendIDs[from.uid] = from.fullname
         
         
         let userNode = Database.database().reference().child("users")

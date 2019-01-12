@@ -18,6 +18,9 @@ extension SocialVC {
             self.hud?.dismiss()
         })
         NotificationCenter.default.addObserver(self, selector: #selector(updateImage(_ :)), name: .newImage, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showFriendRequest(_:)), name: .viewFriendRequest, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(acceptFriendRequest(_:)), name: .acceptFriendRequest, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(rejectFriendRequest(_:)), name: .rejectFriendRequest, object: nil)
     }
     
     @objc func updateImage(_ notification: Notification) {
@@ -70,6 +73,80 @@ extension SocialVC {
     @objc func goToAddFriend() {
         self.performSegue(withIdentifier: "social2addfriend", sender: self)
     }
+    
+    
+    // Notification Processors
+    func getFriendFromNotification(_ notification: Notification) -> (User, Bool)? {
+        guard let data = notification.userInfo as? [String: String] else {
+            return nil
+        }
+        
+        guard let friendID = data["friend"] else {
+            return nil
+        }
+        
+        guard let requests = tableData[1] as? [User] else {
+            return nil
+        }
+        
+        for user in requests {
+            if user == friendID {
+                return (user, true)
+            }
+        }
+        
+        guard let friends = tableData[2] as? [User] else {
+            return nil
+        }
+        for user in friends {
+            if user == friendID {
+                return (user, false)
+            }
+        }
+        
+        
+        return nil
+    }
+    
+    func performUpdate(completion: @escaping () -> ()) {
+        FirebaseAPIClient.updateLocalUserData(usr: self.user) {
+            self.loadFriendsAndInvites({
+                completion()
+            })
+        }
+    }
+    
+    @objc func showFriendRequest(_ notification: Notification) {
+        performUpdate {
+            if let usr = self.getFriendFromNotification(notification) {
+                self.friendSelected = usr.0
+                self.selectedIsRequest = usr.1
+                self.performSegue(withIdentifier: "social2friendDetail", sender: self)
+            }
+        }
+    }
+    
+    @objc func acceptFriendRequest(_ notification: Notification) {
+        performUpdate {
+            if let usr = self.getFriendFromNotification(notification) {
+                FirebaseAPIClient.acceptFriendRequest(from: usr.0, to: self.user) {
+                    self.loadFriendsAndInvites()
+                }
+            }
+        }
+    }
+    
+    @objc func rejectFriendRequest(_ notification: Notification) {
+        performUpdate {
+            if let usr = self.getFriendFromNotification(notification) {
+                FirebaseAPIClient.rejectFriendRequest(from: usr.0, to: self.user) {
+                    self.loadFriendsAndInvites()
+                }
+            }
+        }
+    }
+
+    
     
 
 }

@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HidesNight/Resources/ExtendedUtils.swift"
-            timestampString = "568791782.580108"
+            timestampString = "568957711.962191"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -105,14 +105,142 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HidesNight/ViewControllers/Games/GameDetailScreen/GameDetailVC.swift"
-            timestampString = "568940356.303794"
+            filePath = "HidesNight/ViewControllers/Social/SocialScreen/SocialVC-system.swift"
+            timestampString = "568958661.659763"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "showFriendRequest(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HidesNight.SocialVC.showFriendRequest(Foundation.Notification) -&gt; ()"
+                  moduleName = "HidesNight"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ajaymerchia/wkspc/ios/hidesnight/HidesNight/HidesNight/ViewControllers/Social/SocialScreen/SocialVC-system.swift"
+                  timestampString = "568958661.897599"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "120"
+                  endingLineNumber = "120"
+                  offsetFromSymbolStart = "164">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in HidesNight.SocialVC.showFriendRequest(Foundation.Notification) -&gt; ()"
+                  moduleName = "HidesNight"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ajaymerchia/wkspc/ios/hidesnight/HidesNight/HidesNight/ViewControllers/Social/SocialScreen/SocialVC-system.swift"
+                  timestampString = "568958661.899886"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HidesNight/ViewControllers/Social/SocialScreen/SocialVC-system.swift"
+            timestampString = "568958661.659822"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "acceptFriendRequest(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HidesNight.SocialVC.acceptFriendRequest(Foundation.Notification) -&gt; ()"
+                  moduleName = "HidesNight"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ajaymerchia/wkspc/ios/hidesnight/HidesNight/HidesNight/ViewControllers/Social/SocialScreen/SocialVC-system.swift"
+                  timestampString = "568958662.034976"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "130"
+                  endingLineNumber = "130"
+                  offsetFromSymbolStart = "164">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in HidesNight.SocialVC.acceptFriendRequest(Foundation.Notification) -&gt; ()"
+                  moduleName = "HidesNight"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ajaymerchia/wkspc/ios/hidesnight/HidesNight/HidesNight/ViewControllers/Social/SocialScreen/SocialVC-system.swift"
+                  timestampString = "568958662.037171"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "129"
+                  endingLineNumber = "129"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HidesNight/ViewControllers/Social/SocialScreen/SocialVC-system.swift"
+            timestampString = "568958661.659867"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "rejectFriendRequest(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HidesNight.SocialVC.rejectFriendRequest(Foundation.Notification) -&gt; ()"
+                  moduleName = "HidesNight"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ajaymerchia/wkspc/ios/hidesnight/HidesNight/HidesNight/ViewControllers/Social/SocialScreen/SocialVC-system.swift"
+                  timestampString = "568958662.042105"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "140"
+                  endingLineNumber = "140"
+                  offsetFromSymbolStart = "164">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in HidesNight.SocialVC.rejectFriendRequest(Foundation.Notification) -&gt; ()"
+                  moduleName = "HidesNight"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ajaymerchia/wkspc/ios/hidesnight/HidesNight/HidesNight/ViewControllers/Social/SocialScreen/SocialVC-system.swift"
+                  timestampString = "568958662.044372"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "139"
+                  endingLineNumber = "139"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

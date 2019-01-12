@@ -17,6 +17,7 @@ class SocialVC: UIViewController {
     var gameSelected: Game!
     var selectedIsRequest: Bool!
     
+    
     static let headerNames = ["Game Invites", "Friend Requests", "Friends"]
     var tableData: [[Any]] = [[],[],[]]
     var sectionsToDisplay: [String] = []

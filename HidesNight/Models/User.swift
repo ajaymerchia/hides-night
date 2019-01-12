@@ -49,7 +49,7 @@ class User: FirebaseReady, Equatable, Comparable {
     var games: [Game] = []
     var inbxGaReqs: [String : String]! // ID-adminID combos of games
     
-    var friendIDs: [String : String]! // ID-user combos of users
+    var friendIDs: [String : String]! // ID-fullname combos of users
     var friends: [User] = []
     var sentFrReqs: [String : String]! // ID-user combos of users to whom requests were sent
     var inbxFrReqs: [String : String]! // ID-user combos of users who sent requests
