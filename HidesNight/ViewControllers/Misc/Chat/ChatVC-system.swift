@@ -13,9 +13,10 @@ import iosManagers
 
 extension ChatVC {
     func setupManagers() {
-//        alerts = AlertManager(view: self, stateRestoration: {
-//
-//        })
+        // force eventual reload
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { (t) in
+            self.chatView.reloadData()
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {

@@ -98,7 +98,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             case NotificationActions.setHideTimer:
                 openGame(from: payloadData, withAction: action)
             case NotificationActions.newChat:
-                openGame(from: payloadData, withAction: action)
                 newChat(from: payloadData, withAction: action)
             default:
                 debugPrint("No action to perform")
