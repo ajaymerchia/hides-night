@@ -19,7 +19,10 @@ extension GamesVC {
 //
 //        })
         
+        setUpChangeListener()
         NotificationCenter.default.addObserver(self, selector: #selector(updateImage(_ :)), name: .newImage, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(openGame(_:)), name: .openGame, object: nil)
+        
     }
     
     @objc func updateImage(_ notification: Notification) {
@@ -71,6 +74,26 @@ extension GamesVC {
         self.performSegue(withIdentifier: "games2create", sender: self)
     }
     
+    @objc func openGame(_ notification: Notification) {
+        guard let data = notification.userInfo as? [String: String] else {
+            return
+        }
+        guard let gameID = data["game"] else {
+            return
+        }
+        
+        for game in self.user.games {
+            if game.uid == gameID {
+                self.gameToDetail = game
+            }
+        }
+        
+        FirebaseAPIClient.updateGame(self.gameToDetail) {
+            self.sortAndDisplayGames()
+            self.performSegue(withIdentifier: "games2active", sender: self)
+        }
+        
+    }
     
 
 }

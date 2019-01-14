@@ -10,6 +10,8 @@ import UIKit
 
 class ChatVC: UIViewController {
 
+    var preloadedText: String?
+    
     var chat: Chat!
     var user: User!
     var game: Game!
@@ -42,6 +44,8 @@ class ChatVC: UIViewController {
         setupManagers()
         initUI()
         setUpNewMessageListener()
+        
+        
         
     }
     

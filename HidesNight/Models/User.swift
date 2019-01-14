@@ -57,6 +57,8 @@ class User: FirebaseReady, Equatable, Comparable {
         return inbxFrReqs.count != 0
     }
     
+    var FCMToken: String?
+    
 
     
     init(uid: String, first: String, last: String, email: String, username: String) {
@@ -88,7 +90,7 @@ class User: FirebaseReady, Equatable, Comparable {
         ret["gameIDs"]      = self.gameIDs
         ret["inbxGaReqs"]   = self.inbxGaReqs
         
-        ret["friends"]   = self.friendIDs
+        ret["friends"]      = self.friendIDs
         ret["sentFrReqs"]   = self.sentFrReqs
         ret["inbxFrReqs"]   = self.inbxFrReqs
         

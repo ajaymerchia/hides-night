@@ -198,7 +198,15 @@ class FirebaseAPIClient {
         }
     }
     
-    static func logout() {
+    static func logout(user: User) {
+        Database.database().reference().child("deviceTokens").child(user.uid).setValue(nil)
+        
+        for game in user.games {
+            game.notificationDevices[user.uid] = nil
+            FirebaseAPIClient.updateRemoteGame(game: game, success: {}, fail: {})
+        }
+        
+        
         do {
             print("Attempting to log out")
             try Auth.auth().signOut()

@@ -102,6 +102,7 @@ class Game: FirebaseReady, Comparable {
     }
     
     // Social
+    var notificationDevices = [String: String]()
     var chat: Chat?
     
     // Game State
@@ -169,6 +170,8 @@ class Game: FirebaseReady, Comparable {
         
         
         ret["active"] = self.active
+        
+        ret["notificationDevices"] = self.notificationDevices
         
         return ret
     }
@@ -273,6 +276,9 @@ class Game: FirebaseReady, Comparable {
         
         self.active = record["active"] as? Bool ?? false
         
+        self.notificationDevices = record["notificationDevices"] as? [String: String] ?? [:]
+        
+
     }
     
     func setGamePhoto(to: UIImage, updateRemote: Bool, completion: @escaping () -> () = {}) {
@@ -284,6 +290,19 @@ class Game: FirebaseReady, Comparable {
     
     func getPlayerStatus(forUser: User) -> PlayerStatus {
         return self.playerStatus[forUser.uid]!
+    }
+    
+    func getTeamFor(player: User) -> Team? {
+        for team in self.teams.values {
+            for memberID in team.memberIDs.keys {
+                if memberID == player.uid {
+                    return team
+                }
+            }
+        }
+        
+        return nil
+        
     }
     
     

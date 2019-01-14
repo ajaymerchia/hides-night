@@ -30,4 +30,10 @@ extension ChatVC: UITextFieldDelegate {
             
         }
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        sendTextMessage()
+        return true
+    }
+    
 }

@@ -30,6 +30,9 @@
 		B72BB4AB21E7338A00D9CD8F /* CountDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72BB4AA21E7338A00D9CD8F /* CountDownCell.swift */; };
 		B730637F21E9736C00F4EF7A /* AppDelegate-notificationHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B730637E21E9736C00F4EF7A /* AppDelegate-notificationHandle.swift */; };
 		B730638121E9938500F4EF7A /* AppDelegate-notificationDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = B730638021E9938500F4EF7A /* AppDelegate-notificationDesign.swift */; };
+		B730638321EB9E4000F4EF7A /* FirebaseAPI-ingame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B730638221EB9E4000F4EF7A /* FirebaseAPI-ingame.swift */; };
+		B730638521EC1EE900F4EF7A /* NotificationsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B730638421EC1EE900F4EF7A /* NotificationsHelper.swift */; };
+		B730638721EC2B4A00F4EF7A /* TeamReadOnlyVC-initUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B730638621EC2B4A00F4EF7A /* TeamReadOnlyVC-initUI.swift */; };
 		B731A8A821DCB6D600499798 /* TeamSelectorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B731A8A721DCB6D600499798 /* TeamSelectorVC.swift */; };
 		B731A8AD21DCB73D00499798 /* TeamSelectorVC-initUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B731A8AC21DCB73D00499798 /* TeamSelectorVC-initUI.swift */; };
 		B731A8B321DCC8A900499798 /* RoundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B731A8B221DCC8A900499798 /* RoundCell.swift */; };
@@ -56,7 +59,7 @@
 		B75C537821D1A9660024D027 /* AddFriendVC-initUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75C537721D1A9660024D027 /* AddFriendVC-initUI.swift */; };
 		B75C537B21D1A9880024D027 /* AddFriendVC-system.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75C537A21D1A9880024D027 /* AddFriendVC-system.swift */; };
 		B75C537D21D1A99B0024D027 /* AddFriendVC-logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75C537C21D1A99B0024D027 /* AddFriendVC-logic.swift */; };
-		B75C537F21D1ED1C0024D027 /* FirebaseAPIClient-social.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75C537E21D1ED1C0024D027 /* FirebaseAPIClient-social.swift */; };
+		B75C537F21D1ED1C0024D027 /* FirebaseAPI-social.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75C537E21D1ED1C0024D027 /* FirebaseAPI-social.swift */; };
 		B75C538121D1F6160024D027 /* AddFriendVC-tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75C538021D1F6160024D027 /* AddFriendVC-tableview.swift */; };
 		B75C538321D1F94E0024D027 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75C538221D1F94E0024D027 /* PersonCell.swift */; };
 		B779FD9A21E2EE3400BEFA60 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B779FD9921E2EE3400BEFA60 /* Chat.swift */; };
@@ -127,7 +130,7 @@
 		B7EB12BE21CB74C800C1DEB7 /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB12BD21CB74C800C1DEB7 /* LaunchVC.swift */; };
 		B7EB12C221CB816D00C1DEB7 /* luckiest-guy.regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7EB12C121CB814D00C1DEB7 /* luckiest-guy.regular.ttf */; };
 		B7EB12C421CB883B00C1DEB7 /* Launch-logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB12C321CB883B00C1DEB7 /* Launch-logic.swift */; };
-		B7EB12C621CB888E00C1DEB7 /* FirebaseAPIClient-account.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB12C521CB888E00C1DEB7 /* FirebaseAPIClient-account.swift */; };
+		B7EB12C621CB888E00C1DEB7 /* FirebaseAPI-account.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB12C521CB888E00C1DEB7 /* FirebaseAPI-account.swift */; };
 		B7EB12C821CB898A00C1DEB7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB12C721CB898A00C1DEB7 /* User.swift */; };
 		B7EB12CB21CB89CF00C1DEB7 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB12CA21CB89CF00C1DEB7 /* Game.swift */; };
 		B7EB12CD21CB9D1000C1DEB7 /* LoginVC-initUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB12CC21CB9D1000C1DEB7 /* LoginVC-initUI.swift */; };
@@ -180,6 +183,9 @@
 		B72BB4AA21E7338A00D9CD8F /* CountDownCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownCell.swift; sourceTree = "<group>"; };
 		B730637E21E9736C00F4EF7A /* AppDelegate-notificationHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate-notificationHandle.swift"; sourceTree = "<group>"; };
 		B730638021E9938500F4EF7A /* AppDelegate-notificationDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate-notificationDesign.swift"; sourceTree = "<group>"; };
+		B730638221EB9E4000F4EF7A /* FirebaseAPI-ingame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseAPI-ingame.swift"; sourceTree = "<group>"; };
+		B730638421EC1EE900F4EF7A /* NotificationsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsHelper.swift; sourceTree = "<group>"; };
+		B730638621EC2B4A00F4EF7A /* TeamReadOnlyVC-initUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamReadOnlyVC-initUI.swift"; sourceTree = "<group>"; };
 		B731A8A721DCB6D600499798 /* TeamSelectorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSelectorVC.swift; sourceTree = "<group>"; };
 		B731A8AC21DCB73D00499798 /* TeamSelectorVC-initUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamSelectorVC-initUI.swift"; sourceTree = "<group>"; };
 		B731A8B221DCC8A900499798 /* RoundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundCell.swift; sourceTree = "<group>"; };
@@ -206,7 +212,7 @@
 		B75C537721D1A9660024D027 /* AddFriendVC-initUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddFriendVC-initUI.swift"; sourceTree = "<group>"; };
 		B75C537A21D1A9880024D027 /* AddFriendVC-system.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddFriendVC-system.swift"; sourceTree = "<group>"; };
 		B75C537C21D1A99B0024D027 /* AddFriendVC-logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddFriendVC-logic.swift"; sourceTree = "<group>"; };
-		B75C537E21D1ED1C0024D027 /* FirebaseAPIClient-social.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseAPIClient-social.swift"; sourceTree = "<group>"; };
+		B75C537E21D1ED1C0024D027 /* FirebaseAPI-social.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseAPI-social.swift"; sourceTree = "<group>"; };
 		B75C538021D1F6160024D027 /* AddFriendVC-tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddFriendVC-tableview.swift"; sourceTree = "<group>"; };
 		B75C538221D1F94E0024D027 /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		B779FD9921E2EE3400BEFA60 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
@@ -283,7 +289,7 @@
 		B7EB12BD21CB74C800C1DEB7 /* LaunchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchVC.swift; sourceTree = "<group>"; };
 		B7EB12C121CB814D00C1DEB7 /* luckiest-guy.regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "luckiest-guy.regular.ttf"; sourceTree = "<group>"; };
 		B7EB12C321CB883B00C1DEB7 /* Launch-logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Launch-logic.swift"; sourceTree = "<group>"; };
-		B7EB12C521CB888E00C1DEB7 /* FirebaseAPIClient-account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseAPIClient-account.swift"; sourceTree = "<group>"; };
+		B7EB12C521CB888E00C1DEB7 /* FirebaseAPI-account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseAPI-account.swift"; sourceTree = "<group>"; };
 		B7EB12C721CB898A00C1DEB7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B7EB12CA21CB89CF00C1DEB7 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		B7EB12CC21CB9D1000C1DEB7 /* LoginVC-initUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginVC-initUI.swift"; sourceTree = "<group>"; };
@@ -375,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				B72BB4A721E731F100D9CD8F /* TeamReadOnlyVC.swift */,
+				B730638621EC2B4A00F4EF7A /* TeamReadOnlyVC-initUI.swift */,
 			);
 			path = TeamReadOnlyVC;
 			sourceTree = "<group>";
@@ -570,11 +577,13 @@
 		B7DE62BF21CE0C7200AC0113 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				B7EB12C521CB888E00C1DEB7 /* FirebaseAPIClient-account.swift */,
+				B7EB12C521CB888E00C1DEB7 /* FirebaseAPI-account.swift */,
 				B7229FE621E8A2B10059B184 /* FirebaseAPI-notifications.swift */,
-				B75C537E21D1ED1C0024D027 /* FirebaseAPIClient-social.swift */,
+				B75C537E21D1ED1C0024D027 /* FirebaseAPI-social.swift */,
 				B70BCAD021D2D88D0038BCF1 /* FirebaseAPI-game.swift */,
 				B779FD9B21E2F29100BEFA60 /* FirebaseAPI-chat.swift */,
+				B730638221EB9E4000F4EF7A /* FirebaseAPI-ingame.swift */,
+				B730638421EC1EE900F4EF7A /* NotificationsHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1009,7 +1018,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B779FDB421E41A3200BEFA60 /* ActiveGameVC-initUI.swift in Sources */,
-				B7EB12C621CB888E00C1DEB7 /* FirebaseAPIClient-account.swift in Sources */,
+				B7EB12C621CB888E00C1DEB7 /* FirebaseAPI-account.swift in Sources */,
 				B7B14D5621D7412B003F8A4C /* TeamDetailVC-photopicker.swift in Sources */,
 				B75C536B21D1A1770024D027 /* SocialVC.swift in Sources */,
 				B7DE62A121CC18E100AC0113 /* SignUpVC-initUI.swift in Sources */,
@@ -1019,7 +1028,7 @@
 				B70BCACF21D2CE660038BCF1 /* SocialVC-tableview.swift in Sources */,
 				B7B14D3421D60344003F8A4C /* GameDetailVC-system.swift in Sources */,
 				B779FDAB21E34E5700BEFA60 /* ChatCell.swift in Sources */,
-				B75C537F21D1ED1C0024D027 /* FirebaseAPIClient-social.swift in Sources */,
+				B75C537F21D1ED1C0024D027 /* FirebaseAPI-social.swift in Sources */,
 				B7EB12BE21CB74C800C1DEB7 /* LaunchVC.swift in Sources */,
 				B73736AA21D0EF960068FCA1 /* CreateGameVC-initUI.swift in Sources */,
 				B7DE62C621CF356700AC0113 /* GamesVC-initUI.swift in Sources */,
@@ -1089,6 +1098,7 @@
 				B737368B21D0B44A0068FCA1 /* ProfileVC-photopicker.swift in Sources */,
 				B75C538321D1F94E0024D027 /* PersonCell.swift in Sources */,
 				B75C536F21D1A2120024D027 /* SocialVC-initUI.swift in Sources */,
+				B730638321EB9E4000F4EF7A /* FirebaseAPI-ingame.swift in Sources */,
 				B7EB12CD21CB9D1000C1DEB7 /* LoginVC-initUI.swift in Sources */,
 				B7B14D6321D82490003F8A4C /* RoundDetailVC-initUI.swift in Sources */,
 				B7EB12C821CB898A00C1DEB7 /* User.swift in Sources */,
@@ -1116,11 +1126,13 @@
 				B7DE62A321CC1D9800AC0113 /* SignUpVC-system.swift in Sources */,
 				B7EB12CF21CBA10E00C1DEB7 /* LoginVC-system.swift in Sources */,
 				B731A8AD21DCB73D00499798 /* TeamSelectorVC-initUI.swift in Sources */,
+				B730638521EC1EE900F4EF7A /* NotificationsHelper.swift in Sources */,
 				B7B14D4521D6B851003F8A4C /* InviteFriendVC-tableview.swift in Sources */,
 				B7DE62C221CF351500AC0113 /* GamesVC.swift in Sources */,
 				B7B14D3A21D63888003F8A4C /* GameDetailVC-tableview.swift in Sources */,
 				B72BB4A821E731F100D9CD8F /* TeamReadOnlyVC.swift in Sources */,
 				B7B14D3621D60350003F8A4C /* GameDetailVC-logic.swift in Sources */,
+				B730638721EC2B4A00F4EF7A /* TeamReadOnlyVC-initUI.swift in Sources */,
 				B737369021D0BE7E0068FCA1 /* InstructionsVC.swift in Sources */,
 				B7EB12D121CBA76400C1DEB7 /* LoginVC-logic.swift in Sources */,
 				B7B14D5421D73BDC003F8A4C /* TeamDetailVC-logic.swift in Sources */,

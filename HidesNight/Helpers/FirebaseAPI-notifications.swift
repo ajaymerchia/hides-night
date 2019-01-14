@@ -16,6 +16,12 @@ extension FirebaseAPIClient {
         Database.database().reference().child("deviceTokens").child(forUser.uid).setValue(to) { (err, ref) in
             completion()
         }
+        
+        for game in forUser.games {
+            game.notificationDevices[forUser.uid] = to
+            FirebaseAPIClient.updateRemoteGame(game: game, success: {}, fail: {})
+        }
+        
     }
     
     

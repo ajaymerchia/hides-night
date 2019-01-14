@@ -41,17 +41,19 @@ class Round: Equatable, Comparable, FirebaseReady {
         ret["seeker"] = self.seeker?.uid
         ret["winner"] = self.winner?.uid
         
-        var catchesPushable = [String: String]()
-        for team in self.teamsCaught {
-            catchesPushable[team.uid] = team.name
-        }
-        ret["caught"] = catchesPushable
+        ret["caught"] = self.teamsCaught
         
         var teamLocationsPushable = [String: [String: Any?]]()
         for (uid, location) in self.teamLocations {
             teamLocationsPushable[uid] = location.createPushable()
         }
         ret["teamLocations"] = teamLocationsPushable
+        
+        
+        
+        
+        ret["teamCheckins"] = self.teamCheckins.mapValues { (date) -> String in return date.description}
+        
         
         
         return ret
@@ -101,6 +103,14 @@ class Round: Equatable, Comparable, FirebaseReady {
             }
         }
         
+        
+        self.teamsCaught = record["caught"] as? [String: String] ?? self.teamsCaught
+        
+        if let checkinsAsString = record["teamCheckins"] as? [String: String] {
+            self.teamCheckins = checkinsAsString.mapValues({ (string) -> Date in string.toDateTime()})
+        }
+        
+        
     }
     
     
@@ -125,8 +135,11 @@ class Round: Equatable, Comparable, FirebaseReady {
     var winner: Team?
     
     // Team States
-    var teamsCaught = [Team]()
+    var teamsCaught = [String: String]() // TeamID + Team Name
+    var teamCheckins = [String: Date]()
     var teamLocations = [String: CLLocationCoordinate2D]()
+    
+
     
     
 }

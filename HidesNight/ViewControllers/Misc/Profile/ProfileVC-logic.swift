@@ -28,7 +28,7 @@ extension ProfileVC {
     }
     
     @objc func performLogout() {
-        FirebaseAPIClient.logout()
+        FirebaseAPIClient.logout(user: self.user)
         self.dismiss(animated: true, completion: {})
         self.navigationController?.presentingViewController?.dismiss(animated: true, completion: {})
         

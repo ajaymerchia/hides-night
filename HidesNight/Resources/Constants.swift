@@ -12,19 +12,32 @@ import iosManagers
 import NotificationCenter
 
 class Constants {
-    
+    static let endHideNotification: String = "endHideNotification"
+    static let checkInNotification: String = "checkInNotification"
 }
 
 class NotificationActions {
     // Actions
     static let acceptAction: String = "accept"
     static let rejectAction: String = "decline"
+    static let checkInAction: String = "checkInAction"
     
     // Notification Types
+    // Friends
     static let friendRequest: String = "friendRequest"
     static let newFriend: String = "newFriend"
     
+    // Pregame
     static let gameRequest: String = "gameRequest"
+    
+    
+    // In Game
+    static let gameStarted: String = "gameStarted"
+    static let gameCancelled: String = "gameCancelled"
+    static let setHideTimer: String = "setHideTimer"
+    static let checkIn: String = "checkIn"
+    
+    static let newChat: String = "newChat"
 
 }
 
@@ -53,10 +66,17 @@ extension Notification.Name {
     static let newImage = Notification.Name("newImage")
     
     
-    // Friend Request Actions
+    // Social Actions
     static let rejectFriendRequest = Notification.Name("rejectFriend")
     static let acceptFriendRequest = Notification.Name("acceptFriend")
     static let viewFriendRequest = Notification.Name("viewFriend")
+    
+    // Pre Game Actions
+    
+    // In Game Actions
+    static let openGame = Notification.Name("openGame")
+    
+    
     
     
 }

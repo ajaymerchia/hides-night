@@ -9,8 +9,26 @@
 import Foundation
 import UIKit
 import iosManagers
+import FirebaseDatabase
 
 extension GamesVC {
+    func setUpChangeListener() {
+        Database.database().reference().child("games").observe(.childChanged) { (snap) in
+            guard let data = snap.value as? [String: Any?] else {
+                return
+            }
+            
+            guard let uid = data["uid"] as? String else { return }
+            
+            for game in self.user.games {
+                if game.uid == uid {
+                    game.updateThisGame(key: uid, record: data)
+                    self.sortAndDisplayGames()
+                }
+            }
+        }
+    }
+    
     func getUserFromParent() {
         let parentTab = (self.tabBarController as! TabBarVC)
         self.user = parentTab.user
@@ -39,7 +57,6 @@ extension GamesVC {
         }
         
         gamesTable.reloadData()
-        
         
     }
     

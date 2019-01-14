@@ -53,7 +53,7 @@ class Team: FirebaseReady, Comparable {
     }
     
     func addMember(user: User) {
-        self.memberIDs[user.uid] = user.username
+        self.memberIDs[user.uid] = user.fullname
     }
     
     

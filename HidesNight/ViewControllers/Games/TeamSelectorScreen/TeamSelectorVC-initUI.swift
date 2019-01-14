@@ -35,7 +35,7 @@ extension TeamSelectorVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func teamFor(indexPath: IndexPath) -> Team {
-        return self.game.teams.values.sorted()[indexPath.row]
+        return self.explictTeamList?[indexPath.row] ?? self.game.teams.values.sorted()[indexPath.row]
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -44,7 +44,7 @@ extension TeamSelectorVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.game.teams.count
+        return explictTeamList?.count ?? self.game.teams.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

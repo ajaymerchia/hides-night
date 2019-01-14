@@ -11,6 +11,8 @@ import UIKit
 class TeamSelectorVC: UIViewController {
 
     var game: Game!
+    var explictTeamList: [Team]?
+    
     var tableview: UITableView!
     var callback: ((Team) -> ())!
     

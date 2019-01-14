@@ -27,6 +27,7 @@ extension ActiveGameVC {
 
     // UI Initialization Helpers
     func initNav() {
+        self.title = "Game"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.nav_info_small.withRenderingMode(.alwaysTemplate), style: .plain, target: self, action: #selector(goToDetails))
     }
     
@@ -108,7 +109,7 @@ extension ActiveGameVC {
         }
         
         // if seeker and game in session, enable "caught someone"
-        if round.roundIsActive && round.roundStatus != .hiding {
+        if round.roundIsActive && round.roundStatus != .hiding && self.userIsSeeker {
             let caughtControls = prepareControlsWith(text: "Caught One", image: .mark_catch, tint: .ACCENT_RED, action: #selector(caughtPerson))
             caughtButton = caughtControls.0
             controlViews.append(caughtControls.1)
@@ -167,8 +168,13 @@ extension ActiveGameVC {
         
     }
     
-    func updateUIComponents() {
+    @objc func updateUIComponents() {
         // Instruction
+        if getIntervals()[0] < 0 && round.roundStatus == .hiding {
+            round.roundStatus = .seek
+            FirebaseAPIClient.updateRemoteGame(game: self.game, success: {}, fail: {})
+        }
+        
         if round.roundStatus == RoundStatus.notStarted && self.userIsAdmin {
             gameStatus.text = "Start \(self.round.name!)"
         } else {
@@ -216,7 +222,12 @@ extension ActiveGameVC {
         
         for i in 0..<titles.count {
             let cell = CountDownCell()
-            cell.initializeCellFrom(time: intervals[i], title: titles[i], size: CGSize(width: view.frame.width, height: heightComputer()))
+            debugPrint(intervals[i])
+            if intervals[i] > 0 {
+                cell.initializeCellFrom(time: intervals[i], title: titles[i], size: CGSize(width: view.frame.width, height: heightComputer()))
+                cell.countdown.countdownDelegate = self
+            }
+            
             self.countdownCells.append(cell)
         }
         
@@ -233,7 +244,13 @@ extension ActiveGameVC {
         }
         intervals.append(hidingTime)
         
+        let titles = ["Round Duration", "GPS Activation", "Check In Duration"]
+        debugPrint(game.roundDuration, game.gpsActivation, game.checkInDuration)
         let otherTimes = [game.roundDuration, game.gpsActivation, game.checkInDuration]
+        
+        var i = 0
+        debugPrint("----------------------------------------")
+        debugPrint("----------------------------------------")
         
         for time in otherTimes {
             var fullInterval: TimeInterval = time!
@@ -241,12 +258,34 @@ extension ActiveGameVC {
                 
                 var referenceTime = self.round.roundStatus == .hiding ? self.round.startHide : self.round.startTime
                 
-                let timePassModulated = Date().timeIntervalSince(referenceTime!).remainder(dividingBy: fullInterval)
+                let fullIntervalSeconds = Int(fullInterval)
+                let timeDifferenceSeconds = Int(Date().timeIntervalSince(referenceTime!))
+                let timePassModulated = timeDifferenceSeconds % fullIntervalSeconds
                 
-                fullInterval = fullInterval - timePassModulated
+                
+                debugPrint(titles[i])
+                debugPrint("----------------------------------------")
+                debugPrint("Full Interval was \(fullInterval/60) minutes")
+
+                fullInterval = TimeInterval(exactly: (Int(fullInterval) - timePassModulated))!
+                
+                debugPrint("Time Differenc was \(timeDifferenceSeconds/60) minutes")
+                debugPrint("Time Pass Modulated was \(timePassModulated/60) minutes")
+                
+                
+                i+=1
+                debugPrint("Reference Time was " + myUtils.getTimeWithAMPM(date: referenceTime!))
+                debugPrint("Current Time was " + myUtils.getTimeWithAMPM(date: Date()))
+                debugPrint("Time Difference was ")
+                
+                debugPrint("Full Interval become \(fullIntervalSeconds/60) minutes")
+                
             }
+            
             intervals.append(fullInterval)
         }
+        debugPrint("----------------------------------------")
+        debugPrint("----------------------------------------")
         
         return intervals
     }

@@ -60,6 +60,7 @@ extension ChatVC {
         composeTextField.backgroundColor = .flatBlack
         composeTextField.layer.cornerRadius = composeTextField.frame.height/2
         composeTextField.delegate = self
+        composeTextField.returnKeyType = .send
         
         composeTextField.addTarget(self, action: #selector(messageBoxTyped), for: .allEditingEvents)
         

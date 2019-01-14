@@ -69,8 +69,11 @@ class ActiveGameVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        debugPrint("hello")
+        debugPrint(game.roundDuration, game.gpsActivation, game.checkInDuration)
         
         self.sideControlWidth = self.view.frame.width/5
+        setupManagers()
         self.initUI()
         self.updateUIComponents()
         self.recenter()

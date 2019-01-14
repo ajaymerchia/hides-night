@@ -11,11 +11,21 @@ import UIKit
 class TeamReadOnlyVC: UIViewController {
     
     var team: Team!
+    var game: Game!
+    
+    var teamPhoto: UIImageView!
+    var teamName: UILabel!
+    
+    var slotsFilled = [UIView]()
+    var slotData = [User]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        slotData = team.getMembersOfTeamFrom(game: game)
+        
+        initUI()
     }
     
 

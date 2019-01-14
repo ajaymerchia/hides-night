@@ -10,6 +10,7 @@
 import Foundation
 import UIKit
 import iosManagers
+import CountdownLabel
 
 extension ActiveGameVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -35,20 +36,12 @@ extension ActiveGameVC: UITableViewDelegate, UITableViewDataSource {
             
             if round.roundStatus == .hiding {
                 cell = countdownCells[indexPath.row == 0 ? 0 : 3]
-                if indexPath.row == 0 {
-                    cell.countdown.start {
-                        self.round.roundStatus = .seek
-                        FirebaseAPIClient.updateRemoteGame(game: self.game, success: {
-                            self.updateUIComponents()
-                        }, fail: {
-                            self.updateUIComponents()
-                        })
-                    }
-                }
                 
             } else {
                 cell = countdownCells[indexPath.row + 1]
             }
+            
+            
             if round.roundIsActive {
                 cell.countdown.start()
             }
@@ -57,10 +50,39 @@ extension ActiveGameVC: UITableViewDelegate, UITableViewDataSource {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "teamCell") as! GameCell
             
+            for subview in cell.contentView.subviews {
+                subview.removeFromSuperview()
+            }
+
+            cell.awakeFromNib()
+            
             let team = teamFor(indexPath: indexPath)
             cell.initializeCellFrom(data: team, size: CGSize(width: view.frame.width, height: heightComputer()))
             
-            cell.status.text = self.round.teamsCaught.contains(team) || team == self.round.seeker ? "Seeker" : "Hiding"
+            
+            var statusText = isSeeker(team) ? "Seeker" : "Hiding"
+            cell.status.textColor = .ACCENT_BLUE
+            
+            
+            if let timeSinceCheck = self.round.teamCheckins[team.uid]?.timeIntervalSinceNow {
+                let minutesPassed: Int = Int(timeSinceCheck.magnitude) / 60
+                
+                let tense = minutesPassed == 1 ? "" : "s"
+                let addition = minutesPassed == 0 ? ", last checkin: now" : ", last checkin: \(minutesPassed) minute"+tense+" ago"
+                statusText += addition
+                
+                if minutesPassed * 60 >= Int(self.game.checkInDuration.magnitude) {
+                    cell.status.textColor = .ACCENT_RED
+                }
+            } else {
+                statusText += ", has not checked in"
+                cell.status.textColor = .ACCENT_RED
+
+            }
+            
+            cell.status.text = statusText
+            
+            
             cell.selectionStyle = .none
             return cell
         }
@@ -87,5 +109,15 @@ extension ActiveGameVC: UITableViewDelegate, UITableViewDataSource {
     func teamFor(indexPath: IndexPath) -> Team {
         return self.game.teams.values.sorted()[indexPath.row]
     }
+    
+    func isSeeker(_ team: Team) -> Bool {
+        return self.round.teamsCaught.keys.contains(team.uid) || team == self.round.seeker
+    }
 
+}
+
+extension ActiveGameVC: CountdownLabelDelegate {
+    func countdownFinished() {
+        self.updateUIComponents()
+    }
 }

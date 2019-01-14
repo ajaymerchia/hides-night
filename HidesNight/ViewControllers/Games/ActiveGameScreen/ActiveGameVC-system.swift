@@ -16,6 +16,7 @@ extension ActiveGameVC {
 //        alerts = AlertManager(view: self, stateRestoration: {
 //
 //        })
+        NotificationCenter.default.addObserver(self, selector: #selector(updateUIComponents), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -43,6 +44,7 @@ extension ActiveGameVC {
             detail.user = self.user
         } else if let detail = segue.destination as? TeamReadOnlyVC {
             detail.team = teamToShow
+            detail.game = self.game
         }
     }
     

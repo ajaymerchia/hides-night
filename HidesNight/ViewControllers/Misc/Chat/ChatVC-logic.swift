@@ -13,6 +13,12 @@ import iosManagers
 
 extension ChatVC {
     @objc func sendTextMessage() {
+        
+        if needsRefresh() {
+            self.chatView.reloadData()
+        }
+        
+        
         guard let msg = composeTextField.text else { return }
         addPhotoButton.isUserInteractionEnabled = false
         
@@ -36,6 +42,7 @@ extension ChatVC {
                 self.sendImageMessage(img: imgToSend)
             }
         }
+        
         
         addMessage(msg: textMessage)
         
@@ -61,6 +68,10 @@ extension ChatVC {
             pureMessages.append(contentsOf: messages)
         }
         pureMessages.sort()
+    }
+    
+    func needsRefresh() -> Bool {
+        return Array(self.chat.messages.values).map({ (msg) -> Int in return msg.count }).reduce(0, +) != self.pureMessages.count
     }
     
     func setUpNewMessageListener() {
@@ -89,7 +100,7 @@ extension ChatVC {
     func addMessage(msg: Message) {
         
         if pureMessages.contains(msg) { return }
-        
+    
         self.loadChats()
         self.chatView.beginUpdates()
         self.pureMessages.append(msg)

@@ -58,6 +58,15 @@ extension GameDetailVC {
         
         self.game.active = false
         
+        for round in self.game.rounds {
+            round.startHide = nil
+            round.startTime = nil
+            round.roundStatus = RoundStatus.notStarted
+            round.teamsCaught = [:]
+            round.teamCheckins = [:]
+        }
+        
+        
         FirebaseAPIClient.updateRemoteGame(game: self.game, success: {
             sender.isSelected = false
             self.view.isUserInteractionEnabled = true

@@ -47,10 +47,16 @@ class TabBarVC: UITabBarController {
         self.tabBar.isHidden = false
     }
     
+    @objc func loadGames() {
+        resetVCs()
+        self.selectedIndex = 0
+    }
+    
     @objc func loadSocial() {
         resetVCs()
         self.selectedIndex = 1
     }
+    
     
 
     /*

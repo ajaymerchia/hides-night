@@ -28,7 +28,7 @@ extension UIColor {
 }
 class myUtils {
     
-    static func showChatVCFor(game: Game, perspectiveOf: User, fromVC: UINavigationController) {
+    static func showChatVCFor(game: Game, perspectiveOf: User, fromVC: UINavigationController) -> ChatVC {
         let vc = ChatVC()
         vc.game = game
         vc.user = perspectiveOf
@@ -46,6 +46,8 @@ class myUtils {
                 fromVC.pushViewController(vc, animated: true)
             }
         }
+        
+        return vc
         
         
         

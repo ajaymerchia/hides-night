@@ -20,10 +20,18 @@ extension ChatVC {
 
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
+        composeTextField.text = preloadedText
     }
 
     override func viewDidAppear(_ animated: Bool) {
-
+        if preloadedText != nil {
+            self.sendTextMessage()
+            Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { (t) in
+                self.requestImageMessage()
+            }
+            
+            
+        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
