@@ -97,6 +97,8 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                 openGame(from: payloadData, withAction: action)
             case NotificationActions.newChat:
                 newChat(from: payloadData, withAction: action)
+            case NotificationActions.gameRequest:
+                handleGameRequest(from: payloadData, withAction: action)
             default:
                 debugPrint("No action to perform")
             }
@@ -213,6 +215,30 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             }
         }
         
+    }
+    
+    func handleGameRequest(from: [String: Any], withAction: String?) {
+        // if logged in, continue
+        guard Auth.auth().currentUser != nil else {
+            return
+        }
+        guard let tabVC = self.window?.rootViewController?.presentedViewController as? TabBarVC else {
+            return
+        }
+        tabVC.loadSocial()
+        
+        guard let gameID = from["origin"] as? String else {
+            return
+        }
+        guard let action = withAction else {
+            NotificationCenter.default.post(Notification(name: .viewGameRequest, object: self, userInfo: ["gameID": gameID]))
+            return
+        }
+        if action == NotificationActions.acceptAction {
+            NotificationCenter.default.post(Notification(name: .acceptGameRequest, object: self, userInfo: ["gameID": gameID]))
+        } else {
+            NotificationCenter.default.post(Notification(name: .rejectGameRequest, object: self, userInfo: ["gameID": gameID]))
+        }
     }
     
     

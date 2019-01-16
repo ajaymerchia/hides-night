@@ -57,6 +57,9 @@ extension CreateGameVC {
                 self.seekDecisionType = newSelectionStyle
                 self.seekDecisionCell.detailTextLabel?.text = self.seekDecisionType.description
             }
+        } else {
+            awaitingTeam = false
+            awaitingSeek = false
         }
         
         

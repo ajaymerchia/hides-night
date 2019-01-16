@@ -22,6 +22,9 @@ class RoundDetailVC: UIViewController {
     var hud: JGProgressHUD?
     
     var roundName: LabeledTextField!
+    var roundStatusBar: UILabel!
+    var roundStatusIndex = 0
+    
     var mapView: MKMapView!
     var locationManager: CLLocationManager!
     var tapTracker: UITapGestureRecognizer!
@@ -43,7 +46,7 @@ class RoundDetailVC: UIViewController {
     var hasCalloutSelected = false
     
     var hasPermissions: Bool {
-        return self.user == game.admin && self.game.seekSelection != .Randomized
+        return self.user == game.admin
     }
     
     var seekerHeight: CGFloat!

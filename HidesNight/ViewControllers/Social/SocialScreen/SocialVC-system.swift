@@ -21,6 +21,15 @@ extension SocialVC {
         NotificationCenter.default.addObserver(self, selector: #selector(showFriendRequest(_:)), name: .viewFriendRequest, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(acceptFriendRequest(_:)), name: .acceptFriendRequest, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(rejectFriendRequest(_:)), name: .rejectFriendRequest, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(showGameRequest(_:)), name: .viewGameRequest, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(acceptGameRequest(_:)), name: .acceptGameRequest, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(rejectGameRequest(_:)), name: .rejectGameRequest, object: nil)
+        
+        
+        
+        
+        
     }
     
     @objc func updateImage(_ notification: Notification) {
@@ -142,6 +151,78 @@ extension SocialVC {
                 FirebaseAPIClient.rejectFriendRequest(from: usr.0, to: self.user) {
                     self.loadFriendsAndInvites()
                 }
+            }
+        }
+    }
+    
+    
+    func getGameFromNotification(_ notification: Notification) -> (Game, Bool)? {
+        guard let data = notification.userInfo as? [String: String] else {
+            return nil
+        }
+        
+        guard let gameID = data["gameID"] else {
+            return nil
+        }
+        
+        guard let requests = tableData[0] as? [Game] else {
+            return nil
+        }
+        
+        for game in requests {
+            if game.uid == gameID {
+                return (game, true)
+            }
+        }
+        
+        return nil
+    }
+    
+    @objc func showGameRequest(_ notification: Notification) {
+        self.view.isUserInteractionEnabled = false
+        self.hud = alerts.startProgressHud(withMsg: "Loading Game...", style: .dark)
+        performUpdate {
+            if let game = self.getGameFromNotification(notification) {
+                self.gameSelected = game.0
+                self.selectedIsRequest = game.1
+                self.view.isUserInteractionEnabled = true
+                self.hud?.dismiss()
+                self.performSegue(withIdentifier: "social2gameDetail", sender: self)
+            }
+        }
+    }
+    
+    @objc func acceptGameRequest(_ notification: Notification) {
+        self.view.isUserInteractionEnabled = false
+        self.hud = alerts.startProgressHud(withMsg: "Accepting Game Invitation...", style: .dark)
+        performUpdate {
+            if let game = self.getGameFromNotification(notification) {
+                FirebaseAPIClient.gameInvitationAccepted(by: self.user, forGame: game.0, success: {
+                    self.loadFriendsAndInvites {
+                        self.friendsTable.reloadData()
+                        self.hud?.dismiss()
+                        self.view.isUserInteractionEnabled = true
+                        self.tabBarController?.selectedIndex = 0
+                        
+                    }
+                    
+                }, fail: {})
+            }
+        }
+    }
+    
+    @objc func rejectGameRequest(_ notification: Notification) {
+        self.view.isUserInteractionEnabled = false
+        self.hud = alerts.startProgressHud(withMsg: "Rejecting Game Invitation...", style: .dark)
+        performUpdate {
+            if let game = self.getGameFromNotification(notification) {
+                FirebaseAPIClient.gameInvitationRejected(by: self.user, forGame: game.0, success: {
+                    self.loadFriendsAndInvites {
+                        self.friendsTable.reloadData()
+                        self.hud?.dismiss()
+                        self.view.isUserInteractionEnabled = true
+                    }
+                }, fail: {})
             }
         }
     }

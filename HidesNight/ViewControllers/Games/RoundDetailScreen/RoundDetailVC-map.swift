@@ -33,7 +33,7 @@ extension RoundDetailVC: MKMapViewDelegate, CLLocationManagerDelegate {
         // Initialize other subviews
         addRecenter()
         
-        if hasPermissions {
+        if hasPermissions && round.roundStatus == .notStarted {
             instructions = UILabel(frame: CGRect(x: 0, y: 0, width: mapView.frame.width, height: 30))
             instructions.backgroundColor = UIColor.black.withAlphaComponent(0.7)
             instructions.textColor = .white

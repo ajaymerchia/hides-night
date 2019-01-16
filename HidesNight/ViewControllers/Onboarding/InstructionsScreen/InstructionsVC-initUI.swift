@@ -51,6 +51,12 @@ extension InstructionsVC {
     func addSlidesToScrollView() {
         for i in 0 ..< slides.count {
             slides[i].shiftFrameTo(position: i)
+            slides[i].imageView.layer.cornerRadius = slides[i].imageView.frame.width/2
+            slides[i].imageView.clipsToBounds = true
+            slides[i].imageView.contentMode = .scaleAspectFill
+            slides[i].imageView.image = slides[i].imageView.image
+            slides[i].imageView.layer.borderColor = UIColor.white.cgColor
+            slides[i].imageView.layer.borderWidth = 1.5
             scrollView.addSubview(slides[i])
         }
     }

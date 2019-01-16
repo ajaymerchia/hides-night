@@ -130,7 +130,7 @@ extension FirebaseAPIClient {
         forGame.playerStatus[to.uid] = .invited
         forGame.players.append(to)
         // Put a snippet of the game in their inbox
-        to.inbxGaReqs[forGame.uid] = forGame.admin_username
+        to.inbxGaReqs[forGame.uid] = forGame.title
         
         updateRemoteGame(game: forGame, success: {
             updateRemoteUser(usr: to, success: {
@@ -174,7 +174,12 @@ extension FirebaseAPIClient {
         
         if !by.uid.starts(with: "temp") {
             by.gameIDs.removeValue(forKey: fromGame.uid)
-            by.games.remove(at: by.games.index(of: fromGame)!)
+            
+            if fromGame.playerStatus[by.uid] != PlayerStatus.invited {
+                by.games.remove(at: by.games.index(of: fromGame)!)
+            } else {
+                by.inbxGaReqs.removeValue(forKey: fromGame.uid)
+            }
         }
         
         fromGame.playerStatus.removeValue(forKey: by.uid)

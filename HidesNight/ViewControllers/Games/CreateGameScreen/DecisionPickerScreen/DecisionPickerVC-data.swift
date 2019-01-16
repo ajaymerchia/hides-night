@@ -17,10 +17,10 @@ extension DecisionPickerVC {
         
         slideData.append(SlideData(header: "Assigned",
                                    detail: "Admin (Game Creator) decides the teams.",
-                                   image: .logo_dark))
+                                   image: .select_assigned))
         slideData.append(SlideData(header: "Chosen",
                                    detail: "Anyone can choose who is on their team!",
-                                   image: .logo_dark))
+                                   image: .select_chosen))
 //        slideData.append(SlideData(header: "Random",
 //                                   detail: "Let fate decide who your partners will be.",
 //                                   image: .logo_dark))
@@ -31,13 +31,13 @@ extension DecisionPickerVC {
         
         slideData.append(SlideData(header: "Assigned",
                                    detail: "Admin (Game Creator) decides who the seekers are for each round.",
-                                   image: .logo_dark))
+                                   image: .select_assigned))
 //        slideData.append(SlideData(header: "Chosen",
 //                                   detail: "The group will vote who the seeker is for each round.",
 //                                   image: .logo_dark))
         slideData.append(SlideData(header: "Random",
                                    detail: "Let fate decide who the seekers will be.",
-                                   image: .logo_dark))
+                                   image: .select_random))
     }
     
     @objc func returnDataToParent() {

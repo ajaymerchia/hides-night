@@ -106,7 +106,7 @@ extension InviteFriendVC: UITableViewDelegate, UITableViewDataSource, UITextFiel
         }
         
         if adjustString {
-            cell.name.text = "Manually Add \"\(cellUser.first!)\""
+            cell.name.text = "Add \"\(cellUser.first!)\""
             cell.setState(to: .unknown)
         }
         

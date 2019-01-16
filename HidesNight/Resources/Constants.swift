@@ -32,7 +32,6 @@ class NotificationActions {
     // Pregame
     static let gameRequest: String = "gameRequest"
     
-    
     // In Game
     static let gameStarted: String = "gameStarted"
     static let gameCancelled: String = "gameCancelled"
@@ -74,6 +73,9 @@ extension Notification.Name {
     static let viewFriendRequest = Notification.Name("viewFriend")
     
     // Pre Game Actions
+    static let rejectGameRequest = Notification.Name("rejectGame")
+    static let acceptGameRequest = Notification.Name("acceptGame")
+    static let viewGameRequest = Notification.Name("viewGame")
     
     // In Game Actions
     static let openGame = Notification.Name("openGame")
@@ -127,6 +129,19 @@ extension UIImage {
     static let mark_catch: UIImage! = UIImage(named: "mark-catch")
     static let mark_timer: UIImage! = UIImage(named: "mark-timer")
     
+    
+    // Instruction Graphics
+    static let instruct_findGroup: UIImage! = UIImage(named: "instruct-findGroup")
+    static let instruct_adminSelect: UIImage! = UIImage(named: "instruct-adminSelect")
+    static let instruct_hideAndSeek: UIImage! = UIImage(named: "instruct-hideAndSeek")
+    static let instruct_gps: UIImage! = UIImage(named: "instruct-gps")
+    static let instruct_caught: UIImage! = UIImage(named: "instruct-caught")
+    static let instruct_win: UIImage! = UIImage(named: "instruct-win")
+    
+    // Selection Graphics
+    static let select_assigned: UIImage! = UIImage(named: "select-assigned")
+    static let select_chosen: UIImage! = UIImage(named: "select-chosen")
+    static let select_random: UIImage! = UIImage(named: "select-random")
     
 }
 

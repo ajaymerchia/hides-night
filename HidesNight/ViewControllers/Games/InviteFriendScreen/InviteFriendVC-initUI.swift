@@ -20,7 +20,7 @@ extension InviteFriendVC {
     }
 
     // UI Initialization Helpers
-    @objc     func initNav() {
+    @objc func initNav() {
         if let nav = self.navigationController?.navigationBar {
             nav.tintColor = .white
             nav.backgroundColor = .black
@@ -30,11 +30,6 @@ extension InviteFriendVC {
             
             self.navbar = nav
         }
-        navbar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 70))
-        
-        
-        
-        
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(goBack))
 //        self.navigationItem.titleView = searchBox
@@ -46,7 +41,7 @@ extension InviteFriendVC {
     }
     
     func initSearch() {
-        searchBox = UITextField(frame: LayoutManager.belowCentered(elementAbove: navbar, padding: 0, width: view.frame.width - 2 * .PADDING, height: 40))
+        searchBox = UITextField(frame: LayoutManager.belowCentered(elementAbove: navbar, padding: navbar.frame.height, width: view.frame.width - 2 * .PADDING, height: 40))
         searchBox.textColor = .white
         searchBox.tintColor = .white
         searchBox.font = .TEXT_FONT

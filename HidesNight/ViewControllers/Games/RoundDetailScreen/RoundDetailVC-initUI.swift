@@ -48,6 +48,11 @@ extension RoundDetailVC {
             addToMap(pinAt: spot)
         }
         
+        if self.round.roundStatus == RoundStatus.gameOver {
+            addStatusBar()
+        }
+        
+        
     }
 
     // UI Initialization Helpers
@@ -108,7 +113,7 @@ extension RoundDetailVC {
         selectTeamButton.layer.borderWidth = 0.75
         selectTeamButton.clipsToBounds = true
         
-        if hasPermissions {
+        if hasPermissions && self.game.seekSelection != .Randomized {
             selectTeamButton.setTitle("Pick Seekers", for: .normal)
             selectTeamButton.addTarget(self, action: #selector(toTeamSelect), for: .touchUpInside)
         } else {
@@ -168,7 +173,7 @@ extension RoundDetailVC {
         removeTeam.layer.cornerRadius = removeTeam.frame.width/2
         removeTeam.clipsToBounds = true
         
-        if hasPermissions {
+        if hasPermissions && self.game.seekSelection != .Randomized {
             selectedTeam.addSubview(removeTeam)
             removeTeam.addTarget(self, action: #selector(removeSeekers), for: .touchUpInside)
         }
@@ -203,6 +208,44 @@ extension RoundDetailVC {
         tapTracker = UITapGestureRecognizer(target: self, action: #selector(tapReceived))
         tapTracker.delegate = self
         view.addGestureRecognizer(tapTracker)
+    }
+    
+    func addStatusBar() {
+        roundStatusBar = UILabel(frame: CGRect(x: 0, y: 0, width: mapView.frame.width, height: 30))
+        
+        roundStatusBar.backgroundColor = UIColor.black.withAlphaComponent(0.7)
+        roundStatusBar.textColor = .white
+        roundStatusBar.font = .TEXT_FONT
+        
+        roundStatusBar.textAlignment = .center
+        mapView.addSubview(roundStatusBar)
+        
+        let initialText = "Game Over: " + (self.round.winners.contains(self.round.seeker!) ? "Seekers win!" : "Hiders win!")
+
+        var statusBarOptions = [initialText]
+        statusBarOptions.append(contentsOf: self.round.winners.map({ (t) -> String in
+            
+            let fullNames = Array(t.memberIDs.values)
+            var names = [String]()
+            
+            for name in fullNames {
+                let firstName = String(name.prefix(while: { (character) -> Bool in
+                    return character != " "
+                }))
+                names.append(firstName)
+            }
+            
+            return "\(t.name!): " + names.joined(separator: ", ")
+        }))
+        
+        roundStatusBar.text = initialText
+        Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { (t) in
+            self.roundStatusBar.text = statusBarOptions[self.roundStatusIndex]
+            self.roundStatusIndex = (self.roundStatusIndex + 1) % statusBarOptions.count
+        }
+        
+        
+        mapView.addSubview(roundStatusBar)
     }
     
     
