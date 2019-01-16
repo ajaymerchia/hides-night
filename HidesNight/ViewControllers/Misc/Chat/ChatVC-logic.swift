@@ -154,7 +154,6 @@ extension ChatVC {
     
     @objc func imageTapped(img: UIImage) {
         
-        debugPrint(img.size)
         
         overlayImageView = UIImageView(frame: UIScreen.main.bounds)
         overlayImageView.backgroundColor = .black

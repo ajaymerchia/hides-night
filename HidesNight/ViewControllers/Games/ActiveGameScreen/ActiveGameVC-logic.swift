@@ -10,14 +10,15 @@ import Foundation
 import UIKit
 import iosManagers
 import FirebaseDatabase
+import CoreLocation
+import MapKit
 
 extension ActiveGameVC {
     func setUpChangeListener() {
         Database.database().reference().child("games").child(self.game.uid).observe(.childChanged) { (_) in
             FirebaseAPIClient.updateGame(self.game, completion: {
-                debugPrint(self.game.checkInDuration)
                 self.updateLocalNotification(status: self.game.currentRound.roundStatus)
-                if self.game.active == false {
+                if !self.game.active && !self.game.finished { // If it's no longer active dismiss, unless it's also finished
                     self.navigationController?.popViewController(animated: true)
                 }
                 
@@ -40,7 +41,13 @@ extension ActiveGameVC {
     }
     
     @objc func nextRound(_ sender: UIButton) {
-        
+        self.game.currRoundNumber += 1
+        FirebaseAPIClient.updateRemoteGame(game: self.game, success: {
+            self.updateUIComponents()
+        }) {
+            self.game.currRoundNumber-=1
+            self.updateUIComponents()
+        }
     }
     
     @objc func setHidingTime(_ sender: UIButton) {
@@ -53,6 +60,7 @@ extension ActiveGameVC {
         intervalPicker.setValue(UIColor.white, forKey: "textColor")
         intervalPicker.datePickerMode = .countDownTimer
         intervalPicker.minuteInterval = 1
+//        intervalPicker.countDownDuration = TimeInterval(exactly: 1 * 60)!
         intervalPicker.countDownDuration = TimeInterval(exactly: 15 * 60)!
         
         pop.addSubview(intervalPicker)
@@ -91,6 +99,11 @@ extension ActiveGameVC {
         
         caughtTeamPicker.callback = { (team) in
             self.round.teamsCaught[team.uid] = team.name
+            
+            if self.game.finished {
+                self.game.active = false
+            }
+            
             FirebaseAPIClient.updateRemoteGame(game: self.game, success: {
                 
                 let txt = "\(self.game.getTeamFor(player: self.user)!.name!) caught \(team.name!)"
@@ -133,7 +146,14 @@ extension ActiveGameVC {
         tableView.reloadData()
     }
     
-    
+    func updateLocalData() {
+        LocalData.putLocalData(forKey: .activeGameID, data: self.game.uid)
+        if let teamID = self.game.getTeamFor(player: self.user)?.uid {
+            LocalData.putLocalData(forKey: .activeTeamID, data: teamID)
+            
+        }
+        LocalData.putLocalData(forKey: .activeRoundID, data: self.game.currentRound.uid)
+    }
     
     
     
@@ -144,7 +164,9 @@ extension ActiveGameVC {
             NotificationsHelper.clearLocalNotifications()
         } else if status == RoundStatus.hiding {
             NotificationsHelper.setCheckInTimer(everySeconds: self.game.checkInDuration, gameID: self.game.uid)
-            NotificationsHelper.setGameEndTimer(game: self.game)
+            NotificationsHelper.setEndHideTimer(game: self.game)
+            NotificationsHelper.setEndOfGameTimer(game: self.game)
+            NotificationsHelper.setGPSActivationTimer(game: self.game)
         } else if status == RoundStatus.seek {
             
         } else if status == RoundStatus.seekWithGPS {
@@ -153,6 +175,123 @@ extension ActiveGameVC {
             NotificationsHelper.clearLocalNotifications()
         }
     }
+    
+    @objc func updateCurrentLocation() {
+        guard let teamID = self.game.getTeamFor(player: self.user)?.uid else { return }
+        
+        if roundMap.userLocation.coordinate.latitude == 0 && roundMap.userLocation.coordinate.longitude == 0 {
+            return
+        }
+        
+        self.round.teamLocations[teamID] = roundMap.userLocation.location
+        FirebaseAPIClient.updateRemoteGame(game: self.game, success: {}, fail: {})
+    }
+    
+    
+    
+    func showOtherPlayers() {
+        roundMap.removeAnnotations(teamLocationAnnotations)
+        teamLocationAnnotations = []
+        
+        for (teamID, location) in self.round.teamLocations {
+            if self.game.getTeamFor(player: self.user)?.uid == teamID {
+                continue
+            }
+            
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = location.coordinate
+            annotation.title = self.game.teams[teamID]?.name
+            
+            let oldNess = Date().timeIntervalSince(location.timestamp)
+            
+            if oldNess < 60 {
+                annotation.subtitle = "updated \(Int(oldNess)) seconds ago"
+            } else if oldNess < 60 * 60 {
+                annotation.subtitle = "updated \(Int(oldNess/60)) minutes ago"
+            } else {
+                annotation.subtitle = "updated \(Int(oldNess/60 / 60)) hours ago"
+            }
+            
+            
+            teamLocationAnnotations.append(annotation)
+            roundMap.addAnnotation(annotation)
+        }
+        
+    }
+    
+    @objc func updateUIComponents() {
+        // Instruction
+        if getIntervals()[0] < 0 && round.roundStatus == .hiding {
+            round.roundStatus = .seek
+            FirebaseAPIClient.updateRemoteGame(game: self.game, success: {}, fail: {})
+        }
+        
+        if round.roundStatus != RoundStatus.gameOver && self.round.teamsCaught.count == (self.game.teams.count - 1) {
+            // Game status is not over, but we captured everyone
+            self.round.roundStatus = RoundStatus.gameOver
+            FirebaseAPIClient.updateRemoteGame(game: self.game, success: {}, fail: {})
+            return
+        }
+        
+        
+        gameStatusSwitcher?.invalidate()
+        
+        if round.roundStatus == RoundStatus.notStarted && self.userIsAdmin {
+            gameStatus.text = "Start \(self.round.name!)"
+        } else if round.roundStatus == RoundStatus.gameOver {
+            
+            let initialText = "Game Over: " + (self.round.winners.contains(self.round.seeker!) ? "Seekers win!" : "Hiders win!")
+            gameStatus.text = initialText
+            
+            gameStatusSwitcher = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true, block: { (t) in
+                var statusBarOptions = [initialText]
+                statusBarOptions.append(contentsOf: self.round.winners.map({ (t) -> String in
+                    
+                    let fullNames = Array(t.memberIDs.values)
+                    var names = [String]()
+                    
+                    for name in fullNames {
+                        let firstName = String(name.prefix(while: { (character) -> Bool in
+                            return character != " "
+                        }))
+                        names.append(firstName)
+                    }
+                    
+                    return "\(t.name!): " + names.joined(separator: ", ")
+                }))
+                
+                
+                self.gameStatus.text = statusBarOptions[self.gameStatusIndex]
+                self.gameStatusIndex = (self.gameStatusIndex + 1) % statusBarOptions.count
+            })
+            
+        } else {
+            if self.userIsSeeker {
+                gameStatus.text = round.roundStatus.seekDescription
+            } else {
+                gameStatus.text = round.roundStatus.description
+            }
+        }
+        
+        // Map Bounds
+        addToMap(pins: round.boundaryPoints)
+        
+        createCountDownCells()
+        tableView.reloadData()
+        
+        refreshSideControls()
+        
+        if self.showLocation {
+            self.showOtherPlayers()
+        }
+        
+        // Ensure Local Data's got it down
+        updateLocalData()
+        
+        
+    }
+    
+    
 
     
 }

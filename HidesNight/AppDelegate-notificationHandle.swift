@@ -13,7 +13,6 @@ import FirebaseAuth
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
     // Handle the Actual Notifications
-    
         // Called every time a notfication is sent
         func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
             
@@ -79,7 +78,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             }
             
             
-            debugPrint(userInfo)
             var payloadData: [String: Any] = [:]
             
             if let data = userInfo["data"] as? [String: Any] {
@@ -160,19 +158,24 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     }
     
     func setHideTimer(fromData: [String: Any]) {
-        debugPrint(fromData)
         guard let seekers = fromData["seekers"] as? [String] else { return }
         guard let endOfHide = fromData["endOfHide"] as? String else { return }
         let endOfHideDate = endOfHide.toDateTime()
+        
+        guard let timeToEnd = fromData["timeToEnd"] as? Int else { return }
         guard let timeToCheck = fromData["timeToCheckin"] as? Int else { return }
+        guard let timeToGPS = fromData["timeToGPS"] as? Int else { return }
+        
         guard let gameID = fromData["gameID"] as? String else { return }
+        guard let gameTitle = fromData["gameTitle"] as? String else { return }
+        guard let roundName = fromData["roundName"] as? String else { return }
         
         
-        
-        
-        
-        NotificationsHelper.setGameEndTimer(withSeekers: seekers, endOfHideAt: endOfHideDate)
+        NotificationsHelper.setEndHideTimer(withSeekers: seekers, endOfHideAt: endOfHideDate)
         NotificationsHelper.setCheckInTimer(everySeconds: Double(timeToCheck), gameID: gameID)
+        NotificationsHelper.setGPSActivationTimer(gameTitle: gameTitle, beginningOfGPS: endOfHideDate.addingTimeInterval(TimeInterval(timeToGPS)))
+        NotificationsHelper.setEndOfGameTimer(roundName: roundName, gameTitle: gameTitle, endOfGame: endOfHideDate.addingTimeInterval(TimeInterval(timeToEnd)))
+        
     }
     
     func checkIntoGame(from: [String: Any], withAction: String?) {
@@ -211,7 +214,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         }
         
     }
-    
     
     
     

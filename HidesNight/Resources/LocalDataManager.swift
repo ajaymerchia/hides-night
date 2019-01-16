@@ -18,7 +18,7 @@ class LocalData {
     private init(_ key: String) {
         key_name = key
     }
-
+    
     static func getLocalData(forKey: LocalData) -> String? {
         let defaults = UserDefaults.standard
         guard let str = defaults.string(forKey: forKey.key_name) else {

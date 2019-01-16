@@ -17,6 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
     var window: UIWindow?
     var deviceToken: String?
     var fcmToken: String?
+    
+    var gameID: String?
+    var teamID: String?
+    var roundID: String?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -34,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
         UNUserNotificationCenter.current().delegate = self
         Messaging.messaging().delegate = self
         registerForPushNotifications()
+        setUpLocationManagerSubscriber()	
         
 
 

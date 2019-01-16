@@ -17,6 +17,8 @@ extension GameDetailVC {
         createCellButton.setTitle(createTitles[index], for: .normal)
         tableView.reloadData()
         
+        tableView.isEditing = (index == 2)
+        
         
     }
     
@@ -45,6 +47,11 @@ extension GameDetailVC {
         }
     }
     
+    @objc func restartGame(_ sender: UIButton) {
+        deactivateGame(sender)
+        startGame(sender)
+    }
+    
     @objc func deactivateGame(_ sender: UIButton) {
         self.view.isUserInteractionEnabled = false
         sender.isSelected = true
@@ -57,6 +64,7 @@ extension GameDetailVC {
         }
         
         self.game.active = false
+        self.game.currRoundNumber = 0
         
         for round in self.game.rounds {
             round.startHide = nil
@@ -64,6 +72,8 @@ extension GameDetailVC {
             round.roundStatus = RoundStatus.notStarted
             round.teamsCaught = [:]
             round.teamCheckins = [:]
+            round.teamLocations = [:]
+            
         }
         
         

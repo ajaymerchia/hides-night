@@ -32,6 +32,8 @@ class ActiveGameVC: UIViewController {
     // UI Elements
     var gameTitle: UILabel!
     var gameStatus: UILabel!
+        var gameStatusSwitcher: Timer?
+        var gameStatusIndex: Int = 0
     
     var roundMap: MKMapView!
     
@@ -63,14 +65,19 @@ class ActiveGameVC: UIViewController {
     var borderDrawing: MKPolyline!
     
     // Map Team Control
+    var showLocation: Bool {
+        return round.roundStatus == RoundStatus.seekWithGPS
+        
+    }
+    var teamLocationAnnotations = [MKAnnotation]()
+    var teamLocationAccuracyCircle: MKCircle?
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        debugPrint("hello")
-        debugPrint(game.roundDuration, game.gpsActivation, game.checkInDuration)
         
         self.sideControlWidth = self.view.frame.width/5
         setupManagers()
@@ -78,7 +85,6 @@ class ActiveGameVC: UIViewController {
         self.updateUIComponents()
         self.recenter()
         self.setUpChangeListener()
-        
         
     }
 

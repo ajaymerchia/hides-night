@@ -33,9 +33,10 @@ extension DecisionPickerVC {
     
     func initScrollView() {
         scrollView = UIScrollView(frame: LayoutManager.belowCentered(elementAbove: (self.navigationController?.navigationBar)!, padding: 0, width: view.frame.width, height: view.frame.height))
-        scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(slideData.count), height: scrollView.frame.height)
+        scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(slideData.count), height: 0)
         scrollView.isPagingEnabled = true
         scrollView.delegate = self
+        
         view.addSubview(scrollView)
     }
     

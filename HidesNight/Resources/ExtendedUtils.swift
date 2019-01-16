@@ -28,6 +28,18 @@ extension UIColor {
 }
 class myUtils {
     
+    static func imageResize (image:UIImage, sizeChange:CGSize) -> UIImage {
+        
+        let hasAlpha = true
+        let scale: CGFloat = 0.0 // Use scale factor of main screen
+        
+        UIGraphicsBeginImageContextWithOptions(sizeChange, !hasAlpha, scale)
+        image.draw(in: CGRect(origin: .zero, size: sizeChange))
+        
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        return scaledImage!
+    }
+    
     static func showChatVCFor(game: Game, perspectiveOf: User, fromVC: UINavigationController) -> ChatVC {
         let vc = ChatVC()
         vc.game = game
@@ -102,5 +114,14 @@ class myUtils {
     
     public static func seconds(min: Double) -> Double {
         return min * 60
+    }
+    
+    public static func randomNum(from: Int = 0, upTo: Int, _ inclusive: Bool = false) -> Int {
+        if !inclusive {
+            return Int.random(in: from..<upTo)
+        } else {
+            return Int.random(in: from...upTo)
+        }
+        
     }
 }

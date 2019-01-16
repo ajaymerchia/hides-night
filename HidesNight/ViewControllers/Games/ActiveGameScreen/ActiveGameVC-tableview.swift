@@ -42,7 +42,7 @@ extension ActiveGameVC: UITableViewDelegate, UITableViewDataSource {
             }
             
             
-            if round.roundIsActive {
+            if round.roundIsActive && cell.countdown.timeRemaining > 0 {
                 cell.countdown.start()
             }
             return cell

@@ -21,9 +21,9 @@ extension DecisionPickerVC {
         slideData.append(SlideData(header: "Chosen",
                                    detail: "Anyone can choose who is on their team!",
                                    image: .logo_dark))
-        slideData.append(SlideData(header: "Random",
-                                   detail: "Let fate decide who your partners will be.",
-                                   image: .logo_dark))
+//        slideData.append(SlideData(header: "Random",
+//                                   detail: "Let fate decide who your partners will be.",
+//                                   image: .logo_dark))
     }
     
     func createSeekerSlides() {
@@ -32,16 +32,23 @@ extension DecisionPickerVC {
         slideData.append(SlideData(header: "Assigned",
                                    detail: "Admin (Game Creator) decides who the seekers are for each round.",
                                    image: .logo_dark))
-        slideData.append(SlideData(header: "Chosen",
-                                   detail: "The group will vote who the seeker is for each round.",
-                                   image: .logo_dark))
+//        slideData.append(SlideData(header: "Chosen",
+//                                   detail: "The group will vote who the seeker is for each round.",
+//                                   image: .logo_dark))
         slideData.append(SlideData(header: "Random",
                                    detail: "Let fate decide who the seekers will be.",
                                    image: .logo_dark))
     }
     
     @objc func returnDataToParent() {
-        (self.navigationController as! DataNavVC).selectionType = [GameSelectionType.Assigned, GameSelectionType.Chosen, GameSelectionType.Randomized][pageControl.currentPage]
+        if self.isTeamSlides {
+            (self.navigationController as! DataNavVC).selectionType = [GameSelectionType.Assigned, GameSelectionType.Chosen][pageControl.currentPage]
+        } else {
+            (self.navigationController as! DataNavVC).selectionType = [GameSelectionType.Assigned, GameSelectionType.Randomized][pageControl.currentPage]
+        }
+        
+        
+        
         self.navigationController?.popViewController(animated: true)
     }
 

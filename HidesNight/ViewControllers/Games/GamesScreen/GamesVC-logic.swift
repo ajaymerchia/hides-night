@@ -40,7 +40,7 @@ extension GamesVC {
         for game in self.user.games {
             if game.active {
                 tableData[0].append(game)
-            } else if game.datetime > Date.init() {
+            } else if game.datetime > Date.init() && !game.finished {
                 tableData[1].append(game)
             } else {
                 tableData[2].append(game)

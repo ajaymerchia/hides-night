@@ -97,7 +97,6 @@ class CreateGameVC: UIViewController {
         self.navigationItem.rightBarButtonItem?.title = "Done"
         
         eventNameField.text = g.title
-        addImageButton.setImage(g.img, for: .normal)
         date = g.datetime
         dateTimeCell.detailTextLabel?.text = myUtils.getFormattedDateAndTime(date: self.date)
         

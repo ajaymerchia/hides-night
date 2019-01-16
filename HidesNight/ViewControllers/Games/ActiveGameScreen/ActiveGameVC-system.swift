@@ -10,6 +10,7 @@
 import Foundation
 import UIKit
 import iosManagers
+import CoreLocation
 
 extension ActiveGameVC {
     func setupManagers() {
@@ -17,6 +18,20 @@ extension ActiveGameVC {
 //
 //        })
         NotificationCenter.default.addObserver(self, selector: #selector(updateUIComponents), name: UIApplication.willEnterForegroundNotification, object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(updateCurrentLocation), name: UIApplication.willEnterForegroundNotification, object: nil)
+        
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        locationManager = CLLocationManager()
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        locationManager.delegate = appDelegate
+        locationManager.allowsBackgroundLocationUpdates = true
+        
+        
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -31,7 +46,7 @@ extension ActiveGameVC {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        
+        self.updateCurrentLocation()
     }
 
     override func viewWillDisappear(_ animated: Bool) {

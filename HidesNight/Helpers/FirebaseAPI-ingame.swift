@@ -9,6 +9,7 @@
 import Foundation
 import FirebaseDatabase
 import FirebaseStorage
+import CoreLocation
 
 extension FirebaseAPIClient {
     static func checkIn(by: User, forGame: Game, completion: @escaping () -> ()) {
@@ -20,6 +21,14 @@ extension FirebaseAPIClient {
         }) {
             completion()
         }
+        
+    }
+    
+    static func updateLocationFor(inRound: String, teamID: String, forGame: String, toLocation: CLLocation, completion: @escaping () -> ()) {
+        Database.database().reference().child("games").child(forGame).child("rounds").child(inRound).child("teamLocations").child(teamID).setValue(toLocation.createPushable()) { (err, ref) in
+            completion()
+        }
+        
         
     }
     

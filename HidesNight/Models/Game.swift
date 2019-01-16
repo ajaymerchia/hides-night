@@ -107,6 +107,9 @@ class Game: FirebaseReady, Comparable {
     
     // Game State
     var active = false
+    var finished: Bool {
+        return self.rounds.map({ (round) -> Bool in return round.roundStatus == RoundStatus.gameOver}).reduce(true, { (res, nxt) -> Bool in return res && nxt})
+    }
     
     
     
@@ -169,7 +172,7 @@ class Game: FirebaseReady, Comparable {
         ret["currRoundNumber"] = currRoundNumber
         
         
-        ret["active"] = self.active
+        ret["active"] = self.active && !self.finished
         
         ret["notificationDevices"] = self.notificationDevices
         

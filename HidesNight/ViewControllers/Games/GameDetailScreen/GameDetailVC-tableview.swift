@@ -83,6 +83,10 @@ extension GameDetailVC: UITableViewDelegate, UITableViewDataSource {
             cell.awakeFromNib()
             cell.initializeCellFrom(data: roundFor(indexPath: indexPath), size: CGSize(width: view.frame.width, height: heightComputer()))
             cell.selectionStyle = .none
+            cell.showsReorderControl = false
+            
+            cell.backgroundColor = .black
+            
             return cell
         }
         
@@ -106,6 +110,29 @@ extension GameDetailVC: UITableViewDelegate, UITableViewDataSource {
             self.performSegue(withIdentifier: "detail2round", sender: self)
         }
         
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        
+        if currentSegSelected == 2 {
+            self.game.rounds[sourceIndexPath.row].order = destinationIndexPath.row + 1
+            self.game.rounds[destinationIndexPath.row].order = sourceIndexPath.row + 1
+            self.game.rounds.sort()
+        }
+        
+        FirebaseAPIClient.updateRemoteGame(game: self.game, success: {
+            self.tableView.reloadData()
+        }, fail: {})
+        
+        
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return UITableViewCell.EditingStyle.none
+    }
+    
+    func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
     }
     
     

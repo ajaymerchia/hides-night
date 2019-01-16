@@ -100,13 +100,14 @@ extension RoundDetailVC: MKMapViewDelegate, CLLocationManagerDelegate {
         }
         
         if sourceBoundaries.count > 2 {
-            for coordinate in sourceBoundaries {
-                centerLat += coordinate.latitude
-                centerLon += coordinate.longitude
-            }
+//            for coordinate in sourceBoundaries {
+//                centerLat += coordinate.latitude
+//                centerLon += coordinate.longitude
+//            }
             
-            centerLat = centerLat/Double(sourceBoundaries.count)
-            centerLon = centerLon/Double(sourceBoundaries.count)
+            centerLat = (sourceBoundaries.map({ (coord) -> Double in return coord.latitude }).reduce(Double.infinity, { (res, nxt) -> Double in return min(res, nxt)}) + sourceBoundaries.map({ (coord) -> Double in return coord.latitude }).reduce(-Double.infinity, { (res, nxt) -> Double in return max(res, nxt)}))/2
+            
+            centerLon = (sourceBoundaries.map({ (coord) -> Double in return coord.longitude }).reduce(Double.infinity, { (res, nxt) -> Double in return min(res, nxt)}) + sourceBoundaries.map({ (coord) -> Double in return coord.longitude }).reduce(-Double.infinity, { (res, nxt) -> Double in return max(res, nxt)}))/2
             
             
             let degreePaddingFactor: Double = 1.4

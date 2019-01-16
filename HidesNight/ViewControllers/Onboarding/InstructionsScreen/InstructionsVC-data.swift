@@ -24,6 +24,12 @@ extension InstructionsVC {
         slideData.append(SlideData(header: "Hide & Seek",
                                        detail: "Depending on the size of the zone, seekers will take 5-10 minutes to let other players hide. Stay hidden!",
                                        image: .logo_dark))
+        slideData.append(SlideData(header: "Getting Caught",
+                                   detail: "When the seekers catch a team, they have to tag one of the members and send a photo to the chat. Run FAST!",
+                                   image: .logo_dark))
+        slideData.append(SlideData(header: "GPS Activation",
+                                   detail: "Depending on the Game Admin, your phone's GPS may broadcast your location to other teams. Shelter in place or stay on the move!",
+                                   image: .logo_dark))
         slideData.append(SlideData(header: "Winning",
                                        detail: "The game ends if seekers are unable to find ALL groups before the timer expires. Otherwise, any teams still hidden win!",
                                        image: .logo_dark))

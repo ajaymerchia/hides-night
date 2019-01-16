@@ -194,7 +194,7 @@ extension GameDetailVC: UIGestureRecognizerDelegate {
         
         rightActionButton = UIButton(frame: CGRect(x: 0, y: 0, width: buttonWidth, height: overallButtonHolder.frame.height))
 
-        var textToUse: String = self.userIsAdmin ? (self.game.active ? "Deactivate" : "Start") : "Leave"
+        var textToUse: String = self.userIsAdmin ? (self.game.active ? "Deactivate" : (self.game.finished ? "Restart" : "Start")) : "Leave"
         var colorToUse: UIColor = self.userIsAdmin && !self.game.active ? .ACCENT_GREEN : .ACCENT_RED
         
         if self.game.datetime < Date() {
@@ -236,7 +236,7 @@ extension GameDetailVC: UIGestureRecognizerDelegate {
     }
     
     func configureButtonsForUser() {
-        var textToUse: String = self.userIsAdmin ? (self.game.active ? "Deactivate" : "Start") : "Leave"
+        var textToUse: String = self.userIsAdmin ? (self.game.active ? "Deactivate" : (self.game.finished ? "Restart" : "Start")) : "Leave"
         var colorToUse: UIColor = self.userIsAdmin && !self.game.active ? .ACCENT_GREEN : .ACCENT_RED
 
         if self.game.datetime < Date() {
@@ -267,8 +267,10 @@ extension GameDetailVC: UIGestureRecognizerDelegate {
             if userIsAdmin {
                 if self.game.active {
                     rightActionButton.addTarget(self, action: #selector(deactivateGame), for: .touchUpInside)
-                } else {
+                } else if !self.game.finished {
                     rightActionButton.addTarget(self, action: #selector(startGame), for: .touchUpInside)
+                } else {
+                    rightActionButton.addTarget(self, action: #selector(restartGame), for: .touchUpInside)
                 }
             } else {
                 rightActionButton.addTarget(self, action: #selector(leaveGame), for: .touchUpInside)
@@ -325,6 +327,7 @@ extension GameDetailVC: UIGestureRecognizerDelegate {
         tableView.dataSource = self
         tableView.backgroundColor = .black
         tableView.separatorStyle = .none
+        tableView.allowsSelectionDuringEditing = true
         
         view.addSubview(tableView)
     }

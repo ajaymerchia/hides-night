@@ -43,7 +43,7 @@ class RoundDetailVC: UIViewController {
     var hasCalloutSelected = false
     
     var hasPermissions: Bool {
-        return self.user == game.admin
+        return self.user == game.admin && self.game.seekSelection != .Randomized
     }
     
     var seekerHeight: CGFloat!

@@ -24,7 +24,14 @@ extension RoundDetailVC {
         initTextfield()
         
         if round.seeker == nil {
-            initTeamSelected()
+            if self.game.seekSelection == .Randomized {
+                
+
+                self.round.seeker = Array(self.game.teams.values)[myUtils.randomNum(upTo: self.game.teams.count)]
+                initTeamView()
+            } else {
+                initTeamSelected()
+            }
         } else {
             initTeamView()
         }

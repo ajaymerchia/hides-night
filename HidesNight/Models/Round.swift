@@ -39,7 +39,6 @@ class Round: Equatable, Comparable, FirebaseReady {
         ret["hideTime"] = self.hidingTime.magnitude
         
         ret["seeker"] = self.seeker?.uid
-        ret["winner"] = self.winner?.uid
         
         ret["caught"] = self.teamsCaught
         
@@ -92,7 +91,8 @@ class Round: Equatable, Comparable, FirebaseReady {
         self.hidingTime = TimeInterval(record["hideTime"] as? Int ?? (15 * 60))
         
         self.seeker = self.parentGame.teams[record["seeker"] as? String ?? ""]
-        self.winner = self.parentGame.teams[record["winner"] as? String ?? ""]
+        
+        
         
         if let storedStatus = record["status"] as? String {
             for possibleStatus in RoundStatus.states {
@@ -108,6 +108,12 @@ class Round: Equatable, Comparable, FirebaseReady {
         
         if let checkinsAsString = record["teamCheckins"] as? [String: String] {
             self.teamCheckins = checkinsAsString.mapValues({ (string) -> Date in string.toDateTime()})
+        }
+        
+        if let locations = record["teamLocations"] as? [String: [String: Any]] {
+            for (teamID, locationData) in locations {
+                teamLocations[teamID] = CLLocation(key: "", record: locationData)
+            }
         }
         
         
@@ -132,15 +138,19 @@ class Round: Equatable, Comparable, FirebaseReady {
     }
     
     var seeker: Team?
-    var winner: Team?
+    var winners: [Team] {
+        if teamsCaught.count == self.parentGame.teams.count - 1 {
+            guard let seeker = self.seeker else { return [] }
+            return [seeker]
+        } else {
+            return Array(self.parentGame.teams.values).filter({ (team) -> Bool in return !teamsCaught.keys.contains(team.uid) && team.uid != seeker?.uid})
+        }
+    }
     
     // Team States
     var teamsCaught = [String: String]() // TeamID + Team Name
     var teamCheckins = [String: Date]()
-    var teamLocations = [String: CLLocationCoordinate2D]()
-    
-
-    
+    var teamLocations = [String: CLLocation]()
     
 }
 
@@ -175,7 +185,30 @@ class RoundStatus: Equatable {
     
 }
 
+extension CLLocation {
+    func createPushable() -> [String : Any?] {
+        var ret = [String: Any?]()
+        ret["coord"] = self.coordinate.createPushable()
+        ret["accuracy"] = self.horizontalAccuracy.magnitude
+        ret["time"] = self.timestamp.description
+        
+        return ret
+        
+    }
+    
+    convenience init(key: String, record: [String : Any?]) {
+        let time = (record["time"] as! String).toDateTime()
+        let coord = record["coord"] as! [String: Any]
+        let radius = record["accuracy"] as! Double
+        
+        self.init(coordinate: CLLocationCoordinate2D(key: "", record: coord), altitude: 0, horizontalAccuracy: radius, verticalAccuracy: 0, timestamp: time)
+    }
+    
+}
+
 extension CLLocationCoordinate2D: FirebaseReady {
+    
+    
     func createPushable() -> [String : Any?] {
         var ret = [String: Any?]()
         

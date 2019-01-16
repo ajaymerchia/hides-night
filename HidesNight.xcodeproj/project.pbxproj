@@ -138,6 +138,8 @@
 		B7EB12D121CBA76400C1DEB7 /* LoginVC-logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB12D021CBA76400C1DEB7 /* LoginVC-logic.swift */; };
 		B7EB12D321CBAA7B00C1DEB7 /* SignUpVC-main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB12D221CBAA7B00C1DEB7 /* SignUpVC-main.swift */; };
 		B7EB12DA21CC137D00C1DEB7 /* SignUpVC-logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB12D921CC137D00C1DEB7 /* SignUpVC-logic.swift */; };
+		B7FCA32021EEB7400066E121 /* AppDelegate-location.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FCA31F21EEB7400066E121 /* AppDelegate-location.swift */; };
+		B7FCA32221EEBA3B0066E121 /* LocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FCA32121EEBA3B0066E121 /* LocalDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -297,6 +299,8 @@
 		B7EB12D021CBA76400C1DEB7 /* LoginVC-logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginVC-logic.swift"; sourceTree = "<group>"; };
 		B7EB12D221CBAA7B00C1DEB7 /* SignUpVC-main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpVC-main.swift"; sourceTree = "<group>"; };
 		B7EB12D921CC137D00C1DEB7 /* SignUpVC-logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpVC-logic.swift"; sourceTree = "<group>"; };
+		B7FCA31F21EEB7400066E121 /* AppDelegate-location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate-location.swift"; sourceTree = "<group>"; };
+		B7FCA32121EEBA3B0066E121 /* LocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManager.swift; sourceTree = "<group>"; };
 		BB83551C7A5051851C018E41 /* Pods-HidesNight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HidesNight.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HidesNight/Pods-HidesNight.debug.xcconfig"; sourceTree = "<group>"; };
 		DD9AE1CC1A178A8C1CF1532E /* Pods-HidesNight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HidesNight.release.xcconfig"; path = "Pods/Target Support Files/Pods-HidesNight/Pods-HidesNight.release.xcconfig"; sourceTree = "<group>"; };
 		E374076B8F5F10F7CF88F2CD /* Pods_HidesNight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HidesNight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -677,6 +681,7 @@
 				B7EB127221CAEDC100C1DEB7 /* AppDelegate.swift */,
 				B730638021E9938500F4EF7A /* AppDelegate-notificationDesign.swift */,
 				B730637E21E9736C00F4EF7A /* AppDelegate-notificationHandle.swift */,
+				B7FCA31F21EEB7400066E121 /* AppDelegate-location.swift */,
 				B7EB127921CAEDC200C1DEB7 /* Assets.xcassets */,
 				B7DE62BE21CDCD7B00AC0113 /* Protocols */,
 				B7DE62BF21CE0C7200AC0113 /* Helpers */,
@@ -715,6 +720,7 @@
 			children = (
 				B7EB12B521CB3A0D00C1DEB7 /* Constants.swift */,
 				B70BCACC21D20EB50038BCF1 /* ExtendedUtils.swift */,
+				B7FCA32121EEBA3B0066E121 /* LocalDataManager.swift */,
 				B7EB12C121CB814D00C1DEB7 /* luckiest-guy.regular.ttf */,
 			);
 			path = Resources;
@@ -1034,6 +1040,7 @@
 				B7DE62C621CF356700AC0113 /* GamesVC-initUI.swift in Sources */,
 				B737368721D09F490068FCA1 /* ProfileVC-system.swift in Sources */,
 				B73736A121D0D4950068FCA1 /* SlideData.swift in Sources */,
+				B7FCA32021EEB7400066E121 /* AppDelegate-location.swift in Sources */,
 				B70BCAE221D370E20038BCF1 /* DateTimeVC.swift in Sources */,
 				B779FDA921E342EE00BEFA60 /* ChatVC-tableview.swift in Sources */,
 				B7B14D3F21D6AEF0003F8A4C /* InviteFriendVC-initUI.swift in Sources */,
@@ -1121,6 +1128,7 @@
 				B779FD9E21E2FCCA00BEFA60 /* ChatVC.swift in Sources */,
 				B730637F21E9736C00F4EF7A /* AppDelegate-notificationHandle.swift in Sources */,
 				B7B14D2B21D4DB0F003F8A4C /* DecisionPickerVC-data.swift in Sources */,
+				B7FCA32221EEBA3B0066E121 /* LocalDataManager.swift in Sources */,
 				B7DE62BD21CDCD7500AC0113 /* FirebaseReady.swift in Sources */,
 				B737369A21D0C26D0068FCA1 /* InstructionsVC-data.swift in Sources */,
 				B7DE62A321CC1D9800AC0113 /* SignUpVC-system.swift in Sources */,

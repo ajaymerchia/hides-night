@@ -25,6 +25,12 @@ extension ActiveGameVC: MKMapViewDelegate, CLLocationManagerDelegate {
             polylineRenderer.strokeColor = borderColor
             polylineRenderer.lineWidth = 5
             return polylineRenderer
+        } else if let circle = overlay as? MKCircle {
+            let renderer = MKCircleRenderer(circle: circle )
+            renderer.fillColor = borderColor
+            renderer.alpha = 0.3
+            return renderer
+            
         } else {
             return MKOverlayRenderer(overlay: overlay)
         }
@@ -37,27 +43,124 @@ extension ActiveGameVC: MKMapViewDelegate, CLLocationManagerDelegate {
             return nil
         }
         
-        let reuseId = "pin"
-        
-        let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+        if isBoundaryPoint(annotation: annotation) {
+            let reuseId = "boundary"
+            
+            let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            
+            if annotation is MKPointAnnotation {
+                pinView.pinTintColor = .ACCENT_BLUE
+            }
+            
+            return pinView
+        } else {
+            let reuseId = "team"
+            let anView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            anView.annotation = annotation
 
-        if annotation is MKPointAnnotation {
-            pinView.pinTintColor = .ACCENT_BLUE
+            
+            if let team = getTeamForPoint(annotation: annotation) {
+                
+                let sizeOfView: CGFloat = 40
+                let shadowView = UIView(frame: CGRect(x: 0, y: 0, width: sizeOfView, height: sizeOfView))
+                shadowView.layer.shadowColor = UIColor.DARK_BLUE.cgColor
+                shadowView.layer.shadowOffset = CGSize(width: 0, height: 1)
+                shadowView.layer.shadowOpacity = 0.65
+                shadowView.layer.shadowRadius = 1.0
+                shadowView.clipsToBounds = false
+
+
+                let imageView = UIImageView(frame: shadowView.bounds)
+                imageView.contentMode = .scaleAspectFill
+                imageView.layer.cornerRadius = imageView.frame.width/2
+                imageView.clipsToBounds = true
+                imageView.image = team.img
+
+                imageView.layer.borderColor = UIColor.white.cgColor
+                imageView.layer.borderWidth = 0.75
+
+
+                shadowView.addSubview(imageView)
+                anView.addSubview(shadowView)
+                anView.sendSubviewToBack(shadowView)
+//
+//                anView.sizeToFit()
+////                anView.intrinsicContentSize = shadowView.bounds
+//                anView.sizeThatFits(shadowView.bounds.size)
+                anView.frame = shadowView.bounds
+                anView.calloutOffset = CGPoint(x: 0, y: -sizeOfView/2)
+                
+                
+            }
+            anView.canShowCallout = true
+            anView.rightCalloutAccessoryView = UIButton(type: .infoDark)
+            
+            
+
+            
+            return anView
+            
             
         }
         
-        return pinView
+        
+        
+    }
+    
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
+        guard let annotation = view.annotation else {
+            return
+        }
+        guard let teamID = (getTeamForPoint(annotation: annotation)?.uid) else {
+            return
+        }
+        guard let location = self.round.teamLocations[teamID] else {
+            return
+        }
+        
+        
+        let radius = location.horizontalAccuracy
+        mapView.setRegion(MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: radius * 3, longitudinalMeters: radius * 3), animated: true)
+    
+        teamLocationAccuracyCircle = MKCircle(center: annotation.coordinate, radius: radius)
+        mapView.addOverlay(teamLocationAccuracyCircle!)
+        
+        
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        guard let annotation = view.annotation else {
+            return
+        }
+        if let team = getTeamForPoint(annotation: annotation) {
+            teamToShow = team
+            self.performSegue(withIdentifier: "active2Team", sender: self)
+
+        }
+    }
+    
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        if let circle = teamLocationAccuracyCircle {
+            mapView.removeOverlay(circle)
+        }
     }
     
     
     
-    
-    
+//    func addToMap(team: Team, teamLocation: CLLocation) {
+//        let inaccuracyCircle = MKCircle(center: teamLocation.coordinate, radius: teamLocation.horizontalAccuracy)
+//        roundMap.addOverlay(inaccuracyCircle)
+//
+//    }
     
     
     func addToMap(pins: [CLLocationCoordinate2D]) {
         
+        roundMap.removeAnnotations(boundaries)
         boundaries = []
+        
         for pin in pins {
             let annotation = MKPointAnnotation()
             
@@ -113,13 +216,9 @@ extension ActiveGameVC: MKMapViewDelegate, CLLocationManagerDelegate {
         }
         
         if sourceBoundaries.count > 2 {
-            for coordinate in sourceBoundaries {
-                centerLat += coordinate.latitude
-                centerLon += coordinate.longitude
-            }
+            centerLat = (sourceBoundaries.map({ (coord) -> Double in return coord.latitude }).reduce(Double.infinity, { (res, nxt) -> Double in return min(res, nxt)}) + sourceBoundaries.map({ (coord) -> Double in return coord.latitude }).reduce(-Double.infinity, { (res, nxt) -> Double in return max(res, nxt)}))/2
             
-            centerLat = centerLat/Double(sourceBoundaries.count)
-            centerLon = centerLon/Double(sourceBoundaries.count)
+            centerLon = (sourceBoundaries.map({ (coord) -> Double in return coord.longitude }).reduce(Double.infinity, { (res, nxt) -> Double in return min(res, nxt)}) + sourceBoundaries.map({ (coord) -> Double in return coord.longitude }).reduce(-Double.infinity, { (res, nxt) -> Double in return max(res, nxt)}))/2
             
             
             let degreePaddingFactor: Double = 1.4
@@ -148,6 +247,25 @@ extension ActiveGameVC: MKMapViewDelegate, CLLocationManagerDelegate {
         
         
         roundMap.setRegion(MKCoordinateRegion(center: center, span: span), animated: true)
+    }
+    
+    func isBoundaryPoint(annotation: MKAnnotation) -> Bool {
+        return self.round.boundaryPoints.contains(where: { (oldCoord) -> Bool in
+            return sameCoordinate(c1: oldCoord, c2: annotation.coordinate)
+        })
+    }
+    
+    func getTeamForPoint(annotation: MKAnnotation) -> Team? {
+        for (teamID, location) in self.round.teamLocations {
+            if sameCoordinate(c1: location.coordinate, c2: annotation.coordinate) {
+                return self.game.teams[teamID]
+            }
+        }
+        return nil
+    }
+    
+    func sameCoordinate(c1: CLLocationCoordinate2D, c2: CLLocationCoordinate2D) -> Bool {
+        return c1.latitude == c2.latitude && c1.longitude == c2.longitude
     }
 
 

@@ -98,9 +98,11 @@ extension ActiveGameVC {
             controlViews.append(startControls.1)
         } else if round.roundStatus == RoundStatus.gameOver && userIsAdmin {
             // else if gameover and this is an admin, add the "next round" button
-            let nextControls = prepareControlsWith(text: "Next Round", image: .mark_next, tint: .ACCENT_GREEN, action: #selector(nextRound))
-            nextGameButton = nextControls.0
-            controlViews.append(nextControls.1)
+            if self.game.currRoundNumber < self.game.rounds.count - 1 {
+                let nextControls = prepareControlsWith(text: "Next Round", image: .mark_next, tint: .ACCENT_GREEN, action: #selector(nextRound))
+                nextGameButton = nextControls.0
+                controlViews.append(nextControls.1)
+            }
         } else if round.roundIsActive {
             // else if game in session, enable checkins
             let checkinControls = prepareControlsWith(text: "Check In", image: .mark_check, tint: .ACCENT_GREEN, action: #selector(checkin))
@@ -168,32 +170,7 @@ extension ActiveGameVC {
         
     }
     
-    @objc func updateUIComponents() {
-        // Instruction
-        if getIntervals()[0] < 0 && round.roundStatus == .hiding {
-            round.roundStatus = .seek
-            FirebaseAPIClient.updateRemoteGame(game: self.game, success: {}, fail: {})
-        }
-        
-        if round.roundStatus == RoundStatus.notStarted && self.userIsAdmin {
-            gameStatus.text = "Start \(self.round.name!)"
-        } else {
-            if self.userIsSeeker {
-                gameStatus.text = round.roundStatus.seekDescription
-            } else {
-                gameStatus.text = round.roundStatus.description
-            }
-        }
-        
-        // Map Bounds
-        addToMap(pins: round.boundaryPoints)
-        
-        createCountDownCells()
-        tableView.reloadData()
-        
-        refreshSideControls()
-        
-    }
+    
     func refreshSideControls() {
         for view in sideControls.subviews {
             view.removeFromSuperview()
@@ -222,10 +199,32 @@ extension ActiveGameVC {
         
         for i in 0..<titles.count {
             let cell = CountDownCell()
-            debugPrint(intervals[i])
             if intervals[i] > 0 {
                 cell.initializeCellFrom(time: intervals[i], title: titles[i], size: CGSize(width: view.frame.width, height: heightComputer()))
                 cell.countdown.countdownDelegate = self
+            } else if i == 1 {
+                cell.initializeCellFrom(time: 0, title: titles[i], size: CGSize(width: view.frame.width, height: heightComputer()))
+                
+                self.countdownCells = []
+                for j in 0..<titles.count {
+                    let zeroCell = CountDownCell()
+                    zeroCell.initializeCellFrom(time: 0, title: titles[j], size: CGSize(width: view.frame.width, height: heightComputer()))
+                    self.countdownCells.append(zeroCell)
+                }
+                
+                if self.round.roundStatus == RoundStatus.seekWithGPS || (self.round.roundStatus == RoundStatus.seek && self.game.roundDuration == self.game.gpsActivation) {
+                    self.round.roundStatus = RoundStatus.gameOver
+                    FirebaseAPIClient.updateRemoteGame(game: self.game, success: {}, fail: {})
+                }
+                return
+                
+            } else if i == 2 {
+                cell.initializeCellFrom(time: 0, title: titles[i], size: CGSize(width: view.frame.width, height: heightComputer()))
+                
+                if self.round.roundStatus == RoundStatus.seek {
+                    self.round.roundStatus = RoundStatus.seekWithGPS
+                    FirebaseAPIClient.updateRemoteGame(game: self.game, success: {}, fail: {})
+                }
             }
             
             self.countdownCells.append(cell)
@@ -235,6 +234,7 @@ extension ActiveGameVC {
     
     func getIntervals() -> [TimeInterval] {
         var intervals = [TimeInterval]()
+        var functionStart = Date()
         
         // Get the hiding time leftover
         var hidingTime = round.hidingTime
@@ -244,48 +244,37 @@ extension ActiveGameVC {
         }
         intervals.append(hidingTime)
         
+        
         let titles = ["Round Duration", "GPS Activation", "Check In Duration"]
-        debugPrint(game.roundDuration, game.gpsActivation, game.checkInDuration)
         let otherTimes = [game.roundDuration, game.gpsActivation, game.checkInDuration]
         
         var i = 0
-        debugPrint("----------------------------------------")
-        debugPrint("----------------------------------------")
-        
+
         for time in otherTimes {
             var fullInterval: TimeInterval = time!
             if let gameStart = round.startTime {
                 
                 var referenceTime = self.round.roundStatus == .hiding ? self.round.startHide : self.round.startTime
-                
+                let timeDifferenceSeconds = Int(functionStart.timeIntervalSince(referenceTime!).rounded())
+
                 let fullIntervalSeconds = Int(fullInterval)
-                let timeDifferenceSeconds = Int(Date().timeIntervalSince(referenceTime!))
                 let timePassModulated = timeDifferenceSeconds % fullIntervalSeconds
                 
+                if fullIntervalSeconds <= timeDifferenceSeconds && i != 2 {
+                    fullInterval = 0
+                    intervals.append(fullInterval)
+                    i+=1
+                    continue
+                }
                 
-                debugPrint(titles[i])
-                debugPrint("----------------------------------------")
-                debugPrint("Full Interval was \(fullInterval/60) minutes")
-
+  
                 fullInterval = TimeInterval(exactly: (Int(fullInterval) - timePassModulated))!
-                
-                debugPrint("Time Differenc was \(timeDifferenceSeconds/60) minutes")
-                debugPrint("Time Pass Modulated was \(timePassModulated/60) minutes")
-                
-                
                 i+=1
-                debugPrint("Reference Time was " + myUtils.getTimeWithAMPM(date: referenceTime!))
-                debugPrint("Current Time was " + myUtils.getTimeWithAMPM(date: Date()))
-                debugPrint("Time Difference was ")
-                
-                debugPrint("Full Interval become \(fullIntervalSeconds/60) minutes")
                 
             }
             
             intervals.append(fullInterval)
         }
-        debugPrint("----------------------------------------")
-        debugPrint("----------------------------------------")
         
         return intervals
     }

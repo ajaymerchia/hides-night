@@ -14,6 +14,8 @@ import NotificationCenter
 class Constants {
     static let endHideNotification: String = "endHideNotification"
     static let checkInNotification: String = "checkInNotification"
+    static let gpsTriggerNotification: String = "gpsTriggerNotification"
+    static let gameEndNotification: String = "gameEndNotification"
 }
 
 class NotificationActions {
