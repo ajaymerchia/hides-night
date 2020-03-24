@@ -9,7 +9,7 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 
 extension FriendDetailVC {
     func initUI() {
@@ -68,7 +68,7 @@ extension FriendDetailVC {
         name.adjustsFontSizeToFitWidth = true
         
         view.addSubview(name)
-        view.addSubview(Utils.getBorder(forView: name, thickness: 1.5, color: .white, side: .Bottom))
+        view.addSubview(UISuite.getBorder(forView: name, thickness: 1.5, color: .white, side: .Bottom))
     }
     
     func addRemoveFriendButton() {

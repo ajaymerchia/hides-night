@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 class User: FirebaseReady, Equatable, Comparable {
     
     
@@ -29,7 +29,7 @@ class User: FirebaseReady, Equatable, Comparable {
     }
     
     static func createTemporaryUser(first: String, last: String = "") -> User {
-        return User(uid: "temp" + Utils.uuid(), first: first, last: last, email: "temporary_user", username: (first+last))
+        return User(uid: "temp" + LogicSuite.uuid(), first: first, last: last, email: "temporary_user", username: (first+last))
     }
     
     

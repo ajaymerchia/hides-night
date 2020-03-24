@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import iosManagers
+import ARMDevSuite
 import ChameleonFramework
 
 class GameCell: UITableViewCell {
@@ -41,7 +41,7 @@ class GameCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         if selected {
-            contentView.backgroundColor = .flatBlackDark
+            contentView.backgroundColor = .flatBlackDark()
         } else {
             contentView.backgroundColor = .black
         }
@@ -55,7 +55,7 @@ class GameCell: UITableViewCell {
         let initials: String = String(self.game.title.split(separator: " ").map { (sub) -> Substring in return sub.prefix(1)}.reduce("", +).prefix(2))
         
         
-        contentView.backgroundColor = .flatBlackDark
+        contentView.backgroundColor = .flatBlackDark()
 
         
         gamePhoto = UIButton(frame: CGRect(x: .PADDING, y: 2 * .MARGINAL_PADDING, width: size.height - 4 * .MARGINAL_PADDING, height: size.height - 4 * .MARGINAL_PADDING))
@@ -105,7 +105,7 @@ class GameCell: UITableViewCell {
         let initials: String = String(self.team.name.split(separator: " ").map { (sub) -> Substring in return sub.prefix(1)}.reduce("", +).prefix(2))
         
         
-        contentView.backgroundColor = .flatBlackDark
+        contentView.backgroundColor = .flatBlackDark()
         
         gamePhoto = UIButton(frame: CGRect(x: .PADDING, y: 2 * .MARGINAL_PADDING, width: size.height - 4 * .MARGINAL_PADDING, height: size.height - 4 * .MARGINAL_PADDING))
         gamePhoto.setTitle(initials, for: .normal)

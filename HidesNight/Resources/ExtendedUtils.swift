@@ -8,6 +8,22 @@
 
 import Foundation
 import UIKit
+import ARMDevSuite
+import JGProgressHUD
+
+extension AlertManager {
+	func displayAlert(title: String, message: String?) {
+		self.displayAlert(titled: title, withDetail: message, completion: nil)
+	}
+	func startProgressHud(withMsg: String, style: JGProgressHUDStyle) {
+		self.startJGProgressHud(withTitle: withMsg, withDetail: nil, style: style)
+	}
+	func triggerCallback() {
+		self.callback?()
+	}
+
+}
+
 extension UIColor {
     func modified(withAdditionalHue hue: CGFloat, additionalSaturation: CGFloat, additionalBrightness: CGFloat) -> UIColor {
         
@@ -122,6 +138,5 @@ class myUtils {
         } else {
             return Int.random(in: from...upTo)
         }
-        
     }
 }

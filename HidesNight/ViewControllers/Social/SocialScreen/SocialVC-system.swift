@@ -9,13 +9,13 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 import SideMenu
 
 extension SocialVC {
     func setupManagers() {
-        alerts = AlertManager(view: self, stateRestoration: {
-            self.hud?.dismiss()
+		alerts = AlertManager(vc: self, defaultHandler: {
+            self.alerts.jghud?.dismiss()
         })
         NotificationCenter.default.addObserver(self, selector: #selector(updateImage(_ :)), name: .newImage, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(showFriendRequest(_:)), name: .viewFriendRequest, object: nil)
@@ -45,7 +45,7 @@ extension SocialVC {
 
     override func viewDidAppear(_ animated: Bool) {
         if self.sectionsToDisplay.count == 0 {
-            hud = alerts.startProgressHud(withMsg: "Loading Friends", style: .dark)
+            alerts.startProgressHud(withMsg: "Loading Friends", style: .dark)
             loadFriendsAndInvites()
         } else {
             FirebaseAPIClient.updateLocalUserData(usr: self.user) {
@@ -80,8 +80,32 @@ extension SocialVC {
     }
     
     @objc func goToAddFriend() {
-        self.performSegue(withIdentifier: "social2addfriend", sender: self)
+        self.performSegue(withIdentifier: "go2AddFriend", sender: self)
+
+//		self.launchAddFriend()
     }
+	func launchAddFriend() {
+//		self.present(UINavigationController(rootViewController: .init()), animated: true, completion: nil)
+//
+//		return
+		let vc = AddFriendVC()
+		AddFriendVC.user = self.user
+		vc.view.backgroundColor = .white
+		let n = DataNavVC(rootViewController: vc)
+		n.user = self.user
+		n.modalPresentationStyle = .fullScreen
+		n.view.backgroundColor = .white
+		self.present(n, animated: true, completion: nil)
+		
+//		do {
+//			self.present(vc, animated: true, completion: nil)
+//			self.navigationController?.pushViewController(vc, animated: true)
+//		} catch {
+//			print(error.localizedDescription)
+//		}
+		
+//		self.present(DataNavVC(rootViewController: .init()), animated: true, completion: nil)
+	}
     
     
     // Notification Processors
@@ -180,13 +204,13 @@ extension SocialVC {
     
     @objc func showGameRequest(_ notification: Notification) {
         self.view.isUserInteractionEnabled = false
-        self.hud = alerts.startProgressHud(withMsg: "Loading Game...", style: .dark)
+        alerts.startJGProgressHud(withTitle: "Loading Game...", style: .dark)
         performUpdate {
             if let game = self.getGameFromNotification(notification) {
                 self.gameSelected = game.0
                 self.selectedIsRequest = game.1
                 self.view.isUserInteractionEnabled = true
-                self.hud?.dismiss()
+                self.alerts.jghud?.dismiss()
                 self.performSegue(withIdentifier: "social2gameDetail", sender: self)
             }
         }
@@ -194,13 +218,13 @@ extension SocialVC {
     
     @objc func acceptGameRequest(_ notification: Notification) {
         self.view.isUserInteractionEnabled = false
-        self.hud = alerts.startProgressHud(withMsg: "Accepting Game Invitation...", style: .dark)
+        alerts.startJGProgressHud(withTitle: "Accepting Game Invitation...", style: .dark)
         performUpdate {
             if let game = self.getGameFromNotification(notification) {
                 FirebaseAPIClient.gameInvitationAccepted(by: self.user, forGame: game.0, success: {
                     self.loadFriendsAndInvites {
                         self.friendsTable.reloadData()
-                        self.hud?.dismiss()
+                        self.alerts.jghud?.dismiss()
                         self.view.isUserInteractionEnabled = true
                         self.tabBarController?.selectedIndex = 0
                         
@@ -213,13 +237,13 @@ extension SocialVC {
     
     @objc func rejectGameRequest(_ notification: Notification) {
         self.view.isUserInteractionEnabled = false
-        self.hud = alerts.startProgressHud(withMsg: "Rejecting Game Invitation...", style: .dark)
+        alerts.startJGProgressHud(withTitle: "Rejecting Game Invitation...", style: .dark)
         performUpdate {
             if let game = self.getGameFromNotification(notification) {
                 FirebaseAPIClient.gameInvitationRejected(by: self.user, forGame: game.0, success: {
                     self.loadFriendsAndInvites {
                         self.friendsTable.reloadData()
-                        self.hud?.dismiss()
+						self.alerts.jghud?.dismiss()
                         self.view.isUserInteractionEnabled = true
                     }
                 }, fail: {})

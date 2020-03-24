@@ -9,7 +9,7 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 
 extension TeamDetailVC {
     @objc func pickProfilePhoto() {
@@ -88,7 +88,7 @@ extension TeamDetailVC {
             return
         }
         
-        hud = alerts.startProgressHud(withMsg: "Creating Team", style: .dark)
+        alerts.startProgressHud(withMsg: "Creating Team", style: .dark)
         
         
         for user in self.slotData {

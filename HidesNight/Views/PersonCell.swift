@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import iosManagers
+import ARMDevSuite
 import ChameleonFramework
 
 class PersonCell: UITableViewCell {
@@ -34,22 +34,22 @@ class PersonCell: UITableViewCell {
         if highlighted {
             contentView.backgroundColor = highlightedColor
         } else {
-            contentView.backgroundColor = blackBack ? .black : .flatBlackDark
+            contentView.backgroundColor = blackBack ? .black : .flatBlackDark()
         }
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         if statusData != FRIEND_STATUS.selected {
             if selected && allowsSelect {
-                contentView.backgroundColor = blackBack ? .flatBlackDark : .black
+                contentView.backgroundColor = blackBack ? .flatBlackDark() : .black
             } else {
-                contentView.backgroundColor = blackBack ? .black : .flatBlackDark
+                contentView.backgroundColor = blackBack ? .black : .flatBlackDark()
             }
         } else {
             if selected {
-                contentView.backgroundColor = blackBack ? .black : .flatBlackDark
+                contentView.backgroundColor = blackBack ? .black : .flatBlackDark()
             } else {
-                contentView.backgroundColor = blackBack ? .flatBlackDark : .black
+                contentView.backgroundColor = blackBack ? .flatBlackDark() : .black
             }
         }
     }
@@ -88,7 +88,7 @@ class PersonCell: UITableViewCell {
         let initals: String = String(self.usr.fullname.split(separator: " ").map { (sub) -> Substring in return sub.prefix(1)}.reduce("", +).prefix(2))
         
         
-        contentView.backgroundColor = blackBack ? .black : .flatBlackDark
+        contentView.backgroundColor = blackBack ? .black : .flatBlackDark()
         
         highlightedColor = contentView.backgroundColor?.modified(withAdditionalHue: 0, additionalSaturation: 0, additionalBrightness: 0.1)
         

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import iosManagers
+import ARMDevSuite
 import JGProgressHUD
 
 class SocialVC: UIViewController {

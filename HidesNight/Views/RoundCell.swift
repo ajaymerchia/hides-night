@@ -36,7 +36,7 @@ class RoundCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         if selected {
-            contentView.backgroundColor = .flatBlackDark
+            contentView.backgroundColor = .flatBlackDark()
         } else {
             contentView.backgroundColor = .black
         }
@@ -47,7 +47,7 @@ class RoundCell: UITableViewCell {
         
         
         
-        contentView.backgroundColor = .flatBlackDark
+        contentView.backgroundColor = .flatBlackDark()
         
         
         roundNum = UIButton(frame: CGRect(x: .PADDING, y: 2 * .MARGINAL_PADDING, width: size.height - 4 * .MARGINAL_PADDING, height: size.height - 4 * .MARGINAL_PADDING))

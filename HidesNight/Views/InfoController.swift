@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 
 public class InfoController: UIView, UIGestureRecognizerDelegate {
     
@@ -50,7 +50,7 @@ public class InfoController: UIView, UIGestureRecognizerDelegate {
     
     public init() {
         super.init(frame: .zero)
-        backgroundColor = .flatBlackDark
+		backgroundColor = .flatBlackDark()
     }
     
     required init?(coder aDecoder: NSCoder) {

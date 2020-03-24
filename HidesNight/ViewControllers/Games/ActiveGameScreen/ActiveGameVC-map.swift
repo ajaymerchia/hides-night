@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 import MapKit
 import CoreLocation
-import iosManagers
+import ARMDevSuite
 
 extension ActiveGameVC: MKMapViewDelegate, CLLocationManagerDelegate {
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
@@ -202,8 +202,7 @@ extension ActiveGameVC: MKMapViewDelegate, CLLocationManagerDelegate {
     
     
     @objc func recenter() {
-        
-        
+    
         var center = roundMap.userLocation.coordinate
         var span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
         

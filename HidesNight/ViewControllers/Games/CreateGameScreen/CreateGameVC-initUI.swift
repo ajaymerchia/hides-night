@@ -9,7 +9,7 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 
 extension CreateGameVC {
     func initUI() {
@@ -78,7 +78,7 @@ extension CreateGameVC {
         eventNameField.font = .BIG_TEXT_FONT
         eventNameField.textColor = .white
         eventNameField.tintColor = .white
-        eventNameField.attributedPlaceholder = NSAttributedString(string: "Game Title (e.g. Sir Hides-a-Lot)", attributes: [.font: UIFont.BIG_TEXT_FONT, .foregroundColor: UIColor.flatWhiteDark])
+        eventNameField.attributedPlaceholder = NSAttributedString(string: "Game Title (e.g. Sir Hides-a-Lot)", attributes: [.font: UIFont.BIG_TEXT_FONT, .foregroundColor: UIColor.flatWhiteDark()])
         eventNameField.becomeFirstResponder()
 
         

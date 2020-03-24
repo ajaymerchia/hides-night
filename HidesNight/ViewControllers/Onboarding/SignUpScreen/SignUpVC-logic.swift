@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 extension SignUpVC {
     func loadRestrictedAccounts() {
         restrictedUsernames = ["admin"]
@@ -25,7 +25,7 @@ extension SignUpVC {
     
     @objc func pickProfilePhoto() {
         let actionSheet = UIAlertController(title: "Select Photo From", message: nil, preferredStyle: .actionSheet)
-        
+    
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action) -> Void in
             self.createImagePicker(preferredType: .camera)
         }))
@@ -80,7 +80,7 @@ extension SignUpVC {
     
     @objc func validateFields() {
         self.view.isUserInteractionEnabled = false
-        hud = alerts.startProgressHud(withMsg: "Creating Account", style: .dark)
+        alerts.startProgressHud(withMsg: "Creating Account", style: .dark)
         
         if let emailError = emailValidator() {
             signupError(code: emailError)

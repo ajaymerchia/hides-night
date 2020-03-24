@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 
 extension InviteFriendVC: UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     func provideHeightFor(indexPath: IndexPath) -> CGFloat {
@@ -41,7 +41,7 @@ extension InviteFriendVC: UITableViewDelegate, UITableViewDataSource, UITextFiel
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 30))
-        header.backgroundColor = UIColor.flatBlackDark.darkerColor(percent: 0.45)
+		header.backgroundColor = UIColor.flatBlackDark().darken(byPercentage: 0.45)
         
         let label = UILabel(frame: CGRect(x: .PADDING, y: 0, width: view.frame.width, height: 30))
         

@@ -6,7 +6,7 @@ target 'HidesNight' do
   use_frameworks!
 
   # Pods for HidesNight
-  pod 'iosManagers'
+  pod 'ARMDevSuite'
 
   # Pods for Firebase
   pod 'Firebase/Core'

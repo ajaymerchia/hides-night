@@ -9,7 +9,7 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 
 extension TeamDetailVC: UITextFieldDelegate {
     func initUI() {
@@ -165,7 +165,7 @@ extension TeamDetailVC: UITextFieldDelegate {
                 let button = UIButton(frame: frameOfSlot)
                 button.tag = i
                 button.setBackgroundColor(color: .black, forState: .normal)
-                button.setBackgroundColor(color: .flatBlackDark, forState: .highlighted)
+                button.setBackgroundColor(color: .flatBlackDark(), forState: .highlighted)
                 
                 button.titleLabel?.font = .HEADER_FONT
                 button.layer.cornerRadius = 5

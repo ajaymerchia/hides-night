@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 import MapKit
 import CoreLocation
-import iosManagers
+import ARMDevSuite
 
 extension RoundDetailVC {
     func initUI() {
@@ -105,7 +105,7 @@ extension RoundDetailVC {
     func initTeamSelected() {
         selectTeamButton = UIButton(frame: seekerFrame)
         selectTeamButton.setBackgroundColor(color: .black, forState: .normal)
-        selectTeamButton.setBackgroundColor(color: .flatBlackDark, forState: .highlighted)
+        selectTeamButton.setBackgroundColor(color: .flatBlackDark(), forState: .highlighted)
         
         selectTeamButton.titleLabel?.font = .HEADER_FONT
         selectTeamButton.layer.cornerRadius = 5

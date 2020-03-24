@@ -9,7 +9,7 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 
 extension InviteFriendVC {
     
@@ -45,12 +45,12 @@ extension InviteFriendVC {
     }
     
     @objc func inviteFriends() {
-        hud = alerts.startProgressHud(withMsg: "Sending Invites", style: .dark)
+        alerts.startJGProgressHud(withTitle: "Sending Invites", style: .dark)
         FirebaseAPIClient.sendGameInvitation(to: self.invitesToSend, forGame: self.game, success: {
             self.succesfulSend = true
-            self.alerts.triggerCallback()
+            self.alerts.callback?()
         }) {
-            self.alerts.triggerCallback()
+			self.alerts.callback?()
         }
     }
 

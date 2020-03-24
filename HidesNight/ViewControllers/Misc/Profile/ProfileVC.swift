@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import iosManagers
+import ARMDevSuite
 
 class ProfileVC: UIViewController {
 

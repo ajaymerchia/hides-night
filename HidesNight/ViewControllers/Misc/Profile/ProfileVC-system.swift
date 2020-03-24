@@ -9,11 +9,11 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 
 extension ProfileVC {
     func setupManagers() {
-        alerts = AlertManager(view: self, stateRestoration: {
+		alerts = AlertManager(vc: self, defaultHandler: {
 
         })
     }

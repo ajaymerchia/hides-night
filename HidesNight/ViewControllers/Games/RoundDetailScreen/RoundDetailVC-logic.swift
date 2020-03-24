@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 import MapKit
 import CoreLocation
-import iosManagers
+import ARMDevSuite
 import JGProgressHUD
 
 
@@ -85,7 +85,7 @@ extension RoundDetailVC: UIGestureRecognizerDelegate {
     
     
     @objc func finishEditingRound() {
-        hud = alerts.startProgressHud(withMsg: "Saving Round", style: .dark)
+        alerts.startProgressHud(withMsg: "Saving Round", style: .dark)
         self.view.isUserInteractionEnabled = false
         
         self.round.boundaryPoints = []

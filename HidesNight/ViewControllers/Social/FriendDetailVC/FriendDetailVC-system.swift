@@ -10,12 +10,12 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 import JGProgressHUD
 
 extension FriendDetailVC {
     func setupManagers() {
-        alerts = AlertManager(view: self, stateRestoration: {
+		alerts = AlertManager(vc: self, defaultHandler: {
             self.hud?.indicatorView = JGProgressHUDSuccessIndicatorView(contentView: self.view)
             self.hud?.detailTextLabel.text = ""
             self.hud?.dismiss(afterDelay: 0.5, animated: true)

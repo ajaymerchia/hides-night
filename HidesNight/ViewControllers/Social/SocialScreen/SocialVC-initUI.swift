@@ -9,7 +9,7 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 import SideMenu
 
 
@@ -53,7 +53,7 @@ extension SocialVC {
             profilePictureButton.bottomAnchor.constraint(equalTo: nav.bottomAnchor, constant: -6),
             profilePictureButton.heightAnchor.constraint(equalToConstant: 32),
             profilePictureButton.widthAnchor.constraint(equalToConstant: 32)
-            ])
+        ])
         
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.nav_add_person.withRenderingMode(.alwaysTemplate), style: .plain, target: self, action: #selector(goToAddFriend))

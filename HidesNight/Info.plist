@@ -15,21 +15,23 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Add images</string>
+	<string>Take photos for profile pictures &amp; share photos with friends over chat!</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Provide location for in-game tracking &amp; round set-up!</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Provide location for in-game tracking</string>
+	<string>Provide location for in-game tracking &amp; round set-up!</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Provide location for in-game tracking</string>
+	<string>Provide location for in-game tracking &amp; round set-up!</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Save memories from games</string>
+	<string>Save photos as memories from your games!</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Upload images</string>
+	<string>Take photos for profile pictures &amp; share photos with friends over chat!</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>luckiest-guy.regular.ttf</string>
@@ -48,7 +50,7 @@
 		<string>armv7</string>
 	</array>
 	<key>UIStatusBarStyle</key>
-	<string>UIStatusBarStyleLightContent</string>
+	<string>UIStatusBarStyleDarkContent</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

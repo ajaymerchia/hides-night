@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AA0-Nc-GjN">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AA0-Nc-GjN">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,7 +29,7 @@
             <objects>
                 <navigationController id="cVu-bB-6no" customClass="DataNavVC" customModule="HidesNight" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4Oc-z1-Cg0">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -72,6 +70,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="xPB-fh-Fyg"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Ile-MC-vxS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mKY-Gw-AYN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -87,6 +86,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="NaF-RY-BXv"/>
                     </view>
+                    <navigationItem key="navigationItem" id="h5h-AL-DIf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Qq-Zh-nLV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -103,8 +103,8 @@
                         <viewLayoutGuide key="safeArea" id="8Jl-iv-QmT"/>
                     </view>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="launch2login" animates="NO" id="Scg-zb-PLO"/>
-                        <segue destination="aQN-59-5Ls" kind="show" identifier="launch2home" id="NPn-nF-BY4"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="launch2login" animates="NO" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Scg-zb-PLO"/>
+                        <segue destination="aQN-59-5Ls" kind="presentation" identifier="launch2home" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="NPn-nF-BY4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qL6-17-zhR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -122,8 +122,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <segue destination="aQN-59-5Ls" kind="show" identifier="login2home" id="4ni-DN-5rR"/>
-                        <segue destination="eEF-Td-ewT" kind="presentation" identifier="login2signup" id="iOv-Ng-aH8"/>
+                        <segue destination="aQN-59-5Ls" kind="presentation" identifier="login2home" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="4ni-DN-5rR"/>
+                        <segue destination="eEF-Td-ewT" kind="presentation" identifier="login2signup" modalPresentationStyle="fullScreen" id="iOv-Ng-aH8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -135,7 +135,7 @@
             <objects>
                 <navigationController id="eEF-Td-ewT" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4qp-GV-wVS">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -167,7 +167,7 @@
             <objects>
                 <navigationController storyboardIdentifier="InstructionsParent" id="9kM-Du-sgx" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lm3-Cq-Sxj">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -200,7 +200,7 @@
                 <navigationController id="LZW-OX-nbk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Game" image="tab-game" id="F9H-FW-axC"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="FZr-ba-BOf">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
@@ -221,7 +221,7 @@
                 <navigationController id="Tiz-Wn-xXk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Social" image="tab-social" id="ICJ-RG-OU6"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="kNC-DW-Bgg">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
@@ -238,14 +238,14 @@
             <objects>
                 <viewController id="2fE-bJ-yEC" customClass="SocialVC" customModule="HidesNight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1f7-SY-wwR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="XkB-u1-q1m"/>
                     </view>
                     <navigationItem key="navigationItem" id="bsn-0y-223"/>
                     <connections>
-                        <segue destination="etm-er-dCj" kind="presentation" identifier="social2addfriend" id="4yg-on-45w"/>
+                        <segue destination="etm-er-dCj" kind="presentation" identifier="go2AddFriend" modalPresentationStyle="fullScreen" id="4yg-on-45w"/>
                         <segue destination="n8u-fb-KAY" kind="showDetail" identifier="social2friendDetail" id="19p-oa-os0"/>
                         <segue destination="O6c-Ys-ldF" kind="show" identifier="social2gameDetail" id="q8S-uf-cai"/>
                     </connections>
@@ -259,7 +259,7 @@
             <objects>
                 <navigationController id="etm-er-dCj" customClass="DataNavVC" customModule="HidesNight" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wnK-ac-RV9">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -275,7 +275,7 @@
             <objects>
                 <navigationController id="n8u-fb-KAY" customClass="DataNavVC" customModule="HidesNight" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lIS-DW-PVa">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -323,7 +323,7 @@
             <objects>
                 <navigationController storyboardIdentifier="SideMenuNav" id="2M1-T1-mUE" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ilt-QU-CJs">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <userDefinedRuntimeAttributes>
@@ -341,6 +341,7 @@
         <scene sceneID="onP-lF-Eir">
             <objects>
                 <tabBarController id="aQN-59-5Ls" customClass="TabBarVC" customModule="HidesNight" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="LH5-Er-f0G"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3sV-TN-ZO8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -362,14 +363,14 @@
             <objects>
                 <viewController id="RLA-mH-xxT" customClass="GamesVC" customModule="HidesNight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AWl-8g-6LK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Qxz-P0-qMn"/>
                     </view>
                     <navigationItem key="navigationItem" id="egQ-rC-Rmy"/>
                     <connections>
-                        <segue destination="cVu-bB-6no" kind="presentation" identifier="games2create" id="ieb-M6-Xxw"/>
+                        <segue destination="cVu-bB-6no" kind="presentation" identifier="games2create" modalPresentationStyle="fullScreen" id="ieb-M6-Xxw"/>
                         <segue destination="O6c-Ys-ldF" kind="show" identifier="games2detail" id="rX2-l0-bqT"/>
                         <segue destination="uow-BD-yNC" kind="show" identifier="games2active" id="ZQH-Sj-hsA"/>
                     </connections>
@@ -383,13 +384,14 @@
             <objects>
                 <viewController id="O6c-Ys-ldF" customClass="GameDetailVC" customModule="HidesNight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RGY-Dn-kf8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="VEF-0E-G88"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Zye-bG-UgN"/>
                     <connections>
-                        <segue destination="IJf-MW-8Ts" kind="presentation" identifier="detail2invite" id="fh9-RJ-ReW"/>
+                        <segue destination="IJf-MW-8Ts" kind="presentation" identifier="detail2invite" modalPresentationStyle="fullScreen" id="fh9-RJ-ReW"/>
                         <segue destination="tTh-2g-4zB" kind="show" identifier="detail2team" id="dAv-Ji-uum"/>
                         <segue destination="7hl-xz-am7" kind="show" identifier="detail2round" id="jQJ-3P-sVw"/>
                         <segue destination="cVu-bB-6no" kind="presentation" identifier="detail2edit" id="1Kv-xH-j9u"/>
@@ -421,7 +423,7 @@
             <objects>
                 <navigationController id="IJf-MW-8Ts" customClass="DataNavVC" customModule="HidesNight" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sZP-fi-Jn2">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -437,11 +439,12 @@
             <objects>
                 <viewController id="tTh-2g-4zB" customClass="TeamDetailVC" customModule="HidesNight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L5D-kl-RmO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="oAU-Ab-RJ0"/>
                     </view>
+                    <navigationItem key="navigationItem" id="biv-q6-84x"/>
                     <connections>
                         <segue destination="MDe-kH-7l4" kind="show" identifier="teamDetail2memberSelect" id="lhw-7Z-BUZ"/>
                     </connections>
@@ -455,11 +458,12 @@
             <objects>
                 <viewController id="uow-BD-yNC" customClass="ActiveGameVC" customModule="HidesNight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FdH-GJ-P7d">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="oGh-ED-9fp"/>
                     </view>
+                    <navigationItem key="navigationItem" id="0dU-xE-Hm4"/>
                     <connections>
                         <segue destination="O6c-Ys-ldF" kind="show" identifier="active2detail" id="KBo-Q1-ivw"/>
                         <segue destination="UbS-da-cyR" kind="show" identifier="active2Team" id="9Kg-No-g2v"/>
@@ -474,11 +478,12 @@
             <objects>
                 <viewController id="UbS-da-cyR" customClass="TeamReadOnlyVC" customModule="HidesNight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vpq-b7-Ea5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="24y-6W-JAj"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Xj7-LO-sZo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f6r-N6-fB0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -489,11 +494,12 @@
             <objects>
                 <viewController id="7hl-xz-am7" customClass="RoundDetailVC" customModule="HidesNight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wwx-gX-KYe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="tAv-5P-AaE"/>
                     </view>
+                    <navigationItem key="navigationItem" id="FCI-QV-biL"/>
                     <connections>
                         <segue destination="tOu-SV-nPn" kind="show" identifier="round2teamPick" id="3Xm-Zs-UQt"/>
                     </connections>
@@ -507,11 +513,12 @@
             <objects>
                 <viewController id="tOu-SV-nPn" customClass="TeamSelectorVC" customModule="HidesNight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XN8-vM-TQy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="gL3-Ab-0KI"/>
                     </view>
+                    <navigationItem key="navigationItem" id="WIb-BD-fOD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Mn-l2-aat" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -522,11 +529,12 @@
             <objects>
                 <viewController id="MDe-kH-7l4" customClass="TeamMemberSelectVC" customModule="HidesNight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LnM-aC-wqV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="v3d-YB-qQM"/>
                     </view>
+                    <navigationItem key="navigationItem" id="goX-9d-AoJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hhd-En-nQI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -534,12 +542,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="tab-game" width="36" height="36"/>
-        <image name="tab-social" width="36" height="36"/>
+        <image name="tab-game" width="24" height="24"/>
+        <image name="tab-social" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ZQH-Sj-hsA"/>
-        <segue reference="KBo-Q1-ivw"/>
+        <segue reference="q8S-uf-cai"/>
         <segue reference="4ni-DN-5rR"/>
         <segue reference="ieb-M6-Xxw"/>
     </inferredMetricsTieBreakers>

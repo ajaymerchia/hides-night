@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import iosManagers
+import ARMDevSuite
 import UIKit
 extension TeamDetailVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func createImagePicker(preferredType: UIImagePickerController.SourceType) {

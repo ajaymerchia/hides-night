@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import iosManagers
+import ARMDevSuite
 
 import FirebaseAuth
 import CoreLocation
@@ -19,11 +19,13 @@ extension LaunchVC: CLLocationManagerDelegate {
             return
         }
         print("about to auto login!")
-        let alerts = AlertManager(view: self) {
-            self.hud?.dismiss()
-        }
+        let alerts = AlertManager(vc: self)
+		alerts.callback = {
+			alerts.jghud?.dismiss()
+		}
+		
         
-        hud = alerts.startProgressHud(withMsg: "Logging In", style: .dark)
+        alerts.startProgressHud(withMsg: "Logging In", style: .dark)
     
         
         
@@ -33,7 +35,7 @@ extension LaunchVC: CLLocationManagerDelegate {
             FirebaseAPIClient.getAllGames(withIDs: gameIDs, completion: { (games) in
                 usr?.games = games
                 self.pendingUser = usr
-                self.hud?.dismiss()
+                alerts.jghud?.dismiss()
                 self.performSegue(withIdentifier: "launch2home", sender: self)
             })
         }

@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 
 class Chat: FirebaseReady {
     // Set this up so it can only load a Day at a time
@@ -107,7 +107,7 @@ class Message: FirebaseReady, Comparable {
     
     
     init(msg: String, sender: User) {
-        uid = Utils.uuid()
+        uid = LogicSuite.uuid()
         timeSent = Date()
         senderID = sender.uid
         
@@ -115,7 +115,7 @@ class Message: FirebaseReady, Comparable {
     }
     
     init(img: UIImage, sender: User) {
-        uid = Utils.uuid()
+        uid = LogicSuite.uuid()
         timeSent = Date()
         senderID = sender.uid
         

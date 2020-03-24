@@ -9,7 +9,7 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 
 extension FriendDetailVC {
     func getData() {
@@ -23,7 +23,7 @@ extension FriendDetailVC {
     @objc func acceptFriendRequest(_ sender: UIButton) {
         imageViewVisible(sender)
         self.view.isUserInteractionEnabled = false
-        hud = alerts.startProgressHud(withMsg: "Responding...", style: .dark)
+        alerts.startProgressHud(withMsg: "Responding...", style: .dark)
         
         FirebaseAPIClient.acceptFriendRequest(from: self.friend, to: self.user) {
             self.alerts.triggerCallback()
@@ -33,7 +33,7 @@ extension FriendDetailVC {
     @objc func declineFriendRequest(_ sender: UIButton) {
         imageViewVisible(sender)
         self.view.isUserInteractionEnabled = false
-        hud = alerts.startProgressHud(withMsg: "Responding...", style: .dark)
+        alerts.startProgressHud(withMsg: "Responding...", style: .dark)
         
         FirebaseAPIClient.rejectFriendRequest(from: self.friend, to: self.user) {
             self.alerts.triggerCallback()
@@ -53,7 +53,7 @@ extension FriendDetailVC {
     }
     
     func endFriendship() {
-        hud = alerts.startProgressHud(withMsg: "Removing Friend...", style: .dark)
+        alerts.startProgressHud(withMsg: "Removing Friend...", style: .dark)
         FirebaseAPIClient.endFriendship(of: self.user, and: self.friend) {
             self.alerts.triggerCallback()
         }

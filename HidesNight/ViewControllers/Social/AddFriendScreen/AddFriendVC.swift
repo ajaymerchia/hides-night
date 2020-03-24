@@ -7,11 +7,13 @@
 //
 
 import UIKit
-import iosManagers
+import ARMDevSuite
 import JGProgressHUD
 import HGPlaceholders
 
 class AddFriendVC: UIViewController {
+	
+	static var user: User?
 
     var user: User!
     var allUsers: [User] = []

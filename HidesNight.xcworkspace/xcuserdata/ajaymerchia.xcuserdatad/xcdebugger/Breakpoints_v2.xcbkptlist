@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "21FCDFB0-E535-4058-9C21-24E237ACD7BC"
    type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "AFFC62D3-6CC1-43B2-96D4-9EC064ADD9C5"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HidesNight/ViewControllers/Games/GameDetailScreen/GameDetailVC-logic.swift"
-            timestampString = "569374503.055926"
+            timestampString = "569377381.203083"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "188"
@@ -22,27 +24,29 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "87D816DE-EE5C-465E-8239-FBBE624C08C9"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HidesNight/Resources/ExtendedUtils.swift"
-            timestampString = "569374503.055993"
+            timestampString = "569377381.203167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "46"
             endingLineNumber = "46"
-            landmarkName = "showChatVCFor(game:perspectiveOf:fromVC:)"
+            landmarkName = "imageResize(image:sizeChange:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "7E90BDF4-3E4B-4C82-AF48-910FCA3A32F4"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HidesNight/ViewControllers/Games/ActiveGameScreen/ActiveGameVC-initUI.swift"
-            timestampString = "569374503.056064"
+            timestampString = "569377381.203293"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "271"
@@ -54,11 +58,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "A18C7D92-502E-4ABC-8BBD-3B735F19D5C9"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HidesNight/ViewControllers/Misc/Chat/ChatVC-logic.swift"
-            timestampString = "569374503.056142"
+            timestampString = "569377381.203392"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "104"
@@ -70,19 +75,21 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "D8C10E6B-0DCC-42E1-ACD9-00062123B696"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HidesNight/ViewControllers/Social/SocialScreen/SocialVC-system.swift"
-            timestampString = "569374503.056186"
+            timestampString = "569377381.203441"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "showFriendRequest(_:)"
             landmarkType = "7">
             <Locations>
                <Location
+                  uuid = "D8C10E6B-0DCC-42E1-ACD9-00062123B696 - 494579f3f8ab9308"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -90,14 +97,14 @@
                   moduleName = "HidesNight"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ajaymerchia/wkspc/ios/hidesnight/HidesNight/HidesNight/ViewControllers/Social/SocialScreen/SocialVC-system.swift"
-                  timestampString = "569374503.2597769"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "129"
-                  endingLineNumber = "129"
-                  offsetFromSymbolStart = "164">
+                  startingLineNumber = "153"
+                  endingLineNumber = "153"
+                  offsetFromSymbolStart = "155">
                </Location>
                <Location
+                  uuid = "D8C10E6B-0DCC-42E1-ACD9-00062123B696 - 4de4d1fc73cacd5c"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -105,12 +112,11 @@
                   moduleName = "HidesNight"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ajaymerchia/wkspc/ios/hidesnight/HidesNight/HidesNight/ViewControllers/Social/SocialScreen/SocialVC-system.swift"
-                  timestampString = "569374503.261571"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "128"
-                  endingLineNumber = "128"
-                  offsetFromSymbolStart = "32">
+                  startingLineNumber = "152"
+                  endingLineNumber = "152"
+                  offsetFromSymbolStart = "103">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -118,19 +124,21 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "686AF47A-5BA3-43B6-9F2B-4897836792ED"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HidesNight/ViewControllers/Social/SocialScreen/SocialVC-system.swift"
-            timestampString = "569374503.056249"
+            timestampString = "569377381.203512"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
             landmarkName = "acceptFriendRequest(_:)"
             landmarkType = "7">
             <Locations>
                <Location
+                  uuid = "686AF47A-5BA3-43B6-9F2B-4897836792ED - d03388ccca9b9039"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -138,14 +146,14 @@
                   moduleName = "HidesNight"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ajaymerchia/wkspc/ios/hidesnight/HidesNight/HidesNight/ViewControllers/Social/SocialScreen/SocialVC-system.swift"
-                  timestampString = "569374503.389477"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "139"
-                  endingLineNumber = "139"
-                  offsetFromSymbolStart = "164">
+                  startingLineNumber = "163"
+                  endingLineNumber = "163"
+                  offsetFromSymbolStart = "155">
                </Location>
                <Location
+                  uuid = "686AF47A-5BA3-43B6-9F2B-4897836792ED - d8af5a973e41e5ed"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -153,12 +161,11 @@
                   moduleName = "HidesNight"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ajaymerchia/wkspc/ios/hidesnight/HidesNight/HidesNight/ViewControllers/Social/SocialScreen/SocialVC-system.swift"
-                  timestampString = "569374503.391646"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "138"
-                  endingLineNumber = "138"
-                  offsetFromSymbolStart = "32">
+                  startingLineNumber = "162"
+                  endingLineNumber = "162"
+                  offsetFromSymbolStart = "103">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -166,19 +173,21 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "2C3B1F05-D5A7-465D-AECD-F72CA828CD2B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HidesNight/ViewControllers/Social/SocialScreen/SocialVC-system.swift"
-            timestampString = "569374503.056308"
+            timestampString = "569377381.203578"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
             landmarkName = "rejectFriendRequest(_:)"
             landmarkType = "7">
             <Locations>
                <Location
+                  uuid = "2C3B1F05-D5A7-465D-AECD-F72CA828CD2B - a7e9b2d5d4a7fcea"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -186,14 +195,14 @@
                   moduleName = "HidesNight"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ajaymerchia/wkspc/ios/hidesnight/HidesNight/HidesNight/ViewControllers/Social/SocialScreen/SocialVC-system.swift"
-                  timestampString = "569374503.396589"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "149"
-                  endingLineNumber = "149"
-                  offsetFromSymbolStart = "164">
+                  startingLineNumber = "173"
+                  endingLineNumber = "173"
+                  offsetFromSymbolStart = "155">
                </Location>
                <Location
+                  uuid = "2C3B1F05-D5A7-465D-AECD-F72CA828CD2B - 852a63ac7b75069e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -201,12 +210,11 @@
                   moduleName = "HidesNight"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ajaymerchia/wkspc/ios/hidesnight/HidesNight/HidesNight/ViewControllers/Social/SocialScreen/SocialVC-system.swift"
-                  timestampString = "569374503.398441"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "148"
-                  endingLineNumber = "148"
-                  offsetFromSymbolStart = "32">
+                  startingLineNumber = "172"
+                  endingLineNumber = "172"
+                  offsetFromSymbolStart = "103">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -214,6 +222,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "0D90B4B1-1349-498C-81B0-9CD0CBC5436E"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -230,6 +239,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "06CE0D3D-2679-442F-8B08-28362A8A5518"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -246,11 +256,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "CAE7CA87-DE79-4A1E-8F37-F2D2A36BF411"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HidesNight/Models/Round.swift"
-            timestampString = "569374503.056442"
+            timestampString = "569377381.203722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "109"
@@ -262,11 +273,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "90E5113F-3B7B-4C01-B782-6378AA6FE583"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HidesNight/ViewControllers/Games/ActiveGameScreen/ActiveGameVC-initUI.swift"
-            timestampString = "569374503.056494"
+            timestampString = "569377381.203777"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "261"
@@ -278,27 +290,29 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "1741FD41-D623-47A6-9B39-89AB26CF3476"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HidesNight/ViewControllers/Games/ActiveGameScreen/ActiveGameVC-logic.swift"
-            timestampString = "569374503.056566"
+            timestampString = "569377381.203859"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "97"
             endingLineNumber = "97"
-            landmarkName = "caughtPerson(_:)"
+            landmarkName = "setHidingTime(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "BA525C59-C96E-4F93-9966-A5F4E8B24233"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HidesNight/Models/Round.swift"
-            timestampString = "569374503.056637"
+            timestampString = "569377381.203938"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
@@ -310,11 +324,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "3D977B8F-0A1E-4BA7-985F-B28547BA82A5"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HidesNight/ViewControllers/Misc/Chat/ChatVC-logic.swift"
-            timestampString = "569374503.0566829"
+            timestampString = "569377381.203989"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "102"
@@ -326,43 +341,46 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "1B7FB426-BDE1-4701-BBAD-DEE0AC78BBB2"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HidesNight/ViewControllers/Games/ActiveGameScreen/ActiveGameVC-logic.swift"
-            timestampString = "569374503.056722"
+            timestampString = "569377381.204053"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "185"
             endingLineNumber = "185"
-            landmarkName = "updateCurrentLocation()"
+            landmarkName = "updateLocalNotification(status:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "30BE3D1F-55D1-42D5-A5A1-7FF19CEA4FF4"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HidesNight/ViewControllers/Games/ActiveGameScreen/ActiveGameVC-logic.swift"
-            timestampString = "569374503.056796"
+            timestampString = "569377381.204137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "186"
             endingLineNumber = "186"
-            landmarkName = "updateCurrentLocation()"
+            landmarkName = "updateLocalNotification(status:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "9C05C767-AAE5-4CC3-ACE8-32A2616D1C38"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HidesNight/ViewControllers/Games/ActiveGameScreen/ActiveGameVC-initUI.swift"
-            timestampString = "569374503.05687"
+            timestampString = "569377381.204226"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "279"
@@ -374,11 +392,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "0937AC18-96DB-45EE-B9B5-3539CA576802"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HidesNight/ViewControllers/Games/ActiveGameScreen/ActiveGameVC-initUI.swift"
-            timestampString = "569374503.056936"
+            timestampString = "569377381.204298"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "198"
@@ -390,12 +409,13 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "4E0F3F90-57FC-46BA-B227-CC4962C9CC17"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             condition = "i == 2"
             continueAfterRunningActions = "No"
             filePath = "HidesNight/ViewControllers/Games/ActiveGameScreen/ActiveGameVC-initUI.swift"
-            timestampString = "569374503.056999"
+            timestampString = "569377381.204365"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "201"
@@ -407,11 +427,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "24358AF9-F24B-41DB-B6CC-77B7E63FDF8A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HidesNight/AppDelegate-location.swift"
-            timestampString = "569374503.057062"
+            timestampString = "569377381.204443"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -423,11 +444,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "A4D18020-F478-41FB-BA04-5AC5FFD74B25"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HidesNight/Helpers/NotificationsHelper.swift"
-            timestampString = "569374503.057111"
+            timestampString = "569377381.2044981"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "17"
@@ -439,22 +461,24 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "C784E867-A07D-486A-8640-81F81096425D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HidesNight/ViewControllers/Games/ActiveGameScreen/ActiveGameVC-logic.swift"
-            timestampString = "569374503.0571671"
+            timestampString = "569377381.204558"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "166"
             endingLineNumber = "166"
-            landmarkName = "updateLocalNotification(status:)"
+            landmarkName = "updateLocalData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "DC5605C7-11F4-4896-A917-0C401B7A3C43"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -471,19 +495,21 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "80A7590E-F263-4073-8C13-F6CE42863171"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HidesNight/ViewControllers/Social/SocialScreen/SocialVC-system.swift"
-            timestampString = "569374503.057248"
+            timestampString = "569377381.204645"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "217"
-            endingLineNumber = "217"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
             landmarkName = "rejectGameRequest(_:)"
             landmarkType = "7">
             <Locations>
                <Location
+                  uuid = "80A7590E-F263-4073-8C13-F6CE42863171 - d52167765700674a"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -499,6 +525,7 @@
                   offsetFromSymbolStart = "164">
                </Location>
                <Location
+                  uuid = "80A7590E-F263-4073-8C13-F6CE42863171 - 7070ca2ac147b2be"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -519,15 +546,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "9B6750FF-3004-41F2-B6AD-A198DF20FECC"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HidesNight/ViewControllers/Social/SocialScreen/SocialVC-system.swift"
-            timestampString = "569374503.0573111"
+            timestampString = "569377381.2047189"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "218"
-            endingLineNumber = "218"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
             landmarkName = "rejectGameRequest(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -535,11 +563,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "ADA35814-90C2-4F0E-8673-A0F3D861E3F8"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HidesNight/AppDelegate-notificationHandle.swift"
-            timestampString = "569374503.057373"
+            timestampString = "569377381.204839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "101"
@@ -551,19 +580,21 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "F7F7CBC6-83E2-4CEC-B780-FE9A5C3E4762"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HidesNight/ViewControllers/Social/SocialScreen/SocialVC-system.swift"
-            timestampString = "569374503.057423"
+            timestampString = "569377381.2049201"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
             landmarkName = "acceptGameRequest(_:)"
             landmarkType = "7">
             <Locations>
                <Location
+                  uuid = "F7F7CBC6-83E2-4CEC-B780-FE9A5C3E4762 - 5dffcad891ef6f69"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -579,6 +610,7 @@
                   offsetFromSymbolStart = "164">
                </Location>
                <Location
+                  uuid = "F7F7CBC6-83E2-4CEC-B780-FE9A5C3E4762 - 7b13f92e94bf2b8d"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -599,19 +631,21 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "6204BB22-A8F9-40C9-B96D-1E650FA81ED7"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HidesNight/ViewControllers/Social/SocialScreen/SocialVC-system.swift"
-            timestampString = "569374503.057477"
+            timestampString = "569377381.20498"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
             landmarkName = "showGameRequest(_:)"
             landmarkType = "7">
             <Locations>
                <Location
+                  uuid = "6204BB22-A8F9-40C9-B96D-1E650FA81ED7 - a973ac3d79d05e30"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -627,6 +661,7 @@
                   offsetFromSymbolStart = "164">
                </Location>
                <Location
+                  uuid = "6204BB22-A8F9-40C9-B96D-1E650FA81ED7 - 4597798b60bcf97c"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -647,11 +682,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "602E562D-440F-45F6-A69C-A561A112FBF2"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HidesNight/AppDelegate-notificationHandle.swift"
-            timestampString = "569374503.057531"
+            timestampString = "569377381.205035"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "222"
@@ -663,15 +699,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "713C2349-044A-4D9D-82F6-90B3DB28A6F2"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HidesNight/ViewControllers/Social/SocialScreen/SocialVC-system.swift"
-            timestampString = "569374503.057579"
+            timestampString = "569377381.205084"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
             landmarkName = "showGameRequest(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -679,15 +716,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "78611CD9-5C09-47DC-ABBE-93E5F6D670C2"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HidesNight/ViewControllers/Social/SocialScreen/SocialVC-system.swift"
-            timestampString = "569374503.0576299"
+            timestampString = "569377381.205148"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
             landmarkName = "rejectGameRequest(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -695,11 +733,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "02965872-3797-412F-951B-6345BAA6D4DB"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HidesNight/AppDelegate-notificationHandle.swift"
-            timestampString = "569374503.057677"
+            timestampString = "569377381.205211"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "240"

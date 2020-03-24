@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 import ChameleonFramework
 
 extension LoginVC {
@@ -93,7 +93,7 @@ extension LoginVC {
         howTo.setTitle("How to Play", for: .normal)
         howTo.titleLabel?.font = .TEXT_FONT
         howTo.setTitleColor(.white, for: .normal)
-        howTo.setTitleColor(.flatWhiteDark, for: .highlighted)
+		howTo.setTitleColor(.flatWhiteDark(), for: .highlighted)
         howTo.addTarget(self, action: #selector(toInstructions), for: .touchUpInside)
         
         
@@ -101,7 +101,7 @@ extension LoginVC {
         signUp.setTitle("New Here? Sign-Up!", for: .normal)
         signUp.titleLabel?.font = .TEXT_FONT
         signUp.setTitleColor(.white, for: .normal)
-        signUp.setTitleColor(.flatWhiteDark, for: .highlighted)
+		signUp.setTitleColor(.flatWhiteDark(), for: .highlighted)
         signUp.addTarget(self, action: #selector(toSignUp), for: .touchUpInside)
         
         
@@ -115,7 +115,7 @@ extension LoginVC {
         login.titleLabel?.font = .SUBTITLE_FONT
         login.setTitleColor(.DARK_BLUE, for: .normal)
         login.setBackgroundColor(color: .white, forState: .normal)
-        login.setBackgroundColor(color: .flatWhiteDark, forState: .highlighted)
+		login.setBackgroundColor(color: .flatWhiteDark(), forState: .highlighted)
         login.clipsToBounds = true
         login.layer.cornerRadius = 5
         login.titleEdgeInsets = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)

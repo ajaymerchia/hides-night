@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 class GameSelectionType: Equatable {
     static func == (lhs: GameSelectionType, rhs: GameSelectionType) -> Bool {
         return lhs.description == rhs.description

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import iosManagers
+import ARMDevSuite
 import UIKit
 import CoreLocation
 import MapKit

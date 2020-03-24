@@ -9,11 +9,11 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 
 extension GameDetailVC {
     func setupManagers() {
-        gameValidationAlerts = AlertManager(view: self, stateRestoration: {
+		gameValidationAlerts = AlertManager(vc: self, defaultHandler: {
             self.rightActionButton.isSelected = false
             self.view.isUserInteractionEnabled = true
         })
@@ -65,10 +65,10 @@ extension GameDetailVC {
         case 0:
             self.performSegue(withIdentifier: "detail2invite", sender: self)
         case 1:
-            teamToShow = Team(uid: Utils.uuid(), name: "Team \(game.teams.count + 1)")
+            teamToShow = Team(uid: LogicSuite.uuid(), name: "Team \(game.teams.count + 1)")
             self.performSegue(withIdentifier: "detail2team", sender: self)
         default:
-            roundToShow = Round(uid: Utils.uuid(), name: "Round \(game.rounds.count + 1)", game: self.game)
+            roundToShow = Round(uid: LogicSuite.uuid(), name: "Round \(game.rounds.count + 1)", game: self.game)
             self.performSegue(withIdentifier: "detail2round", sender: self)
         }
     }

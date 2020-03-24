@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import iosManagers
+import ARMDevSuite
 import JGProgressHUD
 
 class CreateGameVC: UIViewController {
@@ -72,7 +72,7 @@ class CreateGameVC: UIViewController {
     
     var allBorders = [[UIView]]()
     
-    let cellColor: UIColor = .flatBlack
+	let cellColor: UIColor = .flatBlack()
     let separatorColor: UIColor = .black
     
     

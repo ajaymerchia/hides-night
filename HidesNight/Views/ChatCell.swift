@@ -93,7 +93,7 @@ class ChatCell: UITableViewCell {
             msgBackground.frame.origin = CGPoint(x: senderImage.frame.maxX + .MARGINAL_PADDING, y: headerSpace + .MARGINAL_PADDING)
             
             
-            msgBackground.backgroundColor = .flatBlackDark
+            msgBackground.backgroundColor = .flatBlackDark()
             nameLabel.frame = CGRect(x: msgBackground.frame.minX, y: 0, width: masterWidth - msgBackground.frame.minX, height: headerSpace)
         }
         

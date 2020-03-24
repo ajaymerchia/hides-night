@@ -9,7 +9,7 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 
 extension GameDetailVC: UIGestureRecognizerDelegate {
     func initUI() {
@@ -46,7 +46,7 @@ extension GameDetailVC: UIGestureRecognizerDelegate {
     
     func initGamePhoto() {
         gamePhoto = UIImageView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height/4))
-        gamePhoto.backgroundColor = .flatBlack
+        gamePhoto.backgroundColor = .flatBlack()
         gamePhoto.image = game.img
         gamePhoto.contentMode = .scaleAspectFill
         gamePhoto.clipsToBounds = true
@@ -198,7 +198,7 @@ extension GameDetailVC: UIGestureRecognizerDelegate {
         var colorToUse: UIColor = self.userIsAdmin && !self.game.active ? .ACCENT_GREEN : .ACCENT_RED
         
         if self.game.datetime < Date() {
-            colorToUse = .flatGrayDark
+            colorToUse = .flatGrayDark()
             textToUse = "Expired"
             rightActionButton.isUserInteractionEnabled = false
         }
@@ -240,7 +240,7 @@ extension GameDetailVC: UIGestureRecognizerDelegate {
         var colorToUse: UIColor = self.userIsAdmin && !self.game.active ? .ACCENT_GREEN : .ACCENT_RED
 
         if self.game.datetime < Date() {
-            colorToUse = .flatGrayDark
+            colorToUse = .flatGrayDark()
             textToUse = "Expired"
         }
         

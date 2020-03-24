@@ -1,10 +1,105 @@
 PODS:
   - Alamofire (4.8.0)
+  - ARMDevSuite (0.1.74):
+    - ARMDevSuite/Alerts (= 0.1.74)
+    - ARMDevSuite/Calendar (= 0.1.74)
+    - ARMDevSuite/Layouts (= 0.1.74)
+    - ARMDevSuite/LocalData (= 0.1.74)
+    - ARMDevSuite/Logic (= 0.1.74)
+    - ARMDevSuite/MultipleImagePicker (= 0.1.74)
+    - ARMDevSuite/PhotoPicker (= 0.1.74)
+    - ARMDevSuite/ProgressHud (= 0.1.74)
+    - ARMDevSuite/SegControl (= 0.1.74)
+    - ARMDevSuite/SlideView (= 0.1.74)
+    - ARMDevSuite/TextField (= 0.1.74)
+    - ARMDevSuite/UISuite (= 0.1.74)
+  - ARMDevSuite/Alerts (0.1.74):
+    - ARMDevSuite/ProgressHud
+    - JGProgressHUD
+  - ARMDevSuite/Calendar (0.1.74)
+  - ARMDevSuite/Layouts (0.1.74)
+  - ARMDevSuite/LocalData (0.1.74)
+  - ARMDevSuite/Logic (0.1.74):
+    - CryptoSwift
+  - ARMDevSuite/MultipleImagePicker (0.1.74):
+    - ARMDevSuite/Logic
+    - ARMDevSuite/UISuite
+    - DKImagePickerController
+  - ARMDevSuite/PhotoPicker (0.1.74):
+    - ARMDevSuite/Alerts
+    - ARMDevSuite/Layouts
+    - ARMDevSuite/UISuite
+    - DKImagePickerController
+  - ARMDevSuite/ProgressHud (0.1.74):
+    - ARMDevSuite/Layouts
+    - ARMDevSuite/UISuite
+  - ARMDevSuite/SegControl (0.1.74):
+    - ARMDevSuite/Layouts
+    - ARMDevSuite/UISuite
+  - ARMDevSuite/SlideView (0.1.74):
+    - ARMDevSuite/Layouts
+    - ARMDevSuite/UISuite
+  - ARMDevSuite/TextField (0.1.74):
+    - ARMDevSuite/UISuite
+    - SkyFloatingLabelTextField (~> 3.0)
+  - ARMDevSuite/UISuite (0.1.74):
+    - ARMDevSuite/Layouts
   - BetterSegmentedControl (1.0.3)
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
   - CountdownLabel (4.0.1)
+  - CropViewController (2.5.1)
+  - CryptoSwift (1.1.2)
+  - DKCamera (1.6.4)
+  - DKImagePickerController (4.2.0):
+    - DKImagePickerController/Camera (= 4.2.0)
+    - DKImagePickerController/Core (= 4.2.0)
+    - DKImagePickerController/ImageDataManager (= 4.2.0)
+    - DKImagePickerController/InlineCamera (= 4.2.0)
+    - DKImagePickerController/PhotoEditor (= 4.2.0)
+    - DKImagePickerController/PhotoGallery (= 4.2.0)
+    - DKImagePickerController/Resource (= 4.2.0)
+  - DKImagePickerController/Camera (4.2.0):
+    - DKCamera
+    - DKImagePickerController/Core
+  - DKImagePickerController/Core (4.2.0):
+    - DKImagePickerController/ImageDataManager
+    - DKImagePickerController/Resource
+  - DKImagePickerController/ImageDataManager (4.2.0)
+  - DKImagePickerController/InlineCamera (4.2.0):
+    - DKCamera
+    - DKImagePickerController/Core
+  - DKImagePickerController/PhotoEditor (4.2.0):
+    - CropViewController (~> 2.5)
+    - DKImagePickerController/Core
+  - DKImagePickerController/PhotoGallery (4.2.0):
+    - DKImagePickerController/Core
+    - DKPhotoGallery
+  - DKImagePickerController/Resource (4.2.0)
+  - DKPhotoGallery (0.0.14):
+    - DKPhotoGallery/Core (= 0.0.14)
+    - DKPhotoGallery/Model (= 0.0.14)
+    - DKPhotoGallery/Preview (= 0.0.14)
+    - DKPhotoGallery/Resource (= 0.0.14)
+    - SDWebImage
+    - SDWebImageFLPlugin
+  - DKPhotoGallery/Core (0.0.14):
+    - DKPhotoGallery/Model
+    - DKPhotoGallery/Preview
+    - SDWebImage
+    - SDWebImageFLPlugin
+  - DKPhotoGallery/Model (0.0.14):
+    - SDWebImage
+    - SDWebImageFLPlugin
+  - DKPhotoGallery/Preview (0.0.14):
+    - DKPhotoGallery/Model
+    - DKPhotoGallery/Resource
+    - SDWebImage
+    - SDWebImageFLPlugin
+  - DKPhotoGallery/Resource (0.0.14):
+    - SDWebImage
+    - SDWebImageFLPlugin
   - Firebase/Auth (5.15.0):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.2.0)
@@ -59,6 +154,7 @@ PODS:
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 5.1)
     - GTMSessionFetcher/Core (~> 1.1)
+  - FLAnimatedImage (1.0.12)
   - FontAwesomeKit (2.2.1):
     - FontAwesomeKit/Core (= 2.2.1)
     - FontAwesomeKit/FontAwesome (= 2.2.1)
@@ -106,8 +202,6 @@ PODS:
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.2.1)
   - HGPlaceholders (0.3.0)
-  - iosManagers (1.0.10):
-    - JGProgressHUD
   - IQKeyboardManager (6.2.0)
   - JGProgressHUD (2.0.3)
   - KeychainAccess (3.1.2)
@@ -120,12 +214,19 @@ PODS:
   - nanopb/encode (0.3.901)
   - PDTSimpleCalendar (0.9.1)
   - Protobuf (3.6.1)
+  - SDWebImage (5.2.3):
+    - SDWebImage/Core (= 5.2.3)
+  - SDWebImage/Core (5.2.3)
+  - SDWebImageFLPlugin (0.3.0):
+    - FLAnimatedImage (>= 1.0.11)
+    - SDWebImage/Core (~> 5.0)
   - SideMenu (5.0.3)
   - SkyFloatingLabelTextField (3.6.0)
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
   - Alamofire
+  - ARMDevSuite
   - BetterSegmentedControl (~> 1.0)
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`, branch `wip/swift4`)
   - CountdownLabel
@@ -136,7 +237,6 @@ DEPENDENCIES:
   - Firebase/Storage
   - FontAwesomeKit
   - HGPlaceholders
-  - iosManagers
   - IQKeyboardManager
   - JGProgressHUD
   - KeychainAccess
@@ -147,7 +247,7 @@ DEPENDENCIES:
   - SwiftyJSON
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - BetterSegmentedControl
     - CountdownLabel
@@ -166,7 +266,6 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMSessionFetcher
     - HGPlaceholders
-    - iosManagers
     - IQKeyboardManager
     - JGProgressHUD
     - KeychainAccess
@@ -178,6 +277,16 @@ SPEC REPOS:
     - SideMenu
     - SkyFloatingLabelTextField
     - SwiftyJSON
+  trunk:
+    - ARMDevSuite
+    - CropViewController
+    - CryptoSwift
+    - DKCamera
+    - DKImagePickerController
+    - DKPhotoGallery
+    - FLAnimatedImage
+    - SDWebImage
+    - SDWebImageFLPlugin
 
 EXTERNAL SOURCES:
   ChameleonFramework:
@@ -191,9 +300,15 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  ARMDevSuite: 1f8990e073f585b634b28b731a10c9cf585f525a
   BetterSegmentedControl: 4e3bd0bd517b0f6077c9e17f5663a01cff48e2c5
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   CountdownLabel: c9975e3f329140b5e7d1f45cd63b1300badd1712
+  CropViewController: 10ba7af75e302f2db7eb913f8aa1156f95cfe88e
+  CryptoSwift: 31dacd1f13427439ddae5b5cbaae4c8dbc43047e
+  DKCamera: 61fa47629a39354e5111bca1fe96695de020dcb9
+  DKImagePickerController: d5bfc4c8696a5d00f9ce24d42d223503546ed6c3
+  DKPhotoGallery: 0290d32343574f06eaa4c26f8f2f8a1035e916be
   Firebase: 8bb9268bff82374f2cbaaabb143e725743c316ae
   FirebaseAnalytics: c06f9d70577d79074214700a71fd5d39de5550fb
   FirebaseAnalyticsInterop: e5f21be9af6548372e2f0815834ff909bff395a2
@@ -204,12 +319,12 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: e2fa4cb35ef5558c200f7f0ad8a53e212215f93e
   FirebaseMessaging: b412996f6a09337d232bb3a6676ce4d1f353d024
   FirebaseStorage: 3d22c041370593e639fba013d1eb698a8dae2881
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   FontAwesomeKit: 3614979b3dbb0ec3f7fac1bd760b91f66c31db67
   GoogleAppMeasurement: 98b71f5e04142793729a5ef23e5b96651ff4b70f
   GoogleUtilities: 95996bea7c7d9b8fb811b7507669a4a8762f80c7
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   HGPlaceholders: 2df01c51b04a30acd0b8c9c7161c7cdde4541109
-  iosManagers: b43375e0d4912fde1f6d347d603477e74a389435
   IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
   JGProgressHUD: 12b20a8f4ffe05258f8635c1ab92816e451f904d
   KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
@@ -218,10 +333,12 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   PDTSimpleCalendar: d1c03387678422715dc021aa1a85d70f4d1014f2
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
+  SDWebImage: 46a7f73228f84ce80990c786e4372cf4db5875ce
+  SDWebImageFLPlugin: cf3f4ae49f249dd785129346fd61bbc8433a88cf
   SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
   SkyFloatingLabelTextField: 38164979b79512f9ff9288ad8acfc4bbf5d843e3
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 4d0cec67386160d2e72de95df26a171cafea0f2b
+PODFILE CHECKSUM: 5c13a7367ded0d390155d84dcb9627da8e8a3e7c
 
-COCOAPODS: 1.6.0.beta.2
+COCOAPODS: 1.8.4

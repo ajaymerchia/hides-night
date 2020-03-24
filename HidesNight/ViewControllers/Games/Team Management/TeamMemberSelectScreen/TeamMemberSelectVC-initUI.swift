@@ -9,7 +9,7 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 
 extension TeamMemberSelectVC: UITableViewDelegate, UITableViewDataSource {
     func initUI() {

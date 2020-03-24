@@ -10,12 +10,12 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 import JGProgressHUD
 
 extension InviteFriendVC {
     func setupManagers() {
-        alerts = AlertManager(view: self, stateRestoration: {
+		alerts = AlertManager(vc: self, defaultHandler: {
             if self.succesfulSend {
                 self.hud?.indicatorView = JGProgressHUDSuccessIndicatorView(contentView: self.view)
                 self.hud?.textLabel.text = "Done!"

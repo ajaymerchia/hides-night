@@ -9,7 +9,7 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 
 extension ChatVC {
     func initUI() {
@@ -57,7 +57,7 @@ extension ChatVC {
         composeTextField.font = .TEXT_FONT
         composeTextField.textColor = .white
         composeTextField.tintColor = .white
-        composeTextField.backgroundColor = .flatBlack
+		composeTextField.backgroundColor = .flatBlack()
         composeTextField.layer.cornerRadius = composeTextField.frame.height/2
         composeTextField.delegate = self
         composeTextField.returnKeyType = .send
@@ -97,8 +97,6 @@ extension ChatVC {
     func keyboardRehandling() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardNotification), name: UIResponder.keyboardWillShowNotification, object: nil);
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardNotification), name: UIResponder.keyboardWillHideNotification, object: nil);
-        
-        
     }
     
 }

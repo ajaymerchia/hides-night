@@ -7,12 +7,12 @@
 //
 
 import Foundation
-import iosManagers
+import ARMDevSuite
 import UIKit
 
 extension LoginVC {
     func setupManagers() {
-        alerts = AlertManager(view: self, stateRestoration: {
+		alerts = AlertManager(vc: self, defaultHandler: {
             self.hud.dismiss()
             self.view.isUserInteractionEnabled = true
         })
@@ -40,7 +40,7 @@ extension LoginVC {
     override func viewWillDisappear(_ animated: Bool) {
         usernameField.text = ""
         passwordField.text = ""
-        hud?.dismiss()
+        alerts.jghud?.dismiss()
         pendingLogin = false
         self.view.isUserInteractionEnabled = true
     }

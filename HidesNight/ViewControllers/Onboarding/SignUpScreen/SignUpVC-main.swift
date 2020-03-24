@@ -8,7 +8,7 @@
 
 import UIKit
 import JGProgressHUD
-import iosManagers
+import ARMDevSuite
 import SkyFloatingLabelTextField
 
 

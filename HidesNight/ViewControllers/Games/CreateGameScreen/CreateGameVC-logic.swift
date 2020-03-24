@@ -9,7 +9,7 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 
 extension CreateGameVC {
     func getData() {
@@ -147,7 +147,7 @@ extension CreateGameVC {
         
         
         self.view.isUserInteractionEnabled = false
-        hud = alerts.startProgressHud(withMsg: "Creating Game", style: .dark)
+        alerts.startProgressHud(withMsg: "Creating Game", style: .dark)
         
         guard let gameTitle = eventNameField.text else {
             alerts.triggerCallback()
@@ -163,7 +163,7 @@ extension CreateGameVC {
         let durations = [roundDuration, checkInDuration, gpsActivation]
         let decisions = [teamDecisionType, seekDecisionType]
         
-        let game = Game(gameid: Utils.uuid(), admin: self.admin, title: gameTitle, datetime: self.date, round_checkin_gps: durations, team_seek: decisions, img: eventImageHeader.image)
+        let game = Game(gameid: LogicSuite.uuid(), admin: self.admin, title: gameTitle, datetime: self.date, round_checkin_gps: durations, team_seek: decisions, img: eventImageHeader.image)
 
         self.admin.gameIDs[game.uid] = self.admin.username
         self.admin.games.append(game)
@@ -183,7 +183,7 @@ extension CreateGameVC {
     
     func updateGame() {
         self.view.isUserInteractionEnabled = false
-        hud = alerts.startProgressHud(withMsg: "Updating Game", style: .dark)
+        alerts.startProgressHud(withMsg: "Updating Game", style: .dark)
         
         guard let g = self.game else {
             alerts.triggerCallback()

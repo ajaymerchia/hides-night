@@ -9,7 +9,7 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 
 extension InviteFriendVC {
     func initUI() {
@@ -46,7 +46,7 @@ extension InviteFriendVC {
         searchBox.tintColor = .white
         searchBox.font = .TEXT_FONT
         searchBox.attributedPlaceholder = NSAttributedString(string: "Search for Friends",
-                                                             attributes: [NSAttributedString.Key.foregroundColor: UIColor.flatWhiteDark])
+                                                             attributes: [NSAttributedString.Key.foregroundColor: UIColor.flatWhiteDark()])
         searchBox.returnKeyType = .done
         searchBox.keyboardToolbar.isHidden = true
         searchBox.addTarget(self, action: #selector(inviteFriends), for: .editingDidEndOnExit)
@@ -61,7 +61,7 @@ extension InviteFriendVC {
         tableview.register(PersonCell.self, forCellReuseIdentifier: "personCell")
         tableview.delegate = self
         tableview.dataSource = self
-        tableview.backgroundColor = .flatBlack
+        tableview.backgroundColor = .flatBlack()
         tableview.separatorStyle = .none
         
         tableview.showsVerticalScrollIndicator = false

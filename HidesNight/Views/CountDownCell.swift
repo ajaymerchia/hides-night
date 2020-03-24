@@ -8,7 +8,7 @@
 
 import UIKit
 import CountdownLabel
-import iosManagers
+import ARMDevSuite
 
 class CountDownCell: UITableViewCell {
     

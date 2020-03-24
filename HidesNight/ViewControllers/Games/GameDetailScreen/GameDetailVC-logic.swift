@@ -9,7 +9,7 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 
 extension GameDetailVC {
     func tabChanged(index: Int) {
@@ -195,7 +195,7 @@ extension GameDetailVC {
         
         
         let alert = UIAlertController(title: "Ready to Start Game?", message: nil, preferredStyle: .alert)
-        alert.view.backgroundColor = .flatBlackDark
+        alert.view.backgroundColor = .flatBlackDark()
         
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (_) in
             self.game.active = true

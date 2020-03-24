@@ -8,7 +8,7 @@
 
 import UIKit
 import PDTSimpleCalendar
-import iosManagers
+import ARMDevSuite
 
 class DateTimeVC: PDTSimpleCalendarViewController, PDTSimpleCalendarViewDelegate {
 
@@ -82,11 +82,12 @@ class DateTimeVC: PDTSimpleCalendarViewController, PDTSimpleCalendarViewDelegate
         BSView.backgroundColor = .black
         view.addSubview(BSView)
         
-        let border1 = Utils.getBorder(forView: self.collectionView, thickness: 1, color: .ACCENT_BLUE, side: .Bottom)
+        let border1 = UISuite.getBorder(forView: self.collectionView, thickness: 1, color: .ACCENT_BLUE, side: .Bottom)
         border1.alpha = 0
         view.addSubview(border1)
         
-        let border2 = Utils.getBorder(forView: self.collectionView, thickness: 1, color: .ACCENT_BLUE, side: .Top)
+        let border2 = UISuite
+			.getBorder(forView: self.collectionView, thickness: 1, color: .ACCENT_BLUE, side: .Top)
         border2.alpha = 0
         view.addSubview(border2)
         
@@ -127,9 +128,9 @@ class DateTimeVC: PDTSimpleCalendarViewController, PDTSimpleCalendarViewDelegate
         let cell = super.collectionView(collectionView, cellForItemAt: indexPath) as! PDTSimpleCalendarViewCell
         
         cell.circleSelectedColor = .ACCENT_BLUE
-        cell.circleTodayColor = .flatGray
+        cell.circleTodayColor = .flatGray()
         cell.circleDefaultColor = .black
-        cell.textDisabledColor = .flatGrayDark
+        cell.textDisabledColor = .flatGrayDark()
         cell.textSelectedColor = .black
         
         cell.layer.borderWidth = 0

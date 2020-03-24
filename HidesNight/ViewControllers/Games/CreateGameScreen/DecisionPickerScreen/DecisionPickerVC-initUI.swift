@@ -9,7 +9,7 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 
 extension DecisionPickerVC {
     func initUI() {
@@ -69,7 +69,7 @@ extension DecisionPickerVC {
     func addButton() {
         selectCurrentMode = UIButton(frame: CGRect(x: 0, y: view.frame.height - (80), width: view.frame.width, height: 80))
         selectCurrentMode.setBackgroundColor(color: .ACCENT_BLUE, forState: .normal)
-        selectCurrentMode.setTitle("Save This Mode", for: .normal)
+        selectCurrentMode.setTitle("Save Mode", for: .normal)
         selectCurrentMode.titleLabel?.font = .SUBTITLE_FONT
         selectCurrentMode.addTarget(self, action: #selector(returnDataToParent), for: .touchUpInside)
         view.addSubview(selectCurrentMode)

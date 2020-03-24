@@ -9,7 +9,7 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 import SideMenu
 
 extension GamesVC {
@@ -97,7 +97,7 @@ extension GamesVC {
         view.addSubview(label)
         
         let underlineThickness: CGFloat = 1
-        view.addSubview(Utils.getBorder(forView: label, thickness: underlineThickness, color: .white, side: .Bottom))
+        view.addSubview(UISuite.getBorder(forView: label, thickness: underlineThickness, color: .white, side: .Bottom))
         
         gamesTable = UITableView(frame: LayoutManager.belowCentered(elementAbove: label, padding: underlineThickness, width: view.frame.width, height: (self.tabBarController?.tabBar.frame.maxY)! - (label.frame.maxY + underlineThickness)))
         gamesTable.register(GameCell.self, forCellReuseIdentifier: "gameCell")

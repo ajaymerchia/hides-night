@@ -10,13 +10,13 @@
 import UIKit
 import MapKit
 import CoreLocation
-import iosManagers
+import ARMDevSuite
 import JGProgressHUD
 
 
 extension RoundDetailVC {
     func setupManagers() {
-        alerts = AlertManager(view: self, stateRestoration: {
+        alerts = AlertManager(vc: self, defaultHandler: {
             self.hud?.indicatorView = JGProgressHUDSuccessIndicatorView(contentView: self.view)
             self.hud?.textLabel.text = "Done!"
             self.hud?.detailTextLabel.text = ""

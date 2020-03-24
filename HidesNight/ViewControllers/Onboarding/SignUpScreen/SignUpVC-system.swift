@@ -9,12 +9,12 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 
 extension SignUpVC {
     func setupManagers() {
-        alerts = AlertManager(view: self, stateRestoration: {
-            self.hud?.dismiss()
+		alerts = AlertManager(vc: self, defaultHandler: {
+            self.alerts.jghud?.dismiss()
             self.view.isUserInteractionEnabled = true
             
             
@@ -34,7 +34,7 @@ extension SignUpVC {
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        hud?.dismiss()
+        alerts.jghud?.dismiss()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

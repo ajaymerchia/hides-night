@@ -9,7 +9,7 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 
 extension ProfileVC {
     func initUI() {
@@ -23,7 +23,7 @@ extension ProfileVC {
     func resetBounds() {
         self.view = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width * 0.625, height: view.frame.height))
         self.navigationController?.navigationBar.isHidden = true
-        self.view.backgroundColor = UIColor.flatBlackDark
+        self.view.backgroundColor = UIColor.flatBlackDark()
     }
     
     
@@ -72,7 +72,7 @@ extension ProfileVC {
         name.adjustsFontSizeToFitWidth = true
         
         view.addSubview(name)
-        view.addSubview(Utils.getBorder(forView: name, thickness: 1.5, color: .white, side: .Bottom))
+        view.addSubview(UISuite.getBorder(forView: name, thickness: 1.5, color: .white, side: .Bottom))
         
     }
     
@@ -81,7 +81,7 @@ extension ProfileVC {
         let insets:CGFloat = 20
         
         let helpTemplateImage = UIImage.nav_info.withRenderingMode(.alwaysTemplate)
-        let helpPreferredColor: UIColor = .flatWhite
+        let helpPreferredColor: UIColor = .flatWhite()
         
         helpButton = UIButton(frame: LayoutManager.belowCentered(elementAbove: name, padding: .PADDING*2, width: view.frame.width/3, height: view.frame.width/3))
         helpButton.setImage(helpTemplateImage, for: .normal)

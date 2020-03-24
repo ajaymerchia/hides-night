@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 import JGProgressHUD
 
 class FriendDetailVC: UIViewController {

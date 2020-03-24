@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 extension GameDetailVC {
     func initSegControl() {
         for i in 0..<3 {

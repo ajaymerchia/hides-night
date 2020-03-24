@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 
 extension SignUpVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func createImagePicker(preferredType: UIImagePickerController.SourceType) {

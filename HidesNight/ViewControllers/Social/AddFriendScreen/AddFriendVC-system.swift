@@ -9,12 +9,12 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 
 extension AddFriendVC {
     func setupManagers() {
-        alerts = AlertManager(view: self, stateRestoration: {
-            self.hud?.dismiss()
+		alerts = AlertManager(vc: self, defaultHandler: {
+            self.alerts.jghud?.dismiss()
             self.view.isUserInteractionEnabled = true
         })
     }

@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 import SkyFloatingLabelTextField
 
 extension SignUpVC: UITextFieldDelegate {
@@ -160,7 +160,7 @@ extension SignUpVC: UITextFieldDelegate {
         signUp.setTitleColor(.DARK_BLUE, for: .normal)
         
         signUp.setBackgroundColor(color: .white, forState: .normal)
-        signUp.setBackgroundColor(color: .flatWhiteDark, forState: .highlighted)
+		signUp.setBackgroundColor(color: .flatWhiteDark(), forState: .highlighted)
         
         signUp.titleLabel?.font = .SUBTITLE_FONT
         signUp.clipsToBounds = true

@@ -9,12 +9,12 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 import HGPlaceholders
 
 extension AddFriendVC {
     func initUI() {
-        self.view.backgroundColor = UIColor.flatBlack
+        self.view.backgroundColor = UIColor.flatBlack()
         initNav()
         initTableView()
         initSendButton()
@@ -38,7 +38,7 @@ extension AddFriendVC {
         searchBox.tintColor = .white
         searchBox.font = .TEXT_FONT
         searchBox.attributedPlaceholder = NSAttributedString(string: "Search for Friends...",
-                                                             attributes: [NSAttributedString.Key.foregroundColor: UIColor.flatWhiteDark])
+                                                             attributes: [NSAttributedString.Key.foregroundColor: UIColor.flatWhiteDark()])
         searchBox.returnKeyType = .done
         searchBox.keyboardToolbar.isHidden = true
         searchBox.delegate = self
@@ -54,16 +54,22 @@ extension AddFriendVC {
     }
     
     func initTableView() {
-        tableview = UITableView(frame: CGRect(x: 0, y: navbar.frame.maxY, width: view.frame.width, height: view.frame.height-(navbar.frame.maxY + 50)))
+		tableview = UITableView(frame: .zero); view.addSubview(tableview)
+		tableview.translatesAutoresizingMaskIntoConstraints = false
+		tableview.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+		tableview.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+		tableview.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
+		tableview.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+		
         tableview.register(PersonCell.self, forCellReuseIdentifier: "personCell")
         tableview.delegate = self
         tableview.dataSource = self
-        tableview.backgroundColor = .flatBlack
+        tableview.backgroundColor = .flatBlack()
         tableview.separatorStyle = .none
         
         tableview.showsVerticalScrollIndicator = false
         
-        view.addSubview(tableview)
+        
 
         
         
@@ -76,16 +82,23 @@ extension AddFriendVC {
         sendRequests.titleLabel?.font = .SUBTITLE_FONT
         sendRequests.titleEdgeInsets = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
         sendRequests.setBackgroundColor(color: UIColor.ACCENT_BLUE.withAlphaComponent(0.90), forState: .normal)
-        sendRequests.setBackgroundColor(color: UIColor.ACCENT_BLUE.darkerColor(percent: 0.45), forState: .highlighted) //FIXME: IDK what is happening here with the color setting
+		sendRequests.setBackgroundColor(color: UIColor.ACCENT_BLUE.darken(byPercentage: 0.45)!, forState: .highlighted) //FIXME: IDK what is happening here with the color setting
         sendRequests.addTarget(self, action: #selector(sendFriendRequests), for: .touchUpInside)
     
         view.addSubview(sendRequests)
     }
     
     func prepareNoResults() {
-        noResultsIndicator = UIView(frame: LayoutManager.belowCentered(elementAbove: navbar, padding: .PADDING, width: view.frame.width, height: view.frame.height/3))
-        
-        let imgView = UIImageView(frame: CGRect(x: 0, y: 0, width: noResultsIndicator.frame.width - 4 * .PADDING, height: noResultsIndicator.frame.height/1.5))
+		noResultsIndicator = UIView(frame: LayoutManager.belowCentered(elementAbove: navbar, padding: .PADDING, width: view.frame.width, height: view.frame.height/3));         view.addSubview(noResultsIndicator)
+
+//		noResultsIndicator = UIView(frame: .zero); view.addSubview(noResultsIndicator)
+//		noResultsIndicator.translatesAutoresizingMaskIntoConstraints = false
+//		noResultsIndicator.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: .PADDING).isActive = true
+//		noResultsIndicator.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor).isActive = true
+//		noResultsIndicator.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 1/3).isActive = true
+//		noResultsIndicator.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+//        
+        let imgView = UIImageView(frame: CGRect(x: 0, y: 0, width: view.frame.width - 4 * .PADDING, height: view.frame.height/(3 * 1.5)))
         imgView.center = CGPoint(x: noResultsIndicator.frame.width/2, y: .PADDING * 3 + imgView.frame.height/2)
         imgView.image = .logo_dark
         imgView.contentMode = .scaleAspectFit
@@ -112,7 +125,6 @@ extension AddFriendVC {
         noResultsIndicator.alpha = 0
         noResultsIndicator.addSubview(sub)
         
-        view.addSubview(noResultsIndicator)
     }
     
     func setNoResults(to: Bool) {

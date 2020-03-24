@@ -9,17 +9,17 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 
 extension AddFriendVC: UITextFieldDelegate {
     func getData() {
-        self.user = (self.navigationController as! DataNavVC).user
-        hud = alerts.startProgressHud(withMsg: "", style: .dark)
+		self.user = (self.navigationController as? DataNavVC)?.user
+        alerts.startJGProgressHud(withTitle: "", style: .dark)
         
         self.view.isUserInteractionEnabled = false
         FirebaseAPIClient.getAllAccountInfo { (usrs) in
             self.allUsers = usrs.sorted()
-            self.alerts.triggerCallback()
+            self.alerts.callback?()
             self.filterResults()
         }
     }
@@ -103,17 +103,16 @@ extension AddFriendVC: UITextFieldDelegate {
         } else {
             searchBox.returnKeyType = .done
         }
-        searchBox.resignFirstResponder()
-        searchBox.becomeFirstResponder()
+//        searchBox.resignFirstResponder()
+//        searchBox.becomeFirstResponder()
         
         
         return hasRecord
     }
     
     func reloadTableview() {
-        
         let hasRecords = updateSectionsHaveRecords()
-        
+		
         if searchBox.text != "" {
             self.setNoResults(to: !hasRecords)
         }
@@ -130,7 +129,7 @@ extension AddFriendVC: UITextFieldDelegate {
     
     @objc func sendFriendRequests() {
         self.view.isUserInteractionEnabled = false
-        hud = alerts.startProgressHud(withMsg: "Sending Friend Requests", style: .dark)
+        alerts.startJGProgressHud(withTitle: "Sending Friend Requests", style: .dark)
         FirebaseAPIClient.sendFriendRequest(from: self.user, to: self.requestsToSend, completion: {
             self.dismiss(animated: true, completion: nil)
         })

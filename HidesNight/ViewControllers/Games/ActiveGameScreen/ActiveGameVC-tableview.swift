@@ -9,7 +9,7 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 import CountdownLabel
 
 extension ActiveGameVC: UITableViewDelegate, UITableViewDataSource {

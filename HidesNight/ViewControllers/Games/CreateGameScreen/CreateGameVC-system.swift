@@ -9,12 +9,12 @@
 
 import Foundation
 import UIKit
-import iosManagers
+import ARMDevSuite
 import JGProgressHUD
 
 extension CreateGameVC {
     func setupManagers() {
-        alerts = AlertManager(view: self, stateRestoration: {
+		alerts = AlertManager(vc: self, defaultHandler: {
             if self.successCreation {
                 self.hud?.indicatorView = JGProgressHUDSuccessIndicatorView(contentView: self.view)
                 self.hud?.detailTextLabel.text = ""

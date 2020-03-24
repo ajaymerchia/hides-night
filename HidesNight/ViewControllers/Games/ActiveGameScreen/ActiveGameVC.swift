@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
-import iosManagers
+import ARMDevSuite
 
 class ActiveGameVC: UIViewController {
 
